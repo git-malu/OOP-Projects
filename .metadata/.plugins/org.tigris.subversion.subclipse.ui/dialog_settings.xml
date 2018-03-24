@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="113" key="HistoryTableProvider.HistoryDialog.Date"/>
+	<item value="23" key="UpdateDialogWithConflictHandling.location.y"/>
+	<item value="849" key="TreeConflictsView.col.Description"/>
+	<item value="250" key="HistoryTableProvider.revisionsBlock.Date"/>
+	<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/FinalProject" key="TreeConflictsView.resource"/>
+	<item value="728" key="DifferencesDialog.size.x"/>
+	<item value="422" key="DifferencesDialog.size.y"/>
+	<item value="820" key="ComparePropertiesDialog2.size.x"/>
+	<item value="591" key="SwitchDialogWithConflictHandling.size.x"/>
+	<item value="418" key="ComparePropertiesDialog2.size.y"/>
+	<item value="644" key="SwitchDialogWithConflictHandling.size.y"/>
+	<item value="501" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Comment"/>
+	<item value="23" key="passwordStores.location.y"/>
+	<item value="207" key="CommitDialog.location.y"/>
+	<item value="348" key="passwordStores.location.x"/>
+	<item value="159" key="CommitDialog.location.x"/>
+	<item value="https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch" key="UrlCombo.HW07.0"/>
+	<item value="538" key="RevertDialog.location.x"/>
+	<item value="525" key="SetSvnPropertyDialog.size.x"/>
+	<item value="200" key="RevertDialog.location.y"/>
+	<item value="142" key="TreeConflictsView.col.Resource"/>
+	<item value="464" key="SetSvnPropertyDialog.size.y"/>
+	<item value="148" key="HistoryTableProvider.SVNHistoryPage.Date"/>
+	<item value="187" key="NewRepositoryDialog.location.y"/>
+	<item value="64" key="HistoryTableProvider.SVNHistoryPage.Author"/>
+	<item value="525" key="NewRepositoryDialog.location.x"/>
+	<item value="250" key="HistoryTableProvider.revisions.Date"/>
+	<item value="500" key="HistoryTableProvider.revisionsBlock.Comment"/>
+	<item value="true" key="TreeConflictsView.container"/>
+	<item value="378" key="ConfigureTagsDialog.location.x"/>
+	<item value="23" key="ConfigureTagsDialog.location.y"/>
+	<item value="https://svn.rice.edu/r/comp504/turnin/F17/lm44/FinalProject" key="UrlCombo.FinalProject.0"/>
+	<item value="https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW03" key="UrlCombo.HW02GQZ.0"/>
+	<item value="561" key="ChooseUrlDialog.location.x"/>
+	<item value="138" key="ChooseUrlDialog.location.y"/>
+	<item value="101" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Revision"/>
+	<item value="101" key="HistoryTableProvider.revisions.Revision"/>
+	<item value="119" key="DifferencesDialog.location.y"/>
+	<item value="600" key="HistoryDialog.location.x"/>
+	<item value="63" key="HistoryDialog.location.y"/>
+	<item value="375" key="RevertDialog.size.y"/>
+	<item value="525" key="RevertDialog.size.x"/>
+	<item value="564" key="passwordStores.size.y"/>
+	<item value="500" key="HistoryTableProvider.revisions.Comment"/>
+	<item value="904" key="passwordStores.size.x"/>
+	<item value="130" key="HistoryTableProvider.SVNHistoryPage.Revision"/>
+	<item value="525" key="ConfigureTagsDialog.size.x"/>
+	<item value="591" key="ConfigureTagsDialog.size.y"/>
+	<item value="122" key="SetSvnPropertyDialog.location.y"/>
+	<item value="538" key="SetSvnPropertyDialog.location.x"/>
+	<item value="160" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
+	<item value="276" key="DifferencesDialog.location.x"/>
+	<item value="101" key="HistoryTableProvider.revisionsBlock.Revision"/>
+	<item value="588" key="HistoryDialog.weights.0"/>
+	<item value="70" key="HistoryTableProvider.HistoryDialog.Author"/>
+	<item value="67" key="ComparePropertiesDialog2.location.y"/>
+	<item value="251" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Date"/>
+	<item value="367" key="NewRepositoryDialog.size.y"/>
+	<item value="231" key="ComparePropertiesDialog2.location.x"/>
+	<item value="339" key="HistoryDialog.weights.2"/>
+	<item value="72" key="HistoryDialog.weights.1"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="784" key="UpdateDialogWithConflictHandling.size.y"/>
+	<item value="36" key="HistoryTableProvider.HistoryDialog.Revision"/>
+	<item value="550" key="NewRepositoryDialog.size.x"/>
+	<item value="https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW08" key="UrlCombo.HW08.0"/>
+	<item value="200" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Author"/>
+	<item value="" key="DirectorySelectionPage.lastParent_https://svn.rice.edu/r/comp504/turnin/F17/lm44"/>
+	<item value="533" key="CommitDialog.size.y"/>
+	<item value="525" key="UpdateDialogWithConflictHandling.size.x"/>
+	<item value="1121" key="CommitDialog.size.x"/>
+	<item value="538" key="UpdateDialogWithConflictHandling.location.x"/>
+	<item value="true" key="BranchTagDialog.makeParents"/>
+	<item value="477" key="ChooseUrlDialog.size.x"/>
+	<item value="358" key="BranchTag.location.x"/>
+	<item value="141" key="BranchTag.location.y"/>
+	<item value="349" key="ChooseUrlDialog.size.y"/>
+	<item value="200" key="HistoryTableProvider.revisions.Author"/>
+	<item value="200" key="HistoryTableProvider.revisionsBlock.Author"/>
+	<item value="https://svn.rice.edu/r/comp504/turnin/F17/lm44" key="RepositorySelectionPage.lastRepository"/>
+	<item value="569" key="BranchTag.size.y"/>
+	<item value="496" key="HistoryDialog.size.x"/>
+	<item value="837" key="BranchTag.size.x"/>
+	<item value="486" key="HistoryDialog.size.y"/>
+	<item value="176" key="HistoryTableProvider.HistoryDialog.Comment"/>
+	<item value="23" key="SwitchDialogWithConflictHandling.location.y"/>
+	<item value="505" key="SwitchDialogWithConflictHandling.location.x"/>
+	<section name="CommitWizard">
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="false" key="ShowCompare"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://svn.rice.edu/r/comp504/turnin/F17/FinalProject/GroupC"/>
+			<item value="https://svn.rice.edu/r/comp504/turnin/F17/FinalProject/GroupB"/>
+			<item value="https://svn.rice.edu/r/comp504/turnin/F17/Final/GroupB"/>
+			<item value="https://svn.rice.edu/r/comp310/course/FinalProject/F15/WWJ_Demo"/>
+			<item value="https://svn.rice.edu/r/comp504/turnin/F17/yb22/HW08"/>
+		</list>
+	</section>
+</section>

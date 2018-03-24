@@ -1,0 +1,20 @@
+package model.strategies;
+
+import model.balls.Ball;
+import util.Randomizer;
+
+/**
+ * A concrete strategy that makes the ball moves at random velocity.
+ * @author Yuchang Shen and Yibing Zhang
+ *
+ */
+public class CrazyStrategy implements IUpdateStrategy {
+
+	@Override
+	public void updateState(Ball ball) {
+		// TODO Auto-generated method stub
+
+		ball.setVel(Randomizer.singleton.randomInt(-75, 75), Randomizer.singleton.randomInt(-75, 75));
+	}
+
+}

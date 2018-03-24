@@ -1,0 +1,17 @@
+package model;
+
+import model.strategies.IUpdateStrategy;
+
+/**
+ * The factory interface
+ * 
+ * @author Yuchang Shen and Weiheng Qiu
+ */
+public interface IStrategyFac {
+
+	/**
+	 * Method that make a strategy.
+	 * @return A strategy
+	 */
+	public IUpdateStrategy make();
+}

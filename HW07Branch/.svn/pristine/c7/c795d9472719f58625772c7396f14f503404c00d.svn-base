@@ -1,0 +1,9 @@
+package engine.engineController;
+
+import engine.engineModel.EngineModel;
+import engine.engineView.EngineView;
+
+public class Controller {
+	private EngineModel engineModel; //will be initialized by constructor
+	private EngineView engineView; //will be initialized by constructor
+}

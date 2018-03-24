@@ -1,0 +1,15 @@
+package strategy.painting;
+
+import java.awt.Graphics;
+
+import model.Shape;
+
+public abstract class IPaintStrategy {
+  
+  public void init(Shape context) {}
+  
+  public void paint(Graphics g, Shape context) {
+    
+  }
+
+}

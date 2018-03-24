@@ -1,0 +1,20 @@
+paint strategies keywords:
+
+Square
+Ellipse
+Flag
+Arrow
+BirdImage
+TearsImage
+ThinkingImage
+
+
+
+buttons
+1. "add to list": add factories to the list by clicking "add to list"
+2. "make ball": make a ball with selected factory by clicking "make ball"
+3. "combine": combine 2 factories in the 2 droplists by clicking "combine"
+4. "make Switcher": make a switchBall by clicking "make Switcher"
+5. "switch strategy": switch the strategy of switchBall by clicking "switch strategy"
+6. "clean balls": clean all the balls by clicking "clean balls".
+7. "add": add paint strategy to the list.

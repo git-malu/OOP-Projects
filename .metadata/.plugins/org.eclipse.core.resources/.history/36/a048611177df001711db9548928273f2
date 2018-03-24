@@ -1,0 +1,7 @@
+package lm44_xw47.clientMap;
+
+import lm44_xw47.model.Place;
+
+public interface IClientMapCtrl2MainViewAdapter {
+	public void addMapView2MainView(ClientMapView<Place> mapView);
+}

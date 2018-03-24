@@ -1,0 +1,322 @@
+package lm44_xw47.model;
+
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import javax.swing.Timer;
+
+import common.DataPacketUser;
+import common.IChatRoom;
+import common.IReceiver;
+import common.IUser;
+import common.IUserCmd2ModelAdapter;
+import common.IUserMessageType;
+import common.datatype.IRequestCmdType;
+import common.datatype.user.IInvitationType;
+import common.datatype.user.IQuitType;
+import common.datatype.user.IUserExceptionStatusType;
+import common.datatype.user.IUserInstallCmdType;
+import common.datatype.user.IUserRejectionStatusType;
+import lm44_xw47.chatRoom.model.ChatRoom;
+import lm44_xw47.chatRoom.model.ICmd2LobbyAdapter;
+import lm44_xw47.clientMap.ICmd2ClientMapAdapter;
+import lm44_xw47.model.dataPacketAlgoCmd.AddTeamGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.AddUserGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.BallPickCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.BallShootCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.CreateTeamCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.DefaultCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.InstallGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.InstallLobbyCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.InvitationCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.JoinTeamCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.PlayerDieCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.PlayerMoveCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.PlayerPositionCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.QuitCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.ReadyToPlayCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.RemoveTeamGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.RemoveUserGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.StopGameCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.UserExceptionStatusCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.UserInstallCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.UserRejectionStatusCmd;
+import lm44_xw47.model.dataPacketAlgoCmd.UserRequestCmd;
+import lm44_xw47.model.dataType.AddTeamGame;
+import lm44_xw47.model.dataType.AddUserGame;
+import lm44_xw47.model.dataType.BallPickType;
+import lm44_xw47.model.dataType.BallShootType;
+import lm44_xw47.model.dataType.CreateTeamType;
+import lm44_xw47.model.dataType.InstallGameType;
+import lm44_xw47.model.dataType.InstallLobbyType;
+import lm44_xw47.model.dataType.JoinTeamType;
+import lm44_xw47.model.dataType.PlayerDieType;
+import lm44_xw47.model.dataType.PlayerMoveType;
+import lm44_xw47.model.dataType.PlayerPostionType;
+import lm44_xw47.model.dataType.ReadyToPlayType;
+import lm44_xw47.model.dataType.RemoveTeamGame;
+import lm44_xw47.model.dataType.RemoveUserGame;
+import lm44_xw47.model.dataType.StopGameType;
+import provided.datapacket.DataPacketAlgo;
+import provided.mixedData.MixedDataKey;
+
+/**
+ * Following defines a user.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ */
+public class User implements IUser {
+	/**
+	 * The name of this user.
+	 */
+	private String name;
+
+	/**
+	 * The unique for this user.
+	 */
+	private UUID uuid = UUID.randomUUID();
+	
+	/**
+	 * The chat rooms this user have joined.
+	 */
+	private Collection<IChatRoom> chatRooms = new ConcurrentLinkedQueue<IChatRoom>();
+	
+	/**
+	 * The algo this user uses to handle message.
+	 */
+	private DataPacketAlgo<String, String> algo;
+	
+	/**
+	 * A map used to store unknown messages.
+	 */
+	private Map<Class<?>, DataPacketUser<?>> unknownMsgs = new Hashtable<Class<?>, DataPacketUser<?>>();
+	
+	private Collection<IUser> users = new ConcurrentLinkedQueue<IUser>();
+	
+	private Collection<IUser> readiedUsers = new ConcurrentLinkedQueue<IUser>();
+	
+	private Map<IUser, IChatRoom> teamsByUser = new Hashtable<IUser, IChatRoom>();
+	
+	private Map<String, IChatRoom> teamsByName = new Hashtable<String, IChatRoom>();
+	
+	private IUser host;
+	
+	private Ball ball = new Ball();
+	
+	private Map<IUser, Player> userPositons = new Hashtable<IUser, Player>();
+
+	private Timer timer;
+	
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param name The name of this user.
+	 */
+	public User(String name) {
+		this.name = name;
+	}
+	
+	public void init(IUserCmd2ModelAdapter cmd2ModelAdapter, IUser userStub) {
+		// users.add(userStub);
+		host = userStub;
+		
+		// Generate North and South team.
+		ILocalUserCmd2ModelAdapter localCmd2ModelAdpt = (ILocalUserCmd2ModelAdapter) cmd2ModelAdapter;
+		IChatRoom South = new ChatRoom("SOUTH");
+		IChatRoom North = new ChatRoom("NORTH");
+		IReceiver serverReceiver1 = localCmd2ModelAdpt.joinTeam(North);
+		IReceiver serverReceiver2 = localCmd2ModelAdpt.joinTeam(South);
+		South.addIReceiverStub(serverReceiver2);
+		North.addIReceiverStub(serverReceiver1);
+		chatRooms.add(North);
+		chatRooms.add(South);
+		teamsByName.put("NORTH", North);
+		teamsByName.put("SOUTH", South);
+		
+		MixedDataKey<ICmd2LobbyAdapter> key = new MixedDataKey<ICmd2LobbyAdapter>(UUID.randomUUID(), "This is the key for cmd2LobbyAdapter.", ICmd2LobbyAdapter.class);
+		MixedDataKey<ICmd2ClientMapAdapter> gameKey = new MixedDataKey<ICmd2ClientMapAdapter>(UUID.randomUUID(), "This is the key for cmd2ClientMapAdapte", ICmd2ClientMapAdapter.class);
+		algo = new DataPacketAlgo<String, String>(new DefaultCmd(userStub, cmd2ModelAdapter, unknownMsgs));
+		
+		algo.setCmd(IInvitationType.class, new InvitationCmd(cmd2ModelAdapter));
+		algo.setCmd(IQuitType.class, new QuitCmd(cmd2ModelAdapter, users, readiedUsers, teamsByUser));
+		algo.setCmd(IUserExceptionStatusType.class, new UserExceptionStatusCmd(cmd2ModelAdapter));
+		algo.setCmd(IUserInstallCmdType.class, new UserInstallCmd(algo, unknownMsgs, cmd2ModelAdapter));
+		algo.setCmd(IUserRejectionStatusType.class, new UserRejectionStatusCmd(cmd2ModelAdapter));
+		algo.setCmd(IRequestCmdType.class, new UserRequestCmd(cmd2ModelAdapter, algo, userStub));
+		algo.setCmd(InstallLobbyType.class, new InstallLobbyCmd(key, cmd2ModelAdapter));
+		algo.setCmd(AddUserGame.class, new AddUserGameCmd(key));
+		algo.setCmd(AddTeamGame.class, new AddTeamGameCmd(key));
+		algo.setCmd(RemoveUserGame.class, new RemoveUserGameCmd(key));
+		algo.setCmd(RemoveTeamGame.class, new RemoveTeamGameCmd(key));
+		algo.setCmd(JoinTeamType.class, new JoinTeamCmd(cmd2ModelAdapter, teamsByUser, teamsByName, userStub));
+		algo.setCmd(CreateTeamType.class, new CreateTeamCmd(cmd2ModelAdapter, teamsByName, chatRooms, users, userStub));
+		algo.setCmd(ReadyToPlayType.class, new ReadyToPlayCmd(cmd2ModelAdapter, users, readiedUsers, teamsByUser, userStub, this));
+		algo.setCmd(InstallGameType.class, new InstallGameCmd(key, gameKey, cmd2ModelAdapter));
+		algo.setCmd(PlayerDieType.class, new PlayerDieCmd(gameKey, cmd2ModelAdapter) );
+		algo.setCmd(PlayerMoveType.class, new PlayerMoveCmd(gameKey, cmd2ModelAdapter));
+		algo.setCmd(BallPickType.class, new BallPickCmd(gameKey, cmd2ModelAdapter));
+		algo.setCmd(BallShootType.class, new BallShootCmd(gameKey, cmd2ModelAdapter));
+		algo.setCmd(PlayerPostionType.class, new PlayerPositionCmd(users, teamsByUser, userPositons, userStub, ball, cmd2ModelAdapter));
+		algo.setCmd(StopGameType.class, new StopGameCmd(gameKey));
+
+	}
+
+	@Override
+	public String getName() throws RemoteException {
+		return name;
+	}
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		return uuid;
+	}
+
+	/**
+	 * getter for the chatroom
+	 */
+	@Override
+	public Collection<IChatRoom> getChatRooms() throws RemoteException {
+		// TODO Auto-generated method stub
+		return chatRooms;
+	}
+	
+	/**
+	 * install lobby for the connected user and add them to the user list
+	 */
+	@Override
+	public void connect(IUser userStub) throws RemoteException {
+		userStub.receive(new DataPacketUser<InstallLobbyType>(InstallLobbyType.class, new InstallLobbyType(users, chatRooms, userStub), host));
+		users.add(userStub);
+	}
+	
+	/**
+	 * receive datapcket and process using visitor
+	 */
+	@Override
+	public <T extends IUserMessageType> void receive(DataPacketUser<T> data) throws RemoteException {
+		// TODO Auto-generated method stub
+		data.execute(algo);
+	}
+	
+	/**
+	 * server side game start
+	 */
+	public void start() {
+		System.out.println("I should start the timer.");
+		for (IUser user : users) {
+			userPositons.put(user, new Player("player", teamsByUser.get(user).getName().equals("NORTH")));
+		}
+		timer = new Timer(50, (e) -> {
+			boolean north = true;
+			boolean south = true;
+			for (IUser user : users) {
+				Player player;
+				player = userPositons.get(user);
+				if (player != null) {
+					if (player.moving) {
+						player.moveTowardDest();
+						player.pickUpBall(ball);
+						if (player.getCarrying()) {
+							carryBall(user);
+						}
+					}
+					System.out.println("status: " + ball.ballState);
+					if (ball.ballState == Ball.FLY) {
+						System.out.println("Check kill.");
+						if (player.hit(ball)) {
+							userPositons.remove(user);
+							playerDie(user);
+							
+							System.out.println("player should be dead now");
+						}
+					}
+					
+					if (userPositons.get(user) != null) {
+						if (userPositons.get(user).getTeam() == false) {
+							north = false;
+						}
+						else {
+							south = false;
+						}
+					}
+				}
+			}
+			
+			if (north) {
+				timer.stop();
+				for (IUser user : users) {
+					new Thread() {
+						@Override
+						public void run() {
+							try {
+								user.receive(new DataPacketUser<StopGameType>(StopGameType.class, new StopGameType("North win the game."), host));
+							} catch (RemoteException e1) {
+								e1.printStackTrace();
+							}
+						}
+					}.start();
+				}
+			}
+			
+			if(south) {
+				timer.stop();
+				for (IUser user : users) {
+					new Thread() {
+						@Override
+						public void run() {
+							try {
+								user.receive(new DataPacketUser<StopGameType>(StopGameType.class, new StopGameType("South win the game."), host));
+							} catch (RemoteException e1) {
+								e1.printStackTrace();
+							}
+						}
+					}.start();
+				}
+			}
+			
+			if (ball.ballState == Ball.FLY) {
+				ball.moveTowardDest();
+			} 
+			else if (ball.ballState == Ball.CARRIED) {
+				ball.followCarrier();
+			}
+		});
+		timer.start();
+	}
+	
+	public void carryBall(IUser user) {
+		for (IUser player : users) {
+			new Thread() {
+				@Override
+				public void run() {
+					try {
+						player.receive(new DataPacketUser<BallPickType>(BallPickType.class, new BallPickType(user), host));
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();;
+		}
+	}
+	
+	public void playerDie(IUser user) {
+		for (IUser player : users) {
+			new Thread() {
+				@Override
+				public void run() {
+					try {
+						player.receive(new DataPacketUser<PlayerDieType>(PlayerDieType.class, new PlayerDieType(user), host));
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+		}
+	}
+}

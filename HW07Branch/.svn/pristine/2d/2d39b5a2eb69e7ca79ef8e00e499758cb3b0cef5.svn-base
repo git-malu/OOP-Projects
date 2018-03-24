@@ -1,0 +1,155 @@
+package client.clientModel;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.function.Consumer;
+
+import provided.client.model.IClientModel;
+import provided.compute.ICompute;
+import provided.compute.IRemoteTaskViewAdapter;
+import provided.compute.ITask;
+import provided.compute.ITaskResultFormatter;
+import provided.rmiUtils.IRMIUtils;
+import provided.rmiUtils.IRMI_Defs;
+import provided.rmiUtils.RMIUtils;
+
+public class ClientModel implements IClientModel {
+
+	private IViewAdapter viewAdapter;
+
+	private Consumer<String> outputCmd = new Consumer<String>() {
+
+		@Override
+		public void accept(String t) {
+			// TODO Auto-generated method stub
+			ClientModel.this.viewAdapter.append(String.valueOf(t) + "\n");
+		}
+	};
+
+	IRMIUtils rmiUtils = new RMIUtils(outputCmd);
+
+	private ICompute computeStub;
+
+	private IRemoteTaskViewAdapter engineTVAStub;
+	private IRemoteTaskViewAdapter clientTVA;
+	private IRemoteTaskViewAdapter clientTVAStub;
+
+	public ClientModel(IViewAdapter viewAdapter) {
+		// TODO Auto-generated constructor stub
+		clientTVAStub = null;
+		engineTVAStub = null;
+		clientTVA = new IRemoteTaskViewAdapter() {
+
+			@Override
+			public void append(String s) throws RemoteException {
+				// TODO Auto-generated method stub
+				outputCmd.accept("[Engine Server]" + s);
+			}
+		};
+		this.viewAdapter = viewAdapter;
+	}
+
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_CLIENT); // The class server the client uses.
+		try {
+			viewAdapter.setRemoteHost(rmiUtils.getLocalAddress());
+			outputCmd.accept("Client is ready..." + "\n");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			String errMsg = "Error getting local address: ";
+			System.err.println(errMsg + e);
+			e.printStackTrace();
+
+		}
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		outputCmd.accept("client is quitting." + "\n");
+		try {
+			rmiUtils.stopRMI();
+		} catch (Exception e) {
+			// TODO: handle exception
+			String errMsg = "Error stopping class server: ";
+			System.err.println(errMsg + e);
+			e.printStackTrace();
+			outputCmd.accept(errMsg + e + "\n");
+		}
+	}
+
+	@Override
+	public String connectTo(String remoteHost) {
+		// TODO Auto-generated method stub
+		try {
+			outputCmd.accept("Locating registry at " + remoteHost + "..." + "\n");
+
+			if (null == clientTVAStub) {
+				clientTVAStub = (IRemoteTaskViewAdapter) UnicastRemoteObject.exportObject((Remote) this.clientTVA,
+						IRemoteTaskViewAdapter.BOUND_PORT_CLIENT);
+			}
+
+			Registry registry = rmiUtils.getRemoteRegistry(remoteHost);
+			outputCmd.accept("Found registry: " + registry);
+
+			computeStub = (ICompute) registry.lookup(ICompute.BOUND_NAME);
+			outputCmd.accept("Found remote Compute object: " + computeStub);
+
+			engineTVAStub = computeStub.setTextAdapter(clientTVAStub);
+			outputCmd.accept("Got text adapter: " + engineTVAStub);
+
+			engineTVAStub.append("Hello from the client!");
+			return "Connection to " + remoteHost + " established!";
+		} catch (Exception e) {
+			// TODO: handle exception
+			String errMsg = "Error connection to ";
+			System.err.println(errMsg + remoteHost + " : " + e + "\n");
+			e.printStackTrace();
+			outputCmd.accept(errMsg + remoteHost + " : " + e + "\n");
+			return "No Connection Established Successfully!";
+		}
+	}
+
+	@Override
+	public void sendMsgToComputeEngine(String text) {
+		// TODO Auto-generated method stub
+		if (null != engineTVAStub) {
+			outputCmd.accept("Sending msg to connected remote host = " + "{" + text + "}");
+			try {
+				engineTVAStub.append(text);
+			} catch (Exception e) {
+				// TODO: handle exception
+				String errMsg = "RemoteException while sending msg to connected remote host: ";
+				System.err.println(errMsg + e + "\n");
+				e.printStackTrace();
+				outputCmd.accept(errMsg + e + "\n");
+			}
+		} else {
+			outputCmd.accept("Error : stub to remote host is null!");
+		}
+
+	}
+
+	@Override
+	public <T> String runTask(ITask<T> task) {
+		// TODO Auto-generated method stub
+		String resultFormatter = "No result yet.";
+		try {
+			ITaskResultFormatter<T> taskResultFormatter = task.getFormatter();
+			T result = computeStub.executeTask(task);
+			resultFormatter = taskResultFormatter.format(result);
+		} catch (Exception e) {
+			// TODO: handle exception
+			String errMsg = "Task execution exception: ";
+			System.err.println(errMsg + e + "\n");
+			e.printStackTrace();
+			outputCmd.accept(errMsg + e + "\n");
+		}
+		return resultFormatter;
+	}
+
+}

@@ -1,0 +1,82 @@
+package lm44_yb22.model;
+
+import java.rmi.RemoteException;
+import java.util.UUID;
+
+import common.DataPacketChatRoom;
+import common.ICmd2ModelAdapter;
+import common.IReceiver;
+import common.IUser;
+import provided.datapacket.ADataPacketAlgoCmd;
+import provided.datapacket.DataPacketAlgo;
+import provided.datapacket.DataPacket;
+
+public class Receiver implements IReceiver {
+	UUID uuid = UUID.randomUUID();
+	IUser userStub;
+	IReceiverAdapter receiverAdapter;
+	DataPacketAlgo<String, Object> visitor = new DataPacketAlgo<>(new ADataPacketAlgoCmd<String, String, Object, ICmd2ModelAdapter, DataPacket<String, IReceiver>>() {
+
+		private static final long serialVersionUID = -4062744963080088375L;
+
+		@Override
+		public String apply(Class<?> index, DataPacket<String, IReceiver> host, Object... params) {
+			// TODO Auto-generated method stub
+			String data = host.getData();
+			System.out.println("Remote Message: "+ data);
+			receiverAdapter.displayMsg(data);
+			return null;
+		}
+
+		@Override
+		public void setCmd2ModelAdpt(ICmd2ModelAdapter cmd2ModelAdpt) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	});
+	
+	public Receiver(IUser userStub, IReceiverAdapter adpt) {
+		// TODO Auto-generated constructor stub
+		this.userStub = userStub;
+		this.receiverAdapter = adpt;
+	}
+	
+	@Override
+	public <T> void receive(DataPacketChatRoom<T> data) throws RemoteException {
+		// TODO Auto-generated method stub
+		data.execute(visitor, null, null);
+	}
+
+	@Override
+	public IUser getUserStub() throws RemoteException {
+		// TODO Auto-generated method stub
+		return userStub;
+	}
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		// TODO Auto-generated method stub
+		return uuid;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj == null) {
+			return false;
+		}else {
+			if(obj instanceof Receiver) {
+				return uuid.equals(((Receiver)obj).uuid);
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return uuid.hashCode();
+	}
+
+}

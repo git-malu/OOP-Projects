@@ -1,0 +1,22 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy
+ * Change color whenever bounced
+ * @author Gao Pan
+ *
+ */
+public class Camouflage implements IUpdateStrategy {
+	/**
+	 * Change color when bounced
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+		if (context.getX() + context.getDx() > Shape.getX_MAX() || context.getX() + context.getDx() < Shape.getX_MIN()
+				|| context.getY() + context.getDy() > Shape.getX_MAX()|| context.getY() + context.getDy() < Shape.getX_MIN()) {
+			context.randomColor();
+		}
+	}
+}

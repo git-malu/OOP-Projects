@@ -1,0 +1,27 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import common.DataPacketUser;
+
+/**
+* 
+ * This command handles user exception status
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *  * */
+public class UserExceptionStatusCmd extends DataPacketUserAlgoCmd<IUserExceptionStatusType> {
+	private static final long serialVersionUID = -1325979615454321236L;
+
+	public UserExceptionStatusCmd(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<IUserExceptionStatusType> host, String... params) {
+		return null;
+	}
+}

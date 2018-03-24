@@ -1,0 +1,45 @@
+package strategy.painting;
+
+import java.awt.Graphics;
+import java.awt.geom.AffineTransform;
+
+import model.Shape;
+
+public abstract class MultiPaintStrategy extends APaintStrategy {
+  
+  private APaintStrategy[] mulStrat;
+
+//  public MultiPaintStrategy(AffineTransform at) {
+//    super(at);
+//    // TODO Auto-generated constructor stub
+//  }
+  
+  public MultiPaintStrategy(AffineTransform at,  APaintStrategy... mulStrat) {
+    super(at);
+    this.mulStrat = mulStrat;
+    // TODO Auto-generated constructor stub
+  }
+  
+  public void init(Shape context) {
+    for (APaintStrategy strat : this.mulStrat) {
+      strat.init(context);
+    }
+  }
+  
+  @Override
+  public void paintCfg(Graphics g, Shape context) {
+    for (APaintStrategy strat : this.mulStrat) {
+      strat.paintCfg(g, context);;
+    }
+  }
+
+  @Override
+  public void paintXfrm(Graphics g, Shape context, AffineTransform at) {
+    // TODO Auto-generated method stub
+    for (APaintStrategy strat : this.mulStrat) {
+      strat.paintXfrm(g, context, at);
+    }
+
+  }
+
+}

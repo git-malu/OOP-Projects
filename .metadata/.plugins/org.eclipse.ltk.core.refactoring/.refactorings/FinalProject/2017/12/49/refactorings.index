@@ -1,0 +1,8 @@
+1512683659591	Rename field 'appStart'
+1512683892651	Rename field '_MapCtrl2MainViewAdapter'
+1512794003448	Rename type 'IModel2ViewAdapter'
+1512794072014	Rename type 'IView2ModelAdapter'
+1512798153495	Delete elements
+1512798189774	Delete element
+1512860080838	Rename method 'nextStep'
+1512860105769	Rename method 'moveOneStep'

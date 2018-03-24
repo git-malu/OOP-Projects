@@ -1,0 +1,115 @@
+package controller;
+
+import java.awt.EventQueue;
+import java.util.Set;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import common.IChatRoom;
+import model.ChatAppModel;
+import model.IModel2ViewAdapter;
+import view.ChatAppFrame;
+import view.IView2ModelAdapter;
+
+public class Controller {
+	private ChatAppModel chatAppModel;
+	
+	private ChatAppFrame<IChatRoom> chatAppFrame;
+	
+	public Controller() {
+		chatAppModel = new ChatAppModel(new IModel2ViewAdapter() {
+
+			@Override
+			public void addBtnChatroom(JButton btnChatroom) {
+				// TODO Auto-generated method stub
+				chatAppFrame.addChatroomBtn(btnChatroom);
+			}
+
+			@Override
+			public void addPnlChatroom(JPanel pnlChatroom) {
+				// TODO Auto-generated method stub
+				chatAppFrame.addComponent(pnlChatroom);
+			}
+			
+			@Override
+			public void createChatroomPnl(IChatRoom chatroom) {
+				
+			}
+
+			@Override
+			public void sendConnectInfo(String info) {
+				// TODO Auto-generated method stub
+				chatAppFrame.appendInfo(info);
+			}
+
+			@Override
+			public void addSelectableChatrooms(Set<IChatRoom> chatrooms) {
+				// TODO Auto-generated method stub
+				chatAppFrame.addJoinableChatrooms(chatrooms);
+			}
+			
+		});
+		
+		chatAppFrame = new ChatAppFrame<IChatRoom>(new IView2ModelAdapter<IChatRoom>() {
+
+			@Override
+			public void connect(String ip) {
+				// TODO Auto-generated method stub
+				chatAppModel.connect(ip);
+			}
+			
+			@Override
+			public void createChatroom(String name) {
+				
+			}
+
+			@Override
+			public void join(IChatRoom chatroom) {
+				// TODO Auto-generated method stub
+				chatAppModel.join(chatroom);
+			}
+
+			@Override
+			public void login(String username) {
+				// TODO Auto-generated method stub
+				chatAppModel.login(username);
+			}
+
+			@Override
+			public void showInfo() {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void quit() {
+				// TODO Auto-generated method stub
+				chatAppModel.quit();
+			}
+			
+		});
+	}
+	
+	public void start() {
+		chatAppFrame.start();
+		chatAppModel.start();
+	}
+	
+	/**
+	 * Start the application.
+	 * 
+	 * @param args The arguments passes from the command-line.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Controller controller = new Controller();
+					controller.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+}

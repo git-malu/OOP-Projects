@@ -1,0 +1,42 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+/**
+ * The interface of the adapter from the view to the model that enables the view to talk to the model.
+ * @author guoqz
+ */
+public interface IView2ModelAdapterCtrl {
+	
+
+	/**
+	 * The method that tells model the type name of the ball need to create
+	 * @param typename the name of the ball
+	 */
+	public void loadBall(String typename);
+
+	/**
+	 * The method that tells model to clean all balls on canvas
+	 */
+	public void clean();
+
+	
+
+	/**
+	 * No-op singleton implementation of IView2ModelAdapter
+	 */
+	public static final IView2ModelAdapterCtrl NULL_OBJECT = new IView2ModelAdapterCtrl() {
+
+		public void loadBall(String temp) {
+
+		}
+
+		
+		public void clean() {
+
+		}
+
+		
+	};
+}

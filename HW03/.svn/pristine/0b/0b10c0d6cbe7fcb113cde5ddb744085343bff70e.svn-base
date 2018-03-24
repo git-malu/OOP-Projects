@@ -1,0 +1,17 @@
+package model;
+
+public interface IStrategyFac {
+	
+	public IUpdateStrategy makeStrategy();
+	public String toString();
+		
+	
+	public static IStrategyFac nullFac = new IStrategyFac() {
+		public IUpdateStrategy makeStrategy() {
+			return null; //return null strategy
+		}
+	};
+	
+	
+	
+}

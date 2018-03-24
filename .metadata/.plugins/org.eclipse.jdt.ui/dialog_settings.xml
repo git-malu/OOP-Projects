@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="0" key="CallHierarchyViewPart.call_mode"/>
+	<item value="2" key="CallHierarchyViewPart.field_mode"/>
+	<item value="3" key="CallHierarchyViewPart.orientation"/>
+	<item value="filter_imports;" key="filters_last_used"/>
+	<item value="500" key="CallHierarchyViewPart.ratio1"/>
+	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
+	<item value="500" key="CallHierarchyViewPart.ratio3"/>
+	<list key="SearchScopeActionGroup.working_set">
+	</list>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="true" key="renameSubpackages"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="true" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="true" key="updateTextualMatches"/>
+	</section>
+	<section name="ProblemSeveritiesConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="false" key="expanded4"/>
+		<item value="false" key="expanded3"/>
+		<item value="false" key="expanded6"/>
+		<item value="false" key="expanded5"/>
+		<item value="false" key="expanded7"/>
+		<item value="true" key="expanded0"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
+	<section name="SearchInDialog">
+		<item value="true" key="SearchInProjects"/>
+		<item value="true" key="SearchInAppLibs"/>
+		<item value="true" key="SearchInJRE"/>
+		<item value="true" key="SearchInSources"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item value="356" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="456" key="DIALOG_HEIGHT"/>
+		<item value="90" key="DIALOG_X_ORIGIN"/>
+		<item value="18" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="2" key="layout"/>
+		<item value="true" key="group_libraries"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1503889251163&quot;&gt;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0A;&lt;xmlDefinedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.buildship.ui.packageexplorer.filter.gradle.buildfolder&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.buildship.ui.packageexplorer.filter.gradle.subProject&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.BinaryProjectFilter1&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.ExternalPluginLibrariesFilter1&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.DeprecatedMembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0A;&lt;/customFilters&gt;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+		<item value="1" key="rootMode"/>
+		<item value="false" key="linkWithEditor"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+		<item value="false" key="configure_problem_severity_dialog_id"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="400" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="450" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item value="530" key="width"/>
+		<item value="330" key="height"/>
+	</section>
+	<section name="CallHierarchySearchScope">
+	</section>
+	<section name="javadoc">
+		<item value="public" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/javadoc" key="javadoc_command_history"/>
+		<item value="1.8" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/doc" key="destdir"/>
+		<item value="true" key="openinbrowser"/>
+		<section name="projects">
+			<section name="VisitorDemo">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/VisitorDemo/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/VisitorDemo/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW07Test">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Test/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Test/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW04DL">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04DL/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04DL/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW08FromBao">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Lab08">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/Lab08/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/Lab08/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW04DLREP">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04DLREP/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04DLREP/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW03">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW03/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW02GQZ/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW04">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW04/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW01">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW01/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW01/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW08pulltest">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08pulltest/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08pulltest/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW07">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="common">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao/src/common/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao/src/common/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW07Branch">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW08">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW05">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW02Fix">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW02Fix/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW02Fix/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW06">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW06/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW06/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW07SVNexternalTest">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07SVNexternalTest/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07SVNexternalTest/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LambdaTest">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/LambdaTest/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/LambdaTest/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW08YB22">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08YB22/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HW05QWH">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="WWJ_Demo">
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/WWJ_Demo/javadoc.xml" key="antpath"/>
+				<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/WWJ_Demo/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="1" key="index"/>
+	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="600" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="534" key="DIALOG_HEIGHT"/>
+		<item value="273" key="DIALOG_X_ORIGIN"/>
+		<item value="188" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="2" key="pageIndex"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="12" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="15" key="INCLUDE_MASK"/>
+		<section name="HISTORY6">
+			<item value="true" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="view.MiniView.addToList(IChatServer)" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="addReceiver" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="addtolist" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY10">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="User" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="addto list" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY11">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="makeMiniMVC" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY8">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="closeChatApp" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY9">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="makemini" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY2">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="CLASS_SERVER_PORT_CLIENT" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="4" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="iBallcmd" key="pattern"/>
+			<item value="3" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="4" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="REGISTRY_PORT" key="pattern"/>
+			<item value="3" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="4" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="CLASS_SERVER_PORT_SERVER" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="4" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="WorkingSetModelAwareSelectionDialog">
+		<item value="true" key="ShowVisibleOnly"/>
+	</section>
+</section>

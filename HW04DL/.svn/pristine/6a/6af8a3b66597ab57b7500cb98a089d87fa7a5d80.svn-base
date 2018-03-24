@@ -1,0 +1,26 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy
+ * Change radius
+ * @author Gao Pan
+ *
+ */
+public class Breathe implements IUpdateStrategy {
+	/**
+	 * Changing rate
+	 */
+	int rate = 1;
+
+	/**
+	 * Change radius
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+		if (context.getRadius() + rate > Shape.getR_MAX() || context.getRadius() + rate < Shape.getR_MIN())
+			rate = -rate;
+		context.setRadius(context.getRadius()+rate);
+	}
+}

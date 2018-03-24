@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TabbedPaneUsage.java&apos; to &apos;FINAL/src/lm44_xw47.view&apos;&#x0A;- Original project: &apos;WWJ_Demo_2_1_0&apos;&#x0A;- Destination element: &apos;FINAL/src/lm44_xw47.view&apos;&#x0A;- Original element: &apos;TabbedPaneUsage.java&apos;" description="Copy file" destination="=FINAL/src&lt;lm44_xw47.view" element1="libs/WWJ/code/src/gov/nasa/worldwindx/examples/TabbedPaneUsage.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1511738651000" units="0" version="1.0"/>
+</session>

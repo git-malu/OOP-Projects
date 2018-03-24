@@ -1,0 +1,53 @@
+package ballControl;
+
+import java.awt.EventQueue;
+
+import javax.swing.text.View;
+
+import ballModel.Model;
+import view.MainFrame;
+import view.IView2ModelAdapter;
+
+public class Controller {
+	private Model myModel= new Model();
+    private MainFrame myMainFrame;
+
+    public Controller() {
+//        myModel = new Model( new IModel2ViewAdapter() {
+//            public void request2View() {
+//                myView.handleModelRequest();  // myView is in scope!
+//            }
+//        });
+//
+//        myView = new View( new IView2ModelAdapter() {
+//            public void request2Model() {
+//                myModel.handleViewRequest(); // myModel is in scope!
+//            }
+//        });
+	    	myMainFrame = new MainFrame(new IView2ModelAdapter() {
+			public void request2Model_makeBall(String s) {
+				myModel.handleViewRequest(s); // myModel is in scope!
+			}						
+		});
+    }
+    
+    public void start() {
+    		myMainFrame.start();
+    }
+    
+    public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					new Controller().start();
+					//frame.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		Controller myController = new Controller();
+	}
+}

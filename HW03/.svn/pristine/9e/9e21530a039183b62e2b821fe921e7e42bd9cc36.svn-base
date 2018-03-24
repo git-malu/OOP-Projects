@@ -1,0 +1,20 @@
+package model;
+
+import java.awt.Color;
+
+public class ColorStrategy implements IUpdateStrategy{
+
+	@Override
+	public void strategy(ABall ball) {
+		// TODO Auto-generated method stub
+		updateState(ball);
+		new StraightStrategy().strategy(ball);
+	}
+	
+	public void updateState(ABall ball) {
+		ball.setColor(new Color((new Double(Math.random() * 128)).intValue() + 128,
+				(new Double(Math.random() * 128)).intValue() + 128,
+				(new Double(Math.random() * 128)).intValue() + 128));
+	}
+
+}

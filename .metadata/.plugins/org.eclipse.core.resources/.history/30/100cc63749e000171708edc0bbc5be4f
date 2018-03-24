@@ -1,0 +1,21 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+
+/**
+* create team 
+ *  * */
+public class CreateTeamType implements IUserMessageType {
+	private static final long serialVersionUID = -7171979375655844408L;
+
+	private String teamname;
+
+	public String getTeamname() {
+		return this.teamname;
+	}
+
+	public CreateTeamType(String teamname) {
+		this.teamname = teamname;
+	}
+
+}

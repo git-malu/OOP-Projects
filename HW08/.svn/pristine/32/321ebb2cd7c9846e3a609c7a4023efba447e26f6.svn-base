@@ -1,0 +1,7 @@
+package lm44_yb22.model;
+
+import java.awt.DisplayMode;
+
+public interface IReceiverAdapter {
+	void displayMsg(String msg);
+}

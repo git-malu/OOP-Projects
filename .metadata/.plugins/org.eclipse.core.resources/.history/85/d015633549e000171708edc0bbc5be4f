@@ -1,0 +1,22 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IChatRoom;
+
+/**
+* add team game
+ *  * */
+public class AddTeamGame implements IUserMessageType {
+	private static final long serialVersionUID = 2334886188849139766L;
+
+	private IChatRoom team;
+
+	public IChatRoom getTeam() {
+		return this.team;
+	}
+
+	public AddTeamGame(IChatRoom team) {
+		this.team = team;
+	}
+
+}

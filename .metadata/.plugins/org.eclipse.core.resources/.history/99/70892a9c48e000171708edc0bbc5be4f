@@ -1,0 +1,106 @@
+package lm44_xw47.chatRoom.controller;
+
+import java.awt.EventQueue;
+import java.util.Collection;
+
+import common.IChatRoom;
+import common.IUser;
+import lm44_xw47.chatRoom.model.ILobbyModel2ViewAdapter;
+import lm44_xw47.chatRoom.model.LobbyModel;
+import lm44_xw47.chatRoom.view.ILobbyView2ModelAdapter;
+import lm44_xw47.chatRoom.view.LobbyView;
+
+/**
+ * Following defines the controller for the lobby.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class LobbyController {
+	/**
+	 * The model for the lobby.
+	 */
+	private LobbyModel lobbyModel;
+	
+	/**
+	 * The view for the lobby.
+	 */
+	private LobbyView lobbyFrame;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param users The collection of users join this lobby.
+	 * @param teams The collection of teams that user can join.
+	 * @param localUser The local user stub.
+	 * @param serverUser The server stub.
+	 */
+	public LobbyController(Collection<IUser> users,Collection<IChatRoom> teams, IUser localUser, IUser serverUser) {
+		lobbyModel = new LobbyModel(new ILobbyModel2ViewAdapter() {
+
+			@Override
+			public void addUser(IUser user) {
+				lobbyFrame.addUser(user);
+			}
+
+			@Override
+			public void addTeam(IChatRoom team) {
+				lobbyFrame.addTeam(team);
+			}
+			
+		}, users, teams, localUser, serverUser);
+		
+		lobbyFrame = new LobbyView(new ILobbyView2ModelAdapter() {
+
+			@Override
+			public void createTeam(String teamname) {
+				lobbyModel.createTeam(teamname);
+			}
+
+			@Override
+			public void joinTeam(IChatRoom Team) {
+				lobbyModel.joinTeam(Team);
+			}
+
+			@Override
+			public void inviteUser(IUser user) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void readyToPlay() {
+				// TODO Auto-generated method stub
+				lobbyModel.readyToPlay();
+			}
+			
+			@Override
+			public void quit() {
+				lobbyModel.quit();
+			}
+			
+		}); 
+	}
+	
+	/**
+	 * Start the lobby MVC.
+	 */
+	public void start() {
+		EventQueue.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				lobbyFrame.start();
+				lobbyModel.start();
+			}
+		});
+	}
+	
+	/**
+	 * Get the lobby view.
+	 * 
+	 * @return The view of lobby.
+	 */
+	public LobbyView getLobbyView() {
+		return lobbyFrame;
+	}
+}

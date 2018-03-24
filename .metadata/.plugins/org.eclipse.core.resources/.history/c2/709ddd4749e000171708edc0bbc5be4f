@@ -1,0 +1,23 @@
+package lm44_xw47.view;
+
+/**
+* Following defines the adapter that main GUI uses to communicate with controller.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu */
+public interface IMainView2ControllerAdapter {
+	/**
+	* Make a map. */
+	/*package*/ void makeMap();
+
+	/**
+	* Start the map. */
+	public void startMap();
+
+	/**
+	* Make controller run the given job.
+	 * 	 * 
+	 * 	 * @param runnable The job will run by controller. */
+	public void runJob(Runnable runnable);
+
+}

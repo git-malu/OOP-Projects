@@ -1,0 +1,199 @@
+package lm44_xw47.view;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import com.jgoodies.forms.layout.FormSpecs;
+import java.awt.Insets;
+import javax.swing.JTextArea;
+
+public class AppStartFrame extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3097617897364258363L;
+	private JPanel contentPane;
+	private final JPanel panel = new JPanel();
+	private final JButton btnMakeMapGUI = new JButton("Make Map on GUI thread");
+	private IAppStart2Controller controller;
+	private final JButton btnMakeMapNonGUI = new JButton("Make Map fully on Non-GUI thread");
+	private final JButton btnMakeMapPartiallyNonGUI = new JButton("Make Map partially on Non-GUI Thread");
+	private final JButton btnMakeMapBQ = new JButton("Make Map using BQ");
+	private final JPanel panel_1 = new JPanel();
+	private final JTextField textField = new JTextField();
+	private final JButton btnNewButton = new JButton("Connect");
+	private final JTextField textField_1 = new JTextField();
+	private final JButton btnNewButton_1 = new JButton("Send");
+	private final JPanel panel_2 = new JPanel();
+	private final JTextArea logArea = new JTextArea();
+
+
+
+	/**
+	 * Create the frame.
+	 */
+	public AppStartFrame(IAppStart2Controller controller) {
+		textField_1.setColumns(10);
+		textField.setColumns(10);
+		initGUI();
+		this.controller = controller;
+	}
+	private void initGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 611, 447);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		contentPane.add(panel, BorderLayout.CENTER);
+		logArea.setRows(10);
+		logArea.setColumns(50);
+		
+		panel.add(logArea);
+		
+		contentPane.add(panel_1, BorderLayout.NORTH);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{189, 134, 117, 0, 0};
+		gbl_panel_1.rowHeights = new int[]{26, 26, 0, 0, 0, 0, 0};
+		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.anchor = GridBagConstraints.NORTH;
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.gridx = 0;
+		gbc_textField.gridy = 0;
+		panel_1.add(textField, gbc_textField);
+		
+		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.fill = GridBagConstraints.VERTICAL;
+		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton.gridx = 1;
+		gbc_btnNewButton.gridy = 0;
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		panel_1.add(btnNewButton, gbc_btnNewButton);
+		
+		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+		gbc_textField_1.anchor = GridBagConstraints.NORTH;
+		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_1.gridx = 0;
+		gbc_textField_1.gridy = 1;
+		panel_1.add(textField_1, gbc_textField_1);
+		
+		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_1.gridx = 1;
+		gbc_btnNewButton_1.gridy = 1;
+		panel_1.add(btnNewButton_1, gbc_btnNewButton_1);
+		GridBagConstraints gbc_btnMakeMapGUI = new GridBagConstraints();
+		gbc_btnMakeMapGUI.insets = new Insets(0, 0, 5, 5);
+		gbc_btnMakeMapGUI.gridx = 0;
+		gbc_btnMakeMapGUI.gridy = 2;
+		panel_1.add(btnMakeMapGUI, gbc_btnMakeMapGUI);
+		GridBagConstraints gbc_btnMakeMapNonGUI = new GridBagConstraints();
+		gbc_btnMakeMapNonGUI.insets = new Insets(0, 0, 5, 5);
+		gbc_btnMakeMapNonGUI.gridx = 0;
+		gbc_btnMakeMapNonGUI.gridy = 3;
+		panel_1.add(btnMakeMapNonGUI, gbc_btnMakeMapNonGUI);
+		GridBagConstraints gbc_btnMakeMapPartiallyNonGUI = new GridBagConstraints();
+		gbc_btnMakeMapPartiallyNonGUI.insets = new Insets(0, 0, 5, 5);
+		gbc_btnMakeMapPartiallyNonGUI.gridx = 0;
+		gbc_btnMakeMapPartiallyNonGUI.gridy = 4;
+		panel_1.add(btnMakeMapPartiallyNonGUI, gbc_btnMakeMapPartiallyNonGUI);
+		GridBagConstraints gbc_btnMakeMapBQ = new GridBagConstraints();
+		gbc_btnMakeMapBQ.insets = new Insets(0, 0, 0, 5);
+		gbc_btnMakeMapBQ.gridx = 0;
+		gbc_btnMakeMapBQ.gridy = 5;
+		panel_1.add(btnMakeMapBQ, gbc_btnMakeMapBQ);
+		btnMakeMapBQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.runJob(new Runnable(){
+
+					@Override
+					public void run() {
+						System.out.println("Main thread job running.");
+						controller.makeMap();   // Instantiate the map on the main thread
+						SwingUtilities.invokeLater(new Runnable() {   // Show the map on the GUI thread.
+
+							@Override
+							public void run() {
+								controller.startMap();	
+							}
+							
+						});
+					}
+					
+				});
+			}
+		});
+		btnMakeMapPartiallyNonGUI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				(new Thread() {
+					@Override
+					public void run() {
+						controller.makeMap();    
+						SwingUtilities.invokeLater(new Runnable() {
+
+							@Override
+							public void run() {
+								controller.startMap();	
+							}
+							
+						});
+					}
+				}).start();
+			}
+		});
+		btnMakeMapNonGUI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				(new Thread() {
+					@Override
+					public void run() {
+						controller.makeMap();
+						controller.startMap();						
+					}
+				}).start();
+			}
+		});
+		btnMakeMapGUI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controller.makeMap();
+				controller.startMap();
+			}
+		});
+		
+		contentPane.add(panel_2, BorderLayout.SOUTH);
+	}
+	public void start() {
+		setVisible(true);
+		
+	}
+	
+	/**
+	 * Display info to the log area.
+	 * @param str
+	 */
+	public void appendLog(String str) {
+		logArea.append(str);
+	}
+
+}

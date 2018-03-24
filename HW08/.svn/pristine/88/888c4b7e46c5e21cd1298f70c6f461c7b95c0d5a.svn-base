@@ -1,0 +1,253 @@
+package lm44_yb22.model;
+
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+
+import javax.swing.JOptionPane;
+
+import common.IChatRoom;
+import common.IReceiver;
+import common.IUser;
+import provided.rmiUtils.RMIUtils;
+import provided.rmiUtils.IRMI_Defs;
+/**
+ * Engine server resides in the MainModel.
+ * @author malu
+ *
+ */
+public class MainModel {
+	
+//	public static final int SERVER_PORT = 2101;
+//	public static final int REGISTRY_PORT = 2099;
+	/**
+	 * Reference to the Registry
+	 */
+	private Registry registry;
+	
+	private RMIUtils rmiUtils;
+	private IMainModelMainAdapter mainModelMainAdapter;
+	
+	private User user;
+	private IUser userStub;
+	private int receiverBoundPort = User.BOUND_PORT + 10; 
+	private HashSet<IMainModel2MiniMVCAdpt> _2MiniMVCAdpts = new HashSet<>();
+	
+	
+	
+//	private HashSet<ChatRoom> chatRooms = new HashSet<>();
+	
+	/**
+	 * engine model constructor
+	 * @param adapter model to view adapter
+	 */
+	public MainModel(IMainModelMainAdapter adapter) {
+		this.mainModelMainAdapter = adapter;
+	}
+	
+	/**
+	 * start the engine by starting the RMIUtils, getting the registry, registering the engine server stub, and setting adapters for the engine server.
+	 */
+	public void start() {
+		// TODO Auto-generated method stub
+		try {
+			// Start the RMI system and get the local Registry, making it if necessary.
+			rmiUtils = new RMIUtils(mainModelMainAdapter.getLogDisplayMethod());// initialize right after model starts
+			
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+		}
+		catch(Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+		
+		
+		
+		
+		//register local user
+		try {
+			// create local user
+			user = new User(JOptionPane.showInputDialog("Input a username:"), rmiUtils.getLocalAddress()
+//					new IUser2ModelAdpt() {
+//						@Override
+//						public void createMiniMVC(ChatServer chatServer) {
+//							main2ViewAdpt.makeMiniMVC(chatServer);
+//						}
+//					}
+					
+					);
+			
+			mainModelMainAdapter.logDisplay("Instantiated new User: " + user.getName() + "\n");
+			// Create a UnicastRemoteObject stub from the RMI Server implementation to be sent to the clients.
+			userStub = (IUser) UnicastRemoteObject.exportObject(user, User.BOUND_PORT);
+
+			// Bind the remote object's stub in the registry at the specified
+			// port use rebind instead of bind so the program can be run
+			// multiple times with the same registry
+			registry.rebind(IUser.BOUND_NAME, userStub);// Bound_Name is "USER"
+			
+			
+//			//set computeServer's remote task view adapter which is for returning to client as a stub
+//			((Compute)computeServer).setRemoteTVAForClient((e)->{
+//				engineModel2ViewAdapter.getDisplayMethod().accept("[From Client]:" + e);
+//			});
+//			
+//			//set computeServer's local task view adapter for the received task to use locally.
+//			((Compute)computeServer).setLocalTVA((e)->{
+//				engineModel2ViewAdapter.getDisplayMethod().accept(e);
+//			});	
+			
+			
+			System.err.println("Server ready");
+
+		} catch (Exception e) {
+			System.err.println("Server exception: " + e.toString());
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+		
+		//test
+		try {
+			//default chatroom
+			createMyChatRoom(user.getName() + "'s room");
+			
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	/**
+	 * create a chatRoom with name, and store it in local user object
+	 * @param roomName
+	 */
+	public void createMyChatRoom(String roomName) {
+		ChatRoom newChatRoom = new ChatRoom(roomName);
+		
+		user.addChatRoom(newChatRoom); //add new  chat room  to the user's list of chat rooms
+		makeMiniMVC4ChatRoom(newChatRoom);
+		
+	}
+	
+	public void addChatRoomsFromOtherUser(IChatRoom newChatRoom) {
+		user.addChatRoom(newChatRoom);
+		makeMiniMVC4ChatRoom(newChatRoom);
+	}
+	/**
+	 * build mini MVC here
+	 * @param newChatRoom
+	 */
+	public void makeMiniMVC4ChatRoom(IChatRoom newChatRoom) {
+		//one receiver for each chatRoom
+		//receiver needs to be made into a stub!!!!!
+		IReceiver receiverStub;
+		try {
+			
+			
+			//instantiate MiniMVC
+			
+			IMainModel2MiniMVCAdpt mainModel2MiniMVCAdpt = mainModelMainAdapter.makeMiniMVC(newChatRoom);//miniController instantiate miniMV
+			_2MiniMVCAdpts.add(mainModel2MiniMVCAdpt);
+			
+			//create new receiver here.
+			//Don't forget the receiver's adapter
+			IReceiverAdapter adapter = mainModel2MiniMVCAdpt.getReceiverToMiniMVCAdpt();
+			receiverStub = (IReceiver) UnicastRemoteObject.exportObject(new Receiver(userStub, adapter), receiverBoundPort++);
+			newChatRoom.addIReceiverStubLocally(receiverStub); //don't use anonymous class for remote object
+			
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	/**
+	 * remove a  chatRoom from user's chatRoom list
+	 * @param chatRoomToBeRemoved
+	 */
+	public void removeChatRoomFromUser(IChatRoom chatRoomToBeRemoved) {
+		user.chatrooms.remove(chatRoomToBeRemoved);
+	}
+	
+//	/**
+//	 * 
+//	 */
+//	public void makeMiniMVC4ChatRoom(IChatRoom newChatRoom) {
+//		
+//		mainModelMainAdapter.addMiniView4ChatRoom(mainModel2MiniMVCAdpt.getMiniView4ChatRoom());
+//	}
+	/**
+	 * return user
+	 * @return
+	 */
+	public User getUser() {
+		return user;
+	}
+	
+	
+	/**
+	 * Connect to remote user 
+	 * @param ip
+	 * @return IUser
+	 */
+	public IUser connectTo(String ip) {
+		try {
+
+			Registry remoteRegistry = rmiUtils.getRemoteRegistry(ip);
+			IUser remoteUserStub = (IUser) remoteRegistry.lookup(IUser.BOUND_NAME);
+			//remoteUser.connect(userStub);// call to auto connect back????
+			
+			//save chatrooms to local user
+			Collection<IChatRoom> localChatRooms = user.getChatRooms();
+			for (IChatRoom eachChatRoom : remoteUserStub.getChatRooms()) {
+				if (!localChatRooms.contains(eachChatRoom)) {
+					//user.addChatRoom(eachChatRoom);
+					addChatRoomsFromOtherUser(eachChatRoom);
+				}
+				
+			}
+			  
+			
+			return remoteUserStub;
+		} catch (RemoteException | NotBoundException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
+	
+	
+	
+	/**
+	 * stop the engine
+	 */
+//	@Override
+//	public void stop() {
+//		// TODO Auto-generated method stub
+//		try {
+//			registry.unbind(Compute.BOUND_NAME);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			System.err.println("Unbind Error:" + e);
+//			e.printStackTrace();
+//		}
+//		
+//		rmiUtils.stopRMI();
+//	}
+	
+
+
+}

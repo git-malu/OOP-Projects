@@ -1,0 +1,11 @@
+package strategy.painting;
+
+public interface IShapeFactory {
+  
+  /**
+   * Make a strategy
+   * @return The strategy made
+   */
+  abstract IPaintStrategy make();
+
+}

@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_sWKFkK0SEeerE-Q5GAf4rA">
+  <modelElement href="Parsed_music.uml#_sQ5LEK0SEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EyWHoK0TEeerE-Q5GAf4rA" targetItem="_EyZK8K0TEeerE-Q5GAf4rA" sourceItem="_Ex738K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EyWusa0TEeerE-Q5GAf4rA" targetItem="_EyZK8K0TEeerE-Q5GAf4rA" sourceItem="_EyWusK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_Ey1P0K0TEeerE-Q5GAf4rA" sourceAnchor="44.0,0.0" targetAnchor="192.0,64.0" superClass="_EyZK8K0TEeerE-Q5GAf4rA" subClass="_Ez1VYK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLnLUK0SEeerE-Q5GAf4rA"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EzldwK0TEeerE-Q5GAf4rA" targetItem="_Ez1VYK0TEeerE-Q5GAf4rA" sourceItem="_EzU_EK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EzqWQa0TEeerE-Q5GAf4rA" targetItem="_Ez1VYK0TEeerE-Q5GAf4rA" sourceItem="_EzqWQK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_E0igAK0TEeerE-Q5GAf4rA" sourceAnchor="44.0,0.0" targetAnchor="192.0,64.0" superClass="_EyZK8K0TEeerE-Q5GAf4rA" subClass="_E1WYUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLpAgK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN1SoK0TEeerE-Q5GAf4rA" sourceY="-136" targetX="-1378" targetY="33"/>
+    <bendpoints xmi:id="_HN1Soa0TEeerE-Q5GAf4rA" sourceX="1378" sourceY="-136" targetY="33"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E07hkK0TEeerE-Q5GAf4rA" targetItem="_E1WYUK0TEeerE-Q5GAf4rA" sourceItem="_E02pEK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E1PqoK0TEeerE-Q5GAf4rA" targetItem="_E1WYUK0TEeerE-Q5GAf4rA" sourceItem="_E1FSkK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E3UuQK0TEeerE-Q5GAf4rA" targetItem="_E35WAK0TEeerE-Q5GAf4rA" sourceItem="_E2tDMK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E3xaMK0TEeerE-Q5GAf4rA" targetItem="_E35WAK0TEeerE-Q5GAf4rA" sourceItem="_E3qsgK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E41KIK0TEeerE-Q5GAf4rA" sourceAnchor="410.0,50.0" targetAnchor="88.0,33.0" target="_E1WYUK0TEeerE-Q5GAf4rA" source="_E-AlEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT2hUa0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN15sa0TEeerE-Q5GAf4rA" sourceX="354" targetX="541" targetY="273"/>
+    <bendpoints xmi:id="_HN15sq0TEeerE-Q5GAf4rA" sourceX="354" sourceY="-273" targetX="541"/>
+    <stereotypes xmi:id="_E9PwEK0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT3vcK0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E9PJAK0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HN-ckK0TEeerE-Q5GAf4rA" position="-21.0,-52.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_E9PJAa0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT2hUq0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HN9OcK0TEeerE-Q5GAf4rA" position="5.0,-46.5"/>
+      <visibility xmi:id="_E9-I0a0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E9-I0K0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E9PJAq0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="decoree" navigable="true">
+      <modelElement href="Parsed_music.uml#_uPj3MK0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HN-cka0TEeerE-Q5GAf4rA" position="551.5,5.0"/>
+      <visibility xmi:id="_E9-I060TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_E9-I0q0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_E7QzEK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_E1WYUK0TEeerE-Q5GAf4rA" subClass="_E-AlEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLeBYK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN2gwK0TEeerE-Q5GAf4rA" sourceY="-184" targetX="26" targetY="32"/>
+    <bendpoints xmi:id="_HN2gwa0TEeerE-Q5GAf4rA" sourceX="-26" sourceY="-184" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E8zrMK0TEeerE-Q5GAf4rA" targetItem="_E-AlEK0TEeerE-Q5GAf4rA" sourceItem="_E8hXUK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E9H0Qa0TEeerE-Q5GAf4rA" targetItem="_E-AlEK0TEeerE-Q5GAf4rA" sourceItem="_E9H0QK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E9luUK0TEeerE-Q5GAf4rA" targetItem="_E-BMIq0TEeerE-Q5GAf4rA" sourceItem="_E9RlQK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_E98ToK0TEeerE-Q5GAf4rA" targetItem="_E-BMK60TEeerE-Q5GAf4rA" sourceItem="_E9wGYK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E_aTQK0TEeerE-Q5GAf4rA" sourceAnchor="410.0,96.0" targetAnchor="384.0,32.0" target="_EyZK8K0TEeerE-Q5GAf4rA" source="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT49kK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN3H0K0TEeerE-Q5GAf4rA" sourceX="2304" targetX="744" targetY="767"/>
+    <bendpoints xmi:id="_HN3H0a0TEeerE-Q5GAf4rA" sourceX="2304" sourceY="-767" targetX="744"/>
+    <stereotypes xmi:id="_FDqhIK0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT5koK0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_FDpTAK0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HOARwK0TEeerE-Q5GAf4rA" position="-21.0,-364.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_FDp6EK0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT49ka0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HN_qsK0TEeerE-Q5GAf4rA" position="697.0,-46.5"/>
+      <visibility xmi:id="_FEzJka0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FEzJkK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_FDp6Ea0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="_first" navigable="true">
+      <modelElement href="Parsed_music.uml#_uP4nUK0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOBf4K0TEeerE-Q5GAf4rA" position="5.0,-46.5"/>
+      <visibility xmi:id="_FEzJk60TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FEzJkq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_FA9LYK0TEeerE-Q5GAf4rA" sourceAnchor="410.0,83.0" targetAnchor="88.0,26.0" target="_E1WYUK0TEeerE-Q5GAf4rA" source="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT5koa0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN3u4K0TEeerE-Q5GAf4rA" sourceX="692" targetX="658" targetY="527"/>
+    <bendpoints xmi:id="_HN3u4a0TEeerE-Q5GAf4rA" sourceX="692" sourceY="-527" targetX="658"/>
+    <stereotypes xmi:id="_FDrIMK0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT6ywK0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_FDqhIa0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HODVEK0TEeerE-Q5GAf4rA" position="-21.0,-185.50000000000006"/>
+    </nameVisual>
+    <sourceRole xmi:id="_FDqhIq0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT5koq0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOCuAK0TEeerE-Q5GAf4rA" position="672.0,-46.0"/>
+      <visibility xmi:id="_FEzJlq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FEzJla0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_FDqhI60TEeerE-Q5GAf4rA" aggregationKind="NONE" name="_rest" navigable="true">
+      <modelElement href="Parsed_music.uml#_uP6cgK0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HODVEa0TEeerE-Q5GAf4rA" position="664.0,5.499999999999943"/>
+      <visibility xmi:id="_FEzJmK0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FEzJl60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FCD-oK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_E1WYUK0TEeerE-Q5GAf4rA" subClass="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLq1sK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN4V8K0TEeerE-Q5GAf4rA" sourceY="-398" targetX="-195" targetY="32"/>
+    <bendpoints xmi:id="_HN4V8a0TEeerE-Q5GAf4rA" sourceX="195" sourceY="-398" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FDaCcK0TEeerE-Q5GAf4rA" targetItem="_FE2M4K0TEeerE-Q5GAf4rA" sourceItem="_FDJjwK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FDhXMK0TEeerE-Q5GAf4rA" targetItem="_FE2M4K0TEeerE-Q5GAf4rA" sourceItem="_FDgwIK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_FDrIMa0TEeerE-Q5GAf4rA" source="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT6ywa0SEeerE-Q5GAf4rA"/>
+    <stereotypes xmi:id="_FEzwpK0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT8A4K0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_FEzwoa0TEeerE-Q5GAf4rA" text=""/>
+    <sourceRole xmi:id="_FEzwoq0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT6ywq0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE0-wa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE0-wK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_FEzwo60TEeerE-Q5GAf4rA" aggregationKind="NONE" name="_toStringAlgo" navigable="true">
+      <modelElement href="Parsed_music.uml#_uP7Dka0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE0-w60TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FE0-wq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEjR8K0TEeerE-Q5GAf4rA" targetItem="_FE2z-a0TEeerE-Q5GAf4rA" sourceItem="_FEQ-EK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEluMK0TEeerE-Q5GAf4rA" targetItem="_FE2z_q0TEeerE-Q5GAf4rA" sourceItem="_FEj5AK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEr00a0TEeerE-Q5GAf4rA" targetItem="_FE20A60TEeerE-Q5GAf4rA" sourceItem="_FEr00K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEtC8K0TEeerE-Q5GAf4rA" targetItem="_FE20CK0TEeerE-Q5GAf4rA" sourceItem="_FEsb4K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEuREK0TEeerE-Q5GAf4rA" targetItem="_FE20Da0TEeerE-Q5GAf4rA" sourceItem="_FEtqAK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEwGQa0TEeerE-Q5GAf4rA" targetItem="_FE20Ga0TEeerE-Q5GAf4rA" sourceItem="_FEwGQK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_FGaTIK0TEeerE-Q5GAf4rA" sourceAnchor="410.0,53.0" targetAnchor="205.0,105.0" target="_FJTPEK0TEeerE-Q5GAf4rA" source="_FJTPEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT3vca0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN49AK0TEeerE-Q5GAf4rA" sourceX="55" targetX="260" targetY="-52"/>
+    <bendpoints xmi:id="_HN49Aa0TEeerE-Q5GAf4rA" sourceX="55" sourceY="143" targetX="260" targetY="91"/>
+    <bendpoints xmi:id="_HN49Aq0TEeerE-Q5GAf4rA" sourceX="-205" sourceY="143" targetY="91"/>
+    <stereotypes xmi:id="_FJRZ4a0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT4WgK0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_FJQy0K0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HOFxUK0TEeerE-Q5GAf4rA" position="-21.0,-124.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_FJQy0a0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT3vcq0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOEjMK0TEeerE-Q5GAf4rA" position="5.0,-46.5"/>
+      <visibility xmi:id="_FJSoAa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJSoAK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_FJRZ4K0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="Singleton" navigable="true">
+      <modelElement href="Parsed_music.uml#_uPwrgq0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOGYYK0TEeerE-Q5GAf4rA" position="7.0,5.500000000000057"/>
+      <visibility xmi:id="_FJSoA60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJSoAq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FH_AcK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_E1WYUK0TEeerE-Q5GAf4rA" subClass="_FJTPEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLpnkK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN49A60TEeerE-Q5GAf4rA" sourceY="-25" targetX="286" targetY="32"/>
+    <bendpoints xmi:id="_HN49BK0TEeerE-Q5GAf4rA" sourceX="-286" sourceY="-25" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FI4YUK0TEeerE-Q5GAf4rA" targetItem="_FJTPEK0TEeerE-Q5GAf4rA" sourceItem="_FIv1cK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FJMhYK0TEeerE-Q5GAf4rA" targetItem="_FJTPEK0TEeerE-Q5GAf4rA" sourceItem="_FI60kK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FL86cK0TEeerE-Q5GAf4rA" sourceAnchor="287.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_Ez1VYK0TEeerE-Q5GAf4rA" subClass="_FR-p8K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLvuMK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN5kEK0TEeerE-Q5GAf4rA" sourceY="-15" targetX="624" targetY="32"/>
+    <bendpoints xmi:id="_HN5kEa0TEeerE-Q5GAf4rA" sourceX="-624" sourceY="-15" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FPTJYK0TEeerE-Q5GAf4rA" targetItem="_FR-p8K0TEeerE-Q5GAf4rA" sourceItem="_FN0isK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FPdhcK0TEeerE-Q5GAf4rA" targetItem="_FR-p8K0TEeerE-Q5GAf4rA" sourceItem="_FPbsQK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FQ2BgK0TEeerE-Q5GAf4rA" targetItem="_FR-qDK0TEeerE-Q5GAf4rA" sourceItem="_FPmrYK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FRtkMK0TEeerE-Q5GAf4rA" targetItem="_FR-qIa0TEeerE-Q5GAf4rA" sourceItem="_FRrvAK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FR1gAa0TEeerE-Q5GAf4rA" targetItem="_FR-qJq0TEeerE-Q5GAf4rA" sourceItem="_FR1gAK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FR2uIa0TEeerE-Q5GAf4rA" targetItem="_FR-qLK0TEeerE-Q5GAf4rA" sourceItem="_FR2uIK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FR4jUK0TEeerE-Q5GAf4rA" targetItem="_FR-qMq0TEeerE-Q5GAf4rA" sourceItem="_FR38QK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FR5KYa0TEeerE-Q5GAf4rA" targetItem="_FR-qN60TEeerE-Q5GAf4rA" sourceItem="_FR5KYK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_FVB98K0TEeerE-Q5GAf4rA" sourceAnchor="329.0,34.0" targetAnchor="0.0,128.0" target="_FR-p8K0TEeerE-Q5GAf4rA" source="_FeA60K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT8A4a0SEeerE-Q5GAf4rA"/>
+    <stereotypes xmi:id="_Fb1JgK0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT8n8K0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Fbz7YK0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HOHmga0TEeerE-Q5GAf4rA" position="-37.0,-7.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_Fb0icK0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT8A4q0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOHmgK0TEeerE-Q5GAf4rA" position="5.5,-46.5"/>
+      <visibility xmi:id="_Fd93ga0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fd93gK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Fb0ica0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="notes" navigable="true">
+      <modelElement href="Parsed_music.uml#_uQGCsK0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOINkK0TEeerE-Q5GAf4rA" position="-48.5,5.5"/>
+      <visibility xmi:id="_Fd-ekK0TEeerE-Q5GAf4rA" label="#"/>
+      <cardinality xmi:id="_Fd93gq0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FYMmsK0TEeerE-Q5GAf4rA" sourceAnchor="165.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_Ez1VYK0TEeerE-Q5GAf4rA" subClass="_FeA60K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLyxgK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN6LIK0TEeerE-Q5GAf4rA" sourceY="-109" targetX="-26" targetY="32"/>
+    <bendpoints xmi:id="_HN6LIa0TEeerE-Q5GAf4rA" sourceX="26" sourceY="-109" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FaiJAK0TEeerE-Q5GAf4rA" targetItem="_FeA60K0TEeerE-Q5GAf4rA" sourceItem="_FaPOEK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FbfLQK0TEeerE-Q5GAf4rA" targetItem="_FeA60K0TEeerE-Q5GAf4rA" sourceItem="_FbWoYK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FbhAcK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="165.0,67.0" superClass="_FeA60K0TEeerE-Q5GAf4rA" subClass="_E35WAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLczQK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN1Soq0TEeerE-Q5GAf4rA" sourceY="-25" targetX="429" targetY="110"/>
+    <bendpoints xmi:id="_HN15sK0TEeerE-Q5GAf4rA" sourceX="-429" sourceY="-25" targetY="110"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FdEfoK0TEeerE-Q5GAf4rA" targetItem="_FeA62a0TEeerE-Q5GAf4rA" sourceItem="_Fb1Jga0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FhJHUK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="165.0,67.0" superClass="_FeA60K0TEeerE-Q5GAf4rA" subClass="_FmXlkK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uL9JkK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN6yMK0TEeerE-Q5GAf4rA" sourceY="-25" targetX="-429" targetY="110"/>
+    <bendpoints xmi:id="_HN6yMa0TEeerE-Q5GAf4rA" sourceX="429" sourceY="-25" targetY="110"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FlyWwK0TEeerE-Q5GAf4rA" targetItem="_FmXlkK0TEeerE-Q5GAf4rA" sourceItem="_Fjw9gK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FmAZMK0TEeerE-Q5GAf4rA" targetItem="_FmXlkK0TEeerE-Q5GAf4rA" sourceItem="_Fl_LEK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FqLukK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="192.0,64.0" dashed="true" superClass="_EyZK8K0TEeerE-Q5GAf4rA" subClass="_Fy0GIK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLkIAK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN7ZQK0TEeerE-Q5GAf4rA" sourceY="-25" targetX="273" targetY="33"/>
+    <bendpoints xmi:id="_HN7ZQa0TEeerE-Q5GAf4rA" sourceX="-273" sourceY="-25" targetY="33"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FvtHwK0TEeerE-Q5GAf4rA" targetItem="_Fy0GIK0TEeerE-Q5GAf4rA" sourceItem="_FtVwQK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Fv2RsK0TEeerE-Q5GAf4rA" targetItem="_Fy0GIK0TEeerE-Q5GAf4rA" sourceItem="_Fv1DkK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Fxa_AK0TEeerE-Q5GAf4rA" targetItem="_Fy0GLa0TEeerE-Q5GAf4rA" sourceItem="_Fv9mcK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Fyn44K0TEeerE-Q5GAf4rA" targetItem="_Fy0GOa0TEeerE-Q5GAf4rA" sourceItem="_Fxl-IK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FyqVIK0TEeerE-Q5GAf4rA" targetItem="_Fy0GPq0TEeerE-Q5GAf4rA" sourceItem="_Fyof8K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Fyxp4K0TEeerE-Q5GAf4rA" targetItem="_Fy0GQ60TEeerE-Q5GAf4rA" sourceItem="_FyxC0K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_F1HzQK0TEeerE-Q5GAf4rA" sourceAnchor="0.0,94.0" targetAnchor="0.0,20.0" target="_E1WYUK0TEeerE-Q5GAf4rA" source="_F_WtUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uT8n8a0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN8AUK0TEeerE-Q5GAf4rA" sourceX="-54" targetX="-918" targetY="169"/>
+    <bendpoints xmi:id="_HN8AUa0TEeerE-Q5GAf4rA" sourceX="-54" sourceY="-169" targetX="-918"/>
+    <stereotypes xmi:id="_F8aHAq0TEeerE-Q5GAf4rA" name="Reference">
+      <modelElement href="Parsed_music.uml#_uT92EK0SEeerE-Q5GAf4rA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_F8Zf8K0TEeerE-Q5GAf4rA" text="">
+      <visualProperties xmi:id="_HOKCwK0TEeerE-Q5GAf4rA" position="-21.0,51.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_F8aHAK0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="">
+      <modelElement href="Parsed_music.uml#_uT8n8q0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOI0oK0TEeerE-Q5GAf4rA" position="-18.5,5.5"/>
+      <visibility xmi:id="_F_Sb4a0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_Sb4K0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_F8aHAa0TEeerE-Q5GAf4rA" aggregationKind="NONE" name="decorees" navigable="true">
+      <modelElement href="Parsed_music.uml#_uQPzsK0SEeerE-Q5GAf4rA"/>
+      <visualProperties xmi:id="_HOKp0K0TEeerE-Q5GAf4rA" position="-68.0,5.500000000000114"/>
+      <visibility xmi:id="_F_TC8K0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_F_Sb4q0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_F45gAK0TEeerE-Q5GAf4rA" sourceAnchor="232.0,0.0" targetAnchor="44.0,40.0" dashed="true" superClass="_E1WYUK0TEeerE-Q5GAf4rA" subClass="_F_WtUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uL1NwK0SEeerE-Q5GAf4rA"/>
+    <bendpoints xmi:id="_HN8nYK0TEeerE-Q5GAf4rA" sourceY="-23" targetX="-676" targetY="32"/>
+    <bendpoints xmi:id="_HN8nYa0TEeerE-Q5GAf4rA" sourceX="676" sourceY="-23" targetY="32"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_F6-joK0TEeerE-Q5GAf4rA" targetItem="_F_WtUK0TEeerE-Q5GAf4rA" sourceItem="_F6s20K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_F8Pu8K0TEeerE-Q5GAf4rA" targetItem="_F_WtUK0TEeerE-Q5GAf4rA" sourceItem="_F8PH4K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_F9-0UK0TEeerE-Q5GAf4rA" targetItem="_F_WtZa0TEeerE-Q5GAf4rA" sourceItem="_F8auEK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_F_HcwK0TEeerE-Q5GAf4rA" targetItem="_F_Wta60TEeerE-Q5GAf4rA" sourceItem="_F_G1sK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_F_J5AK0TEeerE-Q5GAf4rA" targetItem="_F_WtiK0TEeerE-Q5GAf4rA" sourceItem="_F_Iq4K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_GCFRMK0TEeerE-Q5GAf4rA" sourceAnchor="205.0,0.0" targetAnchor="165.0,67.0" superClass="_FeA60K0TEeerE-Q5GAf4rA" subClass="_GGyLAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uMCpIK0SEeerE-Q5GAf4rA"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GGSbwK0TEeerE-Q5GAf4rA" targetItem="_GGyLAK0TEeerE-Q5GAf4rA" sourceItem="_GEtucK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GGcMwK0TEeerE-Q5GAf4rA" targetItem="_GGyLAK0TEeerE-Q5GAf4rA" sourceItem="_GGa-oK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_GLGDQK0TEeerE-Q5GAf4rA" sourceAnchor="254.0,0.0" targetAnchor="232.0,188.0" superClass="_F_WtUK0TEeerE-Q5GAf4rA" subClass="_GZ3fEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uLiS0a0SEeerE-Q5GAf4rA"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GVhKkK0TEeerE-Q5GAf4rA" targetItem="_GZ3fEK0TEeerE-Q5GAf4rA" sourceItem="_GQhV0K0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GVt-4K0TEeerE-Q5GAf4rA" targetItem="_GZ3fEK0TEeerE-Q5GAf4rA" sourceItem="_GVsJsK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GYSxwK0TEeerE-Q5GAf4rA" targetItem="_GZ3fGK0TEeerE-Q5GAf4rA" sourceItem="_GV2hwK0TEeerE-Q5GAf4rA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_GZ0bwK0TEeerE-Q5GAf4rA" targetItem="_GZ3fHq0TEeerE-Q5GAf4rA" sourceItem="_GYatkK0TEeerE-Q5GAf4rA"/>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Ex738K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_EyWHoK0TEeerE-Q5GAf4rA" text="Top level of a piece of abc music.  The generalized notion of a playable piece of music." item="_EyZK8K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--qK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EyWusK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_EyWusa0TEeerE-Q5GAf4rA" text="Abstract Host&#xD;&#xA;Each concrete host calls its associated case on the visitor." item="_EyZK8K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS_lsK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EzU_EK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_EzldwK0TEeerE-Q5GAf4rA" text="Note interface for Notes and collections of Notes." item="_Ez1VYK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--pq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EzqWQK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_EzqWQa0TEeerE-Q5GAf4rA" text="A generalized notion of a note" item="_Ez1VYK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--p60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E02pEK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E07hkK0TEeerE-Q5GAf4rA" text="Interface for sequential lists of IPhrases." item="_E1WYUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS_lta0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E1FSkK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E1PqoK0TEeerE-Q5GAf4rA" text="A list of IPhrases&#xD;&#xA;e.g. an ordered sequence of Notes." item="_E1WYUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS_ltq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E2tDMK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E3UuQK0TEeerE-Q5GAf4rA" text="A collection of notes that make up a Chord.  All of the notes should&#xD;&#xA;be played simultaneously.   The last note defines the length of all the notes." item="_E35WAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS9whK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E3qsgK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E3xaMK0TEeerE-Q5GAf4rA" text="A collection of Notes all played at once" item="_E35WAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS9wha0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E8hXUK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E8zrMK0TEeerE-Q5GAf4rA" text="An ISeqList that transparently routes the visitor execution to its decoree.  &#xD;&#xA;This class is primarily used to provide a placeholder when a the music should flow &#xD;&#xA;to a specific point in the sequence but that point has not yet been calculated, as occurs&#xD;&#xA;for instance, during the processing of repeats.    When that target point is finally calculated, &#xD;&#xA;the decoree can be set and the decorated target will behave identically to the target.&#xD;&#xA;This decorator can also be used to dynamically change the flow of the music by changing the target.  &#xD;&#xA;@author swong" item="_E-AlEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-XkK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E9H0QK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E9H0Qa0TEeerE-Q5GAf4rA" text="Decorated ISeqList used as a transparent proxy placeholder." item="_E-AlEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xka0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E9RlQK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E9luUK0TEeerE-Q5GAf4rA" text="Constructor used to set the decoree to a known value at construction time.&#xD;&#xA;&#x9; * @param decoree The decoree phrase sequence" item="_E-BMIq0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xkq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_E9wGYK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_E98ToK0TEeerE-Q5GAf4rA" text="Setter methods used to set the decoree.&#xD;&#xA;&#x9; * @param decoree  The new decoree ISeqList." item="_E-BMK60TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xk60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FDJjwK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FDaCcK0TEeerE-Q5GAf4rA" text="A non-empty (&quot;cons&quot;) sequence list." item="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAMwK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FDgwIK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FDhXMK0TEeerE-Q5GAf4rA" text="A non-empty ISeqList" item="_FE2M4K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAMwa0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEQ-EK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEjR8K0TEeerE-Q5GAf4rA" text="Accessor method for the first element&#xD;&#xA;&#x9; * @return the IPhrase that is the first element of the sequence list" item="_FE2z-a0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAMw60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEj5AK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEluMK0TEeerE-Q5GAf4rA" text="Accessor method for the rest of the lsit&#xD;&#xA;&#x9; * @return the rest of the sequence list" item="_FE2z_q0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAMxK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEr00K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEr00a0TEeerE-Q5GAf4rA" text="Getter for the _toStringAlgo helper.  Only for use internally inside this package&#xD;&#xA;&#x9; * so ToggleDecoratorSeqList and FineToggleDecoratorSeqList can use the same visitor.&#xD;&#xA;&#x9; * @return the toStringAlgo helper visitor" item="_FE20A60TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz0a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEsb4K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEtC8K0TEeerE-Q5GAf4rA" text="Run a visitor over the list to convert it to a String.  &#xD;&#xA;&#x9; * Delegates to the rest of the list using the helper algo, with the accumulator &#xD;&#xA;&#x9; * (params[0]) set to &quot;{&quot;+_first.toString().  &#xD;&#xA;&#x9; * @return &quot;{a, b, c, d}&quot;" item="_FE20CK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz0q0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEtqAK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEuREK0TEeerE-Q5GAf4rA" text="Cons an IPhrase to a Sequence List.&#xD;&#xA;&#x9; * @param first The first element of the sequence&#xD;&#xA;&#x9; * @param rest The rest of the sequence" item="_FE20Da0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAMwq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEwGQK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FEwGQa0TEeerE-Q5GAf4rA" text="Setter for the _toStringAlgo helper.  This non-typical method is provided solely &#xD;&#xA;&#x9; * for the purpose of enabling the student to install their toStringAlgo into the &#xD;&#xA;&#x9; * read-only provided code.&#xD;&#xA;&#x9; * @param stringAlgo The helper algo to use." item="_FE20Ga0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz0K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FIv1cK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FI4YUK0TEeerE-Q5GAf4rA" text="An empty sequence list." item="_FJTPEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS_lt60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FI60kK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FJMhYK0TEeerE-Q5GAf4rA" text="An empty ISeqList" item="_FJTPEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS_luK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FN0isK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FPTJYK0TEeerE-Q5GAf4rA" text="Basic class representing musical Notes." item="_FR-p8K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz060SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FPbsQK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FPdhcK0TEeerE-Q5GAf4rA" text="A playable note or rest." item="_FR-p8K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz1K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FPmrYK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FQ2BgK0TEeerE-Q5GAf4rA" text="Constructor for the class&#xD;&#xA;&#x9; * @param name  The name of the note&#xD;&#xA;&#x9; * @param octave The octave of the note w.r.t. middle C.  Zero = same octave as middle C.&#xD;&#xA;&#x9; * @param accidental accidental setting sharp &amp;gt; 0, flat &amp;lt; 0&#xD;&#xA;&#x9; * @param duration duration of note&#xD;&#xA;&#x9; * @param isNatural flag to override key signature.  True if note should be natural, overriding key signature." item="_FR-qDK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz1a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FRrvAK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FRtkMK0TEeerE-Q5GAf4rA" text="Returns a string representation of the Note  &#xD;&#xA;&#x9; * @return &quot;(name, octave, duration)&quot;" item="_FR-qIa0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz1q0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FR1gAK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FR1gAa0TEeerE-Q5GAf4rA" text="Accessor to set the name of the note&#xD;&#xA;&#x9; * @param name - the name to set" item="_FR-qJq0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz160SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FR2uIK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FR2uIa0TEeerE-Q5GAf4rA" text="Accessor to set the accidental value&#xD;&#xA;&#x9; * @param accidental - the accidental to set" item="_FR-qLK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTAz2K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FR38QK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FR4jUK0TEeerE-Q5GAf4rA" text="Accessor for isNatural flag&#xD;&#xA;&#x9; * @return isNatural flag setting" item="_FR-qMq0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa4K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FR5KYK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FR5KYa0TEeerE-Q5GAf4rA" text="Settor for isNatural flag.  Accidentals will be set to zero if isNatural is true.&#xD;&#xA;&#x9; * @param isNatural  New isNatural setting" item="_FR-qN60TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa4a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FaPOEK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FaiJAK0TEeerE-Q5GAf4rA" text="A collection of multiple notes" item="_FeA60K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa4q0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FbWoYK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FbfLQK0TEeerE-Q5GAf4rA" text="A collection of Notes" item="_FeA60K0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa460SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fb1Jga0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FdEfoK0TEeerE-Q5GAf4rA" text="Accessor for the array of notes in this collection&#xD;&#xA;&#x9; * @return the array of notes" item="_FeA62a0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa5K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fjw9gK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FlyWwK0TEeerE-Q5GAf4rA" text="A musical triplet.  The three notes should be played with 2/3 of their&#xD;&#xA;indicated duration." item="_FmXlkK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTCB8K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fl_LEK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FmAZMK0TEeerE-Q5GAf4rA" text="A set of 3 notes played in sequence in a special manner." item="_FmXlkK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTCB8a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FtVwQK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FvtHwK0TEeerE-Q5GAf4rA" text="An abc Header.  Headers are identified by a one character &quot;id&quot; and&#xD;&#xA;can have an arbitrary string value. &lt;br/>&#xD;&#xA;Note that this class represents many different *types* of headers, &#xD;&#xA;each with its own id value." item="_Fy0GIK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--oK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fv1DkK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_Fv2RsK0TEeerE-Q5GAf4rA" text="A single Header class represents multiple, distinct header hosts." item="_Fy0GIK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--oa0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fv9mcK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_Fxa_AK0TEeerE-Q5GAf4rA" text="Create a header out of an id and value&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param id    - one character corresponding to the abc header name&#xD;&#xA;&#x9; * @param value - arbitrary string value of the header" item="_Fy0GLa0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--oq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fxl-IK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_Fyn44K0TEeerE-Q5GAf4rA" text="Accessor for the id.&#xD;&#xA;&#x9; * @return the _id" item="_Fy0GOa0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--o60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Fyof8K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_FyqVIK0TEeerE-Q5GAf4rA" text="Accessor for the text value of this header.&#xD;&#xA;&#x9; * @return the _value" item="_Fy0GPq0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--pK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FyxC0K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_Fyxp4K0TEeerE-Q5GAf4rA" text="String representation of this header: &quot;id: text&quot;" item="_Fy0GQ60TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS--pa0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_F6s20K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_F6-joK0TEeerE-Q5GAf4rA" text="Multiple Decorator ISeqList where the active decoree (the &quot;target&quot;) is&#xD;&#xA;toggled (cycled, actually) through all the available decorees.   &#xD;&#xA;This is arguably a State Design Pattern where each decoree is &#xD;&#xA;considered to be another state of the system.&#xD;&#xA;This is used to implement repeats where the first time through, the notes are linked&#xD;&#xA;back to a repeat start (decoree #0) but the next time through, the next note is the one&#xD;&#xA;after the repeat (decoree #1).&#xD;&#xA;&#xD;&#xA;@author swong" item="_F_WtUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa5a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_F8PH4K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_F8Pu8K0TEeerE-Q5GAf4rA" text="Decorated ISeqList that transparently cycles through multiple targets (decorees)" item="_F_WtUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa5q0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_F8auEK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_F9-0UK0TEeerE-Q5GAf4rA" text="Used to explicitly set the target (active) decoree if needed.&#xD;&#xA;&#x9; * @param targetIdx  the index of the target decoree" item="_F_WtZa0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa6K0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_F_G1sK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_F_HcwK0TEeerE-Q5GAf4rA" text="Accessor for the current target (active) decoree&#xD;&#xA;&#x9; * @return  The current target (active) decoree" item="_F_Wta60TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa6a0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_F_Iq4K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_F_J5AK0TEeerE-Q5GAf4rA" text="Setter methods used to set a particular decoree.   &#xD;&#xA;&#x9; * The specified index must already exist.&#xD;&#xA;&#x9; * @param idx The index of the decoree to replace&#xD;&#xA;&#x9; * @param decoree  The new decoree ISeqList." item="_F_WtiK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTBa560SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GEtucK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GGSbwK0TEeerE-Q5GAf4rA" text="Class that represents a tuplet, a series of notes played in a fraction of their normal total time.&#xD;&#xA;The exact fraction depends on the meter and the number of notes in the tuplet.&#xD;&#xA;A triplet is a specific type of tuplet.&#xD;&#xA;@author swong" item="_GGyLAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTCB8q0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GGa-oK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GGcMwK0TEeerE-Q5GAf4rA" text="A arbitrary set of notes played in sequence in a special manner." item="_GGyLAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uTCB860SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GQhV0K0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GVhKkK0TEeerE-Q5GAf4rA" text="The class is used to implement &quot;Da Capo al fine&quot; or &quot;D.C. al fine&quot;, &#xD;&#xA;which is to repeat from the beginning up to the &quot;fine&quot; marker.&#xD;&#xA;&#xD;&#xA;this class assumes that only two target decorees are ever used.&#xD;&#xA;&#xD;&#xA;The is ToggleDecoratorSeqList that can be signaled to switch to the &#xD;&#xA;another target.   Be default, the target decoree (#0) remains the same even &#xD;&#xA;when it is accessed.  But after setFine() is called, the target decoree&#xD;&#xA;is switched to the #1 decoree (the &quot;fine&quot; target, usually an MTSeqList because&#xD;&#xA;it is the end of the piece).   After the #1 decoree is used, the target&#xD;&#xA;decoree is advanced to the next available decoree, which , for two decorees, &#xD;&#xA;would be back to the #0 decoree.  The class returns to default behavior then.&#xD;&#xA;@author swong" item="_GZ3fEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-XlK0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GVsJsK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GVt-4K0TEeerE-Q5GAf4rA" text="ToggleDecoratorSeqList with controllable cycling" item="_GZ3fEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xla0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GV2hwK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GYSxwK0TEeerE-Q5GAf4rA" text="Instantiates the class with two MTSeqList decorees." item="_GZ3fGK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xlq0SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_GYatkK0TEeerE-Q5GAf4rA" sourceConnectionVisual="_GZ0bwK0TEeerE-Q5GAf4rA" text="Sets the system to use the &quot;fine&quot; decorator at the next execution." item="_GZ3fHq0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uS-Xl60SEeerE-Q5GAf4rA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_EyZK8K0TEeerE-Q5GAf4rA" comments="_Ex738K0TEeerE-Q5GAf4rA _EyWusK0TEeerE-Q5GAf4rA" targetConnectionVisual="_EyWHoK0TEeerE-Q5GAf4rA _EyWusa0TEeerE-Q5GAf4rA" name="IPhrase" associationsIn="_E_aTQK0TEeerE-Q5GAf4rA" subclassedBy="_Ey1P0K0TEeerE-Q5GAf4rA _E0igAK0TEeerE-Q5GAf4rA _FqLukK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_UbwK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_EyZK8a0TEeerE-Q5GAf4rA" position="2158.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EyZK8q0TEeerE-Q5GAf4rA" label="+"/>
+    <operations xmi:id="_EyZK860TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNh24K0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_EyZK9K0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNjFAK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_EyZK9a0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_EyZK9q0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EyZK960TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNid8a0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_EyZK-K0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EyZK-a0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNh24a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_EyZK-q0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_EyZK-60TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_EyZK_K0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNid8K0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_EyZK_a0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_EyZK_q0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_Ez1VYK0TEeerE-Q5GAf4rA" comments="_EzU_EK0TEeerE-Q5GAf4rA _EzqWQK0TEeerE-Q5GAf4rA" targetConnectionVisual="_EzldwK0TEeerE-Q5GAf4rA _EzqWQa0TEeerE-Q5GAf4rA" name="INote" generalizations="_Ey1P0K0TEeerE-Q5GAf4rA" subclassedBy="_FL86cK0TEeerE-Q5GAf4rA _FYMmsK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_TNoK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_Ez1VYa0TEeerE-Q5GAf4rA" position="2306.0,263.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Ez1VYq0TEeerE-Q5GAf4rA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_E1WYUK0TEeerE-Q5GAf4rA" comments="_E02pEK0TEeerE-Q5GAf4rA _E1FSkK0TEeerE-Q5GAf4rA" targetConnectionVisual="_E07hkK0TEeerE-Q5GAf4rA _E1PqoK0TEeerE-Q5GAf4rA" name="ISeqList" associationsIn="_E41KIK0TEeerE-Q5GAf4rA _FA9LYK0TEeerE-Q5GAf4rA _F1HzQK0TEeerE-Q5GAf4rA" generalizations="_E0igAK0TEeerE-Q5GAf4rA" subclassedBy="_E7QzEK0TEeerE-Q5GAf4rA _FCD-oK0TEeerE-Q5GAf4rA _FH_AcK0TEeerE-Q5GAf4rA _F45gAK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_E1WYUa0TEeerE-Q5GAf4rA" position="928.0,263.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E1WYUq0TEeerE-Q5GAf4rA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E35WAK0TEeerE-Q5GAf4rA" comments="_E2tDMK0TEeerE-Q5GAf4rA _E3qsgK0TEeerE-Q5GAf4rA" targetConnectionVisual="_E3UuQK0TEeerE-Q5GAf4rA _E3xaMK0TEeerE-Q5GAf4rA" name="Chord" generalizations="_FbhAcK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t-6MEK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_E35WAa0TEeerE-Q5GAf4rA" position="2548.0,646.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E35WAq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_E35WA60TEeerE-Q5GAf4rA" defaultValue="&quot;Chord&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uPgM0K0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_E35WBK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E35WBa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_E35WBq0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E35WB60TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t-7aMK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_E35WCK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E35WCa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E35WCq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t-8BQK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E35WC60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E35WDK0TEeerE-Q5GAf4rA" name="Chord">
+      <modelElement href="Parsed_music.uml#_uLaXAK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_E35WDa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_E35WDq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uLa-EK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_E35WD60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E35WEK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E35WEa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLa-Ea0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E35WEq0TEeerE-Q5GAf4rA" name="Chord">
+          <modelElement href="Parsed_music.uml#_t-6MEK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E35WE60TEeerE-Q5GAf4rA" name="notes">
+        <modelElement href="Parsed_music.uml#_uLaXAa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E35WFK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_E35WFa0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E35WFq0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNYF4K0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_E35WF60TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNYs8a0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E35WGK0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNZ7EK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_E35WGa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E35WGq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E35WG60TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNYs8K0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E35WHK0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E35WHa0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNYF4a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E35WHq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_E35WH60TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E35WIK0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNYF4q0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E35WIa0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_E35WIq0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E-AlEK0TEeerE-Q5GAf4rA" comments="_E8hXUK0TEeerE-Q5GAf4rA _E9H0QK0TEeerE-Q5GAf4rA" targetConnectionVisual="_E8zrMK0TEeerE-Q5GAf4rA _E9H0Qa0TEeerE-Q5GAf4rA" name="DecoratorSeqList" associationsOut="_E41KIK0TEeerE-Q5GAf4rA" generalizations="_E7QzEK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t-92cK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_E-AlEa0TEeerE-Q5GAf4rA" position="793.0,519.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E-AlEq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_E-AlE60TEeerE-Q5GAf4rA" defaultValue="MTSeqList.Singleton" name="decoree">
+      <modelElement href="Parsed_music.uml#_uPj3MK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_E-AlFK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uPlFUK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_E-AlFa0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_E-AlFq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_E-AlF60TEeerE-Q5GAf4rA" name="ISeqList">
+        <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E-AlGK0TEeerE-Q5GAf4rA" name="DecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_t-_EkK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_E-AlGa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_E-AlGq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_t-_roq0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_E-AlG60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E-AlHK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E-BMIK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_ASsK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E-BMIa0TEeerE-Q5GAf4rA" name="DecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t-92cK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-BMIq0TEeerE-Q5GAf4rA" comments="_E9RlQK0TEeerE-Q5GAf4rA" targetConnectionVisual="_E9luUK0TEeerE-Q5GAf4rA" name="DecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_uLeocK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_E-BMI60TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_E-BMJK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E-BMJa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E-BMJq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLfPga0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E-BMJ60TEeerE-Q5GAf4rA" name="DecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t-92cK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-BMKK0TEeerE-Q5GAf4rA" name="decoree">
+        <modelElement href="Parsed_music.uml#_uLeoca0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E-BMKa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_E-BMKq0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-BMK60TEeerE-Q5GAf4rA" comments="_E9wGYK0TEeerE-Q5GAf4rA" targetConnectionVisual="_E98ToK0TEeerE-Q5GAf4rA" name="setDecoree">
+      <modelElement href="Parsed_music.uml#_uLfPgq0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_E-BMLK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E-BMLa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_E-BMLq0TEeerE-Q5GAf4rA" name="decoree">
+        <modelElement href="Parsed_music.uml#_uLfPg60SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E-BML60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_E-BMMK0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-BMMa0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNaiIK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_E-BMMq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNbJMa0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E-BMM60TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNcXUK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_E-BMNK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_E-BMNa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_E-BMNq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNbJMK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_E-BMN60TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-BMOK0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNaiIa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E-BMOa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_E-BMOq0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-BMO60TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNaiIq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_E-BMPK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_E-BMPa0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FE2M4K0TEeerE-Q5GAf4rA" comments="_FDJjwK0TEeerE-Q5GAf4rA _FDgwIK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FDaCcK0TEeerE-Q5GAf4rA _FDhXMK0TEeerE-Q5GAf4rA" name="NESeqList" associationsOut="_E_aTQK0TEeerE-Q5GAf4rA _FA9LYK0TEeerE-Q5GAf4rA _FDrIMa0TEeerE-Q5GAf4rA" generalizations="_FCD-oK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_hQEK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_FE2M4a0TEeerE-Q5GAf4rA" position="572.0,733.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FE2M4q0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_FE2M460TEeerE-Q5GAf4rA" defaultValue="&quot;NESeqList&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uPxSka0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE2M5K0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE2M5a0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FE2M5q0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FE2M560TEeerE-Q5GAf4rA" name="_first">
+      <modelElement href="Parsed_music.uml#_uP4nUK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FE2M6K0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uP51cK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FE2M6a0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FE2M6q0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FE2M660TEeerE-Q5GAf4rA" name="IPhrase">
+        <modelElement href="Parsed_music.uml#_t_UbwK0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FE2M7K0TEeerE-Q5GAf4rA" name="_rest">
+      <modelElement href="Parsed_music.uml#_uP6cgK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FE2z8K0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uP7DkK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FE2z8a0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FE2z8q0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FE2z860TEeerE-Q5GAf4rA" name="ISeqList">
+        <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FE2z9K0TEeerE-Q5GAf4rA" name="_toStringAlgo" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uP7Dka0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FE2z9a0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uP7qoK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FE2z9q0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FE2z960TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FE2z-K0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+        <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FE2z-a0TEeerE-Q5GAf4rA" comments="_FEQ-EK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEjR8K0TEeerE-Q5GAf4rA" name="getFirst">
+      <modelElement href="Parsed_music.uml#_t_ieMK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE2z-q0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE2z-60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE2z_K0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLsq4a0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE2z_a0TEeerE-Q5GAf4rA" name="IPhrase">
+          <modelElement href="Parsed_music.uml#_t_UbwK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FE2z_q0TEeerE-Q5GAf4rA" comments="_FEj5AK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEluMK0TEeerE-Q5GAf4rA" name="getRest">
+      <modelElement href="Parsed_music.uml#_t_jFQK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE2z_60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE20AK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE20Aa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLsq4q0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE20Aq0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FE20A60TEeerE-Q5GAf4rA" comments="_FEr00K0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEr00a0TEeerE-Q5GAf4rA" name="getToStringAlgo" staticOperation="true">
+      <modelElement href="Parsed_music.uml#_t_kTYK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE20BK0TEeerE-Q5GAf4rA" label="~"/>
+      <cardinality xmi:id="_FE20Ba0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE20Bq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLugEK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE20B60TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FE20CK0TEeerE-Q5GAf4rA" comments="_FEsb4K0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEtC8K0TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t_k6cK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE20Ca0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE20Cq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE20C60TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_k6ca0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE20DK0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FE20Da0TEeerE-Q5GAf4rA" comments="_FEtqAK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEuREK0TEeerE-Q5GAf4rA" name="NESeqList">
+      <modelElement href="Parsed_music.uml#_uLsD0K0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_FE20Dq0TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_FE20D60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE20EK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE20Ea0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLsq4K0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE20Eq0TEeerE-Q5GAf4rA" name="NESeqList">
+          <modelElement href="Parsed_music.uml#_t_hQEK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FE20E60TEeerE-Q5GAf4rA" name="first">
+        <modelElement href="Parsed_music.uml#_uLsD0a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FE20FK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FE20Fa0TEeerE-Q5GAf4rA" name="IPhrase">
+          <modelElement href="Parsed_music.uml#_t_UbwK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FE20Fq0TEeerE-Q5GAf4rA" name="rest">
+        <modelElement href="Parsed_music.uml#_uLsD0q0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FE20F60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FE20GK0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FE20Ga0TEeerE-Q5GAf4rA" comments="_FEwGQK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FEwGQa0TEeerE-Q5GAf4rA" name="setToStringAlgo" staticOperation="true">
+      <modelElement href="Parsed_music.uml#_uLt5AK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FE20Gq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE20G60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_FE20HK0TEeerE-Q5GAf4rA" name="stringAlgo">
+        <modelElement href="Parsed_music.uml#_uLt5Aa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FE20Ha0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FE20Hq0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FE20H60TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNsO8K0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FE20IK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNtdEK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FE20Ia0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNurMK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FE20Iq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FE20I60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FE20JK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNs2Aa0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FE20Ja0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FE20Jq0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNsO8a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FE20J60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FE20KK0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FE20Ka0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNs2AK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FE20Kq0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_FE20K60TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FJTPEK0TEeerE-Q5GAf4rA" comments="_FIv1cK0TEeerE-Q5GAf4rA _FI60kK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FI4YUK0TEeerE-Q5GAf4rA _FJMhYK0TEeerE-Q5GAf4rA" name="MTSeqList" associationsIn="_FGaTIK0TEeerE-Q5GAf4rA" associationsOut="_FGaTIK0TEeerE-Q5GAf4rA" generalizations="_FH_AcK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_cXkK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_FJTPEa0TEeerE-Q5GAf4rA" position="1053.0,360.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FJTPEq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_FJTPE60TEeerE-Q5GAf4rA" defaultValue="&quot;MTSeqList&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uPwrgK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FJTPFK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJTPFa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FJTPFq0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FJTPF60TEeerE-Q5GAf4rA" defaultValue="new MTSeqList()" name="Singleton" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uPwrgq0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FJTPGK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJTPGa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FJTPGq0TEeerE-Q5GAf4rA" name="MTSeqList">
+        <modelElement href="Parsed_music.uml#_t_cXkK0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FJTPG60TEeerE-Q5GAf4rA" name="MTSeqList">
+      <modelElement href="Parsed_music.uml#_t_c-oK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_FJTPHK0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_FJTPHa0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_t_dlsq0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FJTPHq0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FJT2IK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FJT2Ia0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_eMwK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FJT2Iq0TEeerE-Q5GAf4rA" name="MTSeqList">
+          <modelElement href="Parsed_music.uml#_t_cXkK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FJT2I60TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t_eMwa0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FJT2JK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJT2Ja0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FJT2Jq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_ez0K0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FJT2J60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FJT2KK0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNpLoK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FJT2Ka0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNpysK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJT2Kq0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNrA0K0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FJT2K60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FJT2LK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FJT2La0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNpLo60SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FJT2Lq0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FJT2L60TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNpLoa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FJT2MK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FJT2Ma0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FJT2Mq0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNpLoq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FJT2M60TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_FJT2NK0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FR-p8K0TEeerE-Q5GAf4rA" comments="_FN0isK0TEeerE-Q5GAf4rA _FPbsQK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FPTJYK0TEeerE-Q5GAf4rA _FPdhcK0TEeerE-Q5GAf4rA" name="Note" associationsIn="_FVB98K0TEeerE-Q5GAf4rA" generalizations="_FL86cK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_FR-p8a0TEeerE-Q5GAf4rA" position="2687.0,350.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FR-p8q0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_FR-p860TEeerE-Q5GAf4rA" defaultValue="&quot;Note&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uP84wK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-p9K0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-p9a0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-p9q0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FR-p960TEeerE-Q5GAf4rA" defaultValue="'Z'" name="name">
+      <modelElement href="Parsed_music.uml#_uQBKMK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-p-K0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-p-a0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-p-q0TEeerE-Q5GAf4rA" name="char">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FR-p-60TEeerE-Q5GAf4rA" defaultValue="0" name="octave">
+      <modelElement href="Parsed_music.uml#_uQBxQa0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-p_K0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-p_a0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-p_q0TEeerE-Q5GAf4rA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FR-p_60TEeerE-Q5GAf4rA" defaultValue="0" name="accidental">
+      <modelElement href="Parsed_music.uml#_uQCYUK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qAK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qAa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-qAq0TEeerE-Q5GAf4rA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FR-qA60TEeerE-Q5GAf4rA" defaultValue="0" name="duration">
+      <modelElement href="Parsed_music.uml#_uQC_YK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qBK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qBa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-qBq0TEeerE-Q5GAf4rA" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_FR-qB60TEeerE-Q5GAf4rA" defaultValue="false" name="isNatural">
+      <modelElement href="Parsed_music.uml#_uQDmcK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FR-qCK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uQENga0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FR-qCa0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_FR-qCq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FR-qC60TEeerE-Q5GAf4rA" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FR-qDK0TEeerE-Q5GAf4rA" comments="_FPmrYK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FQ2BgK0TEeerE-Q5GAf4rA" name="Note">
+      <modelElement href="Parsed_music.uml#_t_sPMK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_FR-qDa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_FR-qDq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qD60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FR-qEK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_tdUq0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FR-qEa0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FR-qEq0TEeerE-Q5GAf4rA" name="name">
+        <modelElement href="Parsed_music.uml#_t_s2QK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qE60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qFK0TEeerE-Q5GAf4rA" name="char">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FR-qFa0TEeerE-Q5GAf4rA" name="octave">
+        <modelElement href="Parsed_music.uml#_t_s2Qa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qFq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qF60TEeerE-Q5GAf4rA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FR-qGK0TEeerE-Q5GAf4rA" name="accidental">
+        <modelElement href="Parsed_music.uml#_t_s2Qq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qGa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qGq0TEeerE-Q5GAf4rA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FR-qG60TEeerE-Q5GAf4rA" name="duration">
+        <modelElement href="Parsed_music.uml#_t_s2Q60SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qHK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qHa0TEeerE-Q5GAf4rA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FR-qHq0TEeerE-Q5GAf4rA" name="isNatural">
+        <modelElement href="Parsed_music.uml#_t_s2RK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qH60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qIK0TEeerE-Q5GAf4rA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FR-qIa0TEeerE-Q5GAf4rA" comments="_FRrvAK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FRtkMK0TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t_tdU60SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qIq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qI60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FR-qJK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_uEYK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FR-qJa0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FR-qJq0TEeerE-Q5GAf4rA" comments="_FR1gAK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FR1gAa0TEeerE-Q5GAf4rA" name="setName">
+      <modelElement href="Parsed_music.uml#_t_urcK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qJ60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qKK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_FR-qKa0TEeerE-Q5GAf4rA" name="name">
+        <modelElement href="Parsed_music.uml#_t_urca0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qKq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qK60TEeerE-Q5GAf4rA" name="char">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FR-qLK0TEeerE-Q5GAf4rA" comments="_FR2uIK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FR2uIa0TEeerE-Q5GAf4rA" name="setAccidental">
+      <modelElement href="Parsed_music.uml#_t_vSgK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qLa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qLq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_FR-qL60TEeerE-Q5GAf4rA" name="accidental">
+        <modelElement href="Parsed_music.uml#_t_vSga0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qMK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qMa0TEeerE-Q5GAf4rA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FR-qMq0TEeerE-Q5GAf4rA" comments="_FR38QK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FR4jUK0TEeerE-Q5GAf4rA" name="getIsNatural">
+      <modelElement href="Parsed_music.uml#_t_v5kK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qM60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qNK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FR-qNa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_wgoK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FR-qNq0TEeerE-Q5GAf4rA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FR-qN60TEeerE-Q5GAf4rA" comments="_FR5KYK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FR5KYa0TEeerE-Q5GAf4rA" name="setIsNatural">
+      <modelElement href="Parsed_music.uml#_t_wgoa0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FR-qOK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qOa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_FR-qOq0TEeerE-Q5GAf4rA" name="isNatural">
+        <modelElement href="Parsed_music.uml#_t_xHsK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qO60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qPK0TEeerE-Q5GAf4rA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FR-qPa0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNwgYK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FR-qPq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNxugK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FR-qP60TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNyVkK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FR-qQK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FR-qQa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FR-qQq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNxHcK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FR-qQ60TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FR-qRK0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNwgYa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qRa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FR-qRq0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FR-qR60TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNwgYq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FR-qSK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_FR-qSa0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FeA60K0TEeerE-Q5GAf4rA" comments="_FaPOEK0TEeerE-Q5GAf4rA _FbWoYK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FaiJAK0TEeerE-Q5GAf4rA _FbfLQK0TEeerE-Q5GAf4rA" name="NoteCollection" abstractClass="true" associationsOut="_FVB98K0TEeerE-Q5GAf4rA" generalizations="_FYMmsK0TEeerE-Q5GAf4rA" subclassedBy="_FbhAcK0TEeerE-Q5GAf4rA _FhJHUK0TEeerE-Q5GAf4rA _GCFRMK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_0LAK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_FeA60a0TEeerE-Q5GAf4rA" position="2159.0,444.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FeA60q0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_FeA6060TEeerE-Q5GAf4rA" name="notes">
+      <modelElement href="Parsed_music.uml#_uQGCsK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FeA61K0TEeerE-Q5GAf4rA" name="Array">
+        <modelElement href="Parsed_music.uml#_uQLiQK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FeA61a0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uQMwYK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FeA61q0TEeerE-Q5GAf4rA" label="#"/>
+      <cardinality xmi:id="_FeA6160TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_FeA62K0TEeerE-Q5GAf4rA" name="Note">
+        <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FeA62a0TEeerE-Q5GAf4rA" comments="_Fb1Jga0TEeerE-Q5GAf4rA" targetConnectionVisual="_FdEfoK0TEeerE-Q5GAf4rA" name="getNotes">
+      <modelElement href="Parsed_music.uml#_t_2nQK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FeA62q0TEeerE-Q5GAf4rA" name="Array">
+        <modelElement href="Parsed_music.uml#_t_3OUq0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FeA6260TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FeA63K0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_FeA63a0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_3OUK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FeA63q0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FeA6360TEeerE-Q5GAf4rA" name="NoteCollection">
+      <modelElement href="Parsed_music.uml#_uLzYkK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_FeA64K0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_FeA64a0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uLz_oq0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FeA64q0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FeA6460TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FeA65K0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLz_o60SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FeA65a0TEeerE-Q5GAf4rA" name="NoteCollection">
+          <modelElement href="Parsed_music.uml#_t_0LAK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FeA65q0TEeerE-Q5GAf4rA" name="notes">
+        <modelElement href="Parsed_music.uml#_uLzYka0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FeA6560TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_FeA66K0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FmXlkK0TEeerE-Q5GAf4rA" comments="_Fjw9gK0TEeerE-Q5GAf4rA _Fl_LEK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FlyWwK0TEeerE-Q5GAf4rA _FmAZMK0TEeerE-Q5GAf4rA" name="Triplet" generalizations="_FhJHUK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uAGe4K0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_FmXlka0TEeerE-Q5GAf4rA" position="1690.0,646.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FmXlkq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_FmXlk60TEeerE-Q5GAf4rA" defaultValue="&quot;Triplet&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uQZksK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FmXllK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FmXlla0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_FmXllq0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FmXll60TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_uAIUEK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_FmXlmK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FmXlma0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FmXlmq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uAIUEa0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FmXlm60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FmXlnK0TEeerE-Q5GAf4rA" name="Triplet">
+      <modelElement href="Parsed_music.uml#_uL7UYK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_FmXlna0TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_FmXlnq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FmXln60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FmXloK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uL77da0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FmXloa0TEeerE-Q5GAf4rA" name="Triplet">
+          <modelElement href="Parsed_music.uml#_uAGe4K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FmXloq0TEeerE-Q5GAf4rA" name="n1">
+        <modelElement href="Parsed_music.uml#_uL77cK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FmXlo60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FmXlpK0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FmXlpa0TEeerE-Q5GAf4rA" name="n2">
+        <modelElement href="Parsed_music.uml#_uL77ca0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FmXlpq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FmXlp60TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FmXlqK0TEeerE-Q5GAf4rA" name="n3">
+        <modelElement href="Parsed_music.uml#_uL77cq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FmXlqa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FmXlqq0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FmXlq60TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uN3OEK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_FmXlrK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uN31Iq0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FmXlra0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uN5DQK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_FmXlrq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_FmXlr60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_FmXlsK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uN31Ia0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_FmXlsa0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FmXlsq0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uN3OEa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FmXls60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_FmXltK0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FmXlta0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uN31IK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_FmXltq0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_FmXlt60TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Fy0GIK0TEeerE-Q5GAf4rA" comments="_FtVwQK0TEeerE-Q5GAf4rA _Fv1DkK0TEeerE-Q5GAf4rA" targetConnectionVisual="_FvtHwK0TEeerE-Q5GAf4rA _Fv2RsK0TEeerE-Q5GAf4rA" name="Header" generalizations="_FqLukK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_L44K0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_Fy0GIa0TEeerE-Q5GAf4rA" position="2418.0,152.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_Fy0GIq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_Fy0GI60TEeerE-Q5GAf4rA" name="_id">
+      <modelElement href="Parsed_music.uml#_uPnhkK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_Fy0GJK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uPovsK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_Fy0GJa0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_Fy0GJq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_Fy0GJ60TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Fy0GKK0TEeerE-Q5GAf4rA" name="_value">
+      <modelElement href="Parsed_music.uml#_uPp90K0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_Fy0GKa0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uPvdYK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_Fy0GKq0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_Fy0GK60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_Fy0GLK0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Fy0GLa0TEeerE-Q5GAf4rA" comments="_Fv9mcK0TEeerE-Q5GAf4rA" targetConnectionVisual="_Fxa_AK0TEeerE-Q5GAf4rA" name="Header">
+      <modelElement href="Parsed_music.uml#_t_OVIK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_Fy0GLq0TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_Fy0GL60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fy0GMK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Fy0GMa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_PjQK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_Fy0GMq0TEeerE-Q5GAf4rA" name="Header">
+          <modelElement href="Parsed_music.uml#_t_L44K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Fy0GM60TEeerE-Q5GAf4rA" name="id">
+        <modelElement href="Parsed_music.uml#_t_O8MK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_Fy0GNK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_Fy0GNa0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Fy0GNq0TEeerE-Q5GAf4rA" name="value">
+        <modelElement href="Parsed_music.uml#_t_O8Ma0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_Fy0GN60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_Fy0GOK0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Fy0GOa0TEeerE-Q5GAf4rA" comments="_Fxl-IK0TEeerE-Q5GAf4rA" targetConnectionVisual="_Fyn44K0TEeerE-Q5GAf4rA" name="getID">
+      <modelElement href="Parsed_music.uml#_t_QKUK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_Fy0GOq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fy0GO60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Fy0GPK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_QKUa0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_Fy0GPa0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Fy0GPq0TEeerE-Q5GAf4rA" comments="_Fyof8K0TEeerE-Q5GAf4rA" targetConnectionVisual="_FyqVIK0TEeerE-Q5GAf4rA" name="getValue">
+      <modelElement href="Parsed_music.uml#_t_QKUq0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_Fy0GP60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fy0GQK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Fy0GQa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_QxYK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_Fy0GQq0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Fy0GQ60TEeerE-Q5GAf4rA" comments="_FyxC0K0TEeerE-Q5GAf4rA" targetConnectionVisual="_Fyxp4K0TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t_QxYa0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_Fy0GRK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fy0GRa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Fy0GRq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_QxYq0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_Fy0GR60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Fy0GSK0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNfaoK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_Fy0GSa0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNgowK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_Fy0GSq0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNhP0K0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_Fy0GS60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_Fy0GTK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Fy0GTa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNgBsa0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_Fy0GTq0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Fy0GT60TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNfaoa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_Fy0GUK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_Fy0GUa0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_Fy0GUq0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNgBsK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_Fy0GU60TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_Fy0GVK0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_F_WtUK0TEeerE-Q5GAf4rA" comments="_F6s20K0TEeerE-Q5GAf4rA _F8PH4K0TEeerE-Q5GAf4rA" targetConnectionVisual="_F6-joK0TEeerE-Q5GAf4rA _F8Pu8K0TEeerE-Q5GAf4rA" name="ToggleDecoratorSeqList" associationsOut="_F1HzQK0TEeerE-Q5GAf4rA" generalizations="_F45gAK0TEeerE-Q5GAf4rA" subclassedBy="_GLGDQK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_5qkK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_F_WtUa0TEeerE-Q5GAf4rA" position="64.0,358.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_F_WtUq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_F_WtU60TEeerE-Q5GAf4rA" defaultValue="{ MTSeqList.Singleton, MTSeqList.Singleton }" name="decorees">
+      <modelElement href="Parsed_music.uml#_uQPzsK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_F_WtVK0TEeerE-Q5GAf4rA" name="Array">
+        <modelElement href="Parsed_music.uml#_uQUsMK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_F_WtVa0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uQV6UK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_WtVq0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_F_WtV60TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_F_WtWK0TEeerE-Q5GAf4rA" name="ISeqList">
+        <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_F_WtWa0TEeerE-Q5GAf4rA" defaultValue="0" name="targetIdx">
+      <modelElement href="Parsed_music.uml#_uQWhYK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_F_WtWq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uQYWkK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_WtW60TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_F_WtXK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_F_WtXa0TEeerE-Q5GAf4rA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_F_WtXq0TEeerE-Q5GAf4rA" name="ToggleDecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_t_7fwK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_F_WtX60TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_F_WtYK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_t_8t4K0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_WtYa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_WtYq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_F_WtY60TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_8t4a0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_F_WtZK0TEeerE-Q5GAf4rA" name="ToggleDecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t_5qkK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_F_WtZa0TEeerE-Q5GAf4rA" comments="_F8auEK0TEeerE-Q5GAf4rA" targetConnectionVisual="_F9-0UK0TEeerE-Q5GAf4rA" name="setTargetToDecoree">
+      <modelElement href="Parsed_music.uml#_t_9U8K0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_F_WtZq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_WtZ60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_F_WtaK0TEeerE-Q5GAf4rA" name="targetIdx">
+        <modelElement href="Parsed_music.uml#_t_9U8a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_Wtaa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_F_Wtaq0TEeerE-Q5GAf4rA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_F_Wta60TEeerE-Q5GAf4rA" comments="_F_G1sK0TEeerE-Q5GAf4rA" targetConnectionVisual="_F_HcwK0TEeerE-Q5GAf4rA" name="getTargetDecoree">
+      <modelElement href="Parsed_music.uml#_t_98AK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_F_WtbK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_Wtba0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_F_Wtbq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uL6GQK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_F_Wtb60TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_F_WtcK0TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t__KIK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_F_Wtca0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uAAYQK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_F_Wtcq0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uAA_UK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_Wtc60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_WtdK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_F_Wtda0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t__xMK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_F_Wtdq0TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_F_Wtd60TEeerE-Q5GAf4rA" name="ToggleDecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_uL100K0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_F_WteK0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_F_Wtea0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uL3qAa0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_Wteq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_Wte60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_F_WtfK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uL3qAq0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_F_Wtfa0TEeerE-Q5GAf4rA" name="ToggleDecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t_5qkK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_F_Wtfq0TEeerE-Q5GAf4rA" name="decorees">
+        <modelElement href="Parsed_music.uml#_uL3C8K0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_Wtf60TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_F_WtgK0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_F_Wtga0TEeerE-Q5GAf4rA" name="setDecorees">
+      <modelElement href="Parsed_music.uml#_uL4REa0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_F_Wtgq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uL44IK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_Wtg60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_WthK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_F_Wtha0TEeerE-Q5GAf4rA" name="decorees">
+        <modelElement href="Parsed_music.uml#_uL4REq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_Wthq0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_F_Wth60TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_F_WtiK0TEeerE-Q5GAf4rA" comments="_F_Iq4K0TEeerE-Q5GAf4rA" targetConnectionVisual="_F_J5AK0TEeerE-Q5GAf4rA" name="setDecoree">
+      <modelElement href="Parsed_music.uml#_uL5fMK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_F_Wtia0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_Wtiq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_F_Wti60TEeerE-Q5GAf4rA" name="idx">
+        <modelElement href="Parsed_music.uml#_uL5fMa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_WtjK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_F_Wtja0TEeerE-Q5GAf4rA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_F_Wtjq0TEeerE-Q5GAf4rA" name="decoree">
+        <modelElement href="Parsed_music.uml#_uL5fMq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_Wtj60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_F_WtkK0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_F_Wtka0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uN0KwK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_F_Wtkq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uN1Y4K0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_F_Wtk60TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uN2nAK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_F_WtlK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_F_Wtla0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_F_Wtlq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uN0x0q0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_F_Wtl60TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_F_WtmK0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uN0x0K0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_Wtma0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_F_Wtmq0TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_F_Wtm60TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uN0x0a0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_F_WtnK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_F_Wtna0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_GGyLAK0TEeerE-Q5GAf4rA" comments="_GEtucK0TEeerE-Q5GAf4rA _GGa-oK0TEeerE-Q5GAf4rA" targetConnectionVisual="_GGSbwK0TEeerE-Q5GAf4rA _GGcMwK0TEeerE-Q5GAf4rA" name="Tuplet" generalizations="_GCFRMK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_uAPo0K0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_GGyLAa0TEeerE-Q5GAf4rA" position="2119.0,659.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_GGyLAq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_GGyLA60TEeerE-Q5GAf4rA" defaultValue="&quot;Tuplet&quot;" name="ID" staticAttribute="true">
+      <modelElement href="Parsed_music.uml#_uQd2IK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_GGyLBK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GGyLBa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_GGyLBq0TEeerE-Q5GAf4rA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_GGyLB60TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_uAQ28K0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_GGyLCK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GGyLCa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GGyLCq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uAReAK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GGyLC60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_GGyLDK0TEeerE-Q5GAf4rA" name="Tuplet">
+      <modelElement href="Parsed_music.uml#_uL-XsK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_GGyLDa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_GGyLDq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uL_l0K0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GGyLD60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GGyLEK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GGyLEa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uL_l0a0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GGyLEq0TEeerE-Q5GAf4rA" name="Tuplet">
+          <modelElement href="Parsed_music.uml#_uAPo0K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_GGyLE60TEeerE-Q5GAf4rA" name="notes">
+        <modelElement href="Parsed_music.uml#_uL--wK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GGyLFK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_GGyLFa0TEeerE-Q5GAf4rA" name="Note">
+          <modelElement href="Parsed_music.uml#_t_py8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_GGyLFq0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uN5qUK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_GGyLF60TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uN64cK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_GGyLGK0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uN7fgK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GGyLGa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GGyLGq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GGyLG60TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uN6RYq0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GGyLHK0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_GGyLHa0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uN6RYK0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GGyLHq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_GGyLH60TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_GGyLIK0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uN6RYa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GGyLIa0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_GGyLIq0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_GZ3fEK0TEeerE-Q5GAf4rA" comments="_GQhV0K0TEeerE-Q5GAf4rA _GVsJsK0TEeerE-Q5GAf4rA" targetConnectionVisual="_GVhKkK0TEeerE-Q5GAf4rA _GVt-4K0TEeerE-Q5GAf4rA" name="FineToggleDecoratorSeqList" generalizations="_GLGDQK0TEeerE-Q5GAf4rA">
+    <modelElement href="Parsed_music.uml#_t_DWAK0SEeerE-Q5GAf4rA"/>
+    <visualProperties xmi:id="_GZ3fEa0TEeerE-Q5GAf4rA" position="42.0,577.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_GZ3fEq0TEeerE-Q5GAf4rA" label="+"/>
+    <attributes xmi:id="_GZ3fE60TEeerE-Q5GAf4rA" defaultValue="false" name="isFine">
+      <modelElement href="Parsed_music.uml#_uPlsYK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_GZ3fFK0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uPm6gK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GZ3fFa0TEeerE-Q5GAf4rA" label="-"/>
+      <cardinality xmi:id="_GZ3fFq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <type xmi:id="_GZ3fF60TEeerE-Q5GAf4rA" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_GZ3fGK0TEeerE-Q5GAf4rA" comments="_GV2hwK0TEeerE-Q5GAf4rA" targetConnectionVisual="_GYSxwK0TEeerE-Q5GAf4rA" name="FineToggleDecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_t_D9EK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_GZ3fGa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <visibility xmi:id="_GZ3fGq0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GZ3fG60TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GZ3fHK0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_EkIq0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GZ3fHa0TEeerE-Q5GAf4rA" name="FineToggleDecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t_DWAK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_GZ3fHq0TEeerE-Q5GAf4rA" comments="_GYatkK0TEeerE-Q5GAf4rA" targetConnectionVisual="_GZ0bwK0TEeerE-Q5GAf4rA" name="setFine">
+      <modelElement href="Parsed_music.uml#_t_FLMK0SEeerE-Q5GAf4rA"/>
+      <visibility xmi:id="_GZ3fH60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GZ3fIK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_GZ3fIa0TEeerE-Q5GAf4rA" name="toString">
+      <modelElement href="Parsed_music.uml#_t_FyQK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_GZ3fIq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_t_IOgK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_GZ3fI60TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_t_JcoK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GZ3fJK0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GZ3fJa0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GZ3fJq0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_t_GZUK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GZ3fJ60TEeerE-Q5GAf4rA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_GZ3fKK0TEeerE-Q5GAf4rA" name="FineToggleDecoratorSeqList">
+      <modelElement href="Parsed_music.uml#_uLhEsK0SEeerE-Q5GAf4rA"/>
+      <keywords xmi:id="_GZ3fKa0TEeerE-Q5GAf4rA" keyword="create"/>
+      <stereotypes xmi:id="_GZ3fKq0TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uLhrwK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GZ3fK60TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GZ3fLK0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GZ3fLa0TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uLhrwa0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GZ3fLq0TEeerE-Q5GAf4rA" name="FineToggleDecoratorSeqList">
+          <modelElement href="Parsed_music.uml#_t_DWAK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_GZ3fL60TEeerE-Q5GAf4rA" name="decorees">
+        <modelElement href="Parsed_music.uml#_uLhEsa0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GZ3fMK0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_GZ3fMa0TEeerE-Q5GAf4rA" name="ISeqList">
+          <modelElement href="Parsed_music.uml#_t_bJcK0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_GZ3fMq0TEeerE-Q5GAf4rA" name="execute">
+      <modelElement href="Parsed_music.uml#_uNc-YK0SEeerE-Q5GAf4rA"/>
+      <stereotypes xmi:id="_GZ3fM60TEeerE-Q5GAf4rA" name="LegacyStyledElement">
+        <modelElement href="Parsed_music.uml#_uNdlca0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_GZ3fNK0TEeerE-Q5GAf4rA" name="Annotations">
+        <modelElement href="Parsed_music.uml#_uNezkK0SEeerE-Q5GAf4rA"/>
+      </stereotypes>
+      <visibility xmi:id="_GZ3fNa0TEeerE-Q5GAf4rA" label="+"/>
+      <cardinality xmi:id="_GZ3fNq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_GZ3fN60TEeerE-Q5GAf4rA">
+        <modelElement href="Parsed_music.uml#_uNdlcK0SEeerE-Q5GAf4rA"/>
+        <type xmi:id="_GZ3fOK0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_GZ3fOa0TEeerE-Q5GAf4rA" name="algo">
+        <modelElement href="Parsed_music.uml#_uNc-Ya0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GZ3fOq0TEeerE-Q5GAf4rA" label="1" max="1" min="1"/>
+        <type xmi:id="_GZ3fO60TEeerE-Q5GAf4rA" name="IPhraseVisitor">
+          <modelElement href="Parsed_music.uml#_t_WQ8K0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_GZ3fPK0TEeerE-Q5GAf4rA" name="params">
+        <modelElement href="Parsed_music.uml#_uNc-Yq0SEeerE-Q5GAf4rA"/>
+        <cardinality xmi:id="_GZ3fPa0TEeerE-Q5GAf4rA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_GZ3fPq0TEeerE-Q5GAf4rA" name="Object">
+          <modelElement href="Parsed_music.uml#_uNVCka0SEeerE-Q5GAf4rA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

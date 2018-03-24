@@ -1,0 +1,17 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy for default
+ * @author Gao Pan
+ *
+ */
+public class Straight implements IUpdateStrategy {
+	/**
+	 * Default behavior for default strategy - doing nothing
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+	}
+}

@@ -1,0 +1,12 @@
+Hello,
+If you run the program, a window will pop up.
+In the north panel, there is a text field where you can type the ball name here, after that you can press the "Make Ball" button, the ball you want will display in center.
+If you type "StraightBall" and press the "Make Ball" button, a normal ball without special behavior will display.
+If you type "SizeBall" and press the "Make Ball" button, a ball that could change radius will display.
+If you type "ColorBall" and press the "Make Ball" button, a ball that could change color will display.
+If you type "SpinBall" and press the "Make Ball" button, a ball that could spin will display.
+If you press the "Clean Balls" button, all balls will disappear.
+
+The center panel is a zone for painting, where there are balls moving, bouncing and showing all kinds of special behavior.
+
+Thank you for reading.

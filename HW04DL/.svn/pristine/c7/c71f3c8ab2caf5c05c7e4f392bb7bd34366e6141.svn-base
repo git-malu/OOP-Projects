@@ -1,0 +1,116 @@
+package controller;
+
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+
+import model.BallModel;
+import model.IViewAdapter;
+import strategy.movement.IStrategyFac;
+import strategy.painting.IShapeFactory;
+import view.BallGUI;
+import view.IModelControl;
+import view.IModelPaint;
+
+/**
+ * Application Entry Class and the Controller managing everything
+ * @author Gao Pan
+ *
+ */
+public class MainController {
+	/**
+	 * The Model - represent data
+	 */
+	private BallModel model;
+
+	/**
+	 * The View - represent user interface, parameterized by strategy factory
+	 */
+	private BallGUI<IStrategyFac, IShapeFactory> view;
+
+	/**
+	 * Initialize the view and the model.
+	 * Implement adapters and link them up.
+	 * 
+	 */
+	public MainController() {
+		model = new BallModel(new IViewAdapter() {
+			@Override
+			public Component getCanvas() {
+				return view.getCanvas();
+			}
+
+			@Override
+			public void updateView() {
+				view.update();
+			}
+		});
+
+		view = new BallGUI<IStrategyFac, IShapeFactory>(new IModelControl<IStrategyFac, IShapeFactory>() {
+			@Override
+			public void addBall(IStrategyFac fac, IShapeFactory shapeFac) {
+				model.addBall(fac, shapeFac);
+			}
+
+			@Override
+			public void resetAll() {
+				model.resetAll();
+			}
+
+			@Override
+			public IStrategyFac addStgyStr(String strName) {
+				return model.makeStrategyFac(strName);
+			}
+			
+			@Override
+      public IShapeFactory addPaintStr(String strName) {
+        return model.makePaintFac(strName);
+      }
+
+			@Override
+			public IStrategyFac combineStr(IStrategyFac str1, IStrategyFac str2) {
+				return model.combineStrategyFac(str1, str2);
+			}
+
+			@Override
+			public void addSwitcher() {
+				model.addSwitcher();
+			}
+
+			@Override
+			public void setSwitchStr(IStrategyFac str) {
+				model.setSwitchStr(str);
+			}
+		}, new IModelPaint() {
+			@Override
+			public void paintAll(Graphics g) {
+				model.paintAll(g);
+			}
+		});
+	}
+
+	/**
+	 * Simply get things rolling AFTER they are all properly initialized
+	 */
+	public void start() {
+		model.start();
+		view.start();
+	}
+
+	/**
+	 * The real entry
+	 * @param args Application parameters
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainController mainCtrl = new MainController(); // instantiate the system
+					mainCtrl.start(); // start the system
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+}

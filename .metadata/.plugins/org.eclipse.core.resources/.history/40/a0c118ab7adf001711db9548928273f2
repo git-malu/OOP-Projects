@@ -1,0 +1,23 @@
+User manual:
+1 How to start the program, both the program itself as well as any individual games or processes. 
+	You may launch the program through FinalProject.launch file;
+	The main method resides in lm44_xw47.controller.MainController;
+	This program is a game server program. In order to properly play the game, at least two client player should connect to the server;
+	When a client connects to the server (server ip is in the server log panel), a lobby window will pop up;
+	In the lobby a play can join either NORTH team or SOUTH team;
+	After joining the team, the player may click the "ready" button. The game starts automatically when all the players are ready.
+	
+2 How to connect to other users
+	In the main frame, there is text field next to connect button. Type the server ip in this field and click connect button, and the connection will be built.
+
+3 How to end and exit the program.
+	Client may quit the game by clicking the "quit" button on the lobby Frame.
+	Server may quit just clicking the X of the frame.
+	
+	
+Game manual:
+	The only way you control the player character in this game is by using the right click.
+	Every player has either NORTH or SOUTH team affiliation.
+	Assume you are a NORTH team player. Then you may only move on the north earth and are not able to move across the equator.
+	When you move near a static ball on the ground that no one is carrying, you will automatically pick it up.
+	

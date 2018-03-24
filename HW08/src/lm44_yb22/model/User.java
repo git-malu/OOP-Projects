@@ -1,0 +1,116 @@
+package lm44_yb22.model;
+
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.UUID;
+
+import common.IChatRoom;
+import common.IReceiver;
+import common.IUser;
+
+public class User implements IUser {
+	
+	/**
+	 * User name
+	 */
+	String username;
+
+	/**
+	 * User ip address
+	 */
+	String ip;
+	
+	/**
+	 * The port that the client will use to communicate with the IUser object
+	 */
+	public static final int BOUND_PORT = 2100;
+	
+	/**
+	 * UUID
+	 */
+	UUID uuid = UUID.randomUUID();
+
+	/**
+	 * Chat rooms
+	 */
+	HashSet<IChatRoom> chatrooms = new HashSet<>();
+	
+	/**
+	 * Receivers
+	 * @param name
+	 * @param ip
+	 */
+	HashSet<IReceiver> receivers = new HashSet<>();
+	
+	
+	public User(String name, String ip) {
+		// TODO Auto-generated constructor stub
+		username = name;
+		this.ip = ip;
+	}
+	
+	/**
+	 * Get the name of the user.
+	 * @return The name of the user
+	 * @throws RemoteException if a network error occurs
+	 */
+	@Override
+	public String getName() throws RemoteException {
+		// TODO Auto-generated method stub
+		return username;
+	}
+
+	/**
+	 * Get UUid of the user, which is a unique identifier for the user
+	 * @return uuid of the user
+	 * @throws RemoteException if a network error occurs
+	 */
+	@Override
+	public UUID getUUID() throws RemoteException {
+		// TODO Auto-generated method stub
+		return uuid;
+	}
+
+	/**
+	 * Get all chat rooms the user has joined.
+	 * @return All chat rooms the user has joined
+	 * @throws RemoteException if a network error occurs
+	 */
+	@Override
+	public Collection<IChatRoom> getChatRooms() throws RemoteException {
+		// TODO Auto-generated method stub
+		return chatrooms;
+	}
+	
+
+	
+	/**
+	 * A method to be called by remote user for auto-connect-back
+	 * @param userStub A remote user stub
+	 * @throws RemoteException if a network error occurs 
+	 */
+	@Override
+	public void connect(IUser userStub) throws RemoteException {
+		// TODO Auto-generated method stub
+//		System.out.println(userStub.getName() + "@" + userStub.getIP() + "connected!");
+//		map.put(userStub.getName() + "@" + userStub.getIP(), userStub);
+	}
+	
+	/**
+	 * add a new chatroom to user.
+	 * only for local use, not for remote
+	 * @param newChatRoom
+	 */
+	public void addChatRoom(IChatRoom newChatRoom) {
+		chatrooms.add(newChatRoom);
+	}
+	
+	/**
+	 * Get all the receivers
+	 */
+	public HashSet<IReceiver> getReceivers() {
+		return receivers;
+	}
+
+}

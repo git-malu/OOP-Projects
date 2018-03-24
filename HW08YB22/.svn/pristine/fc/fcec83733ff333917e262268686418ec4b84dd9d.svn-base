@@ -1,0 +1,15 @@
+please input your user name upon start
+In the left up corner, there is a menu button in which there are "connect" and "create room" button.
+Please find your IP address in the log window. 
+When you click connect, you will be prompted to enter IP address of your desired destination.
+When you create room, you need to provide a room name.
+
+Interaction:
+1. send message
+		click send button to send message
+2. send image (unknown type)  
+		it might take a while to send an image.
+3. leave room   
+		when someone left the chatroom, there will be a broadcast message like "xxx left the room" 
+4. join room 
+		when someone join the chatroom, there will be a broadcast message like "xxx join the room"

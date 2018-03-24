@@ -1,0 +1,8 @@
+package lm44_yb22.model;
+
+import lm44_yb22.view.MiniView;
+
+public interface IMainModel2MiniMVCAdpt {
+	MiniView getMiniView4ChatRoom();
+	IReceiverAdapter getReceiverToMiniMVCAdpt();
+}

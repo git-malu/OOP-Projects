@@ -1,0 +1,21 @@
+:normalEnd:
+project: /HW07
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+revisionRanges: 25277-25278
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 25277-25278
+Summary result: type: 0 category: Deleted number: 1
+Summary result: type: 1 category: Updated number: 2
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+workspaceRevision: 25125
+lowerRevision: 25277
+upperRevision: 25278
+merge -c 25278 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/provided
+Message: 1   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07

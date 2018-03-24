@@ -1,0 +1,34 @@
+package strategy.painting;
+
+import java.awt.Graphics;
+import java.awt.geom.AffineTransform;
+
+import model.Shape;
+
+public class AnimatePaintStrategy extends APaintStrategy {
+  
+  private int count;
+  private APaintStrategy[] mulStrat;
+
+  public AnimatePaintStrategy(AffineTransform at,  APaintStrategy... mulStrat) {
+    super(at);
+    // TODO Auto-generated constructor stub
+    this.mulStrat = mulStrat;
+  }
+  
+  public void init(Shape context) {
+    for (APaintStrategy strat : this.mulStrat) {
+      strat.init(context);
+    }
+  }
+
+  public void paintXfrm(Graphics g, Shape context, AffineTransform at) {
+    // TODO Auto-generated method stub
+    if (count >= this.mulStrat.length) {
+      count = 0;
+    }
+    this.mulStrat[count].paintXfrm(g, context, at);
+    
+  }
+
+}

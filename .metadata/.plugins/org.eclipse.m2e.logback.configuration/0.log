@@ -1,0 +1,99 @@
+2017-08-27 22:00:57,065 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-28 15:53:56,187 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-28 16:17:00,366 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-28 20:49:57,762 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-08-28 20:53:36,275 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-28 21:53:12,372 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-30 17:00:23,372 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-08-30 17:03:22,599 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-30 18:45:44,063 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-30 18:48:57,702 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-08-31 16:50:07,879 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-06 11:03:59,211 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-06 11:03:59,475 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2017-09-08 11:02:26,107 [Worker-27] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-09 17:19:08,370 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-12 15:59:59,446 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-12 21:02:10,729 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-14 13:43:25,423 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-15 13:17:32,759 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-16 23:10:00,732 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-18 00:34:03,954 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-18 10:17:50,300 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-19 16:45:37,744 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-22 11:14:41,351 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-23 21:38:47,854 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-25 23:53:29,636 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-09-26 00:07:50,561 [Worker-31] WARN  org.eclipse.jgit.util.FS - Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '69', error message '
+
+Agreeing to the Xcode/iOS license requires admin privileges, please run âsudo xcodebuild -licenseâ and then retry this command.
+
+
+'
+2017-09-26 23:36:29,757 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-29 11:06:20,618 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-03 22:52:23,865 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-03 23:05:55,278 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-10-07 12:09:24,188 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-09 01:09:26,846 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-15 13:11:46,039 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-21 18:02:04,272 [Worker-14] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-22 10:57:47,023 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-10-22 19:41:57,338 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-25 11:33:25,107 [Worker-21] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-27 11:43:19,249 [Worker-10] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-06 20:41:06,257 [Worker-585] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-07 22:06:46,972 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-08 16:00:54,641 [Worker-176] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-08 19:44:40,355 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-09 22:36:47,915 [Worker-12] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-13 20:21:01,621 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-13 22:06:03,317 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-19 11:46:01,871 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-22 10:41:14,767 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-24 17:01:05,415 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-25 15:03:19,227 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-11-25 18:30:01,226 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @12420727ms to org.eclipse.jetty.util.log.Slf4jLog
+2017-11-25 18:30:01,419 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.5.v20170502
+2017-11-25 18:30:01,456 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2017-11-25 18:30:01,456 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2017-11-25 18:30:01,458 [Start Help Server] INFO  org.eclipse.jetty.server.session - Scavenging every 600000ms
+2017-11-25 18:30:01,517 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@2480146f{/help,null,AVAILABLE}
+2017-11-25 18:30:01,531 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6ef840d9{HTTP/1.1,[http/1.1]}{127.0.0.1:60655}
+2017-11-25 18:30:01,533 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @12421036ms
+2017-11-27 02:36:54,671 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6ef840d9{HTTP/1.1,[http/1.1]}{127.0.0.1:0}
+2017-11-27 02:36:54,673 [Stop Help Server] INFO  org.eclipse.jetty.server.session - Stopped scavenging
+2017-11-27 02:36:54,704 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@2480146f{/help,null,UNAVAILABLE}
+2017-11-27 10:30:20,478 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-12-07 15:25:47,253 [Worker-9] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-12-07 23:29:59,025 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @18023501ms to org.eclipse.jetty.util.log.Slf4jLog
+2017-12-07 23:29:59,229 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.5.v20170502
+2017-12-07 23:29:59,265 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2017-12-07 23:29:59,265 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2017-12-07 23:29:59,268 [Start Help Server] INFO  org.eclipse.jetty.server.session - Scavenging every 660000ms
+2017-12-07 23:29:59,312 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@39348f9f{/help,null,AVAILABLE}
+2017-12-07 23:29:59,328 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@7c59eaf7{HTTP/1.1,[http/1.1]}{127.0.0.1:50104}
+2017-12-07 23:29:59,329 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @18023807ms
+2017-12-11 15:26:53,345 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@7c59eaf7{HTTP/1.1,[http/1.1]}{127.0.0.1:0}
+2017-12-11 15:26:53,346 [Stop Help Server] INFO  org.eclipse.jetty.server.session - Stopped scavenging
+2017-12-11 15:26:53,392 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@39348f9f{/help,null,UNAVAILABLE}
+2017-12-12 12:47:51,972 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-12-12 13:22:18,977 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @2087539ms to org.eclipse.jetty.util.log.Slf4jLog
+2017-12-12 13:22:19,337 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.5.v20170502
+2017-12-12 13:22:19,362 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2017-12-12 13:22:19,362 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2017-12-12 13:22:19,364 [Start Help Server] INFO  org.eclipse.jetty.server.session - Scavenging every 600000ms
+2017-12-12 13:22:19,397 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1cd1c3ad{/help,null,AVAILABLE}
+2017-12-12 13:22:19,409 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5a25856e{HTTP/1.1,[http/1.1]}{127.0.0.1:61992}
+2017-12-12 13:22:19,410 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @2087973ms
+2017-12-12 17:00:23,715 [Worker-12] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-12-13 11:03:02,719 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @57939720ms to org.eclipse.jetty.util.log.Slf4jLog
+2017-12-13 11:03:02,894 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.5.v20170502
+2017-12-13 11:03:02,921 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2017-12-13 11:03:02,921 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2017-12-13 11:03:02,923 [Start Help Server] INFO  org.eclipse.jetty.server.session - Scavenging every 660000ms
+2017-12-13 11:03:02,959 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@6c59a27d{/help,null,AVAILABLE}
+2017-12-13 11:03:02,976 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@3e8e96ab{HTTP/1.1,[http/1.1]}{127.0.0.1:60908}
+2017-12-13 11:03:02,976 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @57939977ms
+2017-12-13 12:09:50,348 [Worker-15] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-12-13 14:37:16,881 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

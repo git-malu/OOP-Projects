@@ -1,0 +1,27 @@
+package lm44_yb22.model.cmd;
+
+import common.DataPacketAlgoCmd;
+import common.DataPacketChatRoom;
+import common.ICmd2ModelAdapter;
+
+public class DefalutCmd extends DataPacketAlgoCmd<Object>{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3509224954420899613L;
+
+	@Override
+	public String apply(Class<?> index, DataPacketChatRoom<Object> host, String... params) {
+		System.out.println("use default command");
+		return "use default command";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICmd2ModelAdapter cmd2ModelAdpt) {
+		
+	}
+	
+	
+	
+}

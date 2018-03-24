@@ -1,0 +1,287 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+
+/**
+ * The view part in this system
+ * @author Gao Pan
+ *
+ */
+public class BallGUI<StrItem, PaintItem> extends JFrame {
+	/**
+	 * The serial version UID
+	 */
+	private static final long serialVersionUID = 6289789714890875369L;
+
+	private JPanel contentPane;
+	private final JPanel pnlTop = new JPanel();
+
+	/**
+	 * Data model for top combo box
+	 */
+	DefaultComboBoxModel<StrItem> strsTop = new DefaultComboBoxModel<StrItem>();
+
+	/**
+	 * Data model for bottom combo box
+	 */
+	DefaultComboBoxModel<StrItem> strsBottom = new DefaultComboBoxModel<StrItem>();
+	
+	/**
+   * Data model for painting combo box
+   */
+  DefaultComboBoxModel<PaintItem> strsPainting = new DefaultComboBoxModel<PaintItem>();
+
+	// the model control adapter initialized with null
+	private IModelControl<StrItem, PaintItem> modelControlAdapt = null;
+
+	// the model paint adapter initialized with NULL_ADAPTER
+	private IModelPaint modelPaintAdapt = IModelPaint.null_ADAPTER;
+
+	// CenterPanel with an overridden paintComponent method
+	private final JPanel pnlCenter = new JPanel() {
+		private static final long serialVersionUID = -6952656931251224807L;
+
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			modelPaintAdapt.paintAll(g);
+		}
+	};
+	private final JButton btnAddBall = new JButton("Create selected ball");
+	private final JButton btnReset = new JButton("Clear");
+	private final JButton btnCombine = new JButton("Combine");
+	private final JButton btnNewStr = new JButton("Add to list");
+	private final JTextField txfStrName = new JTextField();
+	private final JButton btnAddSwi = new JButton("Add a Switcher");
+	private final JButton btnSwitch = new JButton("Switch!");
+	private final JComboBox<StrItem> cmbTop = new JComboBox<StrItem>(strsTop);
+	private final JComboBox<StrItem> cmbBottom = new JComboBox<StrItem>(strsBottom);
+	private final JTextField paintingInput = new JTextField();
+	private final JButton btnPaintingMethod = new JButton("Add");
+	private final JComboBox<PaintItem> comPaintingSelection = new JComboBox<PaintItem>(strsPainting);
+
+	/**
+	 * @param control	Adapter for updating the model
+	 * @param paint		Adapter for painting the balls
+	 */
+	public BallGUI(IModelControl<StrItem, PaintItem> control, IModelPaint paint) {
+	  paintingInput.setText("Ball");
+	  paintingInput.setColumns(10);
+		setTitle("Fish World");
+		initGUI();
+		this.modelControlAdapt = control;
+		this.modelPaintAdapt = paint;
+	}
+
+	private void initGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 711, 521);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		pnlTop.setToolTipText("Control Panel");
+		pnlTop.setBackground(Color.DARK_GRAY);
+
+		contentPane.add(pnlTop, BorderLayout.NORTH);
+		GridBagLayout gbl_pnlTop = new GridBagLayout();
+		gbl_pnlTop.columnWidths = new int[] { 133, 257, 100, 100 };
+		gbl_pnlTop.rowHeights = new int[] { 23, 30, 30, 30 };
+		gbl_pnlTop.columnWeights = new double[] { 0.0, 0.0, 0.0, 1.0 };
+		gbl_pnlTop.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0 };
+		pnlTop.setLayout(gbl_pnlTop);
+		btnAddBall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (cmbTop.getSelectedIndex() != -1)
+					modelControlAdapt.addBall(cmbTop.getItemAt(cmbTop.getSelectedIndex()), comPaintingSelection.getItemAt(comPaintingSelection.getSelectedIndex()));
+
+			}
+		});
+		btnAddBall.setToolTipText("Create a new ball using the top strategy");
+		
+				GridBagConstraints gbc_btnAddBall = new GridBagConstraints();
+				gbc_btnAddBall.fill = GridBagConstraints.BOTH;
+				gbc_btnAddBall.insets = new Insets(0, 0, 5, 5);
+				gbc_btnAddBall.gridx = 1;
+				gbc_btnAddBall.gridy = 0;
+				pnlTop.add(btnAddBall, gbc_btnAddBall);
+				
+						GridBagConstraints gbc_btnNewStr = new GridBagConstraints();
+						gbc_btnNewStr.fill = GridBagConstraints.BOTH;
+						gbc_btnNewStr.insets = new Insets(0, 0, 5, 5);
+						gbc_btnNewStr.gridx = 0;
+						gbc_btnNewStr.gridy = 1;
+						btnNewStr.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								if (txfStrName.getText().length() > 0) {
+									StrItem str = modelControlAdapt.addStgyStr(txfStrName.getText());
+									if (str != null) {
+										strsTop.insertElementAt(str, 0);
+										strsBottom.insertElementAt(str, 0);
+									}
+								}
+							}
+						});
+						btnNewStr.setToolTipText("Add the strategy by name");
+						pnlTop.add(btnNewStr, gbc_btnNewStr);
+		
+				GridBagConstraints gbc_cmbTop = new GridBagConstraints();
+				gbc_cmbTop.insets = new Insets(0, 0, 5, 5);
+				gbc_cmbTop.fill = GridBagConstraints.HORIZONTAL;
+				gbc_cmbTop.gridx = 1;
+				gbc_cmbTop.gridy = 1;
+				cmbTop.setToolTipText("The strategy for new Ball and Switcher");
+				pnlTop.add(cmbTop, gbc_cmbTop);
+						btnReset.addActionListener(e -> modelControlAdapt.resetAll());
+						btnReset.setToolTipText("Remove all the balls");
+						
+								GridBagConstraints gbc_btnReset = new GridBagConstraints();
+								gbc_btnReset.insets = new Insets(0, 0, 5, 5);
+								gbc_btnReset.fill = GridBagConstraints.BOTH;
+								gbc_btnReset.gridx = 2;
+								gbc_btnReset.gridy = 1;
+								pnlTop.add(btnReset, gbc_btnReset);
+						
+						GridBagConstraints gbc_paintingInput = new GridBagConstraints();
+						gbc_paintingInput.insets = new Insets(0, 0, 5, 0);
+						gbc_paintingInput.fill = GridBagConstraints.HORIZONTAL;
+						gbc_paintingInput.gridx = 3;
+						gbc_paintingInput.gridy = 1;
+						pnlTop.add(paintingInput, gbc_paintingInput);
+						
+								GridBagConstraints gbc_txfStrName = new GridBagConstraints();
+								gbc_txfStrName.insets = new Insets(0, 0, 5, 5);
+								gbc_txfStrName.fill = GridBagConstraints.BOTH;
+								gbc_txfStrName.gridx = 0;
+								gbc_txfStrName.gridy = 2;
+								txfStrName.setToolTipText("The name of strategy to be added. No qualifier needed.");
+								txfStrName.setText("Camouflage");
+								txfStrName.setColumns(10);
+								pnlTop.add(txfStrName, gbc_txfStrName);
+				
+						GridBagConstraints gbc_cmbBottom = new GridBagConstraints();
+						gbc_cmbBottom.insets = new Insets(0, 0, 5, 5);
+						gbc_cmbBottom.fill = GridBagConstraints.HORIZONTAL;
+						gbc_cmbBottom.gridx = 1;
+						gbc_cmbBottom.gridy = 2;
+						cmbBottom.setToolTipText("The strategy to be combined with");
+						pnlTop.add(cmbBottom, gbc_cmbBottom);
+				
+						GridBagConstraints gbc_btnCombine = new GridBagConstraints();
+						gbc_btnCombine.fill = GridBagConstraints.BOTH;
+						gbc_btnCombine.insets = new Insets(0, 0, 0, 5);
+						gbc_btnCombine.gridx = 1;
+						gbc_btnCombine.gridy = 3;
+						btnCombine.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								if (cmbTop.getSelectedIndex() >= 0 && cmbBottom.getSelectedIndex() >= 0) {
+									StrItem str = modelControlAdapt.combineStr(cmbTop.getItemAt(cmbTop.getSelectedIndex()),
+											cmbBottom.getItemAt(cmbBottom.getSelectedIndex()));
+									if (str != null) {
+										strsTop.insertElementAt(str, 0);
+										strsBottom.insertElementAt(str, 0);
+									}
+								}
+							}
+						});
+						
+								GridBagConstraints gbc_btnAddSwi = new GridBagConstraints();
+								gbc_btnAddSwi.fill = GridBagConstraints.BOTH;
+								gbc_btnAddSwi.insets = new Insets(0, 0, 5, 5);
+								gbc_btnAddSwi.gridx = 2;
+								gbc_btnAddSwi.gridy = 2;
+								btnAddSwi.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent e) {
+										modelControlAdapt.addSwitcher();
+									}
+								});
+								btnAddSwi.setToolTipText("Add a new ball whose strategy is switchable");
+								pnlTop.add(btnAddSwi, gbc_btnAddSwi);
+						
+						GridBagConstraints gbc_btnPaintingMethod = new GridBagConstraints();
+						gbc_btnPaintingMethod.insets = new Insets(0, 0, 5, 0);
+						gbc_btnPaintingMethod.gridx = 3;
+						gbc_btnPaintingMethod.gridy = 2;
+						btnPaintingMethod.addActionListener(new ActionListener() {
+						  public void actionPerformed(ActionEvent e) {
+						    // add item to painting strategy
+//						    PaintItem paintName = paintingInput.getText();
+//						    strsPainting.insertElementAt(paintName, 0);
+						    
+						    if (txfStrName.getText().length() > 0) {
+						      PaintItem str = modelControlAdapt.addPaintStr(paintingInput.getText());
+                  if (str != null) {
+                    strsPainting.insertElementAt(str, 0);
+                  }
+                }
+              
+						  }
+						});
+						pnlTop.add(btnPaintingMethod, gbc_btnPaintingMethod);
+						btnCombine.setToolTipText("Combine two strategies above");
+						pnlTop.add(btnCombine, gbc_btnCombine);
+						
+								GridBagConstraints gbc_btnSwitch = new GridBagConstraints();
+								gbc_btnSwitch.insets = new Insets(0, 0, 0, 5);
+								gbc_btnSwitch.fill = GridBagConstraints.BOTH;
+								gbc_btnSwitch.gridx = 2;
+								gbc_btnSwitch.gridy = 3;
+								btnSwitch.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent e) {
+										if (cmbTop.getSelectedIndex() != -1)
+											modelControlAdapt.setSwitchStr(cmbTop.getItemAt(cmbTop.getSelectedIndex()));
+									}
+								});
+								btnSwitch.setToolTipText("Switch the strategy for switchers to the top strategy");
+								pnlTop.add(btnSwitch, gbc_btnSwitch);
+						
+						GridBagConstraints gbc_comPaintingSelection = new GridBagConstraints();
+						gbc_comPaintingSelection.fill = GridBagConstraints.HORIZONTAL;
+						gbc_comPaintingSelection.gridx = 3;
+						gbc_comPaintingSelection.gridy = 3;
+						pnlTop.add(comPaintingSelection, gbc_comPaintingSelection);
+		pnlCenter.setBackground(Color.WHITE);
+		pnlCenter.setToolTipText("Canvas Panel");
+
+		contentPane.add(pnlCenter, BorderLayout.CENTER);
+	}
+
+	/**
+	 * Make the GUI visible and start the program
+	 */
+	public void start() {
+		setVisible(true);
+	}
+
+	/**
+	 * Method for adapter to obtain canvas
+	 * @return	The canvas to be painted on
+	 */
+	public Component getCanvas() {
+		return pnlCenter;
+	}
+
+	/**
+	 * Method for adapter to repaint canvas
+	 */
+
+	public void update() {
+		pnlCenter.repaint();
+	}
+}

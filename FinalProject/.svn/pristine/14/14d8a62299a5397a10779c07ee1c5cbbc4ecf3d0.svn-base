@@ -1,0 +1,44 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import java.util.Map;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import common.datatype.user.IUserInstallCmdType;
+import provided.datapacket.DataPacketAlgo;
+
+public class UserInstallCmd extends DataPacketUserAlgoCmd<IUserInstallCmdType>{
+
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 4976230000301875209L;
+	
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	private transient DataPacketAlgo<String, String> algo;
+	
+	private transient Map<Class<?>, DataPacketUser<?>> unknownMsgs;
+	
+	public UserInstallCmd(DataPacketAlgo<String, String> algo, Map<Class<?>, DataPacketUser<?>> unknownMsgs, IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.algo = algo;
+		this.unknownMsgs = unknownMsgs;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<IUserInstallCmdType> host, String... params) {
+		DataPacketUserAlgoCmd<?> cmd = host.getData().getCmd();
+		cmd.setCmd2ModelAdpt(cmd2ModelAdpt);
+		algo.setCmd(host.getData().getCmdId(), cmd);
+		unknownMsgs.remove(host.getData().getCmdId()).execute(algo);
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+	
+}

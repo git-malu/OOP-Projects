@@ -1,0 +1,113 @@
+package engine.engineView;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.JTextArea;
+import javax.swing.border.TitledBorder;
+
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.util.function.Consumer;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+@SuppressWarnings("serial")
+public class EngineView extends JFrame {
+
+	private JPanel contentPane;
+	private final JPanel panelControl = new JPanel();
+	private final JScrollPane scrollPaneDisplay = new JScrollPane();
+	private final JButton buttonQuit = new JButton("Quit");
+	private final JScrollPane scrollPane_1 = new JScrollPane();
+	private final JTextArea textArea = new JTextArea();
+	private final JTextArea textAreaDisplay = new JTextArea();
+
+	private IEngineView2ModelAdapter view2ModelAdapter; //to be initialized by constructor
+	
+	/**
+	 * Create the frame.
+	 */
+	public EngineView(IEngineView2ModelAdapter adapter) {
+		this.view2ModelAdapter = adapter;
+		initGUI();
+	}
+	private void initGUI() {
+		setTitle("RMI Engine");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 650, 350);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.CYAN);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		panelControl.setBackground(Color.WHITE);
+		
+		contentPane.add(panelControl, BorderLayout.NORTH);
+		panelControl.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		//quit button action 
+		buttonQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EngineView.this.view2ModelAdapter.engineQuit(); //engineModel.stop();
+			}
+		});
+		
+		buttonQuit.setToolTipText("Shuts down RMI system and quits");
+		buttonQuit.setFont(new Font("American Typewriter", Font.PLAIN, 15));
+		
+		panelControl.add(buttonQuit);
+		scrollPane_1.setViewportBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Send msg to client", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		
+		panelControl.add(scrollPane_1);
+		textArea.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					String sent = textArea.getText();
+					view2ModelAdapter.sendMsg(sent.substring(0, sent.length()-1));
+					textArea.setText("");
+					textAreaDisplay.append("[Message sent]: "+ sent);
+				}
+			}
+		});
+		
+		
+		textArea.setToolTipText("Enter the msg and sent it to the remote Client. Done with Hit.");
+		textArea.setFont(new Font("American Typewriter", Font.PLAIN, 15));
+		textArea.setRows(2);
+		
+		scrollPane_1.setViewportView(textArea);
+		
+		
+		contentPane.add(scrollPaneDisplay, BorderLayout.CENTER);
+		textAreaDisplay.setBackground(Color.WHITE);
+		textAreaDisplay.setToolTipText("Display area for texts msg");
+		textAreaDisplay.setFont(new Font("American Typewriter", Font.PLAIN, 15));
+		
+		scrollPaneDisplay.setViewportView(textAreaDisplay);
+		
+	}
+	
+	/**
+	 * Make the frame visible
+	 */
+	public void start() {
+		this.setVisible(true);
+	}
+	
+	public Consumer<String> displayToConsole(){
+		return (e)->{
+				textAreaDisplay.append(e+"\n");
+			};
+	}
+
+}

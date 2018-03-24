@@ -1,0 +1,96 @@
+package control;
+
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+import model.BallWorldModel;
+import model.IModel2ViewAdapter;
+import view.IView2ModelAdapterCtrl;
+import view.IView2ModelAdapterPaint;
+import view.MainFrame;
+
+/**
+ * MVC Controller for the system
+ */
+public class Controller {
+
+	private MainFrame view; // starts off null but will be fine when the constructor is finished.
+	private BallWorldModel model; // starts off null but will be fine when the constructor is finished.
+
+	/**
+	 * Controller constructor builds the system
+	 */
+	public Controller() {
+		view = new MainFrame(new IView2ModelAdapterCtrl() {
+			/**
+			 * use model method to pass a type name
+			 */
+			public void loadBall(String typename) {
+				model.make_ball(typename);
+			}
+
+			
+			/**
+			 * use model clean method to clean canvas
+			 */
+			public void clean() {
+				model.clean();
+			}
+			
+		},new IView2ModelAdapterPaint() {
+			/**
+			 * use model update method to paint on canvas
+			 */
+			public void paint(Graphics g) {
+				model.paint(g);
+			}
+
+//			/**
+//			 * use model method to pass bounds
+//			 */
+//			public void getBounds(Rectangle bounds) {
+//				model.getBounds(bounds);
+//			}
+
+		});
+
+		model = new BallWorldModel(new IModel2ViewAdapter() {
+			/**
+			 * use view method update the canvas
+			 */
+			public void repaint() {
+				view.update();
+			}
+
+		});
+	}
+
+	/**
+	 * Start the system
+	 */
+	public void start() {
+		model.start();
+		view.start();
+	}
+
+	/**
+	 * Launch the application.
+	 * @param args Arguments given by the system or command line.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Controller controller = new Controller();
+					controller.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+	}
+
+}

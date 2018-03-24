@@ -1,0 +1,9 @@
+package lm44_xw47.clientMap;
+
+/**
+* game mini mvc to main view adapter
+ * @author malu */
+public interface IClientMapCtrl2MainViewAdapter {
+	public void addMapView2MainView(ClientMapView<Place> mapView);
+
+}

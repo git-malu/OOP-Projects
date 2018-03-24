@@ -1,0 +1,40 @@
+package lm44_xw47.chatRoom.model.dataType;
+
+import common.ICRMessageType;
+
+/**
+ * Following defines the data type for string message.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class StringMsgType implements ICRMessageType{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 3639917220383035363L;
+	
+	/**
+	 * The message.
+	 */
+	private String msg;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param msg The message.
+	 */
+	public StringMsgType(String msg) {
+		this.msg = msg;
+	}
+	
+	/**
+	 * Get the message
+	 * 
+	 * @return The message.
+	 */
+	public String getMsg() {
+		return msg;
+	}
+
+}

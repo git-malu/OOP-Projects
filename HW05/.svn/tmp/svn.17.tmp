@@ -1,0 +1,19 @@
+package model.strategies;
+
+import model.balls.Ball;
+import util.SineMaker;
+
+/**
+ * A concrete strategy that makes the ball moves in a shaking pattern.
+ * @author Yuchang Shen and Yibing Zhang
+ */
+public class ShakeStrategy implements IUpdateStrategy {
+
+	@Override
+	public void updateState(Ball ball) {
+		// TODO Auto-generated method stub
+
+		ball.setVel(ball.getVel().x, new SineMaker(-32, 32, 25).getIntVal());
+	}
+
+}

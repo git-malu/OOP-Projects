@@ -1,0 +1,42 @@
+You may read it on google doc: 
+https://docs.google.com/a/rice.edu/document/d/1673x6s1TKOrbRQAxTAyWcbi9rZGwA6Xghcf9hUCF_-I/edit?usp=sharing
+
+
+########################################################
+Prose description of how your game will work, including typical game play with winning and losing.
+########################################################
+The game is a dodge ball game. The major difference between this game and a traditional dodge ball game is the play ground. 
+The traditional play ground is rectangular whereas in our game the playground is a spherical surface.
+We are gonna use the equator to divide the players into two groups, the northern hemisphere team and the southern hemisphere team. 
+
+Winning Rule:
+To win, one team has to eliminate all the enemy team members by hitting them with a ball that flies across the spherical surface.
+
+Interactions:
+Players can move within either the northern hemisphere or the southern hemisphere according to their team affiliation. 
+Players can pick up and shoot balls in desired directions.
+A ball can hit a player. 
+A player dies after he gets hit by a ball.
+
+How we use World Wind System
+There are mainly 3 kinds of object in this game, a ball, plays of two teams, and the play ground. 
+We are gonna use triangle markers to represent players, each having their own facing direction.
+We are gonna use a ball marker to represent the ball.
+The earth will be used as the playground.
+The equator will be used to limit the movement range of each team.
+
+Typical game play:
+Let’s imagine. A game begins with four players. S1, S2 are in the southern team while N1, N2 are in the northern team.  The ball is initially placed on the north pole. N1 move to the north pole with arrow key on the keyboard, and then he picks up the ball with a right click. N1 drag the earth to find the location of his opponent. He adjust the direction to aim by moving his mouse, and then shoot the ball by right click. The ball flies across the equator and hit S1. S1 is eliminated.
+S2 picks up the ball and try to shoot N2. N2 dodges the ball and then shoots back. S2 gets hit and dies.
+Since both S1 and S2 are eliminated. Game is over. Team north wins.
+
+
+########################################################
+A prose description of how your design will implement the required common API as well as any features specific to your implementation. 
+########################################################
+
+There are two teams in the game, north team and south team. 
+There will be an IChatRoom for each team, and a public IChatRoom, lobby, for both teams.
+Each player is represented by an IUser. Server itself is also represented by an IUser. 
+Server plays the role of judge. All the update of game information must be sent to server first. Then server broadcast the update information to all the players. For example, if a player wants to move in a direction, the player needs to send a “DataPacketUser” to the server to request to update his location. Once the server receives this data packet, server will judge whether the player can move in that direction. If yes, the server will simply broadcast the new position of that player to all the players in the lobby, a public IChatRoom. If no, the server will send back to the player IUserRejectionStatus to inform that the player can’t go that way.
+Similarly, if the server finds that a ball hits a player, it will broadcast that the player is eliminated, and then remove the player from the playground.

@@ -1,0 +1,22 @@
+:normalEnd:
+project: /HW05QWH
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+revisionRanges: 24072-24073
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 24072-24073
+Summary result: type: 0 category: Updated number: 3
+Summary result: type: 1 category: Updated number: 1
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5
+workspaceRevision: 24073
+lowerRevision: 24072
+upperRevision: 24073
+merge -c 24073 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/strategies/MultiInteractStrategy.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/strategies/IInteractionStrategy.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/balls/Ball.java
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH

@@ -1,0 +1,21 @@
+package model;
+
+import java.awt.Color;
+import java.awt.Point;
+
+public interface IUpdateStrategy {
+	
+	//ball is context
+	public void strategy(ABall ball);
+	
+	//NULL object
+	public static IUpdateStrategy nullStrategy = new IUpdateStrategy() {
+		
+		@Override
+		public void strategy(ABall ball) {
+			// TODO Auto-generated method stub
+			
+		}	
+	};
+	
+}

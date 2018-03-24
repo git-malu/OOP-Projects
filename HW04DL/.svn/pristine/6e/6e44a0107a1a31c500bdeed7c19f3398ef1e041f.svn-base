@@ -1,0 +1,30 @@
+package strategy.movement;
+
+import java.awt.Color;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy
+ * Fade out periodically
+ * @author Gao Pan
+ */
+public class FadeOut implements IUpdateStrategy {
+
+	/**
+	 * Rate of fading
+	 */
+	int interval = 0;
+
+	/**
+	 * Fading the ball
+	 * reset when totally faded out
+	 */
+	public void updateStatus(Shape context) {
+		if (interval == 0)
+			interval = context.getRdn().randomInt(10, 20);
+		context.setColor( new Color(context.getColor().getRed(), context.getColor().getGreen(), context.getColor().getBlue(),
+        context.getColor().getAlpha() - interval <= 0 ? 255 : context.getColor().getAlpha() - interval));
+	}
+
+}

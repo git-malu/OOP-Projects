@@ -1,0 +1,24 @@
+1510116046648	Delete elements
+1510116593271	Delete elements
+1510116601779	Delete elements
+1510116607949	Delete element
+1510179235011	Rename type 'EngineController'
+1510181975717	Rename type 'EngineModel'
+1510182633742	Rename field 'ta_log'
+1510188079005	Rename method 'getLogDisplay'
+1510194898695	Rename type 'IMainModel2MainViewAdapter'
+1510205159242	Rename type 'IMiniMVCAdpt'
+1510205244410	Rename type 'IMainModel2AllViewAdapter'
+1510207532320	Delete elements
+1510208280870	Rename type 'IMainModel2MainViewAdapter'
+1510211220888	Rename method 'getMiniView'
+1510211688481	Rename method 'appendInfo'
+1510214029648	Delete element
+1510214051161	Delete element
+1510216343411	Rename method 'makeChatRoom'
+1510279416229	Rename field 'id'
+1510289216146	Rename method 'makeChatRoomView'
+1510346177003	Rename local variable 'reces'
+1510346194651	Rename local variable 'reces2'
+1510348981079	Rename method 'createChatRoom'
+1510366378088	Delete element

@@ -1,0 +1,16 @@
+package model;
+
+public class CurveStrategy implements IUpdateStrategy{
+
+	@Override
+	public void strategy(ABall ball) {
+		// TODO Auto-generated method stub
+			double vx = ball.velocity.getX();
+			double vy = ball.velocity.getY();
+			public void updatestate() {
+			spinvelocity.x = (int) Math.round((spinvelocity.x * Math.cos(angle) - spinvelocity.y * Math.sin(angle)));
+			spinvelocity.y = (int) Math.round((spinvelocity.y * Math.cos(angle) + spinvelocity.x * Math.sin(angle)));
+		}
+	}
+
+}

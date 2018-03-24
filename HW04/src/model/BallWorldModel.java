@@ -1,0 +1,207 @@
+package model;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.util.ArrayList;
+
+import javax.swing.Timer;
+
+import model.strategy.EllipsePaintStrategy;
+import model.strategy.IPaintStrategy;
+import util.Dispatcher;
+import util.Randomizer;
+
+/**
+ * ball model
+ */
+public class BallWorldModel {
+	private int _timeSlice = 50; // update every 50 milliseconds
+	// The model adapter is initialized to a no-op to insure that system always has well-defined behavior
+	private IModel2ViewAdapter _model2ViewAdpt = IModel2ViewAdapter.NULL_OBJECT;
+	private IStrategyFac _straFac = IStrategyFac.nullFac;
+	private SwitchStrategy _switcherStra = new SwitchStrategy();
+	private ArrayList<IStrategyFac> _facList = new ArrayList<IStrategyFac>();
+	//The timer "ticks" by calling this method every _timeslice milliseconds
+	private Timer _timer = new Timer(_timeSlice, (e) -> _model2ViewAdpt.repaint());
+	private Dispatcher myDispatcher = new Dispatcher("paint"); //centralize and distribute
+	//private Dispatcher switchDispatcher = new Dispatcher("switch"); // a dispatcher just for switch
+	private static Rectangle bounds; //the bounds of the canvas
+
+	private Randomizer random = new Randomizer(); //set up a randomizer to random location, radius, velocity and color
+
+	/**
+	 * Constructor is supplied with an instance of the view adapter.
+	 * @param model2ViewAdpt
+	 */
+	public BallWorldModel(IModel2ViewAdapter model2ViewAdpt) {
+		_model2ViewAdpt = model2ViewAdpt; //initialization
+		_switcherStra.setStrategy(new StraightStrategy());
+	}
+
+	//	/**
+	//	 * get the bounds from the view 
+	//	 * @param bounds
+	//	 */
+	//	public void getBounds(Rectangle bounds) {
+	//		BallWorldModel.bounds = bounds;
+	//	}
+
+	/**
+	 * let the ABall class know the bounds of the canvas
+	 * @return bounds
+	 */
+	public static Rectangle returnBounds() {
+		return bounds;
+	}
+
+	/**
+	 * @param facName  strategy factory to make
+	 */
+	public void makeFac(final String facName) {
+		try {
+			System.out.println("heer");
+			Class.forName("model." + facName + "Strategy");
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		_straFac = new IStrategyFac() {
+			public String toString() {
+				return facName; // although the factories are anonymous, their names are kept in this way (by closure).
+			}
+
+			@Override
+			public IUpdateStrategy makeStrategy() {
+				try {
+					//Object[] args = new Object[] { startLoc, startRadius, startVel, startColor, stra };
+					Object[] args = new Object[] {};
+
+					java.lang.reflect.Constructor<?> cs[] = Class.forName("model." + facName + "Strategy")
+							.getConstructors();
+					java.lang.reflect.Constructor<?> c = null;
+					for (int i = 0; i < cs.length; i++) {
+						//find the constructor that match the signature
+						if (args.length == (cs[i]).getParameterTypes().length) {
+							c = cs[i];
+							break;
+						}
+					}
+					return (IUpdateStrategy) c.newInstance(args); //make a strategy
+					// Call the constructor.   Will throw a null ptr exception if no constructor with the right number of input parameters was found.
+				} catch (Exception ex) {
+					System.err.println("Class " + facName + " failed to load. \nException = \n" + ex);
+					ex.printStackTrace();
+					return null;
+				}
+			}
+		};
+
+		_facList.add(_straFac); // add the new factory to the factory list
+
+		System.out.println("strategyFac made " + _straFac.toString());
+
+		_model2ViewAdpt.facListUpdate(_facList);
+	}
+
+	/**
+	 * add the balls with the given type name, randomize the initial location, radius, velocity and color
+	 * add the balls into dispatcher, so right now it can be notified
+	 * @param selectedFactory strategy factory
+	 * @return the ball made
+	 */
+	public Ball make_ball(IStrategyFac selectedFactory) {
+		int radius = random.randomInt(10, 50);
+		Point startLoc = random.randomLoc(returnBounds(), radius);
+		int startRadius = radius;
+		Point startVel = random.randomVel();
+		Color startColor = random.randomColor();
+
+		Ball newBall = new Ball(startLoc, startRadius, startVel, startColor, IUpdateStrategy.nullStrategy, IPaintStrategy.null_paint);
+		//load strategy
+		newBall.strategyInterface = ((IStrategyFac) selectedFactory).makeStrategy();
+		newBall.setPaintStrategy(new EllipsePaintStrategy());
+		myDispatcher.addObserver(newBall);
+		return newBall;
+	}
+
+	/**
+	 * how to make a switch ball?
+	 * 1make a normal ball
+	 * 2save the strategy of the normal ball for reuse
+	 * 3load the ball with switchStrategy
+	 * 4load the switchStrategy with the strategy we just saved. 
+	 * @param selectedFactory
+	 */
+	public void makeSwitchBall(IStrategyFac selectedFactory) {
+		Ball newBall = make_ball(selectedFactory);
+		//IUpdateStrategy newStra = newBall.strategyInterface;
+		newBall.strategyInterface = _switcherStra;
+		//((SwitchStrategy) newBall.strategyInterface).setStrategy(new StraightStrategy());
+
+		myDispatcher.addObserver(newBall);
+	}
+
+	/**
+	 * @param selectedFactory strategy factory
+	 */
+	public void switchStra(IStrategyFac selectedFactory) {
+
+		_switcherStra.setStrategy(selectedFactory.makeStrategy());
+	}
+
+	/**
+	 * @param dropList1  provides the 1st strategy to combine
+	 * @param dropList2  provides the 2nd strategy to combine
+	 */
+	//the factories are already passed to here, the rest to do is to make a composite factory, and add to the facList
+	public void combineFac(IStrategyFac dropList1, IStrategyFac dropList2) {
+		IStrategyFac fac1 = (IStrategyFac) dropList1;
+		IStrategyFac fac2 = (IStrategyFac) dropList2;
+
+		IStrategyFac combinedFac = new IStrategyFac() {
+			public String toString() {
+				//fac1 and fac2 are free variables
+				return fac1.toString() + "-" + fac2.toString(); // although the factories are anonymous, their names are kept in this way (by closure).
+			}
+
+			@Override
+			public IUpdateStrategy makeStrategy() {
+				// TODO Auto-generated method stub	
+				return new MultiStrategy(fac1.makeStrategy(), fac2.makeStrategy());
+
+			}
+
+		};
+		_facList.add(combinedFac);
+		_model2ViewAdpt.facListUpdate(_facList);
+	}
+
+	/**
+	 * clean all observers from dispatcher, so it could clean the canvas
+	 */
+	public void clean() {
+		myDispatcher.deleteObservers();
+
+	}
+
+	/**
+	 * start the model and make the timer start
+	 */
+	public void start() {
+		_timer.start();
+	}
+
+	/**
+	 * notify all observers to update
+	 * @param g
+	 */
+	public void paint(Graphics g) {
+		bounds = g.getClipBounds(); // the bounds are for make_ball
+		myDispatcher.notifyAll(g); //update the ball (e.g. color), order from timer
+	}
+
+}

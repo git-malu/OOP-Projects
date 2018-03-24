@@ -1,0 +1,119 @@
+package engine.engineModel;
+
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+import provided.compute.ICompute;
+import provided.engine.model.IEngineModel;
+import provided.rmiUtils.RMIUtils;
+import provided.rmiUtils.IRMI_Defs;
+/**
+ * Engine server resides in the EngineModel.
+ * @author malu
+ *
+ */
+public class EngineModel implements IEngineModel{
+	
+	public static final int SERVER_PORT = 2101;
+	public static final int REGISTRY_PORT = 2099;
+	/**
+	 * Reference to the Registry
+	 */
+	private Registry registry;
+	
+	private RMIUtils rmiUtils;
+	private ICompute computeServer = new Compute();
+	private IEngineModel2ViewAdapter engineModel2ViewAdapter;
+	private ICompute computeStub;// keep it, so it won't be taken away by garbage collection.
+	
+	/**
+	 * engine model constructor
+	 * @param adapter model to view adapter
+	 */
+	public EngineModel(IEngineModel2ViewAdapter adapter) {
+		this.engineModel2ViewAdapter = adapter;
+	}
+	
+	/**
+	 * start the engine by starting the RMIUtils, getting the registry, registering the engine server stub, and setting adapters for the engine server.
+	 */
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		try {
+			// Start the RMI system and get the local Registry, making it if necessary.
+			rmiUtils = new RMIUtils(engineModel2ViewAdapter.getDisplayMethod());// initialize right after model starts
+			
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+		}
+		catch(Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+		
+		try {
+
+			// Create a UnicastRemoteObject stub from the RMI Server implementation to be sent to the clients.
+			computeStub = (ICompute) UnicastRemoteObject.exportObject(computeServer, ICompute.BOUND_PORT);
+
+			// Bind the remote object's stub in the registry at the specified
+			// port use rebind instead of bind so the program can be run
+			// multiple times with the same registry
+			registry.rebind(Compute.BOUND_NAME, computeStub);// Bound_Name is "Compute"
+			
+			
+			//set computeServer's remote text adapter which is for returning to client as a stub
+			((Compute)computeServer).setRemoteTVAForClient((e)->{
+				engineModel2ViewAdapter.getDisplayMethod().accept("[From Client]:" + e);
+			});
+			
+			//set computeServer's local text adapter for the received task to use locally.
+			((Compute)computeServer).setLocalTVA((e)->{
+				engineModel2ViewAdapter.getDisplayMethod().accept(e);
+			});	
+			
+			
+			System.err.println("Server ready");
+
+		} catch (Exception e) {
+			System.err.println("Server exception: " + e.toString());
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+		
+	}
+	/**
+	 * stop the engine
+	 */
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		try {
+			registry.unbind(Compute.BOUND_NAME);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println("Unbind Error:" + e);
+			e.printStackTrace();
+		}
+		
+		rmiUtils.stopRMI();
+	}
+	
+	/**
+	 * send message to the client using client view adapter stub
+	 */
+	@Override
+	public void sendMsgToClient(String text) {
+		// TODO Auto-generated method stub
+		try {
+			((Compute)computeServer).clientTaskViewAdapter.append(text);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

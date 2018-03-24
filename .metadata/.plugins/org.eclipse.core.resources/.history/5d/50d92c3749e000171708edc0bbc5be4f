@@ -1,0 +1,36 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* ball shoot command type
+ *  * */
+public class BallShootType implements IUserMessageType {
+	private static final long serialVersionUID = 7685755995510918795L;
+
+	private IUser user;
+
+	public IUser getUser() {
+		return this.user;
+	}
+
+	private Double latitude;
+
+	public Double getLatitude() {
+		return this.latitude;
+	}
+
+	private Double longitude;
+
+	public Double getLongitude() {
+		return this.longitude;
+	}
+
+	public BallShootType(IUser user, Double latitude, Double longitude) {
+		this.user = user;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+}

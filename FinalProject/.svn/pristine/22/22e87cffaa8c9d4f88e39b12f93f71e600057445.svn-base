@@ -1,0 +1,48 @@
+package lm44_xw47.model.dataType;
+
+import java.util.Collection;
+import java.util.Hashtable;
+import java.util.Map;
+
+import common.IChatRoom;
+import common.IUser;
+import common.IUserMessageType;
+
+public class InstallGameType implements IUserMessageType {
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 476449171304650402L;
+	// MapController mapController = new MapController(mapCtrl2MainViewAdapter);
+	
+	private Collection<IUser> users;
+	
+	private Map<IUser, IChatRoom> teamsByUser = new Hashtable<IUser, IChatRoom>();
+	
+	private IUser server;
+	
+	private IUser localUser;
+	
+	public InstallGameType(Collection<IUser> users, Map<IUser, IChatRoom> teamsByUser, IUser server, IUser localUser) {
+		this.users = users;
+		this.teamsByUser = teamsByUser;
+		this.server = server;
+		this.localUser = localUser;
+	}
+	
+	public Collection<IUser> getUsers() {
+		return users;
+	}
+	
+	public Map<IUser, IChatRoom> getTeams() {
+		return teamsByUser;
+	}
+	
+	public IUser getServer() {
+		return server;
+	}
+	
+	public IUser getLocalUser() {
+		return localUser;
+	}
+}

@@ -1,0 +1,105 @@
+package lm44_xw47.chatRoom.model.dataPacketAlgo;
+
+import java.rmi.RemoteException;
+
+import javax.swing.SwingUtilities;
+
+import common.DataPacketCR;
+import common.DataPacketCRAlgoCmd;
+import common.ICRCmd2ModelAdapter;
+import common.IReceiver;
+import common.datatype.IRequestCmdType;
+import common.datatype.chatroom.ICRExceptionStatusType;
+import common.datatype.chatroom.ICRInstallCmdType;
+import common.datatype.chatroom.ICRRejectionStatusType;
+import lm44_xw47.chatRoom.model.dataType.CRExceptionStatusType;
+import lm44_xw47.chatRoom.model.dataType.CRInstallCmdType;
+import lm44_xw47.chatRoom.model.dataType.CRRejectionStatusType;
+import provided.datapacket.DataPacketAlgo;
+
+/**
+ * Following defines the command that handle a request that client request a command.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class CRRequestCmd extends DataPacketCRAlgoCmd<IRequestCmdType>{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -8936256039970059818L;
+	
+	/**
+	 * The adapter this command uses to communicate with local system.
+	 */
+	private transient ICRCmd2ModelAdapter cmd2ModelAdpt;
+	
+	/**
+	 * The visitor which holds this command.
+	 */
+	private transient DataPacketAlgo<String, String> algo;
+	
+	/**
+	 * The receiver stub local system.
+	 */
+	private transient IReceiver receiverStub;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param cmd2ModelAdpt The adapter this command uses to communicate with local system.
+	 * @param algo The visitor which holds this command.
+	 * @param host The receiver stub local system.
+	 */
+	public CRRequestCmd(ICRCmd2ModelAdapter cmd2ModelAdpt, DataPacketAlgo<String, String> algo, IReceiver host) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.algo = algo;
+		this.receiverStub = host;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketCR<IRequestCmdType> host, String... params) {
+		IReceiver sender = host.getSender();
+		index = host.getData().getCmdId();
+		DataPacketCRAlgoCmd<?> cmd = (DataPacketCRAlgoCmd<?>) algo.getCmd(index);
+		if (cmd != null) {
+			try {
+				System.out.println("it is executed");
+				System.out.println(sender);
+				sender.receive(new DataPacketCR<ICRInstallCmdType>(ICRInstallCmdType.class,
+						new CRInstallCmdType(index, cmd), receiverStub));
+				System.out.println("I should sent this command");
+			} catch (RemoteException e) {
+				e.printStackTrace();
+				String exceptionInfo = "An remote exception when sending cmd to the receiver occured.";
+				SwingUtilities.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						cmd2ModelAdpt.appendMsg(exceptionInfo, "Remote Server Exception");;
+					}
+				});
+				try {
+					sender.receive(new DataPacketCR<ICRExceptionStatusType>(ICRExceptionStatusType.class,
+							new CRExceptionStatusType(exceptionInfo, host), receiverStub));
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+			}
+		} else {
+			String rejectionInfo = "The sender doesn't have the cmd to process the following data Type: " + index;
+			try {
+				sender.receive(new DataPacketCR<ICRRejectionStatusType>(ICRRejectionStatusType.class,
+						new CRRejectionStatusType(rejectionInfo, host), receiverStub));
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+	
+}

@@ -1,0 +1,14 @@
+package common.datatype.chatroom;
+
+import common.ICRMessageType;
+import common.DataPacketCRAlgoCmd;
+
+/**
+* Well known data type for installing command in a chat room.
+ * Specify the command type to be DataPacketCRAlgoCmd */
+public interface ICRInstallCmdType extends ICRMessageType {
+	public DataPacketCRAlgoCmd<?> getCmd();
+
+	public Class<?> getCmdId();
+
+}

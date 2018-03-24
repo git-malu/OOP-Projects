@@ -1,0 +1,37 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+public interface IView2ModelAdapterPaint {
+	/**
+	 * The method that tells model to paint on canvas
+	 * @param g
+	 */
+	public void paint(Graphics g);
+	
+//	/**
+//	 * The method that tells model the bounds of the canvas
+//	 * @param bounds the bounds of the canvas 
+//	 */
+//	public void getBounds(Rectangle bounds);
+	
+	
+	
+	/**
+	 * No-op singleton implementation of IView2ModelAdapter
+	 */
+	public static final IView2ModelAdapterPaint NULL_OBJECT = new IView2ModelAdapterPaint() {
+
+//		public void getBounds(Rectangle bounds) {
+//
+//		}
+
+
+		@Override
+		public void paint(Graphics g) {
+			// TODO Auto-generated method stub
+			
+		}
+	};
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="false" key="BUILD_ALL"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="447" key="DIALOG_HEIGHT"/>
+		<item value="558" key="DIALOG_X_ORIGIN"/>
+		<item value="133" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/FinalProjectQWH"/>
+			<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW08FromBao"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/FinalProject/src/FinalProject.uml"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="529" key="DIALOG_HEIGHT"/>
+		<item value="698" key="DIALOG_X_ORIGIN"/>
+		<item value="22" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

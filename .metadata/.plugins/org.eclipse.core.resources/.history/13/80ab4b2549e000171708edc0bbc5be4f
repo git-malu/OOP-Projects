@@ -1,0 +1,59 @@
+package lm44_xw47.clientMap;
+
+import common.IUser;
+import gov.nasa.worldwind.geom.Position;
+
+/**
+* server cmd to client adapter
+ * @author xiaojun
+ *  * */
+public interface ICmd2ClientMapAdapter {
+	public static final ICmd2ClientMapAdapter NULL_OBJECT = new ICmd2ClientMapAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void pickBall(IUser user) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void shootBall(IUser user, Position dest) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void playerDie(IUser user) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void playerMove(IUser user, Position dest) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void gameOver(String gameOverMessage) {
+		}
+
+	};
+
+	public void gameOver(String gameOverMessage);
+
+	public void pickBall(IUser user);
+
+	public void playerDie(IUser user);
+
+	public void shootBall(IUser user, Position dest);
+
+	public void playerMove(IUser user, Position dest);
+
+}

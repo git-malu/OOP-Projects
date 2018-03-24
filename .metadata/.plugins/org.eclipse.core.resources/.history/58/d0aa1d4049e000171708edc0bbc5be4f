@@ -1,0 +1,28 @@
+package lm44_xw47.model.dataType;
+
+import common.datatype.user.IUserExceptionStatusType;
+import common.DataPacketUser;
+
+public class UserExceptionStatusType implements IUserExceptionStatusType {
+	private static final long serialVersionUID = 5012309705577298083L;
+
+	private String failureInfo;
+
+	@Override
+	public String getFailureInfo() {
+		return failureInfo;
+	}
+
+	private DataPacketUser<? extends IUserMessageType> dataPacketUser;
+
+	@Override
+	public DataPacketUser<? extends IUserMessageType> getOriginalData() {
+		return dataPacketUser;
+	}
+
+	public UserExceptionStatusType(String failureInfo, DataPacketUser<? extends IUserMessageType> dataPacketUser) {
+		this.failureInfo = failureInfo;
+		this.dataPacketUser = dataPacketUser;
+	}
+
+}

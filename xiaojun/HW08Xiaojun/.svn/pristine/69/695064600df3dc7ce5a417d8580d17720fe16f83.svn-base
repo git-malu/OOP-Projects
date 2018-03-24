@@ -1,0 +1,136 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.border.TitledBorder;
+import javax.swing.JTextField;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import javax.swing.JComboBox;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class ChatAppFrame<IDroplistItem> extends JFrame {
+
+	/**
+	 * An auto-generated id to remove serializeVersionUID warning. 
+	 */
+	private static final long serialVersionUID = -514611651617279735L;
+	private JPanel contentPane;
+	private final JPanel pnlCtrl = new JPanel();
+	private final JButton btnQuit = new JButton("Quit");
+	private final JPanel pnlConnect = new JPanel();
+	private final JTextField txtIp = new JTextField();
+	private final JButton btnConnect = new JButton("Connect");
+	private final JPanel pnlJoinableChatrooms = new JPanel();
+	private final JComboBox<IDroplistItem> comboBoxSelectableChatrooms = new JComboBox<IDroplistItem>();
+	private final JButton btnJoin = new JButton("Join");
+	private IView2ModelAdapter<IDroplistItem> _view2ModelAdapter;
+	private final JPanel panelJoinedChatrooms = new JPanel();
+	private final JPanel pnlChatrooms = new JPanel();
+	private final JPanel pnlCurChatroom = new JPanel();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					// ChatAppFrame frame = new ChatAppFrame();
+					// frame.start();;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ChatAppFrame(IView2ModelAdapter<IDroplistItem> _view2ModelAdapter) {
+		this._view2ModelAdapter = _view2ModelAdapter;
+		txtIp.setText("ip");
+		txtIp.setToolTipText("The ip address of remote user");
+		txtIp.setColumns(10);
+		init();
+	}
+	
+	/**
+	 * Initialize the chatApp view.
+	 */
+	public void init() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		contentPane.add(pnlCtrl, BorderLayout.NORTH);
+		btnQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdapter.quit();
+			}
+		});
+		btnQuit.setToolTipText("Quit the chatApp");
+		
+		pnlCtrl.add(btnQuit);
+		pnlConnect.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Remote User:", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		
+		pnlCtrl.add(pnlConnect);
+		pnlConnect.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		pnlConnect.add(txtIp);
+		btnConnect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdapter.connect(txtIp.getText());
+			}
+		});
+		
+		pnlConnect.add(btnConnect);
+		pnlJoinableChatrooms.setBorder(new TitledBorder(null, "Chatrooms:", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		
+		pnlCtrl.add(pnlJoinableChatrooms);
+		pnlJoinableChatrooms.setLayout(new GridLayout(0, 1, 0, 0));
+		comboBoxSelectableChatrooms.setToolTipText("Select the chatroom you want to join");
+		
+		pnlJoinableChatrooms.add(comboBoxSelectableChatrooms);
+		btnJoin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IDroplistItem chatroom = comboBoxSelectableChatrooms.getItemAt(comboBoxSelectableChatrooms.getSelectedIndex());
+				if (chatroom == null) {
+					return;
+				}
+				_view2ModelAdapter.join(chatroom);
+			}
+		});
+		btnJoin.setPreferredSize(new Dimension(110, 29));
+		btnJoin.setToolTipText("Join the selected chatroom");
+		
+		pnlJoinableChatrooms.add(btnJoin);
+		
+		contentPane.add(panelJoinedChatrooms, BorderLayout.CENTER);
+		panelJoinedChatrooms.setLayout(new BorderLayout(0, 0));
+		
+		panelJoinedChatrooms.add(pnlChatrooms, BorderLayout.NORTH);
+		
+		panelJoinedChatrooms.add(pnlCurChatroom, BorderLayout.CENTER);
+	}
+	
+	/**
+	 * Start the chatApp GUI.
+	 */
+	public void start() {
+		this.setVisible(true);
+	}
+
+}

@@ -1,0 +1,30 @@
+package model.strategy;
+
+/**
+ * Paint strategy that randomly paints a sheep or a bird as its image
+ * 
+ * @author daiwei.ldw
+ * */
+public class BirdSheepImagePaintStrategy extends UprightImagePaintStrategy {
+  /**
+   * File path for the images
+   * */
+  private static String fileName1 = "../image/humbird.gif";
+  private static String fileName2 = "../image/sheep.gif";
+
+  /**
+   * Constructor that randomly loads the sheep or bird image
+   * */
+  public BirdSheepImagePaintStrategy() {
+    super(Math.random() <=0.5 ? "../image/humbird.gif":"../image/sheep.gif",1);
+    
+  }
+  
+  /**
+   * Present the meaningful content on the GUI
+   * */
+  public String toString() {
+    return "BridSheepImage";
+  }
+
+}

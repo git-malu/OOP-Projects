@@ -1,0 +1,23 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* 
+ * ball pick up command type
+ *  * */
+public class BallPickType implements IUserMessageType {
+	private static final long serialVersionUID = 1109200814632363350L;
+
+	private IUser user;
+
+	public IUser getUser() {
+		return this.user;
+	}
+
+	public BallPickType(IUser user) {
+		this.user = user;
+	}
+
+}

@@ -1,0 +1,58 @@
+package lm44_xw47.model;
+
+import common.IReceiver;
+import common.IUser;
+import java.util.UUID;
+import provided.datapacket.DataPacketAlgo;
+import common.DataPacketCR;
+import java.rmi.RemoteException;
+import common.ICRCmd2ModelAdapter;
+
+/**
+* This is the receiver that receives datapackets
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *  * */
+public class Receiver implements IReceiver {
+	private IUser user;
+	private UUID uuid = UUID.randomUUID();
+	private DataPacketAlgo<String, String> algo;
+	private Map<Class<?>, DataPacketCR<?>> unknownMsgs = new Hashtable<Class<?>, DataPacketCR<?>>();
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		return uuid;
+	}
+
+	@Override
+	public IUser getUserStub() throws RemoteException {
+		return user;
+	}
+
+	public Receiver(IUser userStub) {
+		this.user = userStub;
+	}
+
+	/**
+	* Initialize the receiver. */
+	public void init(ICRCmd2ModelAdapter cmd2ModelAdpt, IReceiver receiverStub) {
+		algo = new DataPacketAlgo<String, String>(new DefaultCmd(receiverStub, cmd2ModelAdpt, unknownMsgs));
+
+		algo.setCmd(IAddReceiverType.class, new AddReceiverCmd(cmd2ModelAdpt));
+		algo.setCmd(ICRExceptionStatusType.class, new CRExceptionStatusCmd(cmd2ModelAdpt));
+		algo.setCmd(ICRInstallCmdType.class, new CRInstallCmd(algo, unknownMsgs, cmd2ModelAdpt));
+		algo.setCmd(ICRRejectionStatusType.class, new CRRejectionStatusCmd(cmd2ModelAdpt));
+		algo.setCmd(IRequestCmdType.class, new CRRequestCmd(cmd2ModelAdpt, algo, receiverStub));
+		algo.setCmd(IRemoveReceiverType.class, new RemoveReceiverCmd(cmd2ModelAdpt));
+		// algo.setCmd(StringMsgCmd.class, new StringMsgCmd(cmd2ModelAdpt));
+		algo.setCmd(StringMsgType.class, new StringMsgCmd(cmd2ModelAdpt));
+	}
+
+	@Override
+	public <T extends ICRMessageType> void receive(DataPacketCR<T> data) throws RemoteException {
+		System.out.println("It should execute command");
+		System.out.println(algo);
+		data.execute(algo);
+		System.out.println("xx");
+	}
+}

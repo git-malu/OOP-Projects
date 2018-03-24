@@ -1,0 +1,18 @@
+package model.strategies;
+
+import model.balls.Ball;
+
+/**
+ * A concrete strategy that makes the ball moves in a straight line.
+ * @author Yuchang Shen and Yibing Zhang
+ *
+ */
+public class StraightStrategy implements IUpdateStrategy {
+
+	@Override
+	public void updateState(Ball ball) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

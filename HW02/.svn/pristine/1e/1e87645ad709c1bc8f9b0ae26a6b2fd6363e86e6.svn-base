@@ -1,0 +1,7 @@
+package ballModel;
+
+public class Model {
+	public void handleViewRequest(String s){
+		System.out.println(s);
+	}
+}

@@ -1,0 +1,128 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.Map;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IChatRoom;
+import common.IUser;
+import common.IUserCmd2ModelAdapter;
+import gov.nasa.worldwind.geom.Position;
+import lm44_xw47.model.Ball;
+import lm44_xw47.model.Player;
+import lm44_xw47.model.PlayerInfo;
+import lm44_xw47.model.dataType.BallShootType;
+import lm44_xw47.model.dataType.PlayerMoveType;
+import lm44_xw47.model.dataType.PlayerPostionType;
+
+/**
+ * command that client sends to server when client right clicks
+ *
+ */
+public class PlayerPositionCmd extends DataPacketUserAlgoCmd<PlayerPostionType>{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -3722936847720982848L;
+	
+	private IUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	private transient Collection<IUser> users;
+	
+	private transient Map<IUser, IChatRoom> teamsByUser;
+	
+	private transient Map<IUser, Player> userPositons;
+	
+	private transient IUser server;
+	
+	private transient Ball ball;
+	
+	public PlayerPositionCmd(Collection<IUser> users, Map<IUser, IChatRoom> teamsByUser, Map<IUser, Player> userPositons, IUser server, Ball ball, IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.users = users;
+		this.teamsByUser = teamsByUser;
+		this.userPositons = userPositons;
+		this.server = server;
+		this.ball = ball;
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<PlayerPostionType> host, String... params) {
+		System.out.println("I should receive a command from client.");
+		IUser sender = host.getSender();
+		IChatRoom team = teamsByUser.get(sender);
+		PlayerPostionType data = host.getData();
+		Position clickPos = Position.fromDegrees(data.getLatitude(), data.getLongitude(), 0);
+		Player info = userPositons.get(sender);
+		if (team.getName().equals("NORTH")) {
+			if (clickPos.latitude.degrees > 0) {
+				info.setDestination(clickPos);
+				playerMove(sender, clickPos);
+			}
+			else {
+				System.out.println(info.getCarrying());
+				if (info.getCarrying()) {
+					System.out.println("I should let the ball fly.");
+					info.setCarrying(false);;
+					ball.setState(Ball.FLY);
+					ball.setDest(clickPos);
+					shootBall(sender, clickPos);
+				}
+			}
+		}
+		else {
+			if (clickPos.latitude.degrees < 0) {
+				info.setDestination(clickPos);
+				playerMove(sender, clickPos);
+			}
+			else {
+				if (info.getCarrying()) {
+					info.setCarrying(false);;
+					ball.setState(Ball.FLY);
+					ball.setDest(clickPos);
+					shootBall(sender, clickPos);
+				}
+			}
+		}
+		
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+	
+	public void playerMove(IUser user, Position dest) {
+		for (IUser player : users) {
+			new Thread() {
+				@Override
+				public void run() {
+					try {
+						player.receive(new DataPacketUser<PlayerMoveType>(PlayerMoveType.class, new PlayerMoveType(user, dest.getLatitude().degrees, dest.getLongitude().degrees), server));
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+		}
+	}
+	
+	public void shootBall(IUser user, Position dest) {
+		for (IUser player : users) {
+			new Thread() {
+				@Override
+				public void run() {
+					try {
+						player.receive(new DataPacketUser<BallShootType>(BallShootType.class, new BallShootType(user, dest.getLatitude().degrees, dest.getLongitude().degrees), server));
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+			}.start();
+		}
+	}
+
+}

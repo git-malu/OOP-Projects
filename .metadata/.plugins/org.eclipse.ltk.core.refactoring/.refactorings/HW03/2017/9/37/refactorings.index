@@ -1,0 +1,16 @@
+1505088200671	Copy compilation unit
+1505492180858	Rename package 'ballModel'
+1505492217062	Rename package 'ballControl'
+1505492702321	Rename type 'IModel2ViewAdapter'
+1505492923133	Rename type 'IView2ModelAdapter'
+1505493114688	Rename field '_view2ModelAdpt'
+1505493290193	Rename method 'getName'
+1505501015992	Delete element
+1505501031940	Rename type 'IModel2ViewAdapterCtrl'
+1505503171327	Rename method 'update'
+1505515532268	Rename type 'BallModel'
+1505516660064	Rename method 'update'
+1505586414551	Rename method 'updatestate'
+1505586431208	Rename method 'updatestate'
+1505597803281	Rename method 'update'
+1505602750058	Rename method 'loadBall'

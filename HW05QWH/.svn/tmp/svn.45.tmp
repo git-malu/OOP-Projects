@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package model.strategies;
+
+/**
+ * @author Thinker Q
+ *
+ */
+public class MultiInteractStrategy implements IInteractionStrategy {
+
+	/**
+	 * 
+	 */
+	public MultiInteractStrategy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/* (non-Javadoc)
+	 * @see model.strategies.IInteractionStrategy#interact()
+	 */
+	@Override
+	public void interact() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

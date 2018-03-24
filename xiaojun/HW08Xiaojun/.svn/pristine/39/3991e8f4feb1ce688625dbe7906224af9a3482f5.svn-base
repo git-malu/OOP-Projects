@@ -1,0 +1,59 @@
+package chatroom.controller;
+
+import chatroom.model.ChatroomModel;
+import chatroom.model.IChatroomModel2ViewAdapter;
+import chatroom.view.ChatroomView;
+import chatroom.view.IChatroomView2ModelAdapter;
+import common.IChatRoom;
+import common.IReceiver;
+
+public class ChatroomController {
+	private ChatroomView chatroomView;
+	private ChatroomModel chatroomModel;
+	
+	public ChatroomController(IReceiver user, IChatRoom chatroom) {
+		chatroomView = new ChatroomView(new IChatroomView2ModelAdapter() {
+
+			@Override
+			public void sendMsg(String msg) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void sendImg() {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void sendFile() {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void leave() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		chatroomModel = new ChatroomModel(chatroom, new IChatroomModel2ViewAdapter() {
+
+			@Override
+			public void sendMsg(String msg) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void addUser() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		}, user);
+	}
+}

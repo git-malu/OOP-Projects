@@ -1,0 +1,79 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.Map;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IChatRoom;
+import common.IUser;
+import common.IUserCmd2ModelAdapter;
+import lm44_xw47.model.User;
+import lm44_xw47.model.dataType.InstallGameType;
+import lm44_xw47.model.dataType.ReadyToPlayType;
+
+/**
+ * command client sends to server when clicks ready to play
+ *
+ */
+public class ReadyToPlayCmd extends DataPacketUserAlgoCmd<ReadyToPlayType>{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 3855853480491340983L;
+	
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	private transient Collection<IUser> users;
+	
+	private transient Collection<IUser> readiedUsers;
+	
+	private transient Map<IUser, IChatRoom> teamsByUser;
+	
+	private transient IUser server;
+	
+	private transient User serverHost;
+	
+	public ReadyToPlayCmd(IUserCmd2ModelAdapter cmd2ModelAdpt, Collection<IUser> users, Collection<IUser> readiedUsers, Map<IUser, IChatRoom> teamsByUser, IUser server, User serverHost) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.users = users;
+		this.readiedUsers = readiedUsers;
+		this.teamsByUser = teamsByUser;
+		this.server = server;
+		this.serverHost = serverHost;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<ReadyToPlayType> host, String... params) {
+		IUser sender = host.getSender();
+		if (! teamsByUser.containsKey(sender)) {
+			return "";
+		}
+		
+		readiedUsers.add(sender);
+		if (readiedUsers.size() == users.size()) {
+			cmd2ModelAdpt.appendMsg("Game Start. \n", "System: ");
+			serverHost.start();
+			for (IUser player : users) {
+				System.out.println("send game.");
+				new Thread() {
+					public void run() {
+						try {
+							player.receive(new DataPacketUser<InstallGameType>(InstallGameType.class, new InstallGameType(users,teamsByUser, server, player), server));
+						} catch (RemoteException e) {
+							e.printStackTrace();
+						}
+					}
+				}.start();
+			}
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+}

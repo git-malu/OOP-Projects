@@ -1,0 +1,38 @@
+package lm44_xw47.chatRoom.model.dataType;
+
+import common.datatype.chatroom.ICRRejectionStatusType;
+import common.DataPacketCR;
+
+/**
+* Following defines the data type of rejection status.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public class CRRejectionStatusType implements ICRRejectionStatusType {
+	private static final long serialVersionUID = -5903827727004035023L;
+
+	private String failureInfo;
+
+	@Override
+	public String getFailureInfo() {
+		return failureInfo;
+	}
+
+	private DataPacketCR<? extends ICRMessageType> dataPacketCR;
+
+	@Override
+	public DataPacketCR<? extends ICRMessageType> getOriginalData() {
+		return dataPacketCR;
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param failureInfo The failure information.
+	 * 	 * @param dataPacketCR The data packet that calls exception. */
+	public CRRejectionStatusType(String failureInfo, DataPacketCR<? extends ICRMessageType> dataPacketCR) {
+		this.failureInfo = failureInfo;
+		this.dataPacketCR = dataPacketCR;
+	}
+
+}

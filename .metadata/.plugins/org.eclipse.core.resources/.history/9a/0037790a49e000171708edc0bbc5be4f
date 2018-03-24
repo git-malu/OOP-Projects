@@ -1,0 +1,13 @@
+package common.datatype.user;
+
+import common.IUserMessageType;
+import common.DataPacketUser;
+
+/**
+* Well known data type for sending failure status */
+public interface IUserFailureStatusType extends IUserMessageType {
+	public DataPacketUser<? extends IUserMessageType> getOriginalData();
+
+	public String getFailureInfo();
+
+}

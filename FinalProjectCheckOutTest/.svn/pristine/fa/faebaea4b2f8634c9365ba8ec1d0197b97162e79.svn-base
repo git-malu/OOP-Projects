@@ -1,0 +1,58 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import lm44_xw47.clientMap.ICmd2ClientMapAdapter;
+import lm44_xw47.model.dataType.StopGameType;
+import provided.mixedData.MixedDataKey;
+
+/**
+ * This command handles stop game dataPacket.
+ * stop game datapacket is sent from server to client when game is over.
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *
+ */
+public class StopGameCmd extends DataPacketUserAlgoCmd<StopGameType> {
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 7845452986830759513L;
+	
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	/**
+	 * gamekey to search for game adapter in the storage dictionary
+	 */
+	private MixedDataKey<ICmd2ClientMapAdapter> gameKey;
+	
+	public StopGameCmd(MixedDataKey<ICmd2ClientMapAdapter> gameKey) {
+		this.gameKey = gameKey;
+	}
+
+	/**
+	 * get client game adapter and display the game over message to client
+	 */
+	@Override
+	public String apply(Class<?> index, DataPacketUser<StopGameType> host, String... params) {
+		new Thread() {
+			@Override
+			public void run() {
+				while(cmd2ModelAdpt.get(gameKey) == null);
+				ICmd2ClientMapAdapter cmd2ClientMapAdpt = cmd2ModelAdpt.get(gameKey);
+				cmd2ClientMapAdpt.gameOver(host.getData().getStopMsg());
+			};
+		}.start();
+		return "";
+	}
+
+	/**
+	 * set adatper
+	 */
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+}

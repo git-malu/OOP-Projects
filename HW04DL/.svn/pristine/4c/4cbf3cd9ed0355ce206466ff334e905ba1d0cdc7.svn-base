@@ -1,0 +1,29 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy
+ * Brownian motion
+ * @author Sean Wang
+ */
+public class Brownian implements IUpdateStrategy {
+
+	/**
+	 * count for ticks
+	 */
+	int count;
+
+	/**
+	 * Count down and reset random count and velocity vector 
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+		count--;
+		if (count <= 0) {
+			count = context.getRdn().randomInt(1, 5);
+			context.randomV();
+		}
+
+	}
+}

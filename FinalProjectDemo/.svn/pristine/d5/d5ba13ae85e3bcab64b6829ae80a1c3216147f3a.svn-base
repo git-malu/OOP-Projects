@@ -1,0 +1,73 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.Map;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IChatRoom;
+import common.IReceiver;
+import common.IUser;
+import common.IUserCmd2ModelAdapter;
+import common.datatype.user.IInvitationType;
+import lm44_xw47.chatRoom.model.ChatRoom;
+import lm44_xw47.model.ILocalUserCmd2ModelAdapter;
+import lm44_xw47.model.dataType.AddTeamGame;
+import lm44_xw47.model.dataType.CreateTeamType;
+import lm44_xw47.model.dataType.InvitationType;
+
+public class CreateTeamCmd extends DataPacketUserAlgoCmd<CreateTeamType>{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 2648942795157816095L;
+	
+	private transient ILocalUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	private transient Collection<IUser> users;
+	
+	private transient Map<String, IChatRoom> teamsByName;
+	
+	private transient IUser server;
+	
+	public CreateTeamCmd(IUserCmd2ModelAdapter cmd2ModelAdpt, Map<String, IChatRoom> teamsByName, Collection<IUser> users, IUser server) {
+		this.cmd2ModelAdpt = (ILocalUserCmd2ModelAdapter)cmd2ModelAdpt;
+		this.teamsByName = teamsByName;
+		this.users = users;
+		this.server = server;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<CreateTeamType> host, String... params) {
+		IChatRoom team = new ChatRoom(host.getData().getTeamname());
+		IReceiver serverReceiver = cmd2ModelAdpt.joinTeam(team);
+		team.addIReceiverStub(serverReceiver);
+		IUser sender = host.getSender();
+		teamsByName.put(host.getData().getTeamname(), team);
+		try {
+			sender.receive(new DataPacketUser<IInvitationType>(IInvitationType.class, new InvitationType(team), server));
+			for (IUser user : users) {
+				new Thread() {
+					@Override
+					public void run() {
+						try {
+							user.receive(new DataPacketUser<AddTeamGame>(AddTeamGame.class, new AddTeamGame(team), server));
+						} catch (RemoteException e) {
+							e.printStackTrace();
+						}
+					}
+				}.start();
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = (ILocalUserCmd2ModelAdapter) cmd2ModelAdpt;
+	}
+	
+}

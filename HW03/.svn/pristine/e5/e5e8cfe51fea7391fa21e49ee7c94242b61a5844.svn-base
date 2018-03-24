@@ -1,0 +1,17 @@
+package model;
+
+public interface IModel2ViewAdapterPaint {
+	/**
+	 * The method that tells the view to update
+	 */
+	public void update();
+
+	/**
+	 * No-op "null" adapter
+	 */
+	public static final IModel2ViewAdapterCtrl NULL_OBJECT = new IModel2ViewAdapterCtrl() {
+		public void update() {
+
+		}
+	};
+}

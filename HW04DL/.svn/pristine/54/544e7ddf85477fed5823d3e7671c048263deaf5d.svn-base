@@ -1,0 +1,32 @@
+package strategy.painting;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+public class BallPaintStrategy extends IPaintStrategy {
+  
+  
+  public void paint(Graphics g, model.Shape context) {
+    this.paintBall(g, context.getColor(), context.getX(), context.getY(), context.getRadius(), context.getX_MAX(), context.getX_MIN(), context.getY_MAX(), context.getY_MIN());
+  }
+  
+  
+  /**
+   * Paint the ball with arbitrary configurations.
+   * All parameters will override(but not overwrite) corresponding fields of the ball
+   * Internal x/y coordinates are mapped to the canvas
+   * @param g     graphics object on which the ball will be painted
+   * @param in_color  the specified color
+   * @param in_x    the specified x coordinate
+   * @param in_y    the specified y coordinate
+   * @param in_radius the specified radius
+   */
+  protected void paintBall(Graphics g, Color in_color, int in_x, int in_y, int in_radius, int x_MAX, int x_MIN, int y_MAX, int y_MIN) {
+    g.setColor(in_color);
+    Rectangle r = g.getClipBounds();
+    g.fillOval(Math.round((r.width - 2 * in_radius) / (float) x_MAX * in_x) - x_MIN,
+        Math.round((r.height - 2 * in_radius) / (float) y_MAX * in_y) - y_MIN, 2 * in_radius, 2 * in_radius);
+  }
+
+}

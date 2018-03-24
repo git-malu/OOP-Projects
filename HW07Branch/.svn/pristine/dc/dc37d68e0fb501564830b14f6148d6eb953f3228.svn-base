@@ -1,0 +1,44 @@
+package engine.engineController;
+
+import java.awt.EventQueue;
+
+import engine.engineModel.EngineModel;
+import engine.engineView.EngineView;
+
+public class EngineController {
+	private EngineModel engineModel; //will be initialized by constructor
+	private EngineView engineView; //will be initialized by constructor
+	
+	/**
+	 * constructor who initializes engineModel & engineView
+	 */
+	public EngineController() {
+		engineModel = new EngineModel();
+		engineView = new EngineView();
+	}
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					EngineController engineController = new EngineController();
+					engineController.start();
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * start the controller
+	 */
+	public void start() {
+		this.engineModel.start();
+		this.engineView.start();
+	}
+}

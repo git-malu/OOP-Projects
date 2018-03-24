@@ -1,0 +1,53 @@
+package util;
+
+import java.awt.Graphics;
+import java.awt.Paint;
+import java.awt.Point;
+
+import model.Ball;
+import model.BallWorldModel;
+
+public class BallCmd {
+	public Graphics g;
+	public Graphics getG() {
+		return g;
+	}
+	public void setG(Graphics g) {
+		this.g = g;
+	};
+	
+	public BallCmd() {
+		// TODO Auto-generated constructor stub
+	}
+	public void move(Ball ball) {
+		ball.getLocation().translate(ball.getVelocity().x, ball.getVelocity().y);
+	}
+
+	/**
+	 * bounce the ball when it hit the bounds, change its speed direction and location
+	 */
+	public void bounce(Ball ball) {
+		Point location = ball.getLocation();
+		Point velocity = ball.getVelocity();
+		int radius = ball.getRadius();
+		
+		if (location.x < 0 || location.x + 2 * radius > BallWorldModel.returnBounds().width) {
+			velocity.x = -velocity.x;
+			location.x = location.x + 2 * velocity.x;
+		}
+		if (location.y < 0 || location.y + 2 * radius > BallWorldModel.returnBounds().height) {
+			velocity.y = -velocity.y;
+			location.y = location.y + 2 * velocity.y;
+		}
+	}
+	
+	public void paint(Ball ball){
+		g.setColor(ball.getColor());
+		ball.getPaintStrategy().paint(g, ball);
+		//_paintStrategy.paint(g, this);
+	}
+	
+	public void updateState(Ball ball) {
+		ball.getStraInterface().updateState(ball);
+	}
+}

@@ -1,0 +1,84 @@
+HW07 README.txt
+------------------------------------------------
+This is a java GUI application to connect, send message and tasks between client and server.
+
+
+INSTRUCTION
+------------------------------------------------
+CLIENT:
+1. Start the client GUI by running the ClientController.java file.
+
+2. Enter the desired IP address of the remote server. The default value is your own IP address
+
+3. Click the Connect button to connect with the remote server
+
+4. Enter the message in the "Send msg to host" area, hit Enter to send the message to remote server
+
+5. Enter the qualified task name in Add Task field, the options including:
+	5.1 client.clientModel.task.PalinNum
+		Check a positive number is a palindrome or not.
+		Example:
+		1, 12321, 55 are palindrome numbers.
+		78, 9821, 32 are not palindrome numbers.
+	
+	5.2 client.clientModel.task.PerfectSqr
+		Compute Perfect Square to a given number of digits
+		Example:
+		Given n = 12, return 3 because 12 = 4 + 4 + 4
+		Given n = 13, return 2 because 13 = 4 + 9
+	
+	
+	5.3 client.clientModel.task.ReverseVowels
+		Takes a string as input and reverse only the vowels of a string.
+		Example:
+		Given s = "hello", return "holle"
+	
+	5.4 client.clientModel.task.ReverseWordsInString
+		Given an input string, reverse the string word by word.
+		Example:
+		Given s = "red yellow blue", return "blue yellow red
+	
+	5.5 client.clientModel.task.Sqroot
+		Task to compute and return the square root of the value.
+
+6. "Add to lists" button
+	A task name you entered in the text field will be added to the drop lists.
+
+7. "Run Task" button
+	A task with selected type which in the upper drop list can be ran.
+	
+8. "Combine Tasks" button
+	User can combine the two selected tasks in upper and lower drop lists to a new task type.
+	The new task contains all the feature from two original ones.    	 	
+
+9. "Run Parameter"
+	User can enter required parameter here to make the desired task.
+
+10. Click the Quit button to exit the application.
+
+SEVER:
+1. Start the server GUI by running the ServerController.java file. 
+
+2. Enter the message in the "Send msg to client" area, hit Enter to send the message to remote client
+
+3. Messages and tasks sent by the client will be displayed in the display area.
+
+4. Click the Quit button to exit the application.
+
+
+TEST Group
+------------------------------------------------
+1. Team 08  fl17 gp27
+2. Team 09  qg4  yz104
+3. Team 10  qz18 sd67
+4. Team 16  hz56 xw47
+5. Team 19  zw44 yl128
+6. Team 20  sw12 sq9
+7. Team 22  lz50  zy24
+8. Team 23  ys54 yw29
+9. Team 24  rh41 my26
+10.Team 26  yw63 jo22
+
+AUTHORS
+------------------------------------------------
+Yue Jiang (yj25) and Lu Ma (lm44)

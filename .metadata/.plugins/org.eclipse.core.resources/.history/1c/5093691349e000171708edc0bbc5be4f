@@ -1,0 +1,95 @@
+package lm44_xw47.chatRoom.model;
+
+import common.IChatRoom;
+import java.util.UUID;
+import java.util.Set;
+import common.IReceiver;
+import java.util.Collection;
+import common.DataPacketCR;
+
+/**
+* Following defines a class for chat room.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public class ChatRoom implements IChatRoom {
+	private static final long serialVersionUID = -8318129351498068920L;
+
+	private String name = "";
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	private UUID uuid = UUID.randomUUID();
+	private Set<IReceiver> receivers = new HashSet<IReceiver>();
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param name The name of this chatroom. */
+	public ChatRoom(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public UUID getUUID() {
+		return uuid;
+	}
+
+	@Override
+	public Collection<IReceiver> getIReceiverStubs() {
+		return receivers;
+	}
+
+	@Override
+	public String toString() {
+		return getName();
+	}
+
+	@Override
+	public int hashCode() {
+		return uuid.hashCode();
+	}
+
+	@Override
+	public <T extends ICRMessageType> void sendPacket(DataPacketCR<T> data) {
+		System.out.println("size: " + receivers.size());
+		Thread newThread;
+		for (IReceiver receiver : receivers) {
+			newThread = new Thread() {
+				public void run() {
+					try {
+						System.out.println("Send image");
+						receiver.receive(data);
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			newThread.run();
+		}
+	}
+
+	@Override
+	public boolean addIReceiverStub(IReceiver receiver) {
+		return receivers.add(receiver);
+	}
+
+	@Override
+	public boolean removeIReceiverStub(IReceiver receiver) {
+		return receivers.remove(receiver);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (null != o) {
+			if (o instanceof IChatRoom) {
+				return uuid.equals(((IChatRoom) o).getUUID());
+			}
+		}
+
+		return false;
+	}
+}

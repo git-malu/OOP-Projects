@@ -1,0 +1,38 @@
+package lm44_xw47.chatRoom.model.dataType;
+
+import common.IReceiver;
+import common.datatype.chatroom.IRemoveReceiverType;
+
+/**
+ * Following defines the data type about removing receiver.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class RemoveReceiverType implements IRemoveReceiverType {
+
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -3452123115236086229L;
+
+	/**
+	 * The receiver being removed from the chat room.
+	 */
+	private IReceiver receiver;
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param receiver The receiver being removed from the chat room.
+	 */
+	public RemoveReceiverType(IReceiver receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public IReceiver getReceiverStub() {
+		return receiver;
+	}
+
+}

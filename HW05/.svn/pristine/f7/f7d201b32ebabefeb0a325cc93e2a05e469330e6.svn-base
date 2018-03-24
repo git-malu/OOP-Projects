@@ -1,0 +1,21 @@
+package model.strategies;
+
+import model.balls.Ball;
+
+/**
+ * A concrete strategy that makes the ball moves in a curve pattern.
+ * @author Yuchang Shen and Yibing Zhang
+ *
+ */
+public class CurveStrategy implements IUpdateStrategy {
+
+	@Override
+	public void updateState(Ball ball) {
+		// TODO Auto-generated method stub
+		int Vxold = ball.getVel().x;
+		int Vyold = ball.getVel().y;
+		ball.setVel((int) Math.round((Math.cos(Math.PI / 20) * Vxold - Math.sin(Math.PI / 20) * Vyold)),
+				(int) Math.round(Math.cos(Math.PI / 20) * Vyold + Math.sin(Math.PI / 20) * Vxold));
+	}
+
+}

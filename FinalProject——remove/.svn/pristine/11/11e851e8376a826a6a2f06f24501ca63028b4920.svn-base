@@ -1,0 +1,34 @@
+package lm44_xw47.model;
+
+import java.rmi.registry.Registry;
+
+import provided.rmiUtils.IRMI_Defs;
+import provided.rmiUtils.RMIUtils;
+
+public class MainModel {
+	private IMainModel2ViewAdapter _mainModel2ViewAdapter;
+	private RMIUtils rmiUtils;
+	private Registry registry;
+	
+	public MainModel(IMainModel2ViewAdapter adapter) {
+		_mainModel2ViewAdapter = adapter;
+	}
+	public void start() {
+		try {
+			// Start the RMI system and get the local Registry, making it if necessary.
+			rmiUtils = new RMIUtils((String str)->{
+				_mainModel2ViewAdapter.appendLog(str);
+			});
+			
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+		}
+		catch(Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+	}
+	
+	
+}

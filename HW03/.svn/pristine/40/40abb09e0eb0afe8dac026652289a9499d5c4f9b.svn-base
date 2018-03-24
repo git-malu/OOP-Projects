@@ -1,0 +1,256 @@
+package view;
+
+import java.awt.*;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import model.IStrategyFac;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JList;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+
+/**
+ * class MainFrame, container，Used to add other components
+ * @author guoqz
+ */
+public class MainFrame<TDropListItem> extends JFrame {
+
+	/**
+	 * Maintain version compatibility
+	 */
+	private static final long serialVersionUID = -6787198012587971808L;
+	private JPanel contentPane; //contain all components
+	private Rectangle bounds; //bounds of canvas
+	private final JPanel north_panel = new JPanel(); //edit text here
+	private final JButton make_ball = new JButton("Make Ball"); //press the button will make a new ball with type on text
+	private final JButton clean_balls = new JButton("Clean Balls"); //press the button will clean all balls on canvas
+	// The view adapter is initialized to a no-op to insure that system always has well-defined behavior
+	private IView2ModelAdapterCtrl<TDropListItem> _view2ModelAdptCtrl = (IView2ModelAdapterCtrl<TDropListItem>) IView2ModelAdapterCtrl.NULL_OBJECT;
+	private IView2ModelAdapterPaint _view2ModelAdptPaint = IView2ModelAdapterPaint.NULL_OBJECT;
+
+	// Create a special panel with an overridden paintComponent method.
+	private final JPanel center_panel = new JPanel() {
+		/**
+		 * Maintain version compatibility
+		 */
+		private static final long serialVersionUID = -872444218515942499L;
+
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			//bounds = g.getClipBounds();
+
+			//_view2ModelAdptPaint.getBounds(bounds);
+			_view2ModelAdptPaint.paint(g);// give the g to model, let model do the painting on g.
+		}
+	};
+	private final JComboBox<TDropListItem> dropList2 = new JComboBox<TDropListItem>();
+	private final JComboBox<TDropListItem> dropList1 = new JComboBox<TDropListItem>();
+	private final JPanel panel = new JPanel();
+	private final JPanel panel_1 = new JPanel();
+	private final JPanel panel_2 = new JPanel();
+	private final JButton makeFacButt = new JButton("Add to list");
+	private final JButton btnCombine = new JButton("Combine");
+	private final JPanel panel_3 = new JPanel();
+	private final JButton switchStra = new JButton("switch strategy");
+	private final JButton btnMakeswitcher = new JButton("MakeSwitcher");
+	private final JComboBox<String> facNameList = new JComboBox<String>();
+	private final JLabel lblSelected = new JLabel("to be made");
+	private final JLabel lblToBeCombined = new JLabel("to be combined");
+
+	/**
+	 * Constructor is supplied with an instance of the model adapter.
+	 * @param view2ModelAdpt
+	 */
+	public MainFrame(IView2ModelAdapterCtrl view2ModelAdptCtrl, IView2ModelAdapterPaint view2ModelAdptPaint) {
+		_view2ModelAdptCtrl = view2ModelAdptCtrl;
+		_view2ModelAdptPaint = view2ModelAdptPaint;
+		initGUI();
+	}
+
+	/**
+	 * start
+	 */
+	public void start() {
+		setVisible(true);
+
+	}
+
+	/**
+	 * Updates the view by repainting the canvas
+	 */
+	public void viewRepaint() {
+		center_panel.repaint();
+	}
+
+	//an ArrayList of factories is passed here
+	public void dropListUpdate(ArrayList<TDropListItem> list) {
+		dropList1.removeAllItems();
+		dropList2.removeAllItems();
+		//ArrayList<TDropListItem> facList = (ArrayList) list;
+		for (TDropListItem item : list) {
+			dropList1.addItem(item);
+			dropList2.addItem(item);
+		}
+	}
+
+	//initialize GUI, add all sorts of components
+	private void initGUI() {
+		//auto generated code
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 608, 617);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+
+		north_panel.setBounds(5, 5, 440, 87);
+
+		//not auto generated
+		north_panel.setBackground(Color.GREEN);
+		north_panel.setToolTipText("put the button and textfield here ");
+
+		//auto generated
+		contentPane.add(north_panel, BorderLayout.NORTH);
+		north_panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+
+		north_panel.add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+		facNameList.setToolTipText("select a  factory name");
+
+		panel_2.add(facNameList);
+		facNameList.addItem("Color");
+		facNameList.addItem("Curve");
+		facNameList.addItem("Drunken");
+		facNameList.addItem("Swim");
+		facNameList.addItem("Breathing");
+		facNameList.addItem("Straight");
+		// the "add to list" button; notify model to make a factory
+		makeFacButt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdptCtrl.makeFac((String) facNameList.getSelectedItem());
+				//System.out.println(facName.getText());
+			}
+		});
+
+		panel_2.add(makeFacButt);
+
+		north_panel.add(panel);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+
+		north_panel.add(panel_1);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[] { 0, 103, 0 };
+		gbl_panel_1.rowHeights = new int[] { 29, 29, 29, 29, 0 };
+		gbl_panel_1.columnWeights = new double[] { 0.0, 0.0, Double.MIN_VALUE };
+		gbl_panel_1.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		panel_1.setLayout(gbl_panel_1);
+		GridBagConstraints gbc_make_ball = new GridBagConstraints();
+		gbc_make_ball.fill = GridBagConstraints.BOTH;
+		gbc_make_ball.insets = new Insets(0, 0, 5, 0);
+		gbc_make_ball.gridx = 1;
+		gbc_make_ball.gridy = 0;
+		panel_1.add(make_ball, gbc_make_ball);
+		make_ball.setToolTipText("make a ball");
+
+		//button set up
+		make_ball.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				//String temp = ball_shape.getText().toString();
+				_view2ModelAdptCtrl.makeBall((TDropListItem) dropList1.getSelectedItem());
+
+			}
+		});
+
+		GridBagConstraints gbc_lblSelected = new GridBagConstraints();
+		gbc_lblSelected.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSelected.anchor = GridBagConstraints.EAST;
+		gbc_lblSelected.gridx = 0;
+		gbc_lblSelected.gridy = 1;
+		panel_1.add(lblSelected, gbc_lblSelected);
+		dropList1.setToolTipText("selected factory");
+
+		//		dropList1.addActionListener(new ActionListener() {
+		//			public void actionPerformed(ActionEvent e) {
+		//				_view2ModelAdptCtrl.selectFac(dropList1.getSelectedItem());
+		//			}
+		//		});
+
+		GridBagConstraints gbc_dropList1 = new GridBagConstraints();
+		gbc_dropList1.fill = GridBagConstraints.BOTH;
+		gbc_dropList1.insets = new Insets(0, 0, 5, 0);
+		gbc_dropList1.gridx = 1;
+		gbc_dropList1.gridy = 1;
+		panel_1.add(dropList1, gbc_dropList1);
+
+		GridBagConstraints gbc_lblToBeCombined = new GridBagConstraints();
+		gbc_lblToBeCombined.insets = new Insets(0, 0, 5, 5);
+		gbc_lblToBeCombined.anchor = GridBagConstraints.EAST;
+		gbc_lblToBeCombined.gridx = 0;
+		gbc_lblToBeCombined.gridy = 2;
+		panel_1.add(lblToBeCombined, gbc_lblToBeCombined);
+		dropList2.setToolTipText("factory to be combined");
+		GridBagConstraints gbc_dropList2 = new GridBagConstraints();
+		gbc_dropList2.fill = GridBagConstraints.BOTH;
+		gbc_dropList2.insets = new Insets(0, 0, 5, 0);
+		gbc_dropList2.gridx = 1;
+		gbc_dropList2.gridy = 2;
+		panel_1.add(dropList2, gbc_dropList2);
+		btnCombine.setToolTipText("combine 2 items in the 2 droplists above");
+		btnCombine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdptCtrl.combineFac(
+						(TDropListItem) dropList1.getSelectedItem(),
+						(TDropListItem) dropList2.getSelectedItem());
+			}
+		});
+
+		GridBagConstraints gbc_btnCombine = new GridBagConstraints();
+		gbc_btnCombine.fill = GridBagConstraints.BOTH;
+		gbc_btnCombine.gridx = 1;
+		gbc_btnCombine.gridy = 3;
+		panel_1.add(btnCombine, gbc_btnCombine);
+
+		north_panel.add(panel_3);
+		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
+		btnMakeswitcher.setToolTipText("make a switchBall");
+		btnMakeswitcher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdptCtrl.makeSwitchBall((TDropListItem) dropList1.getSelectedItem());
+			}
+		});
+
+		panel_3.add(btnMakeswitcher);
+		switchStra.setToolTipText("switch the strategy of switchBall");
+		switchStra.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdptCtrl.switchStra((TDropListItem) dropList1.getSelectedItem());
+			}
+		});
+
+		panel_3.add(switchStra);
+		panel_3.add(clean_balls);
+		clean_balls.setToolTipText("clean all the balls on screen");
+
+		clean_balls.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_view2ModelAdptCtrl.clean();
+			}
+		});
+		center_panel.setBounds(5, 92, 440, 181);
+		center_panel.setToolTipText("paint ball here");
+
+		contentPane.add(center_panel);
+
+		center_panel.setBackground(Color.BLACK);
+	}
+}

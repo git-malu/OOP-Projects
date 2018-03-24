@@ -1,0 +1,68 @@
+package lm44_xw47.chatRoom.model;
+
+import lm44_xw47.clientMap.IClientMapCtrl2MainViewAdapter;
+import common.IUser;
+import common.IChatRoom;
+import lm44_xw47.clientMap.ClientMapView;
+
+/**
+* Following defines the adapter that commands uses to communicate with lobby model and view..
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public interface ICmd2LobbyAdapter extends IClientMapCtrl2MainViewAdapter {
+	public static final ICmd2LobbyAdapter NULL_OBJECT = new ICmd2LobbyAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addUser(IUser user) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addTeam(IChatRoom team) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void removeUser(IUser user) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void removeTeam(IChatRoom team) {
+		}
+
+		/**
+		 * 
+		 */
+		public void addMapView(ClientMapView<Place> mapView) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addMapView2MainView(ClientMapView<Place> mapView) {
+		}
+
+	};
+
+	public void addUser(IUser user);
+
+	public void addTeam(IChatRoom team);
+
+	public void removeUser(IUser user);
+
+	public void removeTeam(IChatRoom team);
+
+	public void addMapView(ClientMapView<Place> mapView);
+
+}

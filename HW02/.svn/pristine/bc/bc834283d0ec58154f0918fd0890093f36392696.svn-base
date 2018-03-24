@@ -1,0 +1,44 @@
+package ballModel;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Random;
+
+public class RadiusBall extends Ball implements Observer{
+	double breath_time = 0;
+	public RadiusBall() {
+		super();
+	}
+	public RadiusBall(Color col, int r, double[] locat){
+		//random
+		radius = r;
+		color = col;
+		location = locat;
+//		int radius = rand.nextInt(50); 
+//		int breath_time = 0;
+	}
+	
+	public void moving() {
+		//location[0] = location[0]+velocity[0];
+		//location[1] = location[1]+velocity[1];
+		double newCenterX = location[0]+radius+velocity[0];
+		double newCenterY = location[1]+radius+velocity[1];
+		
+		breath_time = breath_time+0.5;
+		radius=(int)  ((Math.sin(breath_time)+2)*10);
+		
+		//System.out.println(Math.sin(breath_time+0.1));
+		location[0] = newCenterX - radius;
+		location[1] = newCenterY - radius;
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		moving();
+		bouncing();
+		
+	}
+}

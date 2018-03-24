@@ -1,0 +1,25 @@
+package view;
+
+import java.awt.Graphics;
+
+/**
+ * The model adapter for the view to communicate with rest of the world about painting
+ * @author Gao Pan
+ *
+ */
+public interface IModelPaint {
+	/**
+	 * Paint all the ball in the model
+	 * @param g	graphics object on which the balls to be painted
+	 */
+	void paintAll(Graphics g);
+
+	/**
+	 * A null adapter
+	 */
+	IModelPaint null_ADAPTER = new IModelPaint() {
+		@Override
+		public void paintAll(Graphics g) {
+		}
+	};
+}

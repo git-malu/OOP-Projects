@@ -1,0 +1,13 @@
+package common.datatype.chatroom;
+
+import common.ICRMessageType;
+import common.DataPacketCR;
+
+/**
+* Well known data type for sending failure status */
+public interface ICRFailureStatusType extends ICRMessageType {
+	public DataPacketCR<? extends ICRMessageType> getOriginalData();
+
+	public String getFailureInfo();
+
+}

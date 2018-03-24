@@ -1,0 +1,35 @@
+package model;
+
+import java.awt.Component;
+
+/**
+ * The view adapter for the model to communicate with rest of the world
+ * @author Gao Pan
+ *
+ */
+public interface IViewAdapter {
+	/**
+	 * Extract canvas from view
+	 * @return	The canvas to paint
+	 */
+	public Component getCanvas();
+
+	/**
+	 * Notify the view to update
+	 */
+	public void updateView();
+
+	/**
+	 * A null adapter
+	 */
+	IViewAdapter null_ADAPTER = new IViewAdapter() {
+		@Override
+		public Component getCanvas() {
+			return null;
+		}
+
+		@Override
+		public void updateView() {
+		}
+	};
+}

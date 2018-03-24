@@ -1,0 +1,23 @@
+package lm44_xw47.model.dataType;
+
+import common.datatype.user.IQuitType;
+import common.IUser;
+
+/**
+* quit type
+ *  * */
+public class QuitType implements IQuitType {
+	private static final long serialVersionUID = -2647821047454837301L;
+
+	private IUser userStub;
+
+	@Override
+	public IUser getUserStub() {
+		return userStub;
+	}
+
+	public QuitType(IUser userStub) {
+		this.userStub = userStub;
+	}
+
+}

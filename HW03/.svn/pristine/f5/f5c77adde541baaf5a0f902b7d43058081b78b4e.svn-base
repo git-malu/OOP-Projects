@@ -1,0 +1,33 @@
+package model;
+
+import java.awt.Point;
+
+public class SwimStrategy extends StraightStrategy implements IUpdateStrategy {
+	private double breath_time = 0;
+	Randomizer rand = Randomizer.getInstance();
+	Point v = rand.randomVel();
+
+	@Override
+	public void strategy(ABall ball) {
+		updateState(ball);
+		move(ball);
+		bounce(ball);
+	}
+
+	public void updateState(ABall ball) {
+
+		breath_time = (breath_time + 0.15) % (Math.PI * 0.5);
+		if (ball.velocity.x < 0) {
+			ball.velocity.x = -(int) ((Math.sin(breath_time) * v.x + 2));
+		} else {
+			ball.velocity.x = (int) (Math.sin(breath_time) * v.x + 2);
+		}
+
+		if (ball.velocity.y < 0) {
+			ball.velocity.y = -(int) ((Math.sin(breath_time) * v.y + 2));
+		} else {
+			ball.velocity.y = (int) (Math.sin(breath_time) * v.y + 2);
+		}
+
+	}
+}

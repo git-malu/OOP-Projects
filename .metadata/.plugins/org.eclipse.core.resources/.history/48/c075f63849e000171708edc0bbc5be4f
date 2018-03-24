@@ -1,0 +1,39 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import java.util.Collection;
+import common.IUser;
+import common.IChatRoom;
+
+/**
+* 
+ * install lobby command type
+ *  * */
+public class InstallLobbyType implements IUserMessageType {
+	private static final long serialVersionUID = -5974490432578562080L;
+
+	private Collection<IUser> users;
+
+	public Collection<IUser> getUsers() {
+		return this.users;
+	}
+
+	private Collection<IChatRoom> teams;
+
+	public Collection<IChatRoom> getTeams() {
+		return this.teams;
+	}
+
+	private IUser localUser;
+
+	public IUser getLocalUser() {
+		return this.localUser;
+	}
+
+	public InstallLobbyType(Collection<IUser> users, Collection<IChatRoom> teams, IUser localUser) {
+		this.users = users;
+		this.teams = teams;
+		this.localUser = localUser;
+	}
+
+}

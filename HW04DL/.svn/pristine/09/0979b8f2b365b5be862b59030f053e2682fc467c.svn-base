@@ -1,0 +1,17 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * Strategy interface representing the ability to update status
+ * @author Gao Pan
+ *
+ */
+public interface IUpdateStrategy {
+
+	/**
+	 * Update status in given context
+	 * @param context The ball to be updated
+	 */
+	abstract void updateStatus(Shape context);
+}

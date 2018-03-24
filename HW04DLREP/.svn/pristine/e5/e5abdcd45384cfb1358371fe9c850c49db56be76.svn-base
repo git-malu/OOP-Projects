@@ -1,0 +1,15 @@
+package model.strategy;
+
+import util.Randomizer;
+
+public class BirdImagePaintStrategy extends ImagePaintStrategy {
+  private static String fileName = "../image/humbird.gif";
+  public BirdImagePaintStrategy() {
+    super(fileName, Randomizer.getInstance().randomDouble()+0.5);
+  }
+  
+  public String toString() {
+    return "Brid";
+  }
+
+}

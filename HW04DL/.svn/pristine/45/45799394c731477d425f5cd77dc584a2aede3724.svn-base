@@ -1,0 +1,54 @@
+package view;
+
+/**
+ * The model adapter for the view to communicate with rest of the world about model control
+ * @author Gao Pan
+ *
+ */
+public interface IModelControl<StrItem, PaintItem> {
+	/**
+	 * Create a new ball in model
+	 * @param str the strategy for the new ball
+	 */
+	public void addBall(StrItem str, PaintItem paintMethod);
+
+	/**
+	 * Create a switcher in model
+	 */
+	public void addSwitcher();
+
+	/**
+	 * Set strategy for switcher(s)
+	 * @param str the strategy to be set
+	 */
+	public void setSwitchStr(StrItem str);
+
+	/**
+	 * Add a strategy into the list by its name
+	 * @param strName the name of strategy
+	 * @return the new strategy(factory)
+	 */
+	public StrItem addStgyStr(String strName);
+	
+	/**
+   * Add a strategy into the list by its name
+   * @param strName the name of strategy
+   * @return the new strategy(factory)
+   */
+	
+	public PaintItem addPaintStr(String strName);
+
+	/**
+	 * Combine two strategies
+	 * @param str1 the first strategy
+	 * @param str2 the second strategy
+	 * @return the result strategy of combination
+	 */
+	public StrItem combineStr(StrItem str1, StrItem str2);
+
+	/**
+	 * Clear all the balls in the model
+	 */
+	public void resetAll();
+
+}

@@ -1,0 +1,14 @@
+package model.strategy;
+
+import util.Randomizer;
+
+public class TearsImagePaintStrategy extends UprightImagePaintStrategy {
+  private static String fileName = "../image/tears.png";
+  public TearsImagePaintStrategy() {
+    super(fileName, Randomizer.getInstance().randomDouble()+0.5);
+  }
+  
+  public String toString() {
+    return "TearsImage";
+  }
+}

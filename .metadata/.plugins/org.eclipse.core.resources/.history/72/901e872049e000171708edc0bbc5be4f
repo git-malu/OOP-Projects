@@ -1,0 +1,101 @@
+package lm44_xw47.chatRoom.view;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+/**
+* Following defines the view for the chat room.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public class ChatRoomView {
+	private final JPanel pnlContent = new JPanel();
+	private final JScrollPane scrollPaneMsg = new JScrollPane();
+	private final JTextArea textAreaMsg = new JTextArea();
+	private final JPanel pnlCtrl = new JPanel();
+	private final JTextField textFieldMsg = new JTextField();
+	private final JButton btnSend = new JButton("Send");
+	private final JButton btnLeave = new JButton("Leave");
+	private final JPanel panelOther = new JPanel();
+
+	public JPanel getPanelOther() {
+		return panelOther;
+	}
+
+	private IChatRoomView2ModelAdapter chatRoomView2ModelAdapter = IChatRoomView2ModelAdapter.NULL_OBJECT;
+
+	/**
+	* Initialize. */
+	public void init() {
+		pnlContent.setLayout(new BorderLayout(0, 0));
+
+		pnlContent.add(panelOther, BorderLayout.NORTH);
+
+		pnlContent.add(scrollPaneMsg, BorderLayout.CENTER);
+
+		scrollPaneMsg.setViewportView(textAreaMsg);
+
+		pnlContent.add(pnlCtrl, BorderLayout.SOUTH);
+
+		textFieldMsg.setToolTipText("Write your message here.");
+		textFieldMsg.setText("Say something.");
+		textFieldMsg.setColumns(10);
+		pnlCtrl.add(textFieldMsg);
+		btnSend.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String msg = textFieldMsg.getText();
+				if (msg == null || msg.length() == 0) {
+					return;
+				}
+
+				chatRoomView2ModelAdapter.sendMsg(msg);
+			}
+		});
+		btnSend.setToolTipText("Click button to send message.");
+
+		pnlCtrl.add(btnSend);
+		btnLeave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chatRoomView2ModelAdapter.leave();
+			}
+		});
+		btnLeave.setToolTipText("Leave this team.");
+
+		pnlCtrl.add(btnLeave);
+	}
+
+	/**
+	* Add message to view.
+	 * 	 * 
+	 * 	 * @param msg The message being added to view. */
+	public void appendMsg(String msg) {
+		textAreaMsg.append(msg);
+	}
+
+	/**
+	* Set the view visible. */
+	public void start() {
+		pnlContent.setVisible(true);
+	}
+
+	/**
+	* Get the content panel.
+	 * 	 * 
+	 * 	 * @return The content panel. */
+	public JPanel getContentPnl() {
+		return pnlContent;
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param chatRoomView2ModelAdapter The adapter this chat room view to communicate with chat room model. */
+	public ChatRoomView(IChatRoomView2ModelAdapter chatRoomView2ModelAdapter) {
+		this.chatRoomView2ModelAdapter = chatRoomView2ModelAdapter;
+		init();
+	}
+
+}

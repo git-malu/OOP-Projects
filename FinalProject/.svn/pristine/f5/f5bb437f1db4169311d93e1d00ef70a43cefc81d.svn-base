@@ -1,0 +1,9 @@
+Progress:
+map display function is implemented.
+connect function is implemented.
+message sending is not implemented yet.
+
+how to use:
+upon start please input your username when prompted
+click the "make map" button, a new tab will be created next to the "log" tab.
+click the newly created tab to see the WWJ map.

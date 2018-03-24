@@ -1,0 +1,236 @@
+package model;
+
+import java.awt.Graphics;
+import javax.swing.Timer;
+
+import strategy.movement.IStrategyFac;
+import strategy.movement.IUpdateStrategy;
+import strategy.painting.IPaintStrategy;
+import strategy.painting.IShapeFactory;
+import util.Dispatcher;
+
+/**
+ * The model representing data part in this system including balls if any
+ * @author Gao Pan
+ *
+ */
+public class BallModel {
+
+	/**
+	 * Qualifier for concrete strategy class
+	 */
+	private static final String PREFIX = "strategy.movement.";
+	private static final String PREFIX_Paint = "strategy.painting.";
+
+	/**
+	 * A hub(observable) linking concrete balls(observers) and informing them of updating
+	 */
+	private Dispatcher ballHub = new Dispatcher();
+
+	/**
+	 * A wrapper holding concrete strategy for switchers
+	 */
+	private SwitcherStr switchStr = new SwitcherStr();
+
+	/**
+	 * The adapter used to communicate with rest of the world(view)
+	 */
+	private IViewAdapter viewAdapter = IViewAdapter.null_ADAPTER;
+
+	/**
+	 * Set the timer updating the view
+	 */
+	private Timer timer = new Timer(30, e -> viewAdapter.updateView());
+
+	/**
+	 * Initialize with the adapter
+	 * @param adapter The view adapter to which the model talk
+	 */
+	public BallModel(IViewAdapter adapter) {
+		this.viewAdapter = adapter;
+	}
+
+	/**
+	 * Set off the timer and start the model
+	 */
+	public void start() {
+		timer.start();
+	}
+
+	/**
+	 * Generate a factory for specific strategy
+	 * @param strName The name of the strategy 
+	 * @return A factory making strategy specified by its name. If it fails, a beeping error strategy will be returned. 
+	 */
+	public IStrategyFac makeStrategyFac(String strName) {
+		return new IStrategyFac() {
+			public IUpdateStrategy make() {
+				IUpdateStrategy rtn = null;
+				try {
+					// create an instance by the strategy name if succeed
+					rtn = (IUpdateStrategy) Class.forName(PREFIX + strName).getConstructors()[0]
+							.newInstance(new Object[] {});
+				} catch (Error err) {
+					// handle error of missing class
+					System.err.println("Class " + PREFIX + strName + " failed to load. \nError = \n" + err);
+					err.printStackTrace(); // print the stack trace to help in debugging.
+				} catch (Exception ex) {
+					// handle exceptions
+					System.err.println("Class " + PREFIX + strName + " failed to load. \nException = \n" + ex);
+					ex.printStackTrace(); // print the stack trace to help in debugging. 
+				}
+
+				// creation failed
+				if (rtn == null) {
+					return new IUpdateStrategy() {
+						private int count = 0; // update counter
+
+						@Override
+						/**
+						 * Beep the speaker every 25 updates
+						 */
+						public void updateStatus(Shape context) {
+							if (25 < count++) {
+								java.awt.Toolkit.getDefaultToolkit().beep();
+								count = 0;
+							}
+						}
+					};
+				} else
+					return rtn;
+			}
+
+			/**
+			 * Label the factory with name
+			 */
+			public String toString() {
+				return strName;
+			}
+		};
+	}
+	
+	public IShapeFactory makePaintFac(String strName) {
+    return new IShapeFactory() {
+      public IPaintStrategy make() {
+        IPaintStrategy rtn = null;
+        try {
+          // create an instance by the strategy name if succeed
+          rtn = (IPaintStrategy) Class.forName(PREFIX_Paint + strName).getConstructors()[0]
+              .newInstance(new Object[] {});
+        } catch (Error err) {
+          // handle error of missing class
+          System.err.println("Class " + PREFIX + strName + " failed to load. \nError = \n" + err);
+          err.printStackTrace(); // print the stack trace to help in debugging.
+        } catch (Exception ex) {
+          // handle exceptions
+          System.err.println("Class " + PREFIX + strName + " failed to load. \nException = \n" + ex);
+          ex.printStackTrace(); // print the stack trace to help in debugging. 
+        }
+
+        // creation failed
+        if (rtn == null) {
+          return null;
+        } else
+          return rtn;
+      }
+
+      /**
+       * Label the factory with name
+       */
+      public String toString() {
+        return strName;
+      }
+    };
+  }
+
+	/**
+	 * Combine two factories
+	 * @param str1 The first factory for combination
+	 * @param str2 The second factory for combination
+	 * @return The new factory being able to make mixed strategy from both of the input factories
+	 */
+	public IStrategyFac combineStrategyFac(IStrategyFac str1, IStrategyFac str2) {
+		return new IStrategyFac() {
+
+			/**
+			 * Make new strategy by combination
+			 */
+			public IUpdateStrategy make() {
+				IUpdateStrategy s1 = str1.make();
+				IUpdateStrategy s2 = str2.make();
+				return new IUpdateStrategy() {
+					@Override
+					public void updateStatus(Shape context) {
+						s1.updateStatus(context);
+						s2.updateStatus(context);
+					}
+				};
+			}
+
+			/**
+			 * Label the new factory with the concatenated name
+			 */
+			public String toString() {
+				return str1.toString() + "+" + str2.toString();
+			}
+		};
+	}
+
+	/**
+	* Method for view2modelControl to create a new ball
+	* @param sFac The strategy name for the new ball
+	*/
+	public void addBall(IStrategyFac sFac, IShapeFactory shapeFac) {
+		ballHub.addObserver(new Shape(sFac.make(), shapeFac.make()));
+	}
+
+	/**
+	 * Method for view2modelControl to create a switcher
+	 */
+	public void addSwitcher() {
+		if (switchStr == null)
+			switchStr.setCurStr(makeStrategyFac("Straight").make());
+		ballHub.addObserver(new Shape(switchStr, makePaintFac("Ball").make()));
+	}
+
+	/**
+	 * Method for view2modelControl to clear all the balls
+	 */
+	public void resetAll() {
+		ballHub.deleteObservers();
+	}
+
+	/**
+	 * Method for view2modelPaint to paint all the balls
+	 * Notify all the balls to update and paint themselves onto the given Graphics object.
+	 * @param g The Graphics object from the view's paintComponent() call.
+	 */
+	public void paintAll(Graphics g) {
+		ballHub.notifyAll(g); // The Graphics object is being given to all the balls (Observers)
+	}
+
+	/**
+	 * Get the wrapper of switch strategy. Not used currently.
+	 * @return the wrapper of switch strategy
+	 */
+	public IUpdateStrategy getSwitchStr() {
+		return switchStr;
+	}
+
+	/**
+	 * Set the switch strategy
+	 * @param switchStr the switch strategy to set
+	 */
+	public void setSwitchStr(IUpdateStrategy switchStr) {
+		this.switchStr.setCurStr(switchStr);
+	}
+
+	/**
+	 * Set the switch strategy by factory
+	 * @param fac the factory for the strategy to be set
+	 */
+	public void setSwitchStr(IStrategyFac fac) {
+		setSwitchStr(fac.make());
+	}
+
+}

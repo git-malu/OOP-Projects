@@ -1,0 +1,48 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import java.util.Collection;
+import common.IUser;
+import common.IChatRoom;
+import java.util.Map;
+
+/**
+* install game command type
+ *  * */
+public class InstallGameType implements IUserMessageType {
+	private static final long serialVersionUID = 476449171304650402L;
+
+	private Collection<IUser> users;
+
+	public Collection<IUser> getUsers() {
+		return this.users;
+	}
+
+	private Map<IUser, IChatRoom> teamsByUser = new Hashtable<IUser, IChatRoom>();
+	private IUser server;
+
+	public IUser getServer() {
+		return this.server;
+	}
+
+	private IUser localUser;
+
+	public IUser getLocalUser() {
+		return this.localUser;
+	}
+
+	public InstallGameType(Collection<IUser> users, Map<IUser, IChatRoom> teamsByUser, IUser server, IUser localUser) {
+		this.users = users;
+		this.teamsByUser = teamsByUser;
+		this.server = server;
+		this.localUser = localUser;
+	}
+
+	/**
+	* get team affiliation
+	 * 	 * @return team affiliation list */
+	public Map<IUser, IChatRoom> getTeams() {
+		return teamsByUser;
+	}
+
+}

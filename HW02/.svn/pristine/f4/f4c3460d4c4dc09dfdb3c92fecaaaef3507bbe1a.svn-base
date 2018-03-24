@@ -1,0 +1,46 @@
+package ballModel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+
+import javax.swing.Timer;
+
+public class Model {
+	LinkedList<Ball> ballList;
+	private int _timeSlice = 50;  // update every 50 milliseconds
+	
+	//model to view adapter
+	IModel2ViewAdapter _model2ViewAdpt = IModel2ViewAdapter.NULL_OBJECT; //need for empty obj
+	
+	private Timer _timer = new Timer(_timeSlice, new ActionListener() {
+		/**
+		 * The timer "ticks" by calling this method every _timeslice milliseconds
+		 */
+		public void actionPerformed (ActionEvent e) {
+			_model2ViewAdpt.update();
+		}
+	});
+	
+	//constructor
+	public Model(IModel2ViewAdapter adapter){
+		_model2ViewAdpt = adapter;
+		
+	}
+	
+	public void start(){
+		_timer.start();
+	}
+	
+	public void handleViewRequest_makeBall(String s){
+		//System.out.println(s);
+		ballList.add(new RadiusBall());	
+	}
+	
+	
+}
+
+//class ListOfBalls {
+//	ListOfBalls next;
+//	Ball ball;
+//}

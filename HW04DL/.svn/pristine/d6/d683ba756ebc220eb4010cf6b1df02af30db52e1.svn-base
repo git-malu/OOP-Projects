@@ -1,0 +1,16 @@
+package strategy.movement;
+
+/**
+ * Factory interface representing the ability to generate strategies
+ * @author Gao Pan
+ *
+ */
+public interface IStrategyFac {
+
+	/**
+	 * Make a strategy
+	 * @return The strategy made
+	 */
+	abstract IUpdateStrategy make();
+
+}

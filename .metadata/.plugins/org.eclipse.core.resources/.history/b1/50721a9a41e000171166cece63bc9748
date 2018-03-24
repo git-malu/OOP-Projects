@@ -1,0 +1,94 @@
+package lm44_xw47.controller;
+
+import gov.nasa.worldwind.geom.Position;
+import gov.nasa.worldwind.layers.MarkerLayer;
+import gov.nasa.worldwind.layers.RenderableLayer;
+import lm44_xw47.model.IMapModel2MapViewAdapter;
+import lm44_xw47.model.MapModel;
+import lm44_xw47.model.Place;
+import lm44_xw47.view.IMapView2MapModelAdapter;
+import lm44_xw47.view.MapView;
+import map.IRightClickAction;
+import map.MapLayer;
+
+/**
+ * server side mini game controller
+ *
+ */
+public class MapController {
+	/**
+	 * mini model
+	 */
+	private MapModel _mapModel; //miniModel
+
+	/**
+	 * mini view
+	 */
+	private MapView<Place> _mapView; //miniView
+	private IMapCtrl2MainViewAdapter _mapCtrl2MainViewAdapter;
+
+	//constructor
+	public MapController(IMapCtrl2MainViewAdapter mapCtrl2MainViewAdapter) {
+		//initialize adapter
+		_mapCtrl2MainViewAdapter = mapCtrl2MainViewAdapter;
+
+		_mapView = new MapView<Place>(new IMapView2MapModelAdapter<Place>() {
+			public void goPlace(Place p) {
+				_mapView.setPosition(p.getPosition());
+			}
+
+			public void goLatLong(String latitude, String longitude) {
+				try {
+					_mapView.setPosition(
+							Position.fromDegrees(Double.parseDouble(latitude), Double.parseDouble(longitude), 4000));
+				} catch (Exception e) {
+					System.out.println("Improper latitude, longitude: " + latitude + ", " + longitude);
+				}
+			}
+		}, new IRightClickAction() {
+			public void apply(Position p) {
+				_mapModel.click(p);
+			}
+		});
+
+		_mapModel = new MapModel(new IMapModel2MapViewAdapter() {
+			@Override
+			public void addPlace(Place p) {
+				_mapView.addPlace(p);
+			}
+
+			@Override
+			public void show(MapLayer layer) {
+				_mapView.addMapLayer(layer);
+			}
+
+			@Override
+			public void show(RenderableLayer renderableLayer) {
+				_mapView.addRenderableLayer(renderableLayer);
+			}
+
+			@Override
+			public void hide(MapLayer layer) {
+				_mapView.removeMapLayer(layer);
+			}
+
+			@Override
+			public void show(MarkerLayer markerLayer) {
+				_mapView.addMarkerLayer(markerLayer);
+			}
+
+		});
+	}
+
+	/**
+	 * mini controller starts
+	 */
+	public void start() {
+		_mapView.start(); // miniView starts
+		_mapModel.start();// miniModel starts
+
+		_mapCtrl2MainViewAdapter.addMapView2MainView(_mapView); // add miniView to mainView
+
+	}
+
+}

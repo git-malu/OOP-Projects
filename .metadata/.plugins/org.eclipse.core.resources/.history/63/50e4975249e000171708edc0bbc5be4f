@@ -1,0 +1,8 @@
+package provided.extvisitor;
+
+import java.io.Serializable;
+
+public interface IExtVisitor<R, I, P, H extends IExtVisitorHost<I, ? super H>> extends Serializable {
+	public <T extends IExtVisitorHost<I, ? super H>> R caseAt(I idx, T host,
+			@SuppressWarnings("unchecked") P... params);
+}

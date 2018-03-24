@@ -1,0 +1,19 @@
+package provided.mixedData;
+
+/**
+* Abstract mixed data dictionary interface
+ * A mixed data dictionary can hold multiple value types and retrieve those
+ * values in a type-safe manner.   The use of a MixedDataKey is required 
+ * as this special key carries typing information.   This guarantees that 
+ * the type of the values associated with the key match the type specified
+ * by the key.  Thus, no casting of the value returned by a "get" operation 
+ * is necessary.
+ * @author swong
+ *  * */
+public interface IMixedDataDictionary {
+	public abstract boolean containsKey(MixedDataKey<?> key);
+
+	public <T> T get(MixedDataKey<T> key);
+
+	public <T> T put(MixedDataKey<T> key, T value);
+}

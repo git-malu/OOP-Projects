@@ -1,0 +1,33 @@
+package strategy.painting;
+
+import java.awt.Graphics;
+import java.awt.geom.AffineTransform;
+
+public abstract class APaintStrategy extends IPaintStrategy {
+  
+  private AffineTransform at;
+  
+  public APaintStrategy(AffineTransform at) {
+    this.at = at;
+  }
+  
+  public void paint(Graphics g, model.Shape context) {
+    
+    
+    double scale = context.getRadius();
+    at.setToTranslation(context.getX(), context.getY());
+    at.scale(scale, scale);
+    at.rotate(context.getDx(), context.getDy());
+    g.setColor(context.getColor());    
+    paintCfg(g, context);
+    paintXfrm(g, context, at);
+  }
+
+  
+  public void paintCfg(Graphics g,model.Shape context) {
+    
+  }
+  
+  public abstract void paintXfrm(Graphics g, model.Shape context,AffineTransform at);
+
+}

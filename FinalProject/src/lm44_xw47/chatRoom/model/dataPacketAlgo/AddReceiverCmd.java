@@ -1,0 +1,63 @@
+package lm44_xw47.chatRoom.model.dataPacketAlgo;
+
+import java.rmi.RemoteException;
+
+import javax.swing.SwingUtilities;
+
+import common.DataPacketCR;
+import common.DataPacketCRAlgoCmd;
+import common.ICRCmd2ModelAdapter;
+import common.IReceiver;
+import common.datatype.chatroom.IAddReceiverType;
+import lm44_xw47.chatRoom.model.ILocalCRCmd2ModelAdapter;
+
+/**
+ * Following defines the command that add a receiver.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class AddReceiverCmd extends DataPacketCRAlgoCmd<IAddReceiverType> {
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 3808085516023571235L;
+	
+	/**
+	 * The adapter this command uses to communicate with local system.
+	 */
+	private transient ILocalCRCmd2ModelAdapter cmd2ModelAdpt;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param cmd2ModelAdpt The adapter this command uses to communicate with local system.
+	 */
+	public AddReceiverCmd(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = (ILocalCRCmd2ModelAdapter)cmd2ModelAdpt;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketCR<IAddReceiverType> host, String... params) {
+		IReceiver receiver = host.getData().getReceiverStub();
+		try {
+			String username = receiver.getUserStub().getName();
+			SwingUtilities.invokeLater(new Runnable() {
+				@Override
+				public void run() {
+					cmd2ModelAdpt.addReceiver(receiver);
+					cmd2ModelAdpt.appendMsg(" has joined the team. \n", username);
+				}
+			});
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = (ILocalCRCmd2ModelAdapter)cmd2ModelAdpt;
+	}
+	
+}

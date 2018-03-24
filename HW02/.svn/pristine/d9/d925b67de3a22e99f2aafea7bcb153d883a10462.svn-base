@@ -1,0 +1,21 @@
+package view;
+
+import java.awt.Graphics;
+
+public interface IView2ModelAdapter {
+
+	public void request2Model_makeBall(String s);
+	public void request2Model_clearAll();
+	
+	public static final IView2ModelAdapter NULL_OBJECT = new IView2ModelAdapter () {
+		
+		public void request2Model_makeBall(String s) {
+			;
+		}
+		
+		public void request2Model_clearAll() {
+			;
+		}
+		
+	};
+}

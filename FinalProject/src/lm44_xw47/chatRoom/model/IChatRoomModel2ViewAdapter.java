@@ -1,0 +1,49 @@
+package lm44_xw47.chatRoom.model;
+
+import common.ICRCmd2ModelAdapter;
+
+/**
+ * Following defines the adapter the chat room model uses to communicate with view.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public interface IChatRoomModel2ViewAdapter {
+	/**
+	 * Append message to the view.
+	 * 
+	 * @param msg The message being added to view.
+	 */
+	public void appendMsg(String msg);
+	
+	/**
+	 * Create the adapter that commands uses to communicate with chat room model and view.
+	 * 
+	 * @return The adapter that uses to communicate with chat room model and view.
+	 */
+	public ICRCmd2ModelAdapter createCRCmd2ModelAdapter();
+	
+	/**
+	 * Null implementation of this interface.
+	 */
+	public static final IChatRoomModel2ViewAdapter NULL_OBJECT = new IChatRoomModel2ViewAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void appendMsg(String msg) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public ICRCmd2ModelAdapter createCRCmd2ModelAdapter() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	};
+}

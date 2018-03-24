@@ -1,0 +1,40 @@
+package model;
+
+import java.rmi.RemoteException;
+import java.util.UUID;
+
+import common.DataPacketChatRoom;
+import common.IReceiver;
+import common.IUser;
+import model.datapackeAlgoCmd.DefaultCmd;
+import model.datapackeAlgoCmd.StringCmd;
+import provided.datapacket.DataPacketAlgo;
+
+public class Receiver implements IReceiver{
+	private IUser user;
+	
+	private UUID uuid = UUID.randomUUID();
+	
+	private DataPacketAlgo<String, String> algo = new DataPacketAlgo<String, String>(new DefaultCmd());
+	
+	public Receiver(IUser user) {
+		this.user = user;
+		algo.setCmd(String.class, new StringCmd());
+	}
+
+	@Override
+	public <T> void receive(DataPacketChatRoom<T> data) throws RemoteException {
+		data.execute(algo);
+	}
+
+	@Override
+	public IUser getUserStub() throws RemoteException {
+		return user;
+	}
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		return uuid;
+	}
+	
+}

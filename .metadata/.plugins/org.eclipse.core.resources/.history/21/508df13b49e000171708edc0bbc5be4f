@@ -1,0 +1,28 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+
+/**
+* player right click info to be sent to server
+ *  * */
+public class PlayerPostionType implements IUserMessageType {
+	private static final long serialVersionUID = -1305772268873340003L;
+
+	private Double latitude;
+
+	public Double getLatitude() {
+		return this.latitude;
+	}
+
+	private Double longitude;
+
+	public Double getLongitude() {
+		return this.longitude;
+	}
+
+	public PlayerPostionType(Double latitude, Double longitude) {
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+}

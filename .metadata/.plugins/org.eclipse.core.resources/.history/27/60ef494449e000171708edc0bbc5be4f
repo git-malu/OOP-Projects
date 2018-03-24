@@ -1,0 +1,271 @@
+package lm44_xw47.model;
+
+import map.MapLayer;
+import gov.nasa.worldwind.layers.RenderableLayer;
+import gov.nasa.worldwind.layers.MarkerLayer;
+import common.IUser;
+import java.util.Collection;
+import common.IChatRoom;
+import javax.swing.Timer;
+import gov.nasa.worldwind.geom.Position;
+
+/**
+* server side mini mvc model
+ * Following defines model for the map.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu */
+public class MapModel {
+	/*package*/ IMapModel2MapViewAdapter _adpt;
+	/*package*/ MapLayer _layer = new MapLayer();
+	/*package*/ RenderableLayer _renderLayer = new RenderableLayer();
+	/*package*/ final MarkerLayer _markerLayer = new MarkerLayer();
+	/*package*/ IUser meUser;
+	/*package*/ Collection<IUser> userList;
+	/*package*/ Map<IUser, Player> avatarTable = new Hashtable<IUser, Player>();
+	/*package*/ Map<IUser, IChatRoom> userTeamTable;
+	/*package*/ Ball ball = new Ball();
+	private int _timeSlice = 50;
+	private Timer _timer = new Timer(_timeSlice, (e) -> {
+		//players update
+		for (IUser eachUser : userList) {
+			Player player = avatarTable.get(eachUser);
+			if (player.moving) {
+				player.moveTowardDest();
+				player.pickUpBall(ball); // player will try to pick up a ball on the ground. Flying ball won't be picked up.
+				clientBallPick(eachUser);
+			}
+
+			if (ball.ballState == Ball.FLY) {
+
+				if (player.hit(ball)) {
+
+					//if hit by the ball
+					clientPlayerDie(eachUser);
+					_layer.removeAnnotation(player.playerAnnotation);//no longer displayed on layer
+					//playerList.remove(player);
+				}
+			}
+		}
+
+		//ball update
+		if (ball.ballState == Ball.FLY) {
+			ball.moveTowardDest();
+		} else if (ball.ballState == Ball.CARRIED) {
+			ball.followCarrier();
+		}
+
+		this._layer.firePropertyChange(gov.nasa.worldwind.avlist.AVKey.LAYER, null, this);
+
+	});
+
+	/**
+	* Start the map model. */
+	public void start() {
+		//		_layer.addToggleAnnotation("Willy", "Willy Selected!", willy);
+		//		_layer.addToggleAnnotation("Epcot Center", "Epcot Selected!", epcot, 5000, 1000000);
+		//		_layer.addAnnotation(new GlobeAnnotation("NYC", nyc));
+
+		// Create and set an attribute bundle.
+		ShapeAttributes pathAttrs = new BasicShapeAttributes();
+		pathAttrs.setOutlineMaterial(new Material(Color.green));
+		pathAttrs.setOutlineWidth(2d);
+
+		// Create a path, set some of its properties and set its attributes.
+		ArrayList<Position> pathPositions = new ArrayList<Position>();
+		pathPositions.add(Position.fromDegrees(0, -179, 1e4));
+		pathPositions.add(Position.fromDegrees(0, -120, 1e4));
+		pathPositions.add(Position.fromDegrees(0, -60, 1e4));
+		pathPositions.add(Position.fromDegrees(0, 0, 1e4));
+		pathPositions.add(Position.fromDegrees(0, 60, 1e4));
+		pathPositions.add(Position.fromDegrees(0, 120, 1e4));
+		pathPositions.add(Position.fromDegrees(0, 179, 1e4));
+		Path path = new Path(pathPositions);
+		path.setAttributes(pathAttrs);
+		path.setVisible(true);
+		path.setAltitudeMode(WorldWind.RELATIVE_TO_GROUND);
+		path.setPathType(AVKey.GREAT_CIRCLE);
+		_renderLayer.addRenderable(path);
+
+		//add player annotations to the layer
+		//		playerList.add(mePlayer);//default player
+		//		playerList.add(otherPlayer);
+
+		//		for (Player player : playerList) {
+		//			_layer.addAnnotation(player.playerAnnotation);
+		//		}
+
+		//marker layer
+		_markerLayer.setOverrideMarkerElevation(true);
+		_markerLayer.setKeepSeparated(false);
+		_markerLayer.setElevation(1000d);
+		_markerLayer.setMarkers(ball.markers);
+
+		_adpt.show(_layer);
+		_adpt.show(_renderLayer);
+		_adpt.show(_markerLayer);
+		//_timer.start();
+		startGame();
+	}
+
+	public void startGame() {
+		//create player identity for each user
+		for (IUser eachUser : userList) {
+			Player newPlayer;
+			String name = "";
+			try {
+				name = eachUser.getName();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			if (userTeamTable.get(eachUser).getName() == "NORTH") {
+				newPlayer = new Player(name, Player.NORTH);
+			} else {
+				newPlayer = new Player(name, Player.SOUTH);
+			}
+
+			newPlayer.setBall(ball);
+			avatarTable.put(eachUser, newPlayer);
+		}
+
+		//put all player annotations on the map
+		for (IUser eachUser : userList) {
+			Player eachPlayer = avatarTable.get(eachUser);
+			_layer.addAnnotation(eachPlayer.playerAnnotation);
+		}
+		_timer.start();
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param adpt The adapter this model used to communicate with view. */
+	public MapModel(IMapModel2MapViewAdapter adpt) {
+		_adpt = adpt;
+	}
+
+	public void clientPlayerDie(IUser user) {
+		//		for (IUser eachClientUser : userList) {
+		////			eachClientUser.receive(data);
+		//		}
+	}
+
+	public void clientBallPick(IUser user) {
+		//		for (IUser eachClientUser : userList) {
+		////			eachClientUser.receive(data);
+		//		}
+	}
+
+	/**
+	* click shows the position of the mouse clicked place.
+	 * 	 * 
+	 * 	 * @param p The position of the mouse clicked place. */
+	public void click(Position p) {
+		System.out.println("Mouse clicked at: " + p + " altitude = " + p.getAltitude());
+		Player mePlayer = avatarTable.get(meUser);
+		if (mePlayer.team) {
+			//north team
+			if (p.latitude.degrees > 0) {
+				//move
+				mePlayer.setDestination(p);
+			} else {
+				//shoot if carrying the ball
+				if (mePlayer.carrying) {
+					mePlayer.shoot(p);
+				}
+			}
+		} else {
+			//south team
+			if (p.latitude.degrees < 0) {
+				//move
+				mePlayer.setDestination(p);
+			} else {
+				//shoot if carrying the ball
+				if (mePlayer.carrying) {
+					mePlayer.shoot(p);
+				}
+			}
+		}
+
+		this._layer.firePropertyChange(gov.nasa.worldwind.avlist.AVKey.LAYER, null, this);
+	}
+
+	public void receiveClick(IUser clientUser, Position p) {
+		Player clientPlayer = avatarTable.get(clientUser);
+		if (clientPlayer.team) {
+			//north team
+			if (p.latitude.degrees > 0) {
+				//move
+				clientPlayer.setDestination(p);
+				clientPlayerMove(clientUser, p);//broadcast
+			} else {
+				//shoot if carrying the ball
+				if (clientPlayer.carrying) {
+
+					clientPlayer.shoot(p);
+					clientBallShoot(clientUser, p);
+				}
+			}
+		} else {
+			//south team
+			if (p.latitude.degrees < 0) {
+				//move
+				clientPlayer.setDestination(p);
+				clientPlayerMove(clientUser, p);//broadcast
+			} else {
+				//shoot if carrying the ball
+				if (clientPlayer.carrying) {
+					clientPlayer.shoot(p);
+					clientBallShoot(clientUser, p);
+				}
+			}
+		}
+
+		this._layer.firePropertyChange(gov.nasa.worldwind.avlist.AVKey.LAYER, null, this);
+	}
+
+	public void clientPlayerMove(IUser user, Position dest) {
+		//		for (IUser eachClientUser : userList) {
+		////			eachClientUser.receive(data);
+		//		}
+	}
+
+	public void clientBallShoot(IUser user, Position dest) {
+		//		for (IUser eachClientUser : userList) {
+		////			eachClientUser.receive(data);
+		//		}
+	}
+
+	public void clientClick(IUser clientUser, Position p) {
+		Player clientPlayer = avatarTable.get(clientUser);
+
+		if (clientPlayer.team) {
+			//north team
+			if (p.latitude.degrees > 0) {
+				//move
+				clientPlayer.setDestination(p);
+			} else {
+				//shoot if carrying the ball
+				if (clientPlayer.carrying) {
+					clientPlayer.shoot(p);
+				}
+			}
+		} else {
+			//south team
+			if (p.latitude.degrees < 0) {
+				//move
+				clientPlayer.setDestination(p);
+			} else {
+				//shoot if carrying the ball
+				if (clientPlayer.carrying) {
+					clientPlayer.shoot(p);
+				}
+			}
+		}
+
+		this._layer.firePropertyChange(gov.nasa.worldwind.avlist.AVKey.LAYER, null, this);
+	}
+
+}

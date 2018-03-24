@@ -1,0 +1,7 @@
+package provided.extvisitor;
+
+import java.io.Serializable;
+
+public interface IExtVisitorHost<I, H extends IExtVisitorHost<I, ? extends H>> extends Serializable {
+	public <R, P> R execute(IExtVisitor<R, I, P, ? extends H> algo, @SuppressWarnings("unchecked") P... params);
+}

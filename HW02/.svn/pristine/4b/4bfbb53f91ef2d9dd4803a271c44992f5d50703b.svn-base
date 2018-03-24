@@ -1,0 +1,6 @@
+package view;
+
+public interface IView2ModelAdapter {
+
+	public void request2Model_makeBall(String s);
+}

@@ -1,0 +1,42 @@
+package model;
+
+import strategy.movement.IUpdateStrategy;
+
+/**
+ * A wrapper of strategy where underlying concrete strategy is mutable
+ * @author Gao Pan
+ *
+ */
+public class SwitcherStr implements IUpdateStrategy {
+
+	/**
+	 * Underlying concrete strategy
+	 */
+	private IUpdateStrategy curStr;
+
+	/**
+	 * Check and delegate to underlying strategy
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+		if (curStr != null)
+			curStr.updateStatus(context);
+	}
+
+	/**
+	 * Get underlying strategy
+	 * @return the underlying strategy
+	 */
+	public IUpdateStrategy getCurStr() {
+		return curStr;
+	}
+
+	/**
+	 * Set underlying strategy
+	 * @param curStr the concrete strategy to set
+	 */
+	public void setCurStr(IUpdateStrategy curStr) {
+		this.curStr = curStr;
+	}
+
+}

@@ -1,0 +1,23 @@
+package common;
+
+import provided.mixedData.MixedDataKey;
+
+/**
+* This adapter is for the externally-sourced commands to  interact with the local system
+ * @param <S> the target recipient type in method sendTo()
+ * @param <M> The message type (must extends IMessageType) */
+public interface ICmd2ModelAdapter<S, M extends IMessageType> {
+	public String getName();
+
+	public void appendMsg(String text, String name);
+
+	public void buildScrollableComponent(IComponentFactory fac, String label);
+
+	public void buildNonScrollableComponent(IComponentFactory fac, String label);
+
+	public <T> T put(MixedDataKey<T> key, T value);
+
+	public <T> T get(MixedDataKey<T> key);
+
+	public <T extends M> void sendTo(S target, Class<T> id, T data);
+}

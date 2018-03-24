@@ -1,0 +1,106 @@
+package model;
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+
+import provided.rmiUtils.IRMIUtils;
+import provided.rmiUtils.IRMI_Defs;
+import provided.rmiUtils.RMIUtils;
+
+public class ChatAppModel {
+	/**
+	 * The adapter that chatApp model uses to communicate with view.
+	 */
+	private IModel2ViewAdapter _model2ViewAdapter = IModel2ViewAdapter.NULL_OBJECT;
+	
+	/**
+	 * RMI utilities for starting RMI and for getting the Registry
+	 */
+	private IRMIUtils rmiUtils;
+	
+	/**
+	 * The registry that receive that registration from server object stub.
+	 */
+	private Registry registry;
+	
+	// private Set<IChatroom> chatrooms;
+	
+	// private IUser user;
+	
+	/**
+	 * Constructor of chatApp model.
+	 * 
+	 * @param _model2ViewAdapter The Model2ViewAapter that the chatApp model uses to communicate with view.
+	 */
+	public ChatAppModel(IModel2ViewAdapter _model2ViewAdapter) {
+		this._model2ViewAdapter = _model2ViewAdapter;
+		this.rmiUtils = new RMIUtils((s) -> {
+			this._model2ViewAdapter.sendConnectInfo(s);
+		});
+	}
+	
+	/**
+	 * Start the chatApp model by setting the necessary RMI system parameters.
+	 */
+	public void start() {
+		try {
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+		} catch (Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	/**
+	 * login a user with the given username.
+	 * 
+	 * @param username
+	 */
+	public void login(String username) {
+		
+	}
+	
+	/**
+	 * Connects the remote user with the given ip.
+	 * 
+	 * @param ip The ip address of the remote user.
+	 */
+	public void connect(String ip) {
+		Registry remoteRegistry = rmiUtils.getRemoteRegistry(ip);
+		_model2ViewAdapter.sendConnectInfo("[ChatAppModel.connectTo()] Found registry: " + registry);
+		
+		try {
+			remoteRegistry.lookup(ip);
+		} catch(RemoteException | NotBoundException e) {
+			System.err.println("Exception while retrieving IUser stub: \n" + e);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	/**
+	 * Joins the given chatroom.
+	 * 
+	 * @param chatroom The chatroom user wants to join.
+	 */
+	public void join(String chatroom) {
+		
+	}
+	
+	/**
+	 * Shows the info panel.
+	 */
+	public void showInfo() {
+		
+	}
+	
+	/**
+	 * quit the chatApp.
+	 */
+	public void quit() {
+		rmiUtils.stopRMI();
+	}
+}

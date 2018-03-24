@@ -1,0 +1,68 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUserAlgoCmd;
+import lm44_xw47.model.ILocalUserCmd2ModelAdapter;
+import java.util.Collection;
+import common.IUser;
+import common.IChatRoom;
+import common.IUserCmd2ModelAdapter;
+import java.util.Map;
+import common.DataPacketUser;
+
+/**
+* create team command
+ * @author malu
+ *  * */
+public class CreateTeamCmd extends DataPacketUserAlgoCmd<CreateTeamType> {
+	private static final long serialVersionUID = 2648942795157816095L;
+
+	private transient ILocalUserCmd2ModelAdapter cmd2ModelAdpt;
+	private transient Collection<IUser> users;
+	private transient Map<String, IChatRoom> teamsByName;
+	private transient Collection<IChatRoom> teams;
+	private transient IUser server;
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = (ILocalUserCmd2ModelAdapter) cmd2ModelAdpt;
+	}
+
+	public CreateTeamCmd(IUserCmd2ModelAdapter cmd2ModelAdpt, Map<String, IChatRoom> teamsByName,
+			Collection<IChatRoom> teams, Collection<IUser> users, IUser server) {
+		this.cmd2ModelAdpt = (ILocalUserCmd2ModelAdapter) cmd2ModelAdpt;
+		this.teamsByName = teamsByName;
+		this.teams = teams;
+		this.users = users;
+		this.server = server;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<CreateTeamType> host, String... params) {
+		IChatRoom team = new ChatRoom(host.getData().getTeamname());
+		IReceiver serverReceiver = cmd2ModelAdpt.joinTeam(team);
+		team.addIReceiverStub(serverReceiver);
+		teams.add(team);
+		IUser sender = host.getSender();
+		teamsByName.put(host.getData().getTeamname(), team);
+		try {
+			sender.receive(
+					new DataPacketUser<IInvitationType>(IInvitationType.class, new InvitationType(team), server));
+			for (IUser user : users) {
+				new Thread() {
+					@Override
+					public void run() {
+						try {
+							user.receive(
+									new DataPacketUser<AddTeamGame>(AddTeamGame.class, new AddTeamGame(team), server));
+						} catch (RemoteException e) {
+							e.printStackTrace();
+						}
+					}
+				}.start();
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+}

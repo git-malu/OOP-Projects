@@ -1,0 +1,45 @@
+package lm44_xw47.chatRoom.model.dataPacketAlgo;
+
+import common.DataPacketCR;
+import common.DataPacketCRAlgoCmd;
+import common.ICRCmd2ModelAdapter;
+import common.datatype.chatroom.ICRExceptionStatusType;
+
+/**
+ * Following defines the command that process server exception status.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public class CRExceptionStatusCmd extends DataPacketCRAlgoCmd<ICRExceptionStatusType>{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 2224817525325326372L;
+	
+	/**
+	 * The adapter this command uses to communicate with local system.
+	 */
+	private transient ICRCmd2ModelAdapter cmd2ModelAdpt;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param cmd2ModelAdapter The adapter this command uses to communicate with local system.
+	 */
+	public CRExceptionStatusCmd(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketCR<ICRExceptionStatusType> host, String... params) {
+		cmd2ModelAdpt.appendMsg(host.getData().getFailureInfo() + "\n", "Server: ");
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+	
+}

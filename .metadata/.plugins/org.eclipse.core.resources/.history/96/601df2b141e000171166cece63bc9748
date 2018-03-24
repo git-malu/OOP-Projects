@@ -1,0 +1,37 @@
+package lm44_xw47.model.dataType;
+
+import common.datatype.IRequestCmdType;
+
+/**
+ * request cmd data type
+ *
+ */
+public class RequestCmdType implements IRequestCmdType {
+
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -2712913509436490013L;
+
+	/**
+	 * command id
+	 */
+	private Class<?> cmdId;
+
+	/**
+	 * constructor that initialize command id
+	 * @param cmdId
+	 */
+	public RequestCmdType(Class<?> cmdId) {
+		this.cmdId = cmdId;
+	}
+
+	/**
+	 * get command id
+	 */
+	@Override
+	public Class<?> getCmdId() {
+		return cmdId;
+	}
+
+}

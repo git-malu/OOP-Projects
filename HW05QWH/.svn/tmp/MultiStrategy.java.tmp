@@ -1,0 +1,32 @@
+package model.strategies;
+
+import model.balls.Ball;
+
+/**
+ * A concrete composite strategy that is the combination of two other strategies.
+ * @author Yuchang Shen and Yibing Zhang
+ *
+ */
+public class MultiStrategy implements IUpdateStrategy {
+
+	private IUpdateStrategy s1 = IUpdateStrategy.NULL_OBJECT;
+	private IUpdateStrategy s2 = IUpdateStrategy.NULL_OBJECT;
+
+	/**
+	 * constructor
+	 * @param s1 the strategy to combine
+	 * @param s2 the other strategy to combine
+	 */
+	public MultiStrategy(IUpdateStrategy s1, IUpdateStrategy s2) {
+		this.s1 = s1;
+		this.s2 = s2;
+	}
+
+	@Override
+	public void updateState(Ball ball) {
+		// TODO Auto-generated method stub
+		s1.updateState(ball);
+		s2.updateState(ball);
+	}
+
+}

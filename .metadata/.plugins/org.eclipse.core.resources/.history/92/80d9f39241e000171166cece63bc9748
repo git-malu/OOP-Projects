@@ -1,0 +1,108 @@
+package lm44_xw47.chatRoom.model;
+
+import common.ICRCmd2ModelAdapter;
+import common.ICRMessageType;
+import common.IComponentFactory;
+import common.IReceiver;
+import provided.mixedData.MixedDataKey;
+
+/**
+ * Folowing defines the adapter the command uses to communicate with local chat room.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma
+ */
+public interface ILocalCRCmd2ModelAdapter extends ICRCmd2ModelAdapter {
+	/**
+	 * Add a receiver to the local chat room.
+	 * 
+	 * @param receiver The receiver being added to local chat room.
+	 */
+	public void addReceiver(IReceiver receiver);
+
+	/**
+	 * Remove a receiver from the local chat room.
+	 * 
+	 * @param receiver The receiver being removed from the local chat room.
+	 */
+	public void removeReceiver(IReceiver receiver);
+
+	/**
+	 * Null implementation of this interface.
+	 */
+	public static final ILocalCRCmd2ModelAdapter NULL_OBJECT = new ILocalCRCmd2ModelAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T extends ICRMessageType> void sendToChatRoom(Class<T> id, T data) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public String getName() {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void appendMsg(String text, String name) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void buildScrollableComponent(IComponentFactory fac, String label) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void buildNonScrollableComponent(IComponentFactory fac, String label) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T> T put(MixedDataKey<T> key, T value) {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T> T get(MixedDataKey<T> key) {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T extends ICRMessageType> void sendTo(IReceiver target, Class<T> id, T data) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addReceiver(IReceiver receiver) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void removeReceiver(IReceiver receiver) {
+		}
+
+	};
+}

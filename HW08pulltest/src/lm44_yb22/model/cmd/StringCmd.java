@@ -1,0 +1,50 @@
+package lm44_yb22.model.cmd;
+
+import java.rmi.RemoteException;
+
+import javax.swing.SwingUtilities;
+
+import common.DataPacketAlgoCmd;
+import common.DataPacketChatRoom;
+import common.ICmd2ModelAdapter;
+import common.IReceiver;
+
+public class StringCmd extends DataPacketAlgoCmd<String>{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1247570967678200068L;
+	
+	private transient ICmd2ModelAdapter _cmd2ModelAdapter;
+	
+	public StringCmd(ICmd2ModelAdapter _Cmd2ModelAdapter) {
+		this._cmd2ModelAdapter = _Cmd2ModelAdapter;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketChatRoom<String> host, String... params) {
+		IReceiver sender = host.getSender(); // null error
+		String msg = host.getData();//data received
+		System.out.println(msg);//message received successfully
+		try {
+			System.out.println(host.getSender());
+			String username = sender.getUserStub().getName();
+			SwingUtilities.invokeLater(new Runnable() {
+				@Override
+				public void run() {
+					_cmd2ModelAdapter.appendMsg(msg, username);
+				}
+			});
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICmd2ModelAdapter cmd2ModelAdpt) {
+		this._cmd2ModelAdapter = cmd2ModelAdpt;
+	}
+
+}

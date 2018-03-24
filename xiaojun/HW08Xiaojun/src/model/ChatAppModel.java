@@ -1,0 +1,177 @@
+package model;
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import chatroom.model.ChatRoom;
+import common.DataPacketChatRoom;
+import common.IAddReceiverType;
+import common.IChatRoom;
+import common.IComponentFactory;
+import common.IReceiver;
+import common.IUser;
+import model.dataType.AddReceiverType;
+import provided.rmiUtils.IRMIUtils;
+import provided.rmiUtils.IRMI_Defs;
+import provided.rmiUtils.RMIUtils;
+
+public class ChatAppModel {
+	/**
+	 * The adapter that chatApp model uses to communicate with view.
+	 */
+	private IModel2ViewAdapter _model2ViewAdapter = IModel2ViewAdapter.NULL_OBJECT;
+	
+	/**
+	 * RMI utilities for starting RMI and for getting the Registry
+	 */
+	private IRMIUtils rmiUtils;
+	
+	/**
+	 * The registry that receive that registration from server object stub.
+	 */
+	private Registry registry;
+	
+	private IUser user;
+	
+	private IUser userStub;
+	
+	private Set<IChatRoom> joinedChatrooms = new HashSet<IChatRoom>();
+	
+	private Map<IReceiver, IComponentFactory> chatroomPnlsMap = new HashMap<IReceiver, IComponentFactory>();
+	
+	private int receiverPort;
+	
+	/**
+	 * Constructor of chatApp model.
+	 * 
+	 * @param _model2ViewAdapter The Model2ViewAapter that the chatApp model uses to communicate with view.
+	 */
+	public ChatAppModel(IModel2ViewAdapter _model2ViewAdapter) {
+		this._model2ViewAdapter = _model2ViewAdapter;
+		this.rmiUtils = new RMIUtils((s) -> {
+			this._model2ViewAdapter.sendConnectInfo(s);
+		});
+	}
+	
+	/**
+	 * Start the chatApp model by setting the necessary RMI system parameters.
+	 */
+	public void start() {
+		try {
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+		} catch (Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	/**
+	 * login a user with the given username.
+	 * 
+	 * @param username
+	 * @param port The port number the user uses.
+	 */
+	public void login(String username, int port) {
+		try {
+			user = new User(username);
+			userStub = (IUser) UnicastRemoteObject.exportObject(user, port);
+			this.receiverPort = port + 1;
+			registry.rebind(IUser.BOUND_NAME, userStub);
+			joinedChatrooms = (Set<IChatRoom>) user.getChatRooms();
+			_model2ViewAdapter.sendConnectInfo("You have logined as " + username);
+			System.out.println("You have logined as " + username);
+		} catch(Exception e) {
+			System.err.println("Server Exception: " + e);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	/**
+	 * Connects the remote user with the given ip.
+	 * 
+	 * @param ip The ip address of the remote user.
+	 */
+	public void connect(String ip) {
+		Registry remoteRegistry = rmiUtils.getRemoteRegistry(ip);
+		_model2ViewAdapter.sendConnectInfo("[ChatAppModel.connectTo()] Found registry: " + registry);
+		IUser remoteUserStub;
+		// Iterable<IChatRoom> joinedChatrooms;
+		Set<IChatRoom> joinableChatrooms = new HashSet<IChatRoom>();
+		
+		try {
+			remoteUserStub = (IUser) remoteRegistry.lookup(IUser.BOUND_NAME);
+			remoteUserStub.connect(userStub);
+			for (IChatRoom chatroom : remoteUserStub.getChatRooms()) {
+				joinableChatrooms.add(chatroom);
+			}
+			
+			for (IChatRoom chatroom : user.getChatRooms()) {
+				if (joinableChatrooms.contains(chatroom)) {
+					joinableChatrooms.remove(chatroom);
+				} 
+			}
+			
+			_model2ViewAdapter.addSelectableChatrooms(joinableChatrooms);
+		} catch(RemoteException | NotBoundException e) {
+			System.err.println("Exception while retrieving IUser stub: \n" + e);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	/**
+	 * Create a chatroom with the given chatroom name.
+	 * 
+	 * @param name The name of the created chatroom.
+	 */
+	public void createChatroom(String name) {
+		IChatRoom chatroom = new ChatRoom(name);
+		join(chatroom);
+	}
+	
+	/**
+	 * Joins the given chatroom.
+	 * 
+	 * @param chatroom The chatroom user wants to join.
+	 */
+	public void join(IChatRoom chatroom) {
+		IReceiver receiver = new Receiver(userStub, ILocalCmd2ModelAdapter.NULL_OBJECT);
+		IReceiver  receiverStub = null;
+		String username = "";
+		try {
+			receiverStub = (IReceiver) UnicastRemoteObject.exportObject(receiver, receiverPort++);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		
+		try {
+			username = user.getName();
+			System.out.println(username);
+		} catch(RemoteException e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		joinedChatrooms.add(chatroom);
+		((Receiver) receiver).setLocalCmd2ModelAdapter(_model2ViewAdapter.createChatroomPnl(chatroom, receiverStub));
+		chatroom.addIReceiverStubLocally(receiverStub);
+		chatroom.sendPacket(new DataPacketChatRoom<IAddReceiverType>(IAddReceiverType.class, new AddReceiverType(receiverStub), receiverStub));
+	}
+	
+	/**
+	 * quit the chatApp.
+	 */
+	public void quit() {
+		rmiUtils.stopRMI();
+		System.exit(-1);
+	}
+}

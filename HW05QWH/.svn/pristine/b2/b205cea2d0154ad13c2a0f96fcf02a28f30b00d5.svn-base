@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_VRGQgJvlEeezkd4zce6tzQ">
+  <modelElement href="controller.uml#_VZyScJvlEeezkd4zce6tzQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VbdtcZvlEeezkd4zce6tzQ" targetItem="_VbgJuZvlEeezkd4zce6tzQ" sourceItem="_VbdtcJvlEeezkd4zce6tzQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VbeUgZvlEeezkd4zce6tzQ" targetItem="_VbgJx5vlEeezkd4zce6tzQ" sourceItem="_VbeUgJvlEeezkd4zce6tzQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_VbeUg5vlEeezkd4zce6tzQ" targetItem="_VbgJzZvlEeezkd4zce6tzQ" sourceItem="_VbeUgpvlEeezkd4zce6tzQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Vbe7kZvlEeezkd4zce6tzQ" targetItem="_VbgJ0JvlEeezkd4zce6tzQ" sourceItem="_Vbe7kJvlEeezkd4zce6tzQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VbfioJvlEeezkd4zce6tzQ" source="_VbgJuZvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_t0JvlEeezkd4zce6tzQ"/>
+    <stereotypes xmi:id="_VbfioZvlEeezkd4zce6tzQ" name="Reference">
+      <modelElement href="controller.uml#_VZ_t0pvlEeezkd4zce6tzQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_VbfiopvlEeezkd4zce6tzQ" text=""/>
+    <sourceRole xmi:id="_Vbfio5vlEeezkd4zce6tzQ" aggregationKind="NONE" name="">
+      <modelElement href="controller.uml#_VZ_t0ZvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_VbfipJvlEeezkd4zce6tzQ" label="+"/>
+      <cardinality xmi:id="_VbfipZvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_VbfippvlEeezkd4zce6tzQ" aggregationKind="NONE" name="ballModel" navigable="true">
+      <modelElement href="controller.uml#_VZ9RkJvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_Vbfip5vlEeezkd4zce6tzQ" label="-"/>
+      <cardinality xmi:id="_VbfiqJvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VbgJsJvlEeezkd4zce6tzQ" source="_VbgJuZvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_t05vlEeezkd4zce6tzQ"/>
+    <stereotypes xmi:id="_VbgJsZvlEeezkd4zce6tzQ" name="Reference">
+      <modelElement href="controller.uml#_VaAU4JvlEeezkd4zce6tzQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_VbgJspvlEeezkd4zce6tzQ" text=""/>
+    <sourceRole xmi:id="_VbgJs5vlEeezkd4zce6tzQ" aggregationKind="NONE" name="">
+      <modelElement href="controller.uml#_VZ_t1JvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_VbgJtJvlEeezkd4zce6tzQ" label="+"/>
+      <cardinality xmi:id="_VbgJtZvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_VbgJtpvlEeezkd4zce6tzQ" aggregationKind="NONE" name="ballView" navigable="true">
+      <modelElement href="controller.uml#_VZ94oJvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_VbgJt5vlEeezkd4zce6tzQ" label="-"/>
+      <cardinality xmi:id="_VbgJuJvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VbdtcJvlEeezkd4zce6tzQ" sourceConnectionVisual="_VbdtcZvlEeezkd4zce6tzQ" text="The &lt;code>Controller&lt;/code> class is a controller class under MVC pattern.&#xA;The &lt;code>Controller&lt;/code> class is used for instantiates everything,&#xA;including the model, view and adapters.&#xA;&#xA;@author Yuchang Shen and Yibing Zhang&#xA;based on HW02 by Yue Jiang and Yuchang Shen&#xA; *" item="_VbgJuZvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_GwJvlEeezkd4zce6tzQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VbeUgJvlEeezkd4zce6tzQ" sourceConnectionVisual="_VbeUgZvlEeezkd4zce6tzQ" text="Controller constructor builds the system" item="_VbgJx5vlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_GwZvlEeezkd4zce6tzQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_VbeUgpvlEeezkd4zce6tzQ" sourceConnectionVisual="_VbeUg5vlEeezkd4zce6tzQ" text="Start the system" item="_VbgJzZvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_GwpvlEeezkd4zce6tzQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Vbe7kJvlEeezkd4zce6tzQ" sourceConnectionVisual="_Vbe7kZvlEeezkd4zce6tzQ" text="Launch the application.&#xA;&#x9; * &#xA;&#x9; * @param args&#xA;&#x9; *            Arguments given by the system or command line." item="_VbgJ0JvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZ_Gw5vlEeezkd4zce6tzQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_VbgJuZvlEeezkd4zce6tzQ" comments="_VbdtcJvlEeezkd4zce6tzQ" targetConnectionVisual="_VbdtcZvlEeezkd4zce6tzQ" name="Controller" associationsOut="_VbfioJvlEeezkd4zce6tzQ _VbgJsJvlEeezkd4zce6tzQ">
+    <modelElement href="controller.uml#_VZzgkJvlEeezkd4zce6tzQ"/>
+    <visualProperties xmi:id="_VbgJupvlEeezkd4zce6tzQ" position="30.0,30.0"/>
+    <visibility xmi:id="_VbgJu5vlEeezkd4zce6tzQ" label="+"/>
+    <attributes xmi:id="_VbgJvJvlEeezkd4zce6tzQ" name="ballModel">
+      <modelElement href="controller.uml#_VZ9RkJvlEeezkd4zce6tzQ"/>
+      <stereotypes xmi:id="_VbgJvZvlEeezkd4zce6tzQ" name="LegacyStyledElement">
+        <modelElement href="controller.uml#_VZ9RkZvlEeezkd4zce6tzQ"/>
+      </stereotypes>
+      <visibility xmi:id="_VbgJvpvlEeezkd4zce6tzQ" label="-"/>
+      <cardinality xmi:id="_VbgJv5vlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+      <type xmi:id="_VbgJwJvlEeezkd4zce6tzQ" name="BallModel">
+        <modelElement href="controller.uml#_VZ6OQpvlEeezkd4zce6tzQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_VbgJwZvlEeezkd4zce6tzQ" name="ballView">
+      <modelElement href="controller.uml#_VZ94oJvlEeezkd4zce6tzQ"/>
+      <stereotypes xmi:id="_VbgJwpvlEeezkd4zce6tzQ" name="Generics">
+        <modelElement href="controller.uml#_VZ94oZvlEeezkd4zce6tzQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_VbgJw5vlEeezkd4zce6tzQ" name="LegacyStyledElement">
+        <modelElement href="controller.uml#_VZ-fsJvlEeezkd4zce6tzQ"/>
+      </stereotypes>
+      <visibility xmi:id="_VbgJxJvlEeezkd4zce6tzQ" label="-"/>
+      <cardinality xmi:id="_VbgJxZvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+      <type xmi:id="_VbgJxpvlEeezkd4zce6tzQ" name="BallWorldMainAppFrame">
+        <modelElement href="controller.uml#_VZ8DcJvlEeezkd4zce6tzQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_VbgJx5vlEeezkd4zce6tzQ" comments="_VbeUgJvlEeezkd4zce6tzQ" targetConnectionVisual="_VbeUgZvlEeezkd4zce6tzQ" name="Controller">
+      <modelElement href="controller.uml#_VZ0HoJvlEeezkd4zce6tzQ"/>
+      <keywords xmi:id="_VbgJyJvlEeezkd4zce6tzQ" keyword="create"/>
+      <visibility xmi:id="_VbgJyZvlEeezkd4zce6tzQ" label="+"/>
+      <cardinality xmi:id="_VbgJypvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_VbgJy5vlEeezkd4zce6tzQ">
+        <modelElement href="controller.uml#_VZ0Ho5vlEeezkd4zce6tzQ"/>
+        <type xmi:id="_VbgJzJvlEeezkd4zce6tzQ" name="Controller">
+          <modelElement href="controller.uml#_VZzgkJvlEeezkd4zce6tzQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_VbgJzZvlEeezkd4zce6tzQ" comments="_VbeUgpvlEeezkd4zce6tzQ" targetConnectionVisual="_VbeUg5vlEeezkd4zce6tzQ" name="start">
+      <modelElement href="controller.uml#_VZ0HpJvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_VbgJzpvlEeezkd4zce6tzQ" label="+"/>
+      <cardinality xmi:id="_VbgJz5vlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_VbgJ0JvlEeezkd4zce6tzQ" comments="_Vbe7kJvlEeezkd4zce6tzQ" targetConnectionVisual="_Vbe7kZvlEeezkd4zce6tzQ" name="main" staticOperation="true">
+      <modelElement href="controller.uml#_VZ0usJvlEeezkd4zce6tzQ"/>
+      <visibility xmi:id="_VbgJ0ZvlEeezkd4zce6tzQ" label="+"/>
+      <cardinality xmi:id="_VbgJ0pvlEeezkd4zce6tzQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_VbgJ05vlEeezkd4zce6tzQ" name="args">
+        <modelElement href="controller.uml#_VZ0usZvlEeezkd4zce6tzQ"/>
+        <cardinality xmi:id="_VbgJ1JvlEeezkd4zce6tzQ" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_VbgJ1ZvlEeezkd4zce6tzQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

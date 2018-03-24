@@ -1,0 +1,55 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import lm44_xw47.clientMap.ICmd2ClientMapAdapter;
+import lm44_xw47.model.dataType.BallPickType;
+import provided.mixedData.MixedDataKey;
+
+/**
+ * ball pick command
+ *
+ */
+public class BallPickCmd extends DataPacketUserAlgoCmd<BallPickType> {
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -4296735035727567430L;
+
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+
+	/**
+	 * mixed data key
+	 */
+	private MixedDataKey<ICmd2ClientMapAdapter> gameKey;
+
+	/**
+	 * construtor
+	 * @param gameKey data key
+	 * @param cmd2ModelAdpt adapter
+	 */
+	public BallPickCmd(MixedDataKey<ICmd2ClientMapAdapter> gameKey, IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.gameKey = gameKey;
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	/**
+	 * command content
+	 */
+	@Override
+	public String apply(Class<?> index, DataPacketUser<BallPickType> host, String... params) {
+		ICmd2ClientMapAdapter cmd2ClientMapAdpt = cmd2ModelAdpt.get(gameKey);
+		cmd2ClientMapAdpt.pickBall(host.getData().getUser());
+		return "";
+	}
+
+	/**
+	 * set adapter
+	 */
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+}

@@ -1,0 +1,15 @@
+package lm44_xw47.view;
+
+/**
+* The adapter map GUI used to communicate with model.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *  *
+ * @param <CBType> Type. */
+public interface IMapView2MapModelAdapter<CBType> {
+	public void goLatLong(String latitude, String longitude);
+
+	public void goPlace(CBType o);
+
+}

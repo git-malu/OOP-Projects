@@ -1,0 +1,25 @@
+package engine.engineModel;
+
+import provided.engine.model.IEngineModel;
+
+public class EngineModel implements IEngineModel{
+
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sendMsgToClient(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

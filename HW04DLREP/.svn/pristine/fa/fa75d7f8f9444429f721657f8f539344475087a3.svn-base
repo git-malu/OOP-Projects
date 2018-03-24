@@ -1,0 +1,14 @@
+package model.strategy;
+
+import util.Randomizer;
+
+public class ThinkingImagePaintStrategy extends UprightImagePaintStrategy {
+  private static String fileName = "../image/thinking.png";
+  public ThinkingImagePaintStrategy() {
+    super(fileName, Randomizer.getInstance().randomDouble()+0.5);
+  }
+  
+  public String toString() {
+    return "ThinkingImage";
+  }
+}

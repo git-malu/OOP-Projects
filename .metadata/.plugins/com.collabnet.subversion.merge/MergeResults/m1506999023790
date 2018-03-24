@@ -1,0 +1,34 @@
+:normalEnd:
+project: /HW05QWH
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+revisionRanges: 23947-24068
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 23947-24068
+Summary result: type: 0 category: Added number: 3
+Summary result: type: 0 category: Updated number: 2
+Summary result: type: 1 category: Updated number: 1
+Summary result: type: 0 category: Conflicts number: 2
+Summary result: type: 2 category: Tree conflicts number: 5
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5
+workspaceRevision: 24071
+lowerRevision: 23947
+upperRevision: 24068
+merge -r 23947:24068 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/strategies/MultiInteractStrategy.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/strategies/IInteractionStrategy.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/strategies/CollideStrategy.java
+Error:   1 C           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/BallModel.java
+Error:   1 C           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/model/balls/Ball.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/controller/Controller.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/view/BallWorldMainAppFrame.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/util/IDispatcher.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/util/IObserver.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/util/ACollectionDispatcher.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/util/ASetDispatcher.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH/src/util/SetDispatcherSequential.java
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH

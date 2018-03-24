@@ -1,0 +1,28 @@
+package model.datapackeAlgoCmd;
+
+import common.DataPacketAlgoCmd;
+import common.DataPacketChatRoom;
+import common.ICmd2ModelAdapter;
+public class DefaultCmd extends DataPacketAlgoCmd<Object> {
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 2550789087966390011L;
+	
+	transient private ICmd2ModelAdapter _cm2ModelAdpt;
+	
+	@Override
+	public String apply(Class<?> index, DataPacketChatRoom<Object> host, String... params) {
+		Object x= host.getData();
+		String msg = "Default case called. data = "+ x;
+		_cm2ModelAdpt.appendMsg(msg);
+		return msg;
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(ICmd2ModelAdapter cmd2ModelAdpt) {
+		// TODO Auto-generated method stub
+		this._cm2ModelAdpt = cmd2ModelAdpt;
+	}
+
+}

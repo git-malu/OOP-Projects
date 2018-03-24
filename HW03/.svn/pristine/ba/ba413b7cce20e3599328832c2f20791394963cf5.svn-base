@@ -1,0 +1,16 @@
+package model;
+
+public class SwitchStrategy implements IUpdateStrategy {
+	IUpdateStrategy switcherStra = IUpdateStrategy.nullStrategy;
+
+	@Override
+	public void strategy(ABall ball) {
+		// TODO Auto-generated method stub
+		switcherStra.strategy(ball);
+	}
+
+	public void setStrategy(IUpdateStrategy newStra) {
+		switcherStra = newStra;
+	}
+
+}

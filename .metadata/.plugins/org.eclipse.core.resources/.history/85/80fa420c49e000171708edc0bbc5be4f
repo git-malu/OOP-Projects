@@ -1,0 +1,42 @@
+package common;
+
+import java.io.Serializable;
+import java.util.UUID;
+import java.util.Collection;
+
+/**
+* A generalized chat room interface that defines a set of operations of a chat room.
+ * A chat room is a FULLY SERIALIZABLE object that is wholly transmitted from one machine to another machine
+ * A chat room holds a set of IReceiver stubs. */
+public interface IChatRoom extends Serializable {
+	public UUID getUUID();
+
+	/**
+	 * <pre>
+	 *           1..1     1..*
+	 * IChatRoom ------------------------> IReceiver
+	 *           &lt;       iReceiverStubs
+	 * </pre>
+	 */
+	public Collection<IReceiver> getIReceiverStubs();
+
+	/**
+	* Get the name of the chat room
+	 * 	 * @return The name of the chat room */
+	public String getName();
+
+	public <T extends ICRMessageType> void sendPacket(DataPacketCR<T> data);
+
+	/**
+	* Add a receiver in the local chat room without interacting with remote peers
+	 * 	 * @param receiver the receiver to add
+	 * 	 * @return False if the receiver is already in the chat room; True if successfully add the receiver */
+	public boolean addIReceiverStub(IReceiver receiver);
+
+	/**
+	* Remove a receiver in the local chat room without interacting with remote peers
+	 * 	 * @param receiver the receiver to remove
+	 * 	 * @return False if the receiver is actually not in the chat room; True if successfully remove the receiver */
+	public boolean removeIReceiverStub(IReceiver receiver);
+
+}

@@ -1,0 +1,22 @@
+:normalEnd:
+project: /HW05
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5
+revisionRanges: 23991-23992
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 23991-23992
+Summary result: type: 0 category: Updated number: 3
+Summary result: type: 1 category: Updated number: 1
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+workspaceRevision: 23992
+lowerRevision: 23991
+upperRevision: 23992
+merge -c 23992 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05/src/model/IBallCmd.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05/src/model/BallModel.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05/src/controller/Controller.java
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05

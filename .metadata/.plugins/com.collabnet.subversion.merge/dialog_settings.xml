@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="MergeWizardStandardPage.selectRevisions"/>
+	<item value="6" key="MergeWizardMainPage.lastBinaryConflictChoice"/>
+	<item value="23" key="com.collabnet.subversion.merge.wizards.MergeWizard.location.y"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights0"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights1"/>
+	<item value="259" key="com.collabnet.subversion.merge.wizards.MergeWizard.location.x"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights2"/>
+	<item value="-1" key="MergeWizardMainPage.lastTreeConflictChoice"/>
+	<item value="6" key="MergeWizardMainPage.lastTextConflictChoice"/>
+	<item value="0" key="ConflictHandlingDialog.lastTextChoice"/>
+	<item value="/HW07Branch/src/engine/engineModel/EngineModel.java,/HW07Branch/src/engine/engineModel/EngineModel.java" key="mergeFromUrls_https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07/src/engine/engineModel/EngineModel.java"/>
+	<item value="6" key="MergeWizardMainPage.lastPropertyConflictChoice"/>
+	<item value="1083" key="com.collabnet.subversion.merge.wizards.MergeWizard.size.x"/>
+	<item value="753" key="com.collabnet.subversion.merge.wizards.MergeWizard.size.y"/>
+	<item value="/HW07,/HW07" key="mergeFromUrls_https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch"/>
+	<item value="/HW07Branch,/HW07Branch" key="mergeFromUrls_https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07"/>
+	<item value="500" key="MergeWizardRevisionsPageWeightsHorizontal1"/>
+	<item value="500" key="MergeWizardRevisionsPageWeightsHorizontal0"/>
+</section>

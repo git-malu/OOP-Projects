@@ -1,0 +1,46 @@
+package lm44_yb22.model;
+
+import common.DataPacketChatRoom;
+import common.IChatRoom;
+import common.IReceiver;
+
+public class MiniModel {
+	private IChatRoom chatRoom;
+	private IReceiver myReceiver;
+	public MiniModel(IChatRoom newChatRoom) {
+		// TODO Auto-generated constructor stub
+		chatRoom = newChatRoom;
+		//myReceiver = receiverStub;
+	}
+	/**
+	 * getter for chatRoom
+	 * @return
+	 */
+	public IChatRoom getChatRoom() {
+		return chatRoom;
+	}
+	
+	/**
+	 * send message in the chatRoom
+	 */
+	public void sendMsg(String data) {
+		System.out.println( "miniModel sendMsg: " + data);
+		chatRoom.sendPacket(new DataPacketChatRoom<String>(String.class, data, myReceiver)); // receiver is sender
+	}
+	/**
+	 * for initialization
+	 * @param newReceiver
+	 */
+	public void setReceiver(IReceiver newReceiver) {
+		myReceiver = newReceiver;
+	}
+	
+	/**
+	 * add receiver to the chat room.
+	 * @param receiver
+	 */
+	public void addReceiver(IReceiver receiver) {
+		chatRoom.addIReceiverStubLocally(receiver);
+	}
+	
+}

@@ -1,0 +1,240 @@
+package lm44_yb22.controller;
+
+import java.awt.EventQueue;
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.UUID;
+import java.util.function.Consumer;
+
+import javax.swing.JPanel;
+
+import common.DataPacketChatRoom;
+import common.IChatRoom;
+import common.IComponentFactory;
+import common.IReceiver;
+import common.IUser;
+import lm44_yb22.model.IMainModelMainAdapter;
+import lm44_yb22.model.IMiniModelAdapter;
+import lm44_yb22.model.IReceiverAdapter;
+import lm44_yb22.model.IMainModel2MiniMVCAdpt;
+import lm44_yb22.model.MainModel;
+import lm44_yb22.model.MiniModel;
+import lm44_yb22.model.User;
+import lm44_yb22.view.IMainViewAdapter;
+import lm44_yb22.view.IMiniViewAdapter;
+import lm44_yb22.view.MainView;
+import lm44_yb22.view.MiniView;
+
+/**
+ * This is the engine controller of engine MVC.
+ * @author malu
+ *
+ */
+public class MainController {
+	MainView mainView;
+	MainModel mainModel;
+	/**
+	 * constructor who initializes engineModel and engineView
+	 */
+	public MainController() {
+		mainView = new MainView(new IMainViewAdapter() {
+			
+			@Override
+			public IUser connectTo(String ip) {
+				// TODO Auto-generated method stub
+				return mainModel.connectTo(ip);
+			}
+
+			@Override
+			public void createChatRoom(String roomName) {
+				// TODO Auto-generated method stub
+				mainModel.createMyChatRoom(roomName);
+			}
+			
+			
+		});
+		
+		
+		
+		mainModel = new MainModel(new IMainModelMainAdapter() {
+			//implement the adapter with a method of displaying to log
+			@Override
+			public Consumer<String> getLogDisplayMethod() {
+				// TODO Auto-generated method stub
+				return mainView.getDisplayToLogMethod();
+			}
+
+			@Override
+			public IMainModel2MiniMVCAdpt makeMiniMVC(IChatRoom newChatRoom) {
+				
+				//make mini MVC and return adapter to main model
+				IMainModel2MiniMVCAdpt adpt = facMakeMiniMVC(newChatRoom);
+				mainView.addMiniView4ChatRoom(adpt.getMiniView4ChatRoom());
+				return adpt;
+			}
+
+			@Override
+			public void addMiniView4ChatRoom(JPanel miniView) {
+				// TODO Auto-generated method stub
+				mainView.addMiniView4ChatRoom(miniView);
+			}
+
+			@Override
+			public void logDisplay(String log) {
+				// TODO Auto-generated method stub
+				mainView.logDisplay(log);
+			}
+		});
+		
+	}
+	
+	//this method is for MainModelAdapter to use
+	public IMainModel2MiniMVCAdpt facMakeMiniMVC(IChatRoom newChatRoom) {
+
+		return new MiniController() {
+			
+			MiniView miniView;
+			MiniModel miniModel;
+
+			/**
+			 * instantiate the miniView and MiniModel
+			 * @param newChatRoom
+			 * @return
+			 */
+			IMainModel2MiniMVCAdpt instantiate(IChatRoom newChatRoom) {
+				//initialize miniView Adapter
+				miniView = new MiniView(newChatRoom.getName(), new IMiniViewAdapter() {
+					@Override
+					public void sendMsg(String data) {
+						// TODO Auto-generated method stub
+						
+						miniModel.sendMsg(data);
+					}
+					
+//					@Override
+//					public void sendMsg(DataPacketChatRoom<?> data) {
+//						// TODO Auto-generated method stub
+//						miniModel.sendMsg(data);
+//					}
+					
+					// tell miniModel to do the leave room stuff
+					@Override
+					public void leaveRoom() {
+						// TODO Auto-generated method stub
+						mainView.removeMiniView(miniView);
+						
+						//unnecessary?
+						//remove the corresponding receiver from the chatroom's receiver list
+						Collection<IReceiver> chatRoomReceivers = miniModel.getChatRoom().getIReceiverStubs();
+						Collection<IReceiver> userReceivers = mainModel.getUser().getReceivers();
+						for (IReceiver eachRece : userReceivers) {
+							if(chatRoomReceivers.contains(eachRece)) {
+								chatRoomReceivers.remove(eachRece);// remove from chat room
+								userReceivers.remove(eachRece);// remove from user
+							}
+						}
+						
+						
+						/**
+						 * here inform every to remove IReceiver stub from chat before remove the whole chatroom
+						 */
+						for (IReceiver eachRece : chatRoomReceivers) {
+//							try {
+//								// you need to do it by sending message
+//								eachRece.receive(null);
+//								
+//							} catch (RemoteException e) {
+//								// TODO Auto-generated catch block
+//								e.printStackTrace();
+//							}
+						}
+						
+						// remove the chat room from user
+						mainModel.removeChatRoomFromUser(miniModel.getChatRoom());
+					}
+
+					
+
+					
+					
+				});
+				
+				
+				//remember to initialize miniModel Adapter here
+				miniModel = new MiniModel(newChatRoom);
+				
+				
+				
+				return new IMainModel2MiniMVCAdpt() {
+					@Override
+					public MiniView getMiniView4ChatRoom() {
+						// TODO Auto-generated method stub
+						return miniView;
+					}
+					
+					public MiniModel getMiniModel4ChatRoom() {
+						return miniModel;
+					}
+					//get receiver2miniViewAdapter
+					@Override
+					public IReceiverAdapter getReceiverToMiniMVCAdpt() {
+						//receiver to miniMVC adapter
+						
+						return new IReceiverAdapter() {
+
+							@Override
+							public void appendMsg(String text, String name) {
+								miniView.append(name + ": " + text);
+							}
+
+							@Override
+							public void buildScrollableComponent(IComponentFactory fac, String label) {
+								
+							}
+
+							@Override
+							public void buildNonScrollableComponent(IComponentFactory fac, String label) {
+
+							}
+							
+							
+						};
+					}
+				};
+			}
+		}.instantiate(newChatRoom);
+	}
+	
+	/**
+	 * Launch the application.
+	 * @param args main argument
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+//					EngineController engineController = new EngineController();
+//					engineController.start();
+					MainController mainController = new MainController();
+					mainController.start();
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			}
+		});
+	}
+	
+	/**
+	 * start the controller
+	 */
+	public void start() {
+//		this.engineModel.start();
+//		this.engineView.start();
+		mainView.start();
+		mainModel.start();
+	}
+	
+	
+}

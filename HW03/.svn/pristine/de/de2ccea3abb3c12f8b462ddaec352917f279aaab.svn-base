@@ -1,0 +1,23 @@
+package model;
+
+import java.awt.Point;
+
+public class DrunkenStrategy extends StraightStrategy implements IUpdateStrategy {
+	Randomizer rand = Randomizer.getInstance();
+
+	@Override
+	public void strategy(ABall ball) {
+		// TODO Auto-generated method stub
+		updateState(ball);
+		move(ball);
+		bounce(ball);
+	}
+
+	public void updateState(ABall ball) {
+		double angle = (rand.randomDouble() - 0.5) * Math.PI;
+		double vx = ball.velocity.getX();
+		double vy = ball.velocity.getY();
+		ball.velocity = new Point((int) Math.round((vx * Math.cos(angle) - vy * Math.sin(angle))),
+				(int) Math.round((vy * Math.cos(angle) + vx * Math.sin(angle))));
+	}
+}

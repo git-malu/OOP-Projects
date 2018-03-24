@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;HW08/src/lm44_yb22.view&apos;&#x0A;- Original project: &apos;HW08FromBao&apos;&#x0A;- Destination element: &apos;HW08/src/lm44_yb22.view&apos;&#x0A;- Original elements:&#x0A;     view.MiniView.java&#x0A;     view.IMain2ModelAdpt.java&#x0A;     view.MainView.java&#x0A;     view.ChatRoomRenderer.java&#x0A;     view.IMini2ModelAdpt.java" description="Copy compilation units" destination="=HW08/src&lt;lm44_yb22.view" element1="/src&lt;view{MiniView.java" element2="/src&lt;view{IMain2ModelAdpt.java" element3="/src&lt;view{MainView.java" element4="/src&lt;view{ChatRoomRenderer.java" element5="/src&lt;view{IMini2ModelAdpt.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1510177978124" units="5" version="1.0"/>
+</session>

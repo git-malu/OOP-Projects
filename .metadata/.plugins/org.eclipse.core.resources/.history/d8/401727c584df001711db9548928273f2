@@ -1,0 +1,45 @@
+package lm44_xw47.model.dataType;
+
+import java.util.Collection;
+
+import common.IChatRoom;
+import common.IUser;
+import common.IUserMessageType;
+
+public class InstallLobbyType implements IUserMessageType {
+
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -5974490432578562080L;
+	
+	/**
+	 * user list
+	 */
+	private Collection<IUser> users;
+	
+	/**
+	 * get collection team
+	 */
+	private Collection<IChatRoom> teams;
+	
+	private IUser localUser;
+	
+	public InstallLobbyType(Collection<IUser> users, Collection<IChatRoom> teams, IUser localUser) {
+		this.users = users;
+		this.teams = teams;
+		this.localUser = localUser;
+	}
+
+	public Collection<IUser> getUsers() {
+		return users;
+	}
+	
+	public IUser getLocalUser() {
+		return localUser;
+	}
+	
+	public Collection<IChatRoom> getTeams() {
+		return teams;
+	}
+}

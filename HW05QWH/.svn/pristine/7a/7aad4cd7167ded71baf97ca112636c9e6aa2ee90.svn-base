@@ -1,0 +1,28 @@
+package model.strategies;
+
+import model.balls.Ball;
+
+/**
+ * IUpdateStrategy is the interface that defines the common method that a strategy
+ * should have. All strategies implement this interface with there own unique rules.
+ * 
+ * @author Yuchang Shen and Yibing Zhang
+ */
+public interface IUpdateStrategy {
+
+	/**
+	 * Method that describe the behavior corresponding to the strategy.
+	 * 
+	 * @param ball
+	 * 			The ball object to be updated with the strategy.
+	 */
+	public void updateState(Ball ball);
+
+	/**
+	 * the NULL representation of IUpdateStrategy
+	 */
+	public static final IUpdateStrategy NULL_OBJECT = new IUpdateStrategy() {
+		public void updateState(Ball ball) {
+		};
+	};
+}

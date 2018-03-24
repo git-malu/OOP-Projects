@@ -1,0 +1,79 @@
+package engine.engineModel;
+
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+import provided.compute.ICompute;
+import provided.engine.model.IEngineModel;
+import provided.rmiUtils.RMIUtils;
+/**
+ * Engine server resides here.
+ * @author malu
+ *
+ */
+public class EngineModel implements IEngineModel{
+	
+	public static final int SERVER_PORT = 2101;
+	public static final int REGISTRY_PORT = 2099;
+	/**
+	 * Reference to the Registry
+	 */
+	private Registry registry;
+	
+	private RMIUtils rmiUtils;
+	//private ICompute compute = 
+	private IEngineModel2ViewAdapter engineModel2ViewAdapter;
+	
+	public EngineModel(IEngineModel2ViewAdapter adapter) {
+		this.engineModel2ViewAdapter = adapter;
+	}
+	
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		try {
+			// Start the RMI system and get the local Registry, making it if necessary.
+			rmiUtils = new RMIUtils(engineModel2ViewAdapter.getDisplayMethod());// initialize right after model starts
+			//System.out::println
+			rmiUtils.startRMI(SERVER_PORT);
+			registry = rmiUtils.getLocalRegistry();
+		}
+		catch(Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+		
+//		try {
+//
+//			// Create a UnicastRemoteObject stub from the RMI Server implementation to be sent to the clients.
+//			IHello helloStub = (IHello) UnicastRemoteObject.exportObject(helloServer, SERVER_PORT);
+//
+//			// Bind the remote object's stub in the registry at the specified
+//			// port use rebind instead of bind so the program can be run
+//			// multiple times with the same registry
+//			registry.rebind("Hello", helloStub);
+//
+//			System.err.println("Server ready");
+//
+//		} catch (Exception e) {
+//			System.err.println("Server exception: " + e.toString());
+//			e.printStackTrace();
+//			System.exit(-1); // exit the program.
+//		}
+		
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		rmiUtils.stopRMI();
+	}
+
+	@Override
+	public void sendMsgToClient(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,251 @@
+package model.balls;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.util.Observable;
+import java.util.Observer;
+
+import model.IBallCmd;
+import model.paint.strategies.IPaintStrategy;
+import model.strategies.IUpdateStrategy;
+import util.Dispatcher;
+import util.IDispatcher;
+
+/**
+ * The <code>Ball</code> class is the concrete class for all balls.
+ * 
+ * @author Yuchang Shen and Weiheng Qiu
+ * based on HW02 by Yue Jiang and Yuchang Shen
+ *
+ */
+
+public class Ball implements IObserver<IBallCmd> {
+	/**
+	 * The color of this <code>ABall</code>.
+	 */
+	protected Color color;
+
+	/**
+	 * The radius of this <code>ABall</code>.
+	 */
+	protected int radius;
+
+	/**
+	 * The location(center) of this <code>ABall</code>.
+	 */
+	private Point location;
+
+	/**
+	 * The velocity of this <code>ABall</code>.
+	 */
+	protected Point velocity;
+
+	/**
+	 * The canvas used by this <code>ABall</code>.
+	 */
+	private Component canvas;
+
+	private IUpdateStrategy strategy;
+
+	private IPaintStrategy paintStrat;
+
+	/**
+	 * 
+	 * Constructor for invocation by subclass constructors
+	 * 
+	 * @param color
+	 *            the color of this ball
+	 * @param radius
+	 *            the radius of this ball
+	 * @param startLoc
+	 *            the start location of this ball
+	 * @param vel
+	 *            the velocity of this ball
+	 * @param Canvas
+	 *            the canvas used by this ball
+	 * @param strategy
+	 *            the strategy corresponding to the Ball's behavior
+	 * @param paintStrat
+	 * 			  the paint strategy
+	 */
+	public Ball(Color color, int radius, Point startLoc, Point vel, Component Canvas, IUpdateStrategy strategy,
+			IPaintStrategy paintStrat) {
+		this.color = color;
+		this.radius = radius;
+		this.location = startLoc;
+		this.velocity = vel;
+		this.canvas = Canvas;
+		this.strategy = strategy;
+		this.paintStrat = paintStrat;
+
+		paintStrat.init(this);
+	}
+
+	/**
+	 * Setter for the color.
+	 * @param color
+	 * 			The color of the ball.
+	 */
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	/**
+	 *  get color
+	 * @return the color
+	 */
+	public Color getColor() {
+		return this.color;
+	}
+
+	/**
+	 * Setter for the velocity.
+	 * @param velx
+	 * 			The x component of the velocity.
+	 * @param vely
+	 * 			The y component of the velocity.
+	 */
+	public void setVel(int velx, int vely) {
+		this.velocity.x = velx;
+		this.velocity.y = vely;
+	}
+
+	/**
+	 * The getter for the velocity.
+	 * @return The current velocity.
+	 */
+	public Point getVel() {
+		return this.velocity;
+	}
+
+	/**
+	 * The setter for the radius.
+	 * @param radius
+	 * 			The radius of the ball.
+	 */
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+
+	/**
+	 * get radius
+	 * @return the radius
+	 */
+	public int getRadius() {
+		return this.radius;
+	}
+
+	/**
+	 * The setter for the strategy.
+	 * @param strategy
+	 * 			The strategy of the ball.
+	 */
+	public void setStrategy(IUpdateStrategy strategy) {
+		this.strategy = strategy;
+	}
+
+	/**
+	 * get strategy
+	 * @return the strategy
+	 */
+	public IUpdateStrategy getStrategy() {
+		return this.strategy;
+	}
+
+	/**
+	 * get location
+	 * @return the location
+	 */
+	public Point getLocation() {
+		return this.location;
+	}
+
+	/**
+	 * get the canvas
+	 * @return the canvas
+	 */
+	public Component getCanvas() {
+		return this.canvas;
+	}
+
+	/**
+	 * 
+	 * Paint the <code>Ball</code> at an arbitrary location(x - radius, y - radius)
+	 * with current color, (x - radius, y - radius) means the upper left corner of
+	 * this ball.
+	 * 
+	 * @param g
+	 *            a graphics context to draw the ball
+	 */
+	public void paint(Graphics g) {
+		paintStrat.paint(g, this);
+		//		System.out.println("painting!");
+	}
+
+	/**
+	 * Change the location of the ball as per its velocity
+	 */
+	public void move() {
+		location.x += velocity.x;
+		location.y += velocity.y;
+	}
+
+	/**
+	 * Correct the location and velocity of a ball if it has contacted a wall.
+	 * Including the left, right, upper and lower walls.
+	 */
+	public void bounce() {
+		// Bounce the left wall
+		if (location.x - radius < 0) {
+			velocity.x = -1 * velocity.x;
+			location.x = radius * 2 - location.x;
+		}
+		// Bounce the right wall
+		if (location.x + radius > canvas.getWidth()) {
+			velocity.x = -1 * velocity.x;
+			location.x = (canvas.getWidth() - radius) * 2 - location.x;
+		}
+
+		// Bounce the upper wall
+		if (location.y - radius < 0) {
+			velocity.y = -1 * velocity.y;
+			location.y = radius * 2 - location.y;
+		}
+		// Bounce the lower wall
+		if (location.y + radius > canvas.getHeight()) {
+			velocity.y = -1 * velocity.y;
+			location.y = (canvas.getHeight() - radius) * 2 - location.y;
+		}
+
+	}
+
+	/**
+	 * Change the ball's status, for example, color or radius. This abstract method
+	 * which need to implement in ABall's subclass
+	 */
+	//	public void shapeShift() {
+	//	}
+
+	/**
+	 * Doing things like changing the color or radius or velocity in some manner.
+	 */
+	//	public void update(Observable o, Object arg) {
+	//		paint((Graphics) arg);
+	//		move();
+	//		bounce();
+	//		strategy.updateState(this);
+	//		;
+	//	}
+
+	
+	
+//	public void update(Observable o, Object cmd) {
+//		((IBallCmd) cmd).apply(this, (Dispatcher) o);
+//	}
+	public void update(IDispatcher<IBallCmd> o, IBallCmd cmd) {
+         cmd.apply(this, o);
+    }
+
+}

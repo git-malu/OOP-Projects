@@ -1,0 +1,39 @@
+:normalEnd:
+project: /HW07
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+revisionRanges: 25313-25674
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 25313-25674
+Summary result: type: 0 category: Resolved conflicts number: 2
+Summary result: type: 2 category: Resolved conflicts number: 4
+Summary result: type: 0 category: Skipped files number: 1
+Summary result: type: 0 category: Added number: 6
+Summary result: type: 1 category: Updated number: 1
+Summary result: type: 0 category: Conflicts number: 2
+Summary result: type: 2 category: Tree conflicts number: 6
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+workspaceRevision: 25683
+lowerRevision: 25313
+upperRevision: 25674
+merge -r 25313:25674 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/EngineController.launch
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/Controller (6).launch
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineView/EngineGUI.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineView/EngineView.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineView/IEngineView2ModelAdapter.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineModel/EngineModel.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineModel/Compute.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineModel/IEngineModel2ViewAdapter.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/engine/engineController/EngineController.java
+Message: 1 S           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientModel/clientModel.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientModel/ClientModel.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientModel/IViewAdapter.java
+Error:   1 C           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientController/Controller.java
+Error:   1 C           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientView/MyClientGUI.java
+Error:   1         C   /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07/src/client/clientView/IModelAdapter.java
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07

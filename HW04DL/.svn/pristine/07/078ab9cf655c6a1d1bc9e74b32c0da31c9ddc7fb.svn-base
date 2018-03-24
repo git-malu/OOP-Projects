@@ -1,0 +1,25 @@
+package strategy.painting;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+
+import java.awt.Shape;
+
+public class ShapePaintStrategy extends APaintStrategy {
+
+  private Shape shape;
+  
+  public ShapePaintStrategy(AffineTransform at, Shape shape) {
+    super(at);
+    this.shape = shape;
+    // TODO Auto-generated constructor stub
+  }
+
+  @Override
+  public void paintXfrm(Graphics g, model.Shape context, AffineTransform at) {
+    // TODO Auto-generated method stub
+    ((Graphics2D) g).fill(at.createTransformedShape(shape));
+  }
+
+}

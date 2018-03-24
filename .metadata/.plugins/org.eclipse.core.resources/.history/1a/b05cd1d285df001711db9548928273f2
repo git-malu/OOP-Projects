@@ -1,0 +1,51 @@
+package lm44_xw47.model.dataType;
+
+import common.IUser;
+import common.IUserMessageType;
+
+public class PlayerMoveType implements IUserMessageType{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -5753945135025145761L;
+	
+	/**
+	 * user that needs to move
+	 */
+	private IUser user;
+	
+	/**
+	 * the destination that user moves to 
+	 */
+	private Double latitude;
+	
+	/**
+	 * the destination that user moves to 
+	 */
+	private Double longitude;
+	
+	/**
+	 * constructor that initialize user, and moving destination
+	 * @param user user that moves
+	 * @param latitude destination
+	 * @param longitude destination
+	 */
+	public PlayerMoveType(IUser user, Double latitude, Double longitude) {
+		this.user = user;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	
+	public IUser getUser() {
+		return user;
+	}
+	
+	public Double getLatitude() {
+		return latitude;
+	}
+	
+	public Double getLongitude() {
+		return longitude;
+	}
+	
+}

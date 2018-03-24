@@ -1,0 +1,37 @@
+package lm44_yb22.model;
+
+import java.rmi.RemoteException;
+import java.util.UUID;
+
+import common.DataPacketChatRoom;
+import common.IReceiver;
+import common.IUser;
+
+public class Receiver implements IReceiver {
+	UUID uuid = UUID.randomUUID();
+	IUser userStub;
+	
+	public Receiver(IUser userStub) {
+		// TODO Auto-generated constructor stub
+		this.userStub = userStub;
+	}
+	
+	@Override
+	public <T> void receive(DataPacketChatRoom<T> data) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IUser getUserStub() throws RemoteException {
+		// TODO Auto-generated method stub
+		return userStub;
+	}
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		// TODO Auto-generated method stub
+		return uuid;
+	}
+
+}

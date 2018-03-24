@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_VPu-kJvlEeezkd4zce6tzQ" name="controller">
+    <eAnnotations xmi:id="_VUMAwJvlEeezkd4zce6tzQ" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_VUMAwZvlEeezkd4zce6tzQ" source="codegen">
+        <details xmi:id="_VUMAwpvlEeezkd4zce6tzQ" key="codegenDirectory" value="/HW03/src"/>
+        <details xmi:id="_VbVxoJvlEeezkd4zce6tzQ" key="AssociatedSourceCode" value="/HW03/src/controller/Controller.java;972279050/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_VZwdQJvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdQZvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdQpvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdQ5vlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdRJvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdRZvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdRpvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_VZwdR5vlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_VZxEUJvlEeezkd4zce6tzQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VZxEUZvlEeezkd4zce6tzQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_VZxrYJvlEeezkd4zce6tzQ" name="awt">
+        <packagedElement xmi:type="uml:Class" xmi:id="_VZ5AIJvlEeezkd4zce6tzQ" name="Component"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_VZ5nMZvlEeezkd4zce6tzQ" name="EventQueue"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_VZ6OQJvlEeezkd4zce6tzQ" name="Graphics"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VZxrYZvlEeezkd4zce6tzQ" name="model">
+      <packagedElement xmi:type="uml:Class" xmi:id="_VZ6OQpvlEeezkd4zce6tzQ" name="BallModel"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_VZ61UJvlEeezkd4zce6tzQ" name="IModel2ViewUpdateViewAdapter"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_VZ61UpvlEeezkd4zce6tzQ" name="IModelCtrlAdpt"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_VZ7cYJvlEeezkd4zce6tzQ" name="IStrategyFac"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_VZ7cYpvlEeezkd4zce6tzQ" name="IModel2ViewGetCanvasAdapter"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VZxrYpvlEeezkd4zce6tzQ" name="view">
+      <packagedElement xmi:type="uml:Class" xmi:id="_VZ8DcJvlEeezkd4zce6tzQ" name="BallWorldMainAppFrame"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_VZ8DcpvlEeezkd4zce6tzQ" name="IView2ModelPaintAdapter"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VZyScJvlEeezkd4zce6tzQ" name="controller">
+      <packagedElement xmi:type="uml:Class" xmi:id="_VZzgkJvlEeezkd4zce6tzQ" name="Controller">
+        <ownedComment xmi:id="_VZ_GwJvlEeezkd4zce6tzQ">
+          <body>The &lt;code>Controller&lt;/code> class is a controller class under MVC pattern.
+The &lt;code>Controller&lt;/code> class is used for instantiates everything,
+including the model, view and adapters.
+
+@author Yuchang Shen and Yibing Zhang
+based on HW02 by Yue Jiang and Yuchang Shen
+ *</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_VZ9RkJvlEeezkd4zce6tzQ" name="ballModel" visibility="private" type="_VZ6OQpvlEeezkd4zce6tzQ" association="_VZ_t0JvlEeezkd4zce6tzQ"/>
+        <ownedAttribute xmi:id="_VZ94oJvlEeezkd4zce6tzQ" name="ballView" visibility="private" type="_VZ8DcJvlEeezkd4zce6tzQ" association="_VZ_t05vlEeezkd4zce6tzQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_VZ-fsZvlEeezkd4zce6tzQ" name="Controller" specification="_VZ0HoJvlEeezkd4zce6tzQ">
+          <ownedParameter xmi:id="_VZ-fspvlEeezkd4zce6tzQ" type="_VZzgkJvlEeezkd4zce6tzQ" direction="return"/>
+          <language>java</language>
+          <body>// Here the model is shown being constructed first then the view but it could
+		// easily be the other way around if needs dictated it.
+		// set the model field
+		ballModel = new BallModel(new IModel2ViewUpdateViewAdapter() {
+			@Override
+			public void updateView() {
+				ballView.updateView();
+			}
+
+		}, new IModel2ViewGetCanvasAdapter() {
+			@Override
+			public Component getCanvas() {
+				return ballView.getCanvas();
+			}
+		});
+		// set the view field
+		ballView = new BallWorldMainAppFrame&lt;IStrategyFac>(new IModelCtrlAdpt&lt;IStrategyFac>() {
+			@Override
+			public IStrategyFac addStrategy(String className) {
+				return ballModel.makeStrategyFac(className);
+			}
+
+			@Override
+			public void makeBall(IStrategyFac selectedItem) {
+				ballModel.loadBall(selectedItem.make());
+			}
+
+			@Override
+			public void clearBalls() {
+				ballModel.clearBalls();
+				ballModel.switchSwitcherStrategy(ballModel.defaultStrategy);
+			}
+
+			@Override
+			public IStrategyFac combineStrategy(IStrategyFac selectedItem1, IStrategyFac selectedItem2) {
+				return ballModel.combineStrategyFacs(selectedItem1, selectedItem2);
+			}
+
+			@Override
+			public void makeSwitcherBall() {
+				ballModel.loadBall(ballModel.getSwithcerStrategy());
+			}
+
+			@Override
+			public void switchStrategy(IStrategyFac selectedItem) {
+				ballModel.switchSwitcherStrategy(selectedItem.make());
+			}
+		}, new IView2ModelPaintAdapter() {
+			@Override
+			public void paint(Graphics g) {
+				ballModel.update(g);
+			}
+		});
+
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_VZ-fs5vlEeezkd4zce6tzQ" name="start" specification="_VZ0HpJvlEeezkd4zce6tzQ">
+          <language>java</language>
+          <body>ballModel.start(); // better to start the model first but not always
+		ballView.start();
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_VZ-ftJvlEeezkd4zce6tzQ" name="main" specification="_VZ0usJvlEeezkd4zce6tzQ">
+          <ownedParameter xmi:id="_VZ-ftZvlEeezkd4zce6tzQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VZ-ftpvlEeezkd4zce6tzQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>EventQueue.invokeLater(new Runnable() { // Java specs say that the system must be constructed on the GUI event
+												// thread.
+			public void run() {
+				try {
+					Controller controller = new Controller();
+					controller.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_VZ0HoJvlEeezkd4zce6tzQ" name="Controller" method="_VZ-fsZvlEeezkd4zce6tzQ">
+          <eAnnotations xmi:id="_VZ0HoZvlEeezkd4zce6tzQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_VZ0HopvlEeezkd4zce6tzQ" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_VZ_GwZvlEeezkd4zce6tzQ">
+            <body>Controller constructor builds the system</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_VZ0Ho5vlEeezkd4zce6tzQ" type="_VZzgkJvlEeezkd4zce6tzQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VZ0HpJvlEeezkd4zce6tzQ" name="start" method="_VZ-fs5vlEeezkd4zce6tzQ">
+          <ownedComment xmi:id="_VZ_GwpvlEeezkd4zce6tzQ">
+            <body>Start the system</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VZ0usJvlEeezkd4zce6tzQ" name="main" isStatic="true" method="_VZ-ftJvlEeezkd4zce6tzQ">
+          <ownedComment xmi:id="_VZ_Gw5vlEeezkd4zce6tzQ">
+            <body>Launch the application.
+	 * 
+	 * @param args
+	 *            Arguments given by the system or command line.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_VZ0usZvlEeezkd4zce6tzQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VZ0uspvlEeezkd4zce6tzQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_VZ_t0JvlEeezkd4zce6tzQ" name="" memberEnd="_VZ_t0ZvlEeezkd4zce6tzQ _VZ9RkJvlEeezkd4zce6tzQ">
+        <ownedEnd xmi:id="_VZ_t0ZvlEeezkd4zce6tzQ" name="" type="_VZzgkJvlEeezkd4zce6tzQ" association="_VZ_t0JvlEeezkd4zce6tzQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_VZ_t05vlEeezkd4zce6tzQ" name="" memberEnd="_VZ_t1JvlEeezkd4zce6tzQ _VZ94oJvlEeezkd4zce6tzQ">
+        <ownedEnd xmi:id="_VZ_t1JvlEeezkd4zce6tzQ" name="" type="_VZzgkJvlEeezkd4zce6tzQ" association="_VZ_t05vlEeezkd4zce6tzQ"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_VUMn0JvlEeezkd4zce6tzQ">
+      <eAnnotations xmi:id="_VUMn0ZvlEeezkd4zce6tzQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_VUMn0pvlEeezkd4zce6tzQ" base_Package="_VPu-kJvlEeezkd4zce6tzQ">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Reference xmi:id="_VZ5nMJvlEeezkd4zce6tzQ" base_Element="_VZ5AIJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ5nMpvlEeezkd4zce6tzQ" base_Element="_VZ5nMZvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ6OQZvlEeezkd4zce6tzQ" base_Element="_VZ6OQJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ6OQ5vlEeezkd4zce6tzQ" base_Element="_VZ6OQpvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ61UZvlEeezkd4zce6tzQ" base_Element="_VZ61UJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ61U5vlEeezkd4zce6tzQ" base_Element="_VZ61UpvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ7cYZvlEeezkd4zce6tzQ" base_Element="_VZ7cYJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ7cY5vlEeezkd4zce6tzQ" base_Element="_VZ7cYpvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ8DcZvlEeezkd4zce6tzQ" base_Element="_VZ8DcJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ8Dc5vlEeezkd4zce6tzQ" base_Element="_VZ8DcpvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_VZ9RkZvlEeezkd4zce6tzQ" base_Element="_VZ9RkJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Generics xmi:id="_VZ94oZvlEeezkd4zce6tzQ" genericsValue="IStrategyFac" base_Element="_VZ94oJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_VZ-fsJvlEeezkd4zce6tzQ" base_Element="_VZ94oJvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VZ_t0pvlEeezkd4zce6tzQ" base_Element="_VZ_t0JvlEeezkd4zce6tzQ"/>
+  <UMLLabProfile:Reference xmi:id="_VaAU4JvlEeezkd4zce6tzQ" base_Element="_VZ_t05vlEeezkd4zce6tzQ"/>
+</xmi:XMI>

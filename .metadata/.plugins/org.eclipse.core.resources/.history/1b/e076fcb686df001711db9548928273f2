@@ -1,0 +1,35 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+
+/**
+ * join team command type
+ *
+ */
+public class JoinTeamType implements IUserMessageType{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = -4796853568909678228L;
+	
+	/**
+	 * team name
+	 */
+	private String teamName;
+	
+	/**
+	 * constructor that sets team name
+	 * @param teamName team name
+	 */
+	public JoinTeamType(String teamName) {
+		this.teamName = teamName;
+	}
+	
+	/**
+	 * get team name
+	 * @return team name
+	 */
+	public String getTeamName() {
+		return teamName;
+	}
+}

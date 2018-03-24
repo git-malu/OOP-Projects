@@ -1,0 +1,37 @@
+package lm44_xw47.model;
+
+import gov.nasa.worldwind.geom.Position;
+
+/**
+* Following defines a place.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu */
+public class Place {
+	private String _name;
+	private Position _pos;
+
+	/**
+	* Get the position of this place.
+	 * 	 * 
+	 * 	 * @return The positon of this place. */
+	public Position getPosition() {
+		return _pos;
+	}
+
+	@Override
+	public String toString() {
+		return _name;
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param name The name of this place.
+	 * 	 * @param pos The position of this place. */
+	public Place(String name, Position pos) {
+		_name = name;
+		_pos = pos;
+	}
+
+}

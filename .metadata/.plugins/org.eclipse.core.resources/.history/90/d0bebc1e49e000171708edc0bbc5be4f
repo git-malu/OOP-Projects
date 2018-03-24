@@ -1,0 +1,33 @@
+package lm44_xw47.chatRoom.model;
+
+import common.IUser;
+import common.IChatRoom;
+
+/**
+* Following defines the adapter the lobby model uses to communicate with lobby view.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public interface ILobbyModel2ViewAdapter {
+	public static final ILobbyModel2ViewAdapter NULL_OBJECT = new ILobbyModel2ViewAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addUser(IUser user) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addTeam(IChatRoom team) {
+		}
+
+	};
+
+	public void addUser(IUser user);
+
+	public void addTeam(IChatRoom team);
+
+}

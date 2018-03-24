@@ -1,0 +1,11 @@
+package common.datatype.user;
+
+import common.IUserMessageType;
+import common.IChatRoom;
+
+/**
+* Well known data type to invite a user to a chat room */
+public interface IInvitationType extends IUserMessageType {
+	public IChatRoom getChatRoom();
+
+}

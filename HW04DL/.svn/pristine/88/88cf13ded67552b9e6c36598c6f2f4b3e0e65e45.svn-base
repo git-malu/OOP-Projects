@@ -1,0 +1,35 @@
+package strategy.movement;
+
+import model.Shape;
+
+/**
+ * A concrete Strategy
+ * Move like a retro Snake
+ * @author Gao Pan
+ *
+ */
+public class Wiggler implements IUpdateStrategy {
+	/**
+	 * count for ticks
+	 */
+	int count;
+
+	/**
+	 * Count down and reset the count and velocity vector as necessary
+	 */
+	@Override
+	public void updateStatus(Shape context) {
+		count--;
+		if (count <= 0) {
+			count = context.getRdn().randomInt(10, 50);
+			if (context.getDx() == 0) {
+				context.randomV();
+				context.setDx(0);
+			} else {
+				context.randomV();
+				context.setDy(0);
+			}
+		}
+	}
+
+}

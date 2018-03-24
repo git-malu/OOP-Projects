@@ -1,0 +1,37 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* 
+ * player move command tyep
+ *  * */
+public class PlayerMoveType implements IUserMessageType {
+	private static final long serialVersionUID = -5753945135025145761L;
+
+	private IUser user;
+
+	public IUser getUser() {
+		return this.user;
+	}
+
+	private Double latitude;
+
+	public Double getLatitude() {
+		return this.latitude;
+	}
+
+	private Double longitude;
+
+	public Double getLongitude() {
+		return this.longitude;
+	}
+
+	public PlayerMoveType(IUser user, Double latitude, Double longitude) {
+		this.user = user;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+}

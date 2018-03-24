@@ -1,0 +1,143 @@
+package model;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.util.Observable;
+import java.util.Observer;
+
+/**
+ * abstract class, used to create a ball
+ * @version 1.0.0
+ */
+public abstract class ABall implements Observer {
+	protected Point location; // the location of the ball
+	protected int radius; // the radius of the ball
+	protected Color color; //the color of the ball
+	protected Point velocity; //the velocity of the ball
+
+	/**
+	 * constructor
+	 * @param p location
+	 * @param r radius
+	 * @param v velocity
+	 * @param c color
+	 */
+	ABall(Point l, int r, Point v, Color c) {
+		this.location = l;
+		this.radius = r;
+		this.velocity = v;
+		this.color = c;
+	}
+
+	/**
+	 * change all sorts of behaviors of the ball
+	 * @param o when dispatcher notify, it will take action
+	 * @param g graphics
+	 */
+	public void update(Observable o, Object g) {
+		updatestate();
+		move();
+		bounce();
+		paint((Graphics) g);
+	}
+
+	/**
+	 * move the ball to a new place according its velocity
+	 */
+	public void move() {
+		location.translate(velocity.x, velocity.y);
+	}
+
+	/**
+	 * bounce the ball when it hit the bounds, change its speed direction and location
+	 */
+	public void bounce() {
+		if (location.x <= 0 || location.x + 2 * radius >= BallModel.returnBounds().getWidth()) {
+			velocity.x = -velocity.x;
+			location.x = location.x + 2 * velocity.x;
+		}
+		if (location.y <= 0 || location.y + 2 * radius >= BallModel.returnBounds().getHeight()) {
+			velocity.y = -velocity.y;
+			location.y = location.y + 2 * velocity.y;
+		}
+	}
+
+	/**
+	 * set the location
+	 * @param n_location
+	 */
+	public void setLocation(Point n_location) {
+		this.location = n_location;
+	}
+
+	/**
+	 * get the location
+	 * @return location
+	 */
+	public Point getLocation() {
+		return location;
+	}
+
+	/**
+	 * set the velocity
+	 * @param velocity
+	 */
+	public void setVelocity(Point velocity) {
+		this.velocity = velocity;
+	}
+
+	/**
+	 * get the velocity
+	 * @return velocity
+	 */
+	public Point getVelocity() {
+		return velocity;
+	}
+
+	/**
+	 * set the color
+	 * @param color
+	 */
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	/**
+	 * get the color
+	 * @return color
+	 */
+	public Color getColor() {
+		return color;
+	}
+
+	/**
+	 * set the radius
+	 * @param radius
+	 */
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+
+	/**
+	 * get the radius
+	 * @return radius
+	 */
+	public int getRadius() {
+		return radius;
+	}
+
+	/**
+	 * paint a ball on canvas with location location and radius radius
+	 * @param g
+	 */
+	public void paint(Graphics g) {
+		g.setColor(color);
+		g.fillOval(location.x, location.y, 2 * radius, 2 * radius);
+	}
+
+	/**
+	 * abstract method, change the specific action of the individual ball
+	 */
+	public abstract void updatestate();
+}

@@ -1,0 +1,23 @@
+package lm44_xw47.model;
+
+import map.MapLayer;
+import gov.nasa.worldwind.layers.RenderableLayer;
+import gov.nasa.worldwind.layers.MarkerLayer;
+
+/**
+* Following defines the adapter that map model uses to communicate with map view.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu */
+public interface IMapModel2MapViewAdapter {
+	public void addPlace(Place p);
+
+	public void show(MapLayer layer);
+
+	public void show(RenderableLayer renderableLayer);
+
+	public void show(MarkerLayer markerLayer);
+
+	public void hide(MapLayer layer);
+
+}

@@ -1,0 +1,43 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import provided.datapacket.DataPacketAlgo;
+import common.DataPacketUser;
+import java.util.Map;
+
+/**
+* This command installs new commands for the unknown dataPackets
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *  * */
+public class UserInstallCmd extends DataPacketUserAlgoCmd<IUserInstallCmdType> {
+	private static final long serialVersionUID = 4976230000301875209L;
+
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	private transient DataPacketAlgo<String, String> algo;
+	private transient Map<Class<?>, DataPacketUser<?>> unknownMsgs;
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	public UserInstallCmd(DataPacketAlgo<String, String> algo, Map<Class<?>, DataPacketUser<?>> unknownMsgs,
+			IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.algo = algo;
+		this.unknownMsgs = unknownMsgs;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<IUserInstallCmdType> host, String... params) {
+		DataPacketUserAlgoCmd<?> cmd = host.getData().getCmd();
+		cmd.setCmd2ModelAdpt(cmd2ModelAdpt);
+		algo.setCmd(host.getData().getCmdId(), cmd);
+		if (unknownMsgs.containsKey(host.getData().getCmdId())) {
+			unknownMsgs.remove(host.getData().getCmdId()).execute(algo);
+		}
+		return "";
+	}
+}

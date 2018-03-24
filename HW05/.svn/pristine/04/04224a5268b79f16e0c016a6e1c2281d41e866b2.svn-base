@@ -1,0 +1,10 @@
+package model.strategies;
+
+import model.IBallCmd;
+import model.balls.Ball;
+import util.IDispatcher;
+
+public interface IInteractionStrategy {
+  
+	public void interact(Ball context, Ball target,IDispatcher<IBallCmd> dispatcher);
+}

@@ -1,0 +1,25 @@
+package model;
+
+import java.util.ArrayList;
+
+public class MultiStrategy implements IUpdateStrategy {
+	ArrayList<IUpdateStrategy> listOfStra = new ArrayList<IUpdateStrategy>();
+	
+	public MultiStrategy(IUpdateStrategy a, IUpdateStrategy b) {
+		listOfStra.add(a);
+		listOfStra.add(b);
+	}
+	
+	@Override
+	public void strategy(ABall ball) {
+		// TODO Auto-generated method stub
+		for(IUpdateStrategy stra : listOfStra) {
+			stra.strategy(ball);
+		}
+	}
+	
+	public ArrayList<IUpdateStrategy> getStraList(){
+		return listOfStra;
+	}
+	
+}

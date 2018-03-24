@@ -1,0 +1,49 @@
+package shape;
+
+import java.awt.Color;
+import java.awt.*;
+
+/**
+ * a superclass for all kinds of shapes
+ * @author malu
+ *
+ */
+public abstract class AShape {
+	/**
+	 * shapes will have color, location, size.
+	 * 
+	 */
+	Color color;
+	int[] size;
+	int[] location;
+
+	// abstract method will be implemented by sub classes,that is, other specific shapes
+	public abstract void paint(Graphics g);
+
+	//setters & getters
+
+	public void setColor(Color value) {
+		this.color = value;
+	}
+
+	public Color getColor() {
+		return this.color;
+	}
+
+	public void setSize(int[] value) {
+		this.size = value;
+	}
+
+	public int[] getSize() {
+		return this.size;
+	}
+
+	public void setLocation(int[] value) {
+		this.location = value;
+	}
+
+	public int[] getLocation() {
+		return this.location;
+	}
+
+}

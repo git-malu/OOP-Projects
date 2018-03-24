@@ -1,0 +1,38 @@
+package client.clientModel;
+
+import provided.client.model.IClientModel;
+import provided.compute.ITask;
+
+public class clientModel implements IClientModel {
+
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String connectTo(String remoteHost) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void sendMsgToComputeEngine(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public <T> String runTask(ITask<T> task) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

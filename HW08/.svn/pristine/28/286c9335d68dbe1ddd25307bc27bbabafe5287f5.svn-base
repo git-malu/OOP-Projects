@@ -1,0 +1,70 @@
+package lm44_yb22.model;
+
+import java.rmi.RemoteException;
+import java.util.UUID;
+
+import javax.naming.InitialContext;
+
+import common.DataPacketChatRoom;
+import common.IReceiver;
+import common.IUser;
+import lm44_yb22.model.cmd.DefalutCmd;
+import lm44_yb22.model.cmd.StringCmd;
+import provided.datapacket.DataPacketAlgo;
+
+public class Receiver implements IReceiver {
+	UUID uuid = UUID.randomUUID();
+	IUser userStub;
+	IReceiverAdapter receiverAdapter;
+	DataPacketAlgo<String, String> visitor = new DataPacketAlgo<String, String>(new DefalutCmd());
+	
+	public Receiver(IUser userStub, IReceiverAdapter adpt) {
+		// TODO Auto-generated constructor stub
+		this.userStub = userStub;
+		this.receiverAdapter = adpt;
+		init();
+	}
+	
+	public void init() {
+		visitor.setCmd(String.class, new StringCmd(receiverAdapter));
+	}
+	
+	@Override
+	public <T> void receive(DataPacketChatRoom<T> data) throws RemoteException {
+		// TODO Auto-generated method stub
+		System.out.println("Remote should receiver the datapacket");
+		data.execute(visitor);
+	}
+
+	@Override
+	public IUser getUserStub() throws RemoteException {
+		// TODO Auto-generated method stub
+		return userStub;
+	}
+
+	@Override
+	public UUID getUUID() throws RemoteException {
+		// TODO Auto-generated method stub
+		return uuid;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj == null) {
+			return false;
+		}else {
+			if(obj instanceof Receiver) {
+				return uuid.equals(((Receiver)obj).uuid);
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return uuid.hashCode();
+	}
+
+}

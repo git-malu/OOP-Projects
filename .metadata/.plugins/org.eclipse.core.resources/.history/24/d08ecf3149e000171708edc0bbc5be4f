@@ -1,0 +1,35 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import provided.mixedData.MixedDataKey;
+import common.DataPacketUser;
+
+/**
+* 
+ * @author Lu Ma
+ * @author Xiaojun Wu
+ *  * */
+public class RemoveUserGameCmd extends DataPacketUserAlgoCmd<RemoveUserGame> {
+	private static final long serialVersionUID = 714801897211248088L;
+
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	private MixedDataKey<ICmd2LobbyAdapter> key;
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	public RemoveUserGameCmd(MixedDataKey<ICmd2LobbyAdapter> key) {
+		this.key = key;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<RemoveUserGame> host, String... params) {
+		IUser user = host.getData().getUser();
+		ICmd2LobbyAdapter cmd2LobbyAdapter = cmd2ModelAdpt.get(key);
+		cmd2LobbyAdapter.removeUser(user);
+		return "";
+	}
+}

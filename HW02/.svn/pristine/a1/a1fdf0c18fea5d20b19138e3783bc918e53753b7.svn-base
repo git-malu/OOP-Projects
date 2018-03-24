@@ -1,0 +1,71 @@
+package ballModel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.util.Observable;
+import java.util.Random;
+
+import javax.swing.Timer;
+
+public class Model {
+	LinkedList<Ball> ballList = new LinkedList<Ball>();
+	private int _timeSlice = 50;  // update every 50 milliseconds
+	Dispatcher dispatcher = new Dispatcher();
+	//model to view adapter
+	IModel2ViewAdapter _model2ViewAdpt = IModel2ViewAdapter.NULL_OBJECT; //need for empty obj
+	Random rand = new Random(); 
+	
+	private Timer _timer = new Timer(_timeSlice, new ActionListener() {
+		/**
+		 * The timer "ticks" by calling this method every _timeslice milliseconds
+		 */
+		public void actionPerformed (ActionEvent e) {
+			
+			dispatcher.notifyAll(rand.nextInt(70));
+			_model2ViewAdpt.request2View_update(ballList);
+		}
+	});
+	
+	//constructor
+	public Model(IModel2ViewAdapter adapter){
+		_model2ViewAdpt = adapter;
+		
+	}
+	
+	public void start(){
+		ballList.add(new NullBall());
+		_timer.start();
+		
+	}
+	
+	public void handleViewRequest_makeBall(String s){
+		
+		if(s.equals("color") ){
+			ColorBall cl = new ColorBall();
+			ballList.add(cl);
+			dispatcher.addObserver(cl);
+			//System.out.println(s);
+		}else if(s.equals("radius")){
+			RadiusBall rab = new RadiusBall();
+			ballList.add(rab);
+			dispatcher.addObserver(rab);
+		}else if(s.equals("spin")){
+			SpinBall spb = new SpinBall();
+			ballList.add(spb);
+			dispatcher.addObserver(spb);
+		}
+			
+	}
+	
+	public void handleViewRequest_clearAll() {
+		ballList.clear();
+	}
+}
+
+//class ListOfBalls {
+//	ListOfBalls next;
+//	Ball ball;
+//}
+
+

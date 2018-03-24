@@ -1,0 +1,74 @@
+:normalEnd:
+project: /HW07Branch
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+revisionRanges: 25279-25312
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 25279-25312
+Summary result: type: 0 category: Skipped files number: 1
+Summary result: type: 0 category: Deleted number: 44
+Summary result: type: 0 category: Added number: 3
+Summary result: type: 0 category: Updated number: 2
+Summary result: type: 1 category: Merged number: 1
+Summary result: type: 1 category: Updated number: 1
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+workspaceRevision: 25313
+lowerRevision: 25279
+upperRevision: 25312
+merge -r 25279:25312 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch
+Message: 1 S           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided because of working copy obstruction.
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/engine/model/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/engine/model/IEngineModel.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/engine/model
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/engine
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/Engine_demo_JAR.launch
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/client_demo.jar
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/Client_demo_JAR.launch
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/README.txt
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo/engine_demo.jar
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/demo
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/IRMIUtils.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/IRMI_Defs.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/classServer/ClassServer.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/classServer/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/classServer/ClassFileServer.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/classServer
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/server.policy
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils/RMIUtils.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/rmiUtils
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/ILocalTaskViewAdapter.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/IRemoteTaskViewAdapter.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/README.txt
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/ITask.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/ITaskResultFormatter.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute/ICompute.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/compute
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/taskUtils/ITaskFactoryLoader.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/taskUtils/SingletonTaskFactoryLoader.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/taskUtils/ITaskFactory.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/taskUtils/package-info.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/taskUtils
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/task/Pi2.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/task/GetInfo.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/task/package-info.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/task
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/package-info.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model/IClientModel.java
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client/model
+Message: 2 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/client
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/provided/package-info.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/engine/engineView/EngineGUI.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/engine/engineModel/EngineModel.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/engine/engineController/Controller.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientModel/ClientModel.java
+Message: 1 D           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientModel/clientModel.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientView/MyClientGUI.java
+Error:   1   G         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch

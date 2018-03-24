@@ -1,0 +1,13 @@
+package common.datatype.user;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* Common data type for quitting.
+ * When a user quits the app, the user will send such a data packet to all connected peers, so that 
+ * they can remove the very user from their connected host list. */
+public interface IQuitType extends IUserMessageType {
+	public IUser getUserStub();
+
+}

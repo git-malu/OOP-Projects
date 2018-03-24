@@ -1,0 +1,21 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* remove user game */
+public class RemoveUserGame implements IUserMessageType {
+	private static final long serialVersionUID = 3008598978712539215L;
+
+	private IUser user;
+
+	public IUser getUser() {
+		return this.user;
+	}
+
+	public RemoveUserGame(IUser user) {
+		this.user = user;
+	}
+
+}

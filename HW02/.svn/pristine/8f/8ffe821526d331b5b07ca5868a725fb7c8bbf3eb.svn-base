@@ -1,0 +1,20 @@
+package ballModel;
+
+public class IModel2ViewAdapter {
+	public void request2View() {
+		
+	}
+	public void update(){
+		
+	}
+	
+	public static final IModel2ViewAdapter NULL_OBJECT = new IModel2ViewAdapter() {
+		
+		public void request2View() {
+			
+		}
+		public void update(){
+			
+		}
+	};
+}

@@ -1,0 +1,28 @@
+:normalEnd:
+project: /HW07Branch
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07
+revisionRanges: 25452-25453
+force: false
+recurse: false
+ignore: false
+depth: 0
+revisions: 25452-25453
+Summary result: type: 0 category: Resolved conflicts number: 1
+Summary result: type: 0 category: Added number: 3
+Summary result: type: 0 category: Updated number: 2
+Summary result: type: 1 category: Updated number: 1
+Summary result: type: 0 category: Conflicts number: 1
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07Branch
+workspaceRevision: 25470
+lowerRevision: 25452
+upperRevision: 25453
+merge -c 25453 https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW07 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/Controller (6).launch
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientModel/ClientModel.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientModel/IViewAdapter.java
+Message: 1 U           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientController/Controller.java
+Error:   1 C           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientView/MyClientGUI.java
+Message: 1 A           /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch/src/client/clientView/IModelAdapter.java
+Message: 3   U         /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW07Branch

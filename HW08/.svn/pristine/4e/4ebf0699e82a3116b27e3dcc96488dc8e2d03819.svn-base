@@ -1,0 +1,66 @@
+package lm44_yb22.model;
+
+import java.util.Collection;
+import java.util.UUID;
+
+import common.DataPacketChatRoom;
+import common.IChatRoom;
+import common.IReceiver;
+
+public class ChatRoomWrapper implements IChatRoom {
+	IChatRoom simpleChatRoom;
+	public IReceiver myReceiverStub; // build the correspondence
+	/**
+	 * wrap the original chatroom
+	 * @param simpleChatRoom
+	 */
+	public ChatRoomWrapper(ChatRoom simpleChatRoom) {
+		// TODO Auto-generated constructor stub
+		this.simpleChatRoom = simpleChatRoom;
+	}
+	
+	/**
+	 * For each chat room, build a relation between one receiver and this chat room
+	 * @param myReceiverStub
+	 */
+	public void bindMyReceiverWithChatRoom(IReceiver myReceiverStub) {
+		this.myReceiverStub = myReceiverStub;
+	}
+	
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return simpleChatRoom.getName();
+	}
+
+	@Override
+	public UUID getUUID() {
+		// TODO Auto-generated method stub
+		return simpleChatRoom.getUUID();
+	}
+
+	@Override
+	public Collection<IReceiver> getIReceiverStubs() {
+		// TODO Auto-generated method stub
+		return simpleChatRoom.getIReceiverStubs();
+	}
+
+	@Override
+	public <T> void sendPacket(DataPacketChatRoom<T> data) {
+		// TODO Auto-generated method stub
+		simpleChatRoom.sendPacket(data);
+	}
+
+	@Override
+	public boolean addIReceiverStubLocally(IReceiver receiver) {
+		// TODO Auto-generated method stub
+		return simpleChatRoom.addIReceiverStubLocally(receiver);
+	}
+
+	@Override
+	public boolean removeIReceiverStubLocally(IReceiver receiver) {
+		// TODO Auto-generated method stub
+		return simpleChatRoom.removeIReceiverStubLocally(receiver);
+	}
+
+}

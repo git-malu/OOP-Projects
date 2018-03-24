@@ -1,0 +1,39 @@
+package lm44_xw47.model;
+
+import gov.nasa.worldwind.geom.Position;
+
+public class PlayerInfo {
+	private Position pos;
+	private Position origPos;
+	private boolean carry;
+
+	public void setCarry(boolean carry) {
+		this.carry = carry;
+	}
+
+	public boolean getCarry() {
+		return carry;
+	}
+
+	public Position getPostion() {
+		return pos;
+	}
+
+	public Position getOrgiPosition() {
+		return origPos;
+	}
+
+	public PlayerInfo(Position pos, Position origPos) {
+		this.pos = pos;
+		this.origPos = origPos;
+	}
+
+	public void setPositon(Position pos) {
+		this.pos = pos;
+	}
+
+	public void setOrgiPositon(Position origPos) {
+		this.origPos = origPos;
+	}
+
+}

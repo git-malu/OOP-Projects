@@ -1,0 +1,33 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import common.DataPacketUserAlgoCmd;
+import common.IUserCmd2ModelAdapter;
+import provided.mixedData.MixedDataKey;
+import common.DataPacketUser;
+
+/**
+* add team game command
+ *  * */
+public class AddTeamGameCmd extends DataPacketUserAlgoCmd<AddTeamGame> {
+	private static final long serialVersionUID = 5499700016792308152L;
+
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	private MixedDataKey<ICmd2LobbyAdapter> key;
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	public AddTeamGameCmd(MixedDataKey<ICmd2LobbyAdapter> key) {
+		this.key = key;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<AddTeamGame> host, String... params) {
+		IChatRoom team = host.getData().getTeam();
+		ICmd2LobbyAdapter cmd2LobbyAdapter = cmd2ModelAdpt.get(key);
+		cmd2LobbyAdapter.addTeam(team);
+		return "";
+	}
+}

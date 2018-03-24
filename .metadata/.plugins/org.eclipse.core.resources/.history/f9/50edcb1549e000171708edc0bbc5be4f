@@ -1,0 +1,50 @@
+package lm44_xw47.chatRoom.model.dataPacketAlgo;
+
+import common.DataPacketCRAlgoCmd;
+import common.ICRCmd2ModelAdapter;
+import provided.datapacket.DataPacketAlgo;
+import common.DataPacketCR;
+import java.util.Map;
+
+/**
+* Following defines the command to install a new command.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public class CRInstallCmd extends DataPacketCRAlgoCmd<ICRInstallCmdType> {
+	private static final long serialVersionUID = 3455543561084198579L;
+
+	private transient ICRCmd2ModelAdapter cmd2ModelAdpt;
+	private transient DataPacketAlgo<String, String> algo;
+	private transient Map<Class<?>, DataPacketCR<?>> unknownMsgs;
+
+	@Override
+	public void setCmd2ModelAdpt(ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param algo The visitor that holds all commands.
+	 * 	 * @param unknownMsgs The unknown messages.
+	 * 	 * @param cmd2ModelAdpt The adapter this command uses to communicate with local system. */
+	public CRInstallCmd(DataPacketAlgo<String, String> algo, Map<Class<?>, DataPacketCR<?>> unknownMsgs,
+			ICRCmd2ModelAdapter cmd2ModelAdpt) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.algo = algo;
+		this.unknownMsgs = unknownMsgs;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketCR<ICRInstallCmdType> host, String... params) {
+		System.out.println("It should install command.");
+		DataPacketCRAlgoCmd<?> cmd = host.getData().getCmd();
+		cmd.setCmd2ModelAdpt(cmd2ModelAdpt);
+		algo.setCmd(host.getData().getCmdId(), cmd);
+		if (unknownMsgs.containsKey(host.getData().getCmdId())) {
+			unknownMsgs.remove(host.getData().getCmdId()).execute(algo);
+		}
+		return "";
+	}
+}

@@ -1,0 +1,21 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+
+public class StopGameType implements IUserMessageType{
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 3002273009905183854L;
+	
+	public String stopMsg;
+	
+	public StopGameType(String stopMsg) {
+		this.stopMsg = stopMsg;
+	}
+	
+	public String getStopMsg() {
+		return stopMsg;
+	}
+	
+}

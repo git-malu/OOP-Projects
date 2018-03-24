@@ -1,0 +1,14 @@
+User manual:
+1 How to start the program, both the program itself as well as any individual games or processes. 
+	You may launch the program through FinalProject.launch file;
+	The main method resides in lm44_xw47.controller.MainController;
+	This program is a game server program. In order to properly play the game, at least two client player should connect to the server;
+	When a client connects to the server (server ip is in the server log panel), a lobby window will pop up;
+	In the lobby a play can join either NORTH team or SOUTH team;
+	After joining the team, the player may click the "ready" button. The game starts automatically when all the players are ready.
+	
+2 How to connect to other users
+
+3 How to use every feature of the program.
+
+4 How to end and exit the program.

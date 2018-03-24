@@ -1,0 +1,229 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Font;
+import java.awt.Graphics;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.JComboBox;
+import java.awt.GridLayout;
+import model.IModelCtrlAdpt;
+
+/**
+ * The <code>BallWorldMainAppFrame</code> class is a view class under MVC
+ * pattern. * The <code>BallWorldMainAppFrame</code> is the user interface
+ * portion, using to display the balls
+ * 
+ * @author Yuchang Shen and Weiheng Qiu
+ * based on HW02 by Yue Jiang and Yuchang Shen
+ *
+ */
+public class BallWorldMainAppFrame<TDropListItem1, TDropListItem2> extends JFrame {
+
+	private static final long serialVersionUID = 8180421682775032458L;
+	private JPanel contentPane;
+
+	/**
+	 * To paint the desired items
+	 */
+	private final JPanel panelDisplay = new JPanel() {
+		private static final long serialVersionUID = 1745329082208890818L;
+
+		/**
+		 * Overridden paintComponent method to paint a shape in the panel.
+		 * 
+		 * @param g
+		 *            The Graphics object to paint on.
+		 **/
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g); // clear the panel and redo the background
+			_view2ModelPaintAdpt.paint(g);
+
+		}
+	};
+	private final JPanel panelControl = new JPanel();
+	private final JTextField textFieldBallName = new JTextField();
+	private final JButton buttonMakeBall = new JButton("Make Ball");
+	private final JButton buttonClearAll = new JButton("Clear All");
+	/**
+	 * Insures that the adapter is always valid
+	 */
+	@SuppressWarnings("unchecked")
+	private IModelCtrlAdpt<TDropListItem1, TDropListItem2> _modelCtrlAdpt = (IModelCtrlAdpt<TDropListItem1, TDropListItem2>) IModelCtrlAdpt.NULL_OBJECT;
+	private IView2ModelPaintAdapter _view2ModelPaintAdpt = IView2ModelPaintAdapter.NULL_OBJECT;
+	private final JComboBox<TDropListItem1> comboBox1 = new JComboBox<TDropListItem1>();
+	private final JButton btnAddToLists = new JButton("Add to update strategy lists");
+	private final JComboBox<TDropListItem1> comboBox2 = new JComboBox<TDropListItem1>();
+	private final JButton btnCombine = new JButton("Combine!");
+	private final JPanel panel = new JPanel();
+	private final JPanel panel_1 = new JPanel();
+	private final JPanel panel_2 = new JPanel();
+	private final JButton btnMakeSwitcher = new JButton("Make Switcher");
+	private final JButton btnSwitch = new JButton("Switch!");
+	private final JPanel panel_3 = new JPanel();
+	private final JButton btnAddToList = new JButton("Add to paint strategy list");
+	private final JComboBox<TDropListItem2> comboBox3 = new JComboBox<TDropListItem2>();
+	private final JTextField txtEnterThePaint = new JTextField();
+
+	/**
+	 * Create the frame.
+	 * 
+	 * @param iModelCtrlAdpt
+	 *            Interface IModelCtrlAdpt
+	 * @param iView2ModelPaintAdapter
+	 *            Interface IView2ModelPaintAdapter
+	 */
+	public BallWorldMainAppFrame(IModelCtrlAdpt<TDropListItem1, TDropListItem2> iModelCtrlAdpt,
+			IView2ModelPaintAdapter iView2ModelPaintAdapter) {
+		txtEnterThePaint.setToolTipText("Enter the paint strategy");
+		txtEnterThePaint.setText("Ball");
+		txtEnterThePaint.setColumns(10);
+		textFieldBallName.setText("Collide");
+		panel.add(textFieldBallName);
+		textFieldBallName.setToolTipText("Please enter the correct ball's name");
+		// TODO Auto-generated constructor stub
+		textFieldBallName.setColumns(10);
+		_modelCtrlAdpt = iModelCtrlAdpt;
+		_view2ModelPaintAdpt = iView2ModelPaintAdapter;
+		initGUI();
+	}
+
+	/**
+	 * Make the frame visible
+	 */
+	public void start() {
+		setVisible(true);
+	}
+
+	/**
+	 * Update the panel display
+	 */
+	public void updateView() {
+		panelDisplay.repaint();
+	}
+
+	/**
+	 * The method to get the canvas
+	 * 
+	 * @return the canvas which use to display the balls
+	 */
+	public Component getCanvas() {
+		return panelDisplay;
+	}
+
+	/**
+	 * Initial the ball GUI
+	 */
+	private void initGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 500, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		panelDisplay.setBackground(Color.WHITE);
+
+		contentPane.add(panelDisplay, BorderLayout.CENTER);
+		panelControl.setBackground(Color.PINK);
+
+		contentPane.add(panelControl, BorderLayout.NORTH);
+		panelControl.setLayout(new GridLayout(5, 12, 0, 0));
+
+		panelControl.add(panel);
+		panel.setLayout(new GridLayout(0, 2, 0, 0));
+		btnAddToLists.setToolTipText("Add the strategy to the list");
+		panel.add(btnAddToLists);
+		btnAddToLists.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TDropListItem1 o = _modelCtrlAdpt.addStrategy(textFieldBallName.getText());
+				if (null == o)
+					return;
+				comboBox1.insertItemAt(o, 0);
+				comboBox2.insertItemAt(o, 0);
+			}
+		});
+
+		panelControl.add(panel_1);
+		panel_1.setLayout(new GridLayout(0, 4, 0, 0));
+		comboBox1.setToolTipText("Choose update strategy");
+		panel_1.add(comboBox1);
+		comboBox2.setToolTipText("Choose update strategy");
+		panel_1.add(comboBox2);
+		panel_1.add(buttonMakeBall);
+		buttonMakeBall.setToolTipText("Make a ball with the selected strategy");
+		buttonMakeBall.setFont(new Font("American Typewriter", Font.PLAIN, 15));
+		btnCombine.setToolTipText("Combine the two selected strategies");
+		panel_1.add(btnCombine);
+		btnCombine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TDropListItem1 o = _modelCtrlAdpt.combineStrategy(comboBox1.getItemAt(comboBox1.getSelectedIndex()),
+						comboBox2.getItemAt(comboBox2.getSelectedIndex()));
+				if (null == o)
+					return;
+				comboBox1.insertItemAt(o, 0);
+				comboBox2.insertItemAt(o, 0);
+			}
+		});
+		buttonMakeBall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_modelCtrlAdpt.makeBall(comboBox1.getItemAt(comboBox1.getSelectedIndex()),
+						comboBox3.getItemAt(comboBox3.getSelectedIndex()));
+			}
+		});
+		buttonClearAll.setToolTipText("Click this button to clear all balls");
+		buttonClearAll.setFont(new Font("American Typewriter", Font.PLAIN, 15));
+		buttonClearAll.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_modelCtrlAdpt.clearBalls();
+			}
+		});
+
+		panelControl.add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
+		btnMakeSwitcher.setToolTipText("Make a switcher ball");
+		btnMakeSwitcher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_modelCtrlAdpt.makeSwitcherBall(comboBox3.getItemAt(comboBox1.getSelectedIndex()));
+			}
+		});
+
+		panel_2.add(btnMakeSwitcher);
+		btnSwitch.setToolTipText("Switch the switcher balls with the selected strategy");
+		btnSwitch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_modelCtrlAdpt.switchStrategy(comboBox1.getItemAt(comboBox1.getSelectedIndex()));
+			}
+		});
+
+		panel_2.add(btnSwitch);
+
+		panelControl.add(panel_3);
+		panel_3.setLayout(new GridLayout(1, 3, 0, 0));
+		btnAddToList.setToolTipText("add paint strategy");
+		btnAddToList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TDropListItem2 o = _modelCtrlAdpt.addPaintStrategy(txtEnterThePaint.getText());
+				if (null == o)
+					return;
+				comboBox3.insertItemAt(o, 0);
+			}
+		});
+
+		panel_3.add(txtEnterThePaint);
+
+		panel_3.add(btnAddToList);
+		comboBox3.setToolTipText("Choose the paint strategy");
+
+		panel_3.add(comboBox3);
+		panelControl.add(buttonClearAll);
+
+	}
+
+}

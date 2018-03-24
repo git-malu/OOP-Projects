@@ -1,0 +1,233 @@
+package lm44_xw47.controller;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import gov.nasa.worldwind.geom.Position;
+import javax.swing.SwingUtilities;
+
+import common.IUser;
+import lm44_xw47.view.AppFrame;
+import lm44_xw47.view.AppStartFrame;
+import lm44_xw47.view.IAppStart2Controller;
+import lm44_xw47.view.IMainView2ModelAdapter;
+import lm44_xw47.view.IView2ModelAdapter;
+
+import map.IRightClickAction;
+import map.MapLayer;
+import lm44_xw47.model.MapModel;
+import lm44_xw47.model.Place;
+import lm44_xw47.model.IMainModel2ViewAdapter;
+import lm44_xw47.model.IModel2ViewAdapter;
+import lm44_xw47.model.MainModel;
+
+public class MainController {
+	private AppFrame<Place> _view; //delete later
+	private MapModel _model; //delete later
+	private MainModel _mainModel;
+	private AppStartFrame<IUser> appStart;
+	private MapController _miniController;
+	
+	public MainController() {
+		// the main view
+		appStart = new AppStartFrame<IUser>(new IAppStart2Controller() {
+
+			@Override
+			public void makeMap() {
+				makeMapMVC();
+			}
+
+			@Override
+			public void startMap() {
+				MainController.this.startMap();
+			}
+
+			@Override
+			public void runJob(Runnable runnable) {
+				MainController.this.runJob(runnable);
+			}
+			
+		}, new IMainView2ModelAdapter<IUser>() {
+
+			@Override
+			public IUser connect(String ip) {
+				return _mainModel.connect(ip);
+			}
+
+			
+		});
+		
+		//main model
+		_mainModel = new MainModel(new IMainModel2ViewAdapter() {
+
+			@Override
+			public void appendLog(String str) {
+				appStart.appendLog(str);
+			}
+			
+		});
+		
+	}
+	
+	//inner class; miniController
+	private class MapController {
+		private MapModel _mapModel; //miniModel
+		private AppFrame<Place> _mapView; //miniView
+		
+		//constructor
+		public MapController() {
+			_mapView  = new AppFrame<Place>(new IView2ModelAdapter<Place>() {
+				public void goPlace(Place p) {
+					_mapView.setPosition(p.getPosition());
+				}
+				public void goLatLong(String latitude, String longitude) {
+					try {
+						_mapView.setPosition(Position.fromDegrees(Double.parseDouble(latitude), Double.parseDouble(longitude), 4000));
+					} catch (Exception e) {
+						System.out.println("Improper latitude, longitude: " + latitude + ", " + longitude);
+					}
+				}
+			}, new IRightClickAction() {
+				public void apply(Position p) {
+					_mapModel.click(p);				
+				}
+			});
+			
+			_mapModel = new MapModel(new IModel2ViewAdapter() {
+				public void addPlace(Place p) {
+					_mapView.addPlace(p);
+				}
+				public void show(MapLayer layer) {
+					_mapView.addMapLayer(layer);
+				}
+				public void hide(MapLayer layer) {
+					_mapView.removeMapLayer(layer);
+				}
+			});
+		}
+		
+		//miniController start
+		public void start() {
+			// here needs toMainView adapter to add the miniView to mainView
+			
+			_mapView.start();
+			_mapModel.start();
+			
+			appStart.addMiniView(_mapView);
+			
+			
+			
+		}
+	}
+	
+	
+	//original version of mini MVC
+	public void makeMapMVC() {
+//		_view  = new AppFrame<Place>(new IView2ModelAdapter<Place>() {
+//			public void goPlace(Place p) {
+//				_view.setPosition(p.getPosition());
+//			}
+//			public void goLatLong(String latitude, String longitude) {
+//				try {
+//					_view.setPosition(Position.fromDegrees(Double.parseDouble(latitude), Double.parseDouble(longitude), 4000));
+//				} catch (Exception e) {
+//					System.out.println("Improper latitude, longitude: " + latitude + ", " + longitude);
+//				}
+//			}
+//		}, new IRightClickAction() {
+//			public void apply(Position p) {
+//				_model.click(p);				
+//			}
+//		});
+//		
+//		_model = new MapModel(new IModel2ViewAdapter() {
+//			public void addPlace(Place p) {
+//				_view.addPlace(p);
+//			}
+//			public void show(MapLayer layer) {
+//				_view.addMapLayer(layer);
+//			}
+//			public void hide(MapLayer layer) {
+//				_view.removeMapLayer(layer);
+//			}
+//		});
+		
+		_miniController = new MapController();
+		
+	}
+	
+	//mini mvc start. I will make my version of this method
+	public void startMap() {
+		
+		//original code
+//		_view.start();
+//		_model.start();
+		
+		_miniController.start();
+		
+		
+		//test only, delete later
+//		appStart.addMiniView(_view);
+		
+	}
+	
+	//main controller start
+	public void start() {
+		appStart.start();//main view
+		_mainModel.start();//main model
+		
+		//test only, delete later
+		//new MapController().start();
+	}
+	
+	/**
+	 * Run the given Runnable job on the main thread.
+	 * @param r   The Runnable job to run
+	 */
+	public void runJob(Runnable r) {
+		try {
+			bq.put(r);   // Put job into the queue, blocking if out of space
+		} catch (InterruptedException e) {
+			System.out.println("runJob(): Exception putting job into blocking queue = "+e);
+			e.printStackTrace();
+		} 
+	}
+	
+	private BlockingQueue<Runnable> bq = new LinkedBlockingQueue<Runnable>(5);   // May want larger or different type of blocking queue
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		final MainController[] c = new MainController[1];   // One-element array trick to get around the "final"
+		
+		try {
+			SwingUtilities.invokeAndWait(new Runnable() {  // Must use invokeAndWait, not invokeLater so that controller will be a valid instance when the job processing loop starts below.
+				public void run() {
+					c[0] = new MainController();  // Controller, incl. GUI, is constructed on GUI thread
+					c[0].start();  // Always show the GUI on the GUI thread.
+					
+				}
+			});
+		} catch (InvocationTargetException | InterruptedException e1) {
+			System.err.println("main(): Exception in instantiating controller = "+e1);
+			e1.printStackTrace();
+		}
+		
+		// Go into infinite loop, waiting for Runnable jobs to perform on the main thread.
+		while(true) {
+			try {
+				System.out.println("Waiting for main thread jobs..");
+				Runnable r = c[0].bq.take();  // Pull the next available job out of the queue, otherwise block
+				System.out.println("Found and now running job: " + r); 
+				r.run();  // Run the job.
+			} catch (InterruptedException e) {
+				System.err.println("Exception in blocking queue: "+ e);
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

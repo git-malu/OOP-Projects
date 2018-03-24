@@ -1,0 +1,71 @@
+package lm44_xw47.model.dataPacketAlgoCmd;
+
+import java.rmi.RemoteException;
+import java.util.Map;
+
+import javax.swing.SwingUtilities;
+
+import common.DataPacketUser;
+import common.DataPacketUserAlgoCmd;
+import common.IUser;
+import common.IUserCmd2ModelAdapter;
+import common.IUserMessageType;
+import common.datatype.IRequestCmdType;
+import lm44_xw47.model.dataType.RequestCmdType;
+
+public class DefaultCmd extends DataPacketUserAlgoCmd<IUserMessageType>{
+
+	/**
+	 * An auto-generated id for serialization.
+	 */
+	private static final long serialVersionUID = 4024174437817028848L;
+	
+	/**
+	 * The adapter this command uses to communicate with local system.
+	 */
+	private transient IUserCmd2ModelAdapter cmd2ModelAdpt;
+	
+	/**
+	 * The unknown messages.
+	 */
+	private transient Map<Class<?>, DataPacketUser<?>> unknownMsgs;
+	
+	private transient IUser userStub;
+	
+	public DefaultCmd(IUser userStub, IUserCmd2ModelAdapter cmd2ModelAdpt, Map<Class<?>, DataPacketUser<?>> unknownMsgs) {
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+		this.unknownMsgs = unknownMsgs;
+		this.userStub = userStub;
+	}
+
+	@Override
+	public String apply(Class<?> index, DataPacketUser<IUserMessageType> host, String... params) {
+		// TODO Auto-generated method stub
+		IUserMessageType data = host.getData();
+		String msg = "Default case called. data = " + data + "\n";
+		IUser sender = host.getSender();
+		
+		unknownMsgs.put(index, host);
+		try {
+			sender.receive(new DataPacketUser<IRequestCmdType>(IRequestCmdType.class, new RequestCmdType(index), userStub));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			
+			SwingUtilities.invokeLater(new Runnable() {
+				@Override
+				public void run() {
+					cmd2ModelAdpt.appendMsg(msg, "Default:");
+				}
+			});
+		}
+		return "";
+	}
+
+	@Override
+	public void setCmd2ModelAdpt(IUserCmd2ModelAdapter cmd2ModelAdpt) {
+		// TODO Auto-generated method stub
+		this.cmd2ModelAdpt = cmd2ModelAdpt;
+	}
+	
+	
+}

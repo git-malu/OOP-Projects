@@ -1,0 +1,11 @@
+Hello,
+If you run the program, a window will pop up.
+In the north panel, there is a "text field" where you can type whatever text that will be displayed in the middle "display area" once you click the "click here"" button.
+
+The center panel is a zone for painting, where there is initially a red oval and an arc painted.
+
+In the south panel, there are four buttons named "Rect", "Arc", "RoundRect", "A House" separately.
+These four buttons paint shapes that they are named respectively. 
+For example, when you click "rect" button, a rectangle will be painted. And A house when "A House" is clicked.
+
+Thank you for reading.

@@ -1,0 +1,35 @@
+package lm44_xw47.model.dataType;
+
+import common.datatype.user.IUserRejectionStatusType;
+import common.DataPacketUser;
+
+/**
+* user rejection status type
+ *  * */
+public class UserRejectionStatusType implements IUserRejectionStatusType {
+	private static final long serialVersionUID = -320036311324352859L;
+
+	private String failureInfo;
+
+	@Override
+	public String getFailureInfo() {
+		return failureInfo;
+	}
+
+	private DataPacketUser<? extends IUserMessageType> dataPacketUser;
+
+	@Override
+	public DataPacketUser<? extends IUserMessageType> getOriginalData() {
+		return dataPacketUser;
+	}
+
+	/**
+	* constructor
+	 * 	 * @param failureInfo fail information
+	 * 	 * @param dataPacketUser datapacket */
+	public UserRejectionStatusType(String failureInfo, DataPacketUser<? extends IUserMessageType> dataPacketUser) {
+		this.failureInfo = failureInfo;
+		this.dataPacketUser = dataPacketUser;
+	}
+
+}

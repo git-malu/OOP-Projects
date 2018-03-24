@@ -1,0 +1,299 @@
+package model;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.util.Observable;
+import java.util.Observer;
+
+import strategy.movement.IUpdateStrategy;
+import strategy.painting.IPaintStrategy;
+import util.Randomizer;
+
+/**
+ * The Ball class
+ * @author Gao Pan
+ *
+ */
+public class Shape implements Observer {
+
+	/**
+	 * Maximum for internal x coordinate
+	 */
+	protected static int x_MAX = 1000;
+
+	/**
+	 * Minimum for internal x coordinate
+	 */
+	protected static int x_MIN = 0;
+
+	/**
+	 * Maximum for internal y coordinate
+	 */
+	protected static int y_MAX = 1000;
+
+	/**
+	 * Minimum for internal y coordinate
+	 */
+	protected static int y_MIN = 0;
+
+	/**
+	 * Maximum for radius
+	 */
+	protected static int r_MAX = 25;
+
+	/**
+	 * Minimum for radius
+	 */
+	protected static int r_MIN = 5;
+
+	/**
+	 * Specific strategy to be used for updating 
+	 */
+	protected IUpdateStrategy updStrgy;
+
+	/**
+	 * Color of the ball
+	 */
+	protected Color color;
+
+	/**
+	 * Internal x coordinate
+	 */
+	protected int x;
+
+	/**
+	 * Internal y coordinate
+	 */
+	protected int y;
+
+	/**
+	 * Radius of the ball
+	 */
+	protected int radius;
+
+	/**
+	 * The projection of velocity vector on x coordinate, under internal scale
+	 */
+	protected int dx;
+
+	/**
+	 * The projection of velocity vector on y coordinate, under internal scale
+	 */
+	protected int dy;
+
+	/**
+	 * Randomizer - generate random stuff for (almost) anything
+	 */
+	protected Randomizer rdn;
+	
+	protected IPaintStrategy paintStrgy;
+
+	public IPaintStrategy getPaintStrgy() {
+    return paintStrgy;
+  }
+
+  public void setPaintStrgy(IPaintStrategy paintStrgy) {
+    this.paintStrgy = paintStrgy;
+  }
+
+  /**
+	 * Set the strategy and randomize all essential fields.
+	 * @param strgy the strategy for the ball
+	 */
+	protected Shape(IUpdateStrategy strgy, IPaintStrategy paintStrgy) {
+		updStrgy = strgy;
+		this.paintStrgy = paintStrgy;
+		rdn = new Randomizer();
+		randomColor();
+		randomRadius();
+		randomPos();
+		randomV();
+	}
+
+	/**
+	 * Simply call the strategy for updating  
+	 */
+	protected void updateStatus() {
+		updStrgy.updateStatus(this);
+	}
+
+	/**
+	 * Move the ball according to the velocity vector represented by dx and dy.
+	 * Bouncing is handled.
+	 */
+	protected void move() {
+		x += dx;
+		y += dy;
+		while (x > x_MAX || x < x_MIN) {
+			if (x > x_MAX)
+				x = x_MAX * 2 - x;
+			if (x < x_MIN)
+				x = x_MIN * 2 - x;
+			dx = -dx;
+
+		}
+		while (y > y_MAX || y < y_MIN) {
+			if (y > y_MAX)
+				y = y_MAX * 2 - y;
+			if (y < y_MIN)
+				y = y_MIN * 2 - y;
+			dy = -dy;
+		}
+	}
+
+	/**
+	 * Paint the ball
+	 * @param g	The graphics object to paint on
+	 */
+	protected void paint(Graphics g) {
+	  this.paintStrgy.paint(g, this);
+//		paintBall(g, color, x, y, radius);
+	}
+
+	/**
+	 * Paint the ball with arbitrary configurations.
+	 * All parameters will override(but not overwrite) corresponding fields of the ball
+	 * Internal x/y coordinates are mapped to the canvas
+	 * @param g			graphics object on which the ball will be painted
+	 * @param in_color	the specified color
+	 * @param in_x		the specified x coordinate
+	 * @param in_y		the specified y coordinate
+	 * @param in_radius	the specified radius
+	 */
+	protected void paintBall(Graphics g, Color in_color, int in_x, int in_y, int in_radius) {
+		g.setColor(in_color);
+		Rectangle r = g.getClipBounds();
+		g.fillOval(Math.round((r.width - 2 * radius) / (float) x_MAX * in_x) - x_MIN,
+				Math.round((r.height - 2 * radius) / (float) y_MAX * in_y) - y_MIN, 2 * in_radius, 2 * in_radius);
+	}
+
+	/**
+	 * Implement the interface method called by observable
+	 * Update status, move, then paint
+	 */
+	@Override
+	public void update(Observable o, Object arg) {
+		updateStatus();
+		move();
+		paint((Graphics) arg);
+	}
+
+	/**
+	 * Randomize the position
+	 */
+	protected void randomPos() {
+		x = rdn.randomInt(x_MIN, x_MAX);
+		y = rdn.randomInt(y_MIN, y_MAX);
+	}
+
+	/**
+	 * Randomize the velocity vector
+	 */
+	public void randomV() {
+		dx = rdn.randomInt(10, (x_MAX - x_MIN) / 20) * ((rdn.randomInt(0, 1) == 1) ? 1 : -1);
+		dy = rdn.randomInt(10, (y_MAX - y_MIN) / 20) * ((rdn.randomInt(0, 1) == 1) ? 1 : -1);
+	}
+
+	/**
+	 * Randomize the color
+	 */
+	public void randomColor() {
+		color = rdn.randomColor();
+	}
+
+	/**	
+	 * Randomize the radius
+	 */
+	protected void randomRadius() {
+		radius = rdn.randomInt(r_MIN, r_MAX);
+	}
+
+  public IUpdateStrategy getUpdStrgy() {
+    return updStrgy;
+  }
+
+  public void setUpdStrgy(IUpdateStrategy updStrgy) {
+    this.updStrgy = updStrgy;
+  }
+
+  public Color getColor() {
+    return color;
+  }
+
+  public void setColor(Color color) {
+    this.color = color;
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public void setX(int x) {
+    this.x = x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  public void setY(int y) {
+    this.y = y;
+  }
+
+  public int getRadius() {
+    return radius;
+  }
+
+  public void setRadius(int radius) {
+    this.radius = radius;
+  }
+
+  public int getDx() {
+    return dx;
+  }
+
+  public void setDx(int dx) {
+    this.dx = dx;
+  }
+
+  public int getDy() {
+    return dy;
+  }
+
+  public void setDy(int dy) {
+    this.dy = dy;
+  }
+
+  public Randomizer getRdn() {
+    return rdn;
+  }
+
+  public void setRdn(Randomizer rdn) {
+    this.rdn = rdn;
+  }
+
+  public static int getX_MAX() {
+    return x_MAX;
+  }
+
+  public static int getX_MIN() {
+    return x_MIN;
+  }
+
+  public static int getY_MAX() {
+    return y_MAX;
+  }
+
+  public static int getY_MIN() {
+    return y_MIN;
+  }
+
+  public static int getR_MAX() {
+    return r_MAX;
+  }
+
+  public static int getR_MIN() {
+    return r_MIN;
+  }
+}

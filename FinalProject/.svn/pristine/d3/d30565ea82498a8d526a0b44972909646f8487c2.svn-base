@@ -1,0 +1,129 @@
+package lm44_xw47.clientMap;
+
+import java.util.Collection;
+import java.util.Map;
+
+import common.IChatRoom;
+import common.IUser;
+import gov.nasa.worldwind.geom.Position;
+import gov.nasa.worldwind.layers.MarkerLayer;
+import gov.nasa.worldwind.layers.RenderableLayer;
+import lm44_xw47.model.IMapModel2MapViewAdapter;
+import lm44_xw47.model.Place;
+import lm44_xw47.view.IMapView2MapModelAdapter;
+import map.IRightClickAction;
+import map.MapLayer;
+
+/**
+ * It's a mini-controller which makes mini-mvc for the client side game.
+ * @author malu
+ *
+ */
+public class ClientMapController {
+	/**
+	 * client side model
+	 */
+	private ClientMapModel _mapModel; //miniModel
+	
+	/**
+	 * client side map view
+	 */
+	private ClientMapView<Place> _mapView; //miniView
+	
+	/**
+	 * miniMVC to mainView adapter
+	 */
+	private IClientMapCtrl2MainViewAdapter _mapCtrl2MainViewAdapter;
+
+	/**
+	 * mini-controller constructor
+	 * @param mapCtrl2MainViewAdapter adapter
+	 * @param users user list of the game
+	 * @param teamsByUser team affiliation for each user
+	 * @param server server remote stub
+	 * @param localUser client user
+	 */
+	public ClientMapController(IClientMapCtrl2MainViewAdapter mapCtrl2MainViewAdapter, Collection<IUser> users, Map<IUser, IChatRoom> teamsByUser, IUser server, IUser localUser) {
+		
+		/**
+		 * mini-controller constructor
+		 */
+		_mapCtrl2MainViewAdapter = mapCtrl2MainViewAdapter;
+		
+		/**
+		 * game mini view
+		 */
+		_mapView = new ClientMapView<Place>(new IMapView2MapModelAdapter<Place>() {
+			public void goPlace(Place p) {
+				_mapView.setPosition(p.getPosition());
+			}
+
+			public void goLatLong(String latitude, String longitude) {
+				try {
+					_mapView.setPosition(Position.fromDegrees(Double.parseDouble(latitude),
+							Double.parseDouble(longitude), 4000));
+				} catch (Exception e) {
+					System.out.println("Improper latitude, longitude: " + latitude + ", " + longitude);
+				}
+			}
+		}, new IRightClickAction() {
+			public void apply(Position p) {
+				_mapModel.click(p);
+			}
+		});
+		
+		/**
+		 * game mini model
+		 */
+		_mapModel = new ClientMapModel(new IMapModel2MapViewAdapter() {
+			@Override
+			public void addPlace(Place p) {
+				_mapView.addPlace(p);
+			}
+
+			@Override
+			public void show(MapLayer layer) {
+				_mapView.addMapLayer(layer);
+			}
+			
+			@Override
+			public void show(RenderableLayer renderableLayer) {
+				_mapView.addRenderableLayer(renderableLayer);
+			}
+			
+			@Override
+			public void hide(MapLayer layer) {
+				_mapView.removeMapLayer(layer);
+			}
+
+			@Override
+			public void show(MarkerLayer markerLayer) {
+				_mapView.addMarkerLayer(markerLayer);
+			}
+
+
+		}, users, teamsByUser,server, localUser);
+	}
+
+	/**
+	 * mini controller start
+	 */
+	public void start() {
+		_mapView.start(); // miniView starts
+		_mapModel.start();// miniModel starts
+		_mapCtrl2MainViewAdapter.addMapView2MainView(_mapView); // add miniView to mainView
+	}
+	
+	/**
+	 * get client map model for the main MVC
+	 * @return map model
+	 */
+	public ClientMapModel getClientMapModel() {
+		return _mapModel;
+	}
+}
+
+
+	
+	
+

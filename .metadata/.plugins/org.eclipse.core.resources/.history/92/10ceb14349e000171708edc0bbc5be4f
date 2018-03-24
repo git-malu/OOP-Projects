@@ -1,0 +1,108 @@
+package lm44_xw47.model;
+
+import common.IUser;
+import provided.rmiUtils.RMIUtils;
+import java.rmi.registry.Registry;
+import java.util.Collection;
+import common.IReceiver;
+import common.IChatRoom;
+
+/**
+* Following defines the main model for this application.
+ * 
+ * @author Lu Ma
+ * @author Xiaojun Wu */
+public class MainModel {
+	private IMainModel2ViewAdapter _mainModel2ViewAdapter;
+	private User meUser;
+	private IUser userStub;
+	private String username = "";
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	private RMIUtils rmiUtils;
+	private Registry registry;
+	private int port = 2050;
+	private int receiverPort = 2060;
+	private Collection<IReceiver> receivers = new HashSet<IReceiver>();
+
+	/**
+	* Start the model. */
+	public void start() {
+		try {
+			// Start the RMI system and get the local Registry, making it if necessary.
+			rmiUtils = new RMIUtils((String str) -> {
+				_mainModel2ViewAdapter.appendLog(str);
+			});
+
+			rmiUtils.startRMI(IRMI_Defs.CLASS_SERVER_PORT_SERVER);
+			registry = rmiUtils.getLocalRegistry();
+
+			//save it to prevent garbage collection
+			meUser = new User(JOptionPane.showInputDialog("Input a username:"));
+			username = meUser.getName();
+			//save it to prevent garbage collection
+			userStub = (IUser) UnicastRemoteObject.exportObject(meUser, port);
+			//bind to the registry
+			registry.rebind(IUser.BOUND_NAME, userStub);
+			meUser.init(this._mainModel2ViewAdapter.createUserCmd2ModelAdapter(), userStub);
+			_mainModel2ViewAdapter.appendLog("RMI Server Ready");
+
+		} catch (Exception e) {
+			System.err.println("Exception while intializing RMI: \n" + e);
+			e.printStackTrace();
+			System.exit(-1); // exit the program.
+		}
+	}
+
+	/**
+	* Connect the remote user by the given ip address.
+	 * 	 * 
+	 * 	 * @param ip The ip address of remote user.
+	 * 	 * @return The stub of remote user. */
+	public IUser connect(String ip) {
+		try {
+			Registry remoteRegistry = rmiUtils.getRemoteRegistry(ip);
+			IUser remoteUserStub = (IUser) remoteRegistry.lookup(IUser.BOUND_NAME);
+			remoteUserStub.connect(userStub);
+			return remoteUserStub;
+
+		} catch (RemoteException | NotBoundException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public IUser getUser() {
+		return userStub;
+	}
+
+	/**
+	* Constructor.
+	 * 	 * 
+	 * 	 * @param adapter The adapter this model uses to communicate with view. */
+	public MainModel(IMainModel2ViewAdapter adapter) {
+		_mainModel2ViewAdapter = adapter;
+	}
+
+	public IReceiver[] joinChatRoom(IChatRoom chatRoom) {
+		IReceiver[] receiverChatRoom = new IReceiver[2];
+		IReceiver receiver = new Receiver(userStub);
+		receivers.add(receiver);
+		try {
+			IReceiver receiverStub = (IReceiver) UnicastRemoteObject.exportObject(receiver, receiverPort++);
+			registry.rebind("Receiver", receiverStub);
+			receiverChatRoom[0] = receiver;
+			receiverChatRoom[1] = receiverStub;
+			return receiverChatRoom;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+
+}

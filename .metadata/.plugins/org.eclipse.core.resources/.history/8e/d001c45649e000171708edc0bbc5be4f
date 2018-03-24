@@ -1,0 +1,88 @@
+package provided.rmiUtils.classServer;
+
+import java.io.IOException;
+import java.util.function.Consumer;
+
+/**
+* The ClassFileServer implements a ClassServer that
+ * reads class files from the file system. See the
+ * doc for the "Main" method for how to run this
+ * server. */
+public class ClassFileServer extends ClassServer {
+	private String classpath;
+
+	/**
+	* Constructs a ClassFileServer.  Info and error messages are 
+	 * 	 * sent to System.out.println() and System.err.println() respectively.
+	 * 	 *
+	 * 	 * @param port The port to use for the server
+	 * 	 * @param classpath The classpath where the server locates classes
+	 * 	 * @throws IOException if cannot listen on specified port */
+	public ClassFileServer(int port, String classpath) throws IOException {
+		this(port, classpath, (s) -> {
+		}, (s) -> {
+		});
+	}
+
+	/**
+	* Returns an array of bytes containing the bytecodes for
+	 * 	 * the class represented by the argument <b>path</b>.
+	 * 	 * The <b>path</b> is a dot separated class name with
+	 * 	 * the ".class" extension removed.
+	 * 	 *
+	 * 	 * @return the bytecodes for the class
+	 * 	 * @exception ClassNotFoundException if the class corresponding
+	 * 	 * to <b>path</b> could not be loaded. */
+	public byte[] getBytes(String path) throws IOException, ClassNotFoundException {
+		showInfoMsg("[ClassFileServer.getBytes()] reading on path = " + path);
+		File f = new File(classpath + File.separator + path.replace('.', File.separatorChar) + ".class");
+		int length = (int) (f.length());
+		if (length == 0) {
+			throw new IOException("File length is zero: " + path);
+		} else {
+			FileInputStream fin = new FileInputStream(f);
+			DataInputStream in = new DataInputStream(fin);
+			byte[] bytecodes = new byte[length];
+			in.readFully(bytecodes);
+			in.close();
+			return bytecodes;
+		}
+	}
+
+	public static void main(String... args) {
+		int port = IRMI_Defs.CLASS_SERVER_PORT_SERVER;
+		String classpath = "";
+
+		if (args.length >= 1) {
+			port = Integer.parseInt(args[0]);
+		}
+
+		if (args.length >= 2) {
+			classpath = args[1];
+		}
+
+		try {
+			new ClassFileServer(port, classpath);
+		} catch (IOException e) {
+			System.out.println("Unable to start ClassServer: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	* Constructs a ClassFileServer. The given infoMsgStrategy and errMsgStrategy 
+	 * 	 * are augmented to first send messages to System.out.println() and 
+	 * 	 * System.err.println() respectively.
+	 * 	 * @param port The port to use for the server
+	 * 	 * @param classpath The classpath where the server locates classes
+	 * 	 * @param infoMsgStrategy Strategy to display an info message.  
+	 * 	 * @param errMsgStrategy Strategy to display an error message. 	 
+	 * 	 * @throws IOException  If there is an error creating the server. */
+	public ClassFileServer(int port, String classpath, Consumer<String> infoMsgStrategy,
+			Consumer<String> errMsgStrategy) throws IOException {
+		super(port, infoMsgStrategy, errMsgStrategy);
+		this.classpath = classpath;
+		showInfoMsg("[ClassFileServer] port = " + port + ", classpath = " + classpath);
+	}
+
+}

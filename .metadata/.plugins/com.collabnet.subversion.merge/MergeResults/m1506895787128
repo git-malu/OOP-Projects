@@ -1,0 +1,16 @@
+:normalEnd:
+project: /HW05QWH
+fromUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+fromRevision: HEAD
+toUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05
+toRevision: HEAD
+force: false
+recurse: false
+ignore: false
+depth: 0
+
+workspaceUrl: https://svn.rice.edu/r/comp504/turnin/F17/lm44/HWbranch5
+workspaceRevision: 23945
+lowerRevision: 0
+upperRevision: 0
+merge -rHEAD:HEAD https://svn.rice.edu/r/comp504/turnin/F17/lm44/HW05 /Users/malu/Dropbox/Rice_University/COMP504/HomeWorks/HW05QWH

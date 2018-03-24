@@ -1,0 +1,23 @@
+package lm44_xw47.model.dataType;
+
+import common.IUserMessageType;
+import common.IUser;
+
+/**
+* 
+ * player die command type
+ *  * */
+public class PlayerDieType implements IUserMessageType {
+	private static final long serialVersionUID = -2085455729940540868L;
+
+	private IUser user;
+
+	public IUser getUser() {
+		return this.user;
+	}
+
+	public PlayerDieType(IUser user) {
+		this.user = user;
+	}
+
+}

@@ -1,0 +1,92 @@
+package lm44_xw47.chatRoom.model;
+
+import common.ICRCmd2ModelAdapter;
+import common.IReceiver;
+
+/**
+* Folowing defines the adapter the command uses to communicate with local chat room.
+ * 
+ * @author Xiaojun Wu
+ * @author Lu Ma */
+public interface ILocalCRCmd2ModelAdapter extends ICRCmd2ModelAdapter {
+	public static final ILocalCRCmd2ModelAdapter NULL_OBJECT = new ILocalCRCmd2ModelAdapter() {
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T extends ICRMessageType> void sendToChatRoom(Class<T> id, T data) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public String getName() {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void appendMsg(String text, String name) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void buildScrollableComponent(IComponentFactory fac, String label) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void buildNonScrollableComponent(IComponentFactory fac, String label) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T> T put(MixedDataKey<T> key, T value) {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T> T get(MixedDataKey<T> key) {
+			return null;
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public <T extends ICRMessageType> void sendTo(IReceiver target, Class<T> id, T data) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void addReceiver(IReceiver receiver) {
+		}
+
+		/**
+		 * No-op.
+		 */
+		@Override
+		public void removeReceiver(IReceiver receiver) {
+		}
+
+	};
+
+	public void addReceiver(IReceiver receiver);
+
+	public void removeReceiver(IReceiver receiver);
+
+}

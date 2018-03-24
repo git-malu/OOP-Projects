@@ -1,0 +1,5 @@
+package strategy.painting;
+
+public class Oval extends IPaintStrategy  {
+
+}

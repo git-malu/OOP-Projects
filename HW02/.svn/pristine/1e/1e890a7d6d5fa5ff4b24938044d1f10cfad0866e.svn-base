@@ -1,0 +1,35 @@
+package shape;
+
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+public class ACompositeShape extends AShape {
+	/**
+	 * this is an instance of composite design pattern
+	 * composite shape will have children
+	 */
+	ArrayList<AShape> childShapes = new ArrayList<AShape>();
+
+	public void paint(Graphics g) {
+		//paint all the children
+		for (AShape s : childShapes) {
+			s.paint(g);
+		}
+	}
+
+	/**
+	 * add a child
+	 * @param s
+	 */
+	public void add(AShape s) {
+		childShapes.add(s);
+	}
+
+	/**
+	 * remove a child
+	 * @param s
+	 */
+	public void remove(AShape s) {
+		childShapes.remove(s);
+	}
+}
